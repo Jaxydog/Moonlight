@@ -10,6 +10,7 @@
 		"moonlight:moobloom/regen",
 		"moonlight:moobloom/size",
 		"moonlight:moobloom/vegetarian",
-		"moonlight:moobloom/water_slowness"
+		"moonlight:moobloom/water_slowness",
+		"origins-classes:more_crop_drops"
 	]
 }
