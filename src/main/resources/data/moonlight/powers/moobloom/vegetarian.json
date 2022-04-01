@@ -1,0 +1,78 @@
+{
+	"name": "power.moonlight.moobloom.vegetarian.name",
+	"description": "power.moonlight.moobloom.vegetarian.description",
+	"type": "origins:multiple",
+	"no_meat": {
+		"type": "origins:prevent_item_use",
+		"item_condition": {
+			"type": "origins:meat"
+		}
+	},
+	"better_food": {
+		"type": "origins:modify_food",
+		"food_modifier": {
+			"operation": "addition",
+			"value": 1
+		},
+		"saturation_modifier": {
+			"operation": "multiply_total",
+			"value": 0.5
+		},
+		"item_condition": {
+			"type": "origins:meat",
+			"inverted": true
+		}
+	},
+	"wheat_eater": {
+		"type": "origins:active_self",
+		"cooldown": 5,
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "function moonlight:moobloom/vegetarian_eat_wheat"
+				},
+				{
+					"type": "origins:equipped_item_action",
+					"equipment_slot": "mainhand",
+					"action": {
+						"type": "origins:consume"
+					}
+				},
+				{
+					"type": "origins:feed",
+					"food": 2,
+					"saturation": 0.25
+				}
+			]
+		},
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.use",
+			"continuous": true
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "mainhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:wheat"
+						}
+					}
+				},
+				{
+					"type": "origins:food_level",
+					"comparison": "<",
+					"compare_to": 20
+				}
+			]
+		}
+	}
+}

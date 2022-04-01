@@ -1,0 +1,17 @@
+{
+	"name": "power.moonlight.moobloom.flower_trail.name",
+	"description": "power.moonlight.moobloom.flower_trail.description",
+	"type": "origins:action_over_time",
+	"interval": 10,
+	"entity_action": {
+		"type": "origins:chance",
+		"action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:moobloom/flower_trail_place"
+		},
+		"chance": 0.25
+	},
+	"condition": {
+		"type": "origins:moving"
+	}
+}

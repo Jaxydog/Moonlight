@@ -1,0 +1,174 @@
+{
+	"name": "power.moonlight.moobloom.milk_bucket.name",
+	"description": "power.moonlight.moobloom.milk_bucket.description",
+	"type": "origins:multiple",
+	"resource": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 180,
+		"start_value": 180,
+		"hud_render": {
+			"sprite_location": "moonlight:textures/gui/hud/resource_bar.png",
+			"bar_index": 0
+		},
+		"min_action": {
+			"type": "origins:execute_command",
+			"command": "playsound minecraft:item.bucket.fill_powder_snow player @s ~ ~ ~ 0.75 1.25"
+		},
+		"max_action": {
+			"type": "origins:execute_command",
+			"command": "playsound minecraft:item.bucket.fill player @s ~ ~ ~ 0.25 1.5"
+		}
+	},
+	"regen_slow": {
+		"type": "origins:action_over_time",
+		"interval": 30,
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "moonlight:moobloom/milk_bucket_resource",
+			"change": 1
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:moobloom/milk_bucket_resource",
+					"comparison": "<",
+					"compare_to": 180
+				},
+				{
+					"type": "origins:food_level",
+					"comparison": "<",
+					"compare_to": 10
+				}
+			]
+		}
+	},
+	"regen_medium": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "moonlight:moobloom/milk_bucket_resource",
+			"change": 1
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:moobloom/milk_bucket_resource",
+					"comparison": "<",
+					"compare_to": 180
+				},
+				{
+					"type": "origins:food_level",
+					"comparison": "<",
+					"compare_to": 15
+				},
+				{
+					"type": "origins:food_level",
+					"comparison": ">=",
+					"compare_to": 10
+				}
+			]
+		}
+	},
+	"regen_fast": {
+		"type": "origins:action_over_time",
+		"interval": 10,
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "moonlight:moobloom/milk_bucket_resource",
+			"change": 1
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:moobloom/milk_bucket_resource",
+					"comparison": "<",
+					"compare_to": 180
+				},
+				{
+					"type": "origins:food_level",
+					"comparison": ">=",
+					"compare_to": 15
+				}
+			]
+		}
+	},
+	"drain": {
+		"type": "origins:exhaust",
+		"interval": 20,
+		"exhaustion": 0.25,
+		"condition": {
+			"type": "origins:resource",
+			"resource": "moonlight:moobloom/milk_bucket_resource",
+			"comparison": "<",
+			"compare_to": 180
+		}
+	},
+	"milk": {
+		"type": "origins:active_self",
+		"cooldown": 5,
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:change_resource",
+					"resource": "moonlight:moobloom/milk_bucket_resource",
+					"change": -45
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "playsound minecraft:item.bucket.fill player @a ~ ~ ~ 1 1"
+				},
+				{
+					"type": "origins:equipped_item_action",
+					"equipment_slot": "mainhand",
+					"action": {
+						"type": "origins:consume"
+					}
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "give @s minecraft:milk_bucket"
+				}
+			]
+		},
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.use",
+			"continuous": true
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "mainhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:bucket"
+						}
+					}
+				},
+				{
+					"type": "origins:sneaking"
+				},
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:moobloom/milk_bucket_resource",
+					"comparison": ">=",
+					"compare_to": 45
+				}
+			]
+		}
+	}
+}

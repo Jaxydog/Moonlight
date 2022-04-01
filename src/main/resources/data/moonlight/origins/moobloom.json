@@ -1,0 +1,15 @@
+{
+	"name": "origin.moonlight.moobloom.name",
+	"description": "origin.moonlight.moobloom.description",
+	"icon": "minecraft:dandelion",
+	"impact": 2,
+	"powers": [
+		"moonlight:moobloom/flower_trail",
+		"moonlight:moobloom/milk_bucket",
+		"moonlight:moobloom/no_gold_armor",
+		"moonlight:moobloom/regen",
+		"moonlight:moobloom/size",
+		"moonlight:moobloom/vegetarian",
+		"moonlight:moobloom/water_slowness"
+	]
+}
