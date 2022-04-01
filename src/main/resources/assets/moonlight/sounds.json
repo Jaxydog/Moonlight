@@ -1,0 +1,10 @@
+{
+	"item.avocado.jingle": {
+		"subtitle": "subtitles.moonlight.item.avocado.jingle",
+		"sounds": [
+			{
+				"name": "moonlight:item/avocado_jingle"
+			}
+		]
+	}
+}
