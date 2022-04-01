@@ -4,5 +4,21 @@
 	"item.moonlight.avocado": "Avocado",
 	"item.moonlight.avocado.tooltip": "It's probably from Mexico...",
 	"item.moonlight.banana": "Banana",
-	"item.moonlight.banana.tooltip": "All hail the code monkeys!"
+	"item.moonlight.banana.tooltip": "All hail the code monkeys!",
+	"origin.moonlight.moobloom.name": "Moobloom",
+	"origin.moonlight.moobloom.description": "TBD",
+	"power.moonlight.moobloom.flower_trail.name": "Flower Trail",
+	"power.moonlight.moobloom.flower_trail.description": "You leave a trail of dandelions as you walk.",
+	"power.moonlight.moobloom.milk_bucket.name": "Udders",
+	"power.moonlight.moobloom.milk_bucket.description": "Sneaking and right-clicking while holding a bucket will fill it with milk.",
+	"power.moonlight.moobloom.no_netherite.name": "Not *THAT* Strong",
+	"power.moonlight.moobloom.no_netherite.description": "Netherite armor is too heavy for you to wear.",
+	"power.moonlight.moobloom.regen.name": "The Cutest of Cows",
+	"power.moonlight.moobloom.regen.description": "Nearby players are charmed by you and regenerate health more quickly.",
+	"power.moonlight.moobloom.size.name": "Cow-sized",
+	"power.moonlight.moobloom.size.description": "You're smaller than a normal player, only being 1.5 blocks tall.",
+	"power.moonlight.moobloom.vegetarian.name": "Vegetarian",
+	"power.moonlight.moobloom.vegetarian.description": "You can only eat wheat and plant-based foods.",
+	"power.moonlight.moobloom.water_slowness.name": "Big Build",
+	"power.moonlight.moobloom.water_slowness.description": "Your body mass makes it hard to walk while in water."
 }

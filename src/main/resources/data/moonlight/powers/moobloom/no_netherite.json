@@ -1,29 +1,29 @@
 {
-	"name": "power.moonlight.moobloom.no_gold_armor.name",
-	"description": "power.moonlight.moobloom.no_gold_armor.description",
+	"name": "power.moonlight.moobloom.no_netherite.name",
+	"description": "power.moonlight.moobloom.no_netherite.description",
 	"type": "origins:restrict_armor",
 	"head": {
 		"type": "origins:ingredient",
 		"ingredient": {
-			"item": "minecraft:golden_helmet"
+			"item": "minecraft:netherite_helmet"
 		}
 	},
 	"chest": {
 		"type": "origins:ingredient",
 		"ingredient": {
-			"item": "minecraft:golden_chestplate"
+			"item": "minecraft:netherite_chestplate"
 		}
 	},
 	"legs": {
 		"type": "origins:ingredient",
 		"ingredient": {
-			"item": "minecraft:golden_leggings"
+			"item": "minecraft:netherite_leggings"
 		}
 	},
 	"feet": {
 		"type": "origins:ingredient",
 		"ingredient": {
-			"item": "minecraft:golden_boots"
+			"item": "minecraft:netherite_boots"
 		}
 	}
 }
