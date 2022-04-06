@@ -11,7 +11,7 @@
 	"power.moonlight.moobloom.flower_trail.name": "Flower Trail",
 	"power.moonlight.moobloom.flower_trail.description": "You leave a trail of dandelions as you walk.",
 	"power.moonlight.moobloom.milk_bucket.name": "Udders",
-	"power.moonlight.moobloom.milk_bucket.description": "Sneaking and right-clicking while holding a bucket will fill it with milk.",
+	"power.moonlight.moobloom.milk_bucket.description": "Right-clicking while sneaking and holding a bucket will fill it with milk.",
 	"power.moonlight.moobloom.no_netherite.name": "Not *THAT* Strong",
 	"power.moonlight.moobloom.no_netherite.description": "Netherite armor is too heavy for you to wear.",
 	"power.moonlight.moobloom.regen.name": "Passive Dosage",
@@ -19,8 +19,8 @@
 	"power.moonlight.moobloom.size.name": "Cow-sized",
 	"power.moonlight.moobloom.size.description": "You're smaller than a normal player, only being 1.5 blocks tall.",
 	"power.moonlight.moobloom.vegetarian.name": "Vegetarian",
-	"power.moonlight.moobloom.vegetarian.description": "You can only eat wheat and plant-based foods.",
+	"power.moonlight.moobloom.vegetarian.description": "You can only eat wheat and plant-based foods, however eating grants you more hunger.",
 	"power.moonlight.moobloom.vegetarian.wheat_tooltip": "Looks tasty!",
 	"power.moonlight.moobloom.water_slowness.name": "Big Build",
-	"power.moonlight.moobloom.water_slowness.description": "Your body mass makes it hard to walk while in water."
+	"power.moonlight.moobloom.water_slowness.description": "Your body mass makes it difficult to walk while in water."
 }
