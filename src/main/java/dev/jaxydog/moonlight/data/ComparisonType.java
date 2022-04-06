@@ -17,14 +17,6 @@ public enum ComparisonType {
 		this.CONVERSION = conversion;
 	}
 
-	public int convert(double value, ItemStack stack) {
-		return this.CONVERSION.apply(value, stack);
-	}
-
-	public String getType() {
-		return this.TYPE;
-	}
-
 	public static ComparisonType getFromString(String type) {
 		switch (type) {
 			case "value":
@@ -33,5 +25,13 @@ public enum ComparisonType {
 				return PERCENTAGE;
 		}
 		return NONE;
+	}
+
+	public String getType() {
+		return this.TYPE;
+	}
+
+	public int convert(double value, ItemStack stack) {
+		return this.CONVERSION.apply(value, stack);
 	}
 }
