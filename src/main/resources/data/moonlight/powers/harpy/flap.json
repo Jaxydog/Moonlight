@@ -1,0 +1,97 @@
+{
+	"name": "power.moonlight.harpy.flap.name",
+	"description": "power.moonlight.harpy.flap.description",
+	"type": "origins:multiple",
+	"resource": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 14,
+		"start_value": 14,
+		"hud_render": {
+			"sprite_location": "moonlight:textures/gui/hud/resource_bar_14.png",
+			"bar_index": 0
+		},
+		"min_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:harpy/flap_min"
+		},
+		"max_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:harpy/flap_max"
+		}
+	},
+	"regen_slow": {
+		"type": "origins:action_over_time",
+		"interval": 60,
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "moonlight:harpy/flap_resource",
+			"change": 1
+		},
+		"condition": {
+			"type": "origins:on_block",
+			"inverted": true
+		}
+	},
+	"regen_fast": {
+		"type": "origins:action_over_time",
+		"interval": 30,
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "moonlight:harpy/flap_resource",
+			"change": 1
+		},
+		"condition": {
+			"type": "origins:on_block"
+		}
+	},
+	"activate": {
+		"type": "origins:active_self",
+		"cooldown": 10,
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "function moonlight:harpy/flap"
+				},
+				{
+					"type": "origins:add_velocity",
+					"space": "local_horizontal",
+					"y": 0.35,
+					"z": 0.25
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "moonlight:harpy/flap_resource",
+					"change": -1
+				}
+			]
+		},
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.jump",
+			"continuous": true
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:fall_flying"
+				},
+				{
+					"type": "origins:sneaking",
+					"inverted": true
+				},
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:harpy/flap_resource",
+					"comparison": ">",
+					"compare_to": 0
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"name": "power.moonlight.harpy.weak_legs.name",
+	"description": "power.moonlight.harpy.weak_legs.description",
+	"type": "origins:conditioned_attribute",
+	"tick_rate": 5,
+	"modifier": {
+		"attribute": "minecraft:generic.movement_speed",
+		"operation": "multiply_total",
+		"value": -0.25
+	},
+	"condition": {
+		"type": "origins:on_block"
+	}
+}

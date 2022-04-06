@@ -1,0 +1,1 @@
+playsound minecraft:entity.parrot.fly player @s ~ ~ ~ 1 0.75

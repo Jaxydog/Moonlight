@@ -1,0 +1,39 @@
+{
+	"name": "power.moonlight.harpy.sharp_claws.name",
+	"description": "power.moonlight.harpy.sharp_claws.description",
+	"type": "origins:multiple",
+	"unarmed": {
+		"type": "origins:modify_damage_dealt",
+		"modifier": {
+			"operation": "addition",
+			"value": 2
+		},
+		"bientity_condition": {
+			"type": "origins:actor_condition",
+			"condition": {
+				"type": "origins:equipped_item",
+				"equipment_slot": "mainhand",
+				"item_condition": {
+					"type": "origins:empty"
+				}
+			}
+		},
+		"self_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:harpy/sharp_claws_attack"
+		}
+	},
+	"flying": {
+		"type": "origins:modify_damage_dealt",
+		"modifier": {
+			"operation": "multiply_total",
+			"value": 0.5
+		},
+		"bientity_condition": {
+			"type": "origins:actor_condition",
+			"condition": {
+				"type": "origins:fall_flying"
+			}
+		}
+	}
+}

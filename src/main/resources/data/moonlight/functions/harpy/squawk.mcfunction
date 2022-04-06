@@ -1,0 +1,1 @@
+playsound minecraft:entity.parrot.ambient player @a ~ ~ ~ 0.75 0.75

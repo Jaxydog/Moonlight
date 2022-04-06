@@ -87,5 +87,79 @@
 			"translate": "power.moonlight.moobloom.vegetarian.wheat_tooltip",
 			"color": "gray"
 		}
+	},
+	"grass_eater": {
+		"type": "origins:active_self",
+		"cooldown": 5,
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "function moonlight:moobloom/eat_grass"
+				},
+				{
+					"type": "origins:equipped_item_action",
+					"equipment_slot": "mainhand",
+					"action": {
+						"type": "origins:consume"
+					}
+				}
+			]
+		},
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.use",
+			"continuous": true
+		},
+		"condition": {
+			"type": "origins:equipped_item",
+			"equipment_slot": "mainhand",
+			"item_condition": {
+				"type": "origins:ingredient",
+				"ingredient": {
+					"item": "minecraft:grass"
+				}
+			}
+		}
+	},
+	"dandelion_eater": {
+		"type": "origins:active_self",
+		"cooldown": 3,
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "function moonlight:moobloom/eat_dandelion"
+				},
+				{
+					"type": "origins:equipped_item_action",
+					"equipment_slot": "mainhand",
+					"action": {
+						"type": "origins:consume"
+					}
+				}
+			]
+		},
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.use",
+			"continuous": true
+		},
+		"condition": {
+			"type": "origins:equipped_item",
+			"equipment_slot": "mainhand",
+			"item_condition": {
+				"type": "origins:ingredient",
+				"ingredient": {
+					"item": "minecraft:dandelion"
+				}
+			}
+		}
 	}
 }

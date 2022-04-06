@@ -1,0 +1,20 @@
+{
+	"name": "origin.moonlight.harpy.name",
+	"description": "origin.moonlight.harpy.description",
+	"icon": "minecraft:feather",
+	"impact": 3,
+	"powers": [
+		"moonlight:harpy/ambient",
+		"moonlight:harpy/backpedal",
+		"moonlight:harpy/elytra",
+		"moonlight:harpy/flap",
+		"moonlight:harpy/flimsy",
+		"moonlight:harpy/perch",
+		"moonlight:harpy/sharp_claws",
+		"moonlight:harpy/size",
+		"moonlight:harpy/soaked",
+		"moonlight:harpy/soaked_effects",
+		"moonlight:harpy/steal",
+		"moonlight:harpy/weak_legs"
+	]
+}

@@ -1,0 +1,7 @@
+{
+	"name": "power.moonlight.harpy.size.name",
+	"description": "power.moonlight.harpy.size.description",
+	"type": "moonlight:model_scale",
+	"width": 0.5,
+	"height": 0.5
+}

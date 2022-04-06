@@ -1,0 +1,57 @@
+{
+	"hidden": true,
+	"type": "origins:multiple",
+	"squawk": {
+		"type": "origins:action_over_time",
+		"interval": 100,
+		"entity_action": {
+			"type": "origins:chance",
+			"chance": 0.25,
+			"action": {
+				"type": "origins:execute_command",
+				"command": "function moonlight:harpy/squawk"
+			}
+		},
+		"condition": {
+			"type": "origins:gamemode",
+			"gamemode": "spectator",
+			"inverted": true
+		}
+	},
+	"eat": {
+		"type": "origins:action_on_item_use",
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "playsound minecraft:entity.parrot.eat player @a ~ ~ ~ 1 0.75"
+		},
+		"item_condition": {
+			"type": "origins:food"
+		}
+	},
+	"hurt": {
+		"type": "origins:action_when_damage_taken",
+		"cooldown": 0,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "playsound minecraft:entity.parrot.hurt player @a ~ ~ ~ 1 0.75"
+		},
+		"condition": {
+			"type": "origins:health",
+			"comparison": ">",
+			"compare_to": 0
+		}
+	},
+	"death": {
+		"type": "origins:action_when_damage_taken",
+		"cooldown": 0,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "playsound minecraft:entity.parrot.death player @a ~ ~ ~ 1 0.75"
+		},
+		"condition": {
+			"type": "origins:health",
+			"comparison": "==",
+			"compare_to": 0
+		}
+	}
+}
