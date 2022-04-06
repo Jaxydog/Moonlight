@@ -7,7 +7,7 @@
 		"type": "origins:chance",
 		"action": {
 			"type": "origins:execute_command",
-			"command": "function moonlight:moobloom/flower_trail_place"
+			"command": "function moonlight:moobloom/flower_trail"
 		},
 		"chance": 0.25
 	},

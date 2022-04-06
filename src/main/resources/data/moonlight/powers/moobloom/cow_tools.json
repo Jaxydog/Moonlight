@@ -1,0 +1,47 @@
+{
+	"hidden": true,
+	"type": "origins:active_self",
+	"cooldown": 5,
+	"entity_action": {
+		"type": "origins:raycast",
+		"distance": 64,
+		"block": false,
+		"bientity_action": {
+			"type": "origins:target_action",
+			"action": {
+				"type": "origins:and",
+				"actions": [
+					{
+						"type": "origins:chance",
+						"chance": 0.05,
+						"action": {
+							"type": "origins:execute_command",
+							"command": "function moonlight:moobloom/cow_tools_ambient"
+						}
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "function moonlight:moobloom/cow_tools_passive"
+					}
+				]
+			}
+		}
+	},
+	"hud_render": {
+		"should_render": false
+	},
+	"key": {
+		"key": "key.origins.primary_active",
+		"continuous": true
+	},
+	"condition": {
+		"type": "origins:equipped_item",
+		"equipment_slot": "mainhand",
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"tag": "moonlight:moobloom/cow_tools"
+			}
+		}
+	}
+}

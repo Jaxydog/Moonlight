@@ -4,6 +4,7 @@
 	"icon": "minecraft:dandelion",
 	"impact": 2,
 	"powers": [
+		"moonlight:moobloom/cow_tools",
 		"moonlight:moobloom/flower_trail",
 		"moonlight:moobloom/milk_bucket",
 		"moonlight:moobloom/no_netherite",

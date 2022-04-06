@@ -7,6 +7,7 @@
 	"item.moonlight.banana.tooltip": "All hail the code monkeys!",
 	"origin.moonlight.moobloom.name": "Moobloom",
 	"origin.moonlight.moobloom.description": "A cow grown from the ground, surrounded and shrouded in dandelions. It roams the Earth serving melatonin to others.",
+	"power.moonlight.moobloom.cow_tools.message": "cow tools",
 	"power.moonlight.moobloom.flower_trail.name": "Flower Trail",
 	"power.moonlight.moobloom.flower_trail.description": "You leave a trail of dandelions as you walk.",
 	"power.moonlight.moobloom.milk_bucket.name": "Udders",
@@ -19,6 +20,7 @@
 	"power.moonlight.moobloom.size.description": "You're smaller than a normal player, only being 1.5 blocks tall.",
 	"power.moonlight.moobloom.vegetarian.name": "Vegetarian",
 	"power.moonlight.moobloom.vegetarian.description": "You can only eat wheat and plant-based foods.",
+	"power.moonlight.moobloom.vegetarian.wheat_tooltip": "Looks tasty!",
 	"power.moonlight.moobloom.water_slowness.name": "Big Build",
 	"power.moonlight.moobloom.water_slowness.description": "Your body mass makes it hard to walk while in water."
 }

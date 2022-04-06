@@ -31,7 +31,7 @@
 			"actions": [
 				{
 					"type": "origins:execute_command",
-					"command": "function moonlight:moobloom/vegetarian_eat_wheat"
+					"command": "function moonlight:moobloom/eat_wheat"
 				},
 				{
 					"type": "origins:equipped_item_action",
@@ -73,6 +73,19 @@
 					"compare_to": 20
 				}
 			]
+		}
+	},
+	"wheat_tooltip": {
+		"type": "origins:tooltip",
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"item": "minecraft:wheat"
+			}
+		},
+		"text": {
+			"translate": "power.moonlight.moobloom.vegetarian.wheat_tooltip",
+			"color": "gray"
 		}
 	}
 }

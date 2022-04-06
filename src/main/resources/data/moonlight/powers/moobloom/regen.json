@@ -10,7 +10,7 @@
 			"type": "origins:target_action",
 			"action": {
 				"type": "origins:execute_command",
-				"command": "function moonlight:moobloom/regen_trigger"
+				"command": "function moonlight:moobloom/regen"
 			}
 		}
 	}
