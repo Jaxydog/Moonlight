@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import dev.jaxydog.moonlight.item.MoonlightArmorItems;
 import dev.jaxydog.moonlight.item.MoonlightItems;
+import dev.jaxydog.moonlight.power.MoonlightActions;
 import dev.jaxydog.moonlight.power.MoonlightConditions;
 import dev.jaxydog.moonlight.power.MoonlightPowers;
 import net.fabricmc.api.ModInitializer;
@@ -24,6 +25,7 @@ public class Moonlight implements ModInitializer {
 		MoonlightItems.register();
 		MoonlightArmorItems.register();
 		MoonlightConditions.register();
+		MoonlightActions.register();
 		MoonlightPowers.register();
 		LOGGER.info("Loaded mod! Thanks for playing :)");
 	}
