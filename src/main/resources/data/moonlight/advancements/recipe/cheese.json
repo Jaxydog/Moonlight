@@ -1,0 +1,22 @@
+{
+	"criteria": {
+		"has_mane": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"minecraft:milk_bucket"
+						]
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"recipes": [
+			"moonlight:cheese_block",
+			"moonlight:cheese"
+		]
+	}
+}
