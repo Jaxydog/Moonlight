@@ -1,0 +1,23 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		[
+			{
+				"item": "moonlight:cheese"
+			},
+			{
+				"item": "moonlight:cheese"
+			},
+			{
+				"item": "moonlight:cheese"
+			},
+			{
+				"item": "moonlight:pasta"
+			}
+		]
+	],
+	"result": {
+		"item": "moonlight:macaroni_and_cheese",
+		"count": 1
+	}
+}

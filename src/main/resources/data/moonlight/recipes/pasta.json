@@ -1,0 +1,26 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		[
+			{
+				"item": "minecraft:wheat"
+			},
+			{
+				"item": "minecraft:wheat"
+			},
+			{
+				"item": "minecraft:wheat"
+			},
+			{
+				"item": "minecraft:egg"
+			},
+			{
+				"item": "minecraft:egg"
+			}
+		]
+	],
+	"result": {
+		"item": "moonlight:pasta",
+		"count": 1
+	}
+}

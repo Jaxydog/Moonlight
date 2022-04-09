@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" b ",
+		"ccc",
+		" b "
+	],
+	"key": {
+		"b": {
+			"item": "minecraft:bread"
+		},
+		"c": {
+			"item": "moonlight:cheese"
+		}
+	},
+	"result": {
+		"item": "moonlight:grilled_cheese",
+		"count": 1
+	}
+}
