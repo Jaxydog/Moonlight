@@ -4,8 +4,14 @@
 	"icon": "moonlight:cheese",
 	"impact": 3,
 	"powers": [
+		"moonlight:rat/ambient",
+		"moonlight:rat/flame",
+		"moonlight:rat/hunger",
 		"moonlight:rat/pack",
 		"moonlight:rat/plague",
-		"moonlight:rat/small"
+		"moonlight:rat/silverfish",
+		"moonlight:rat/small",
+		"moonlight:rat/sun",
+		"moonlight:rat/tunneler"
 	]
 }

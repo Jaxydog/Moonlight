@@ -1,20 +1,18 @@
 {
 	"type": "minecraft:crafting_shapeless",
 	"ingredients": [
-		[
-			{
-				"item": "minecraft:cooked_beef"
-			},
-			{
-				"item": "minecraft:bread"
-			},
-			{
-				"item": "minecraft:cheese"
-			},
-			{
-				"item": "minecraft:cheese"
-			}
-		]
+		{
+			"item": "minecraft:cooked_beef"
+		},
+		{
+			"item": "minecraft:bread"
+		},
+		{
+			"item": "moonlight:cheese"
+		},
+		{
+			"item": "moonlight:cheese"
+		}
 	],
 	"result": {
 		"item": "moonlight:cheese_steak",

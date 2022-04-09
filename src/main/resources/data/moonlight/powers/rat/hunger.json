@@ -1,0 +1,31 @@
+{
+	"name": "power.moonlight.rat.hunger.name",
+	"description": "power.moonlight.rat.hunger.description",
+	"type": "origins:multiple",
+	"hungry": {
+		"type": "origins:modify_exhaustion",
+		"modifier": {
+			"name": "Increased exhaustion",
+			"operation": "multiply_base",
+			"value": 0.5
+		}
+	},
+	"diet": {
+		"type": "origins:prevent_item_use",
+		"item_condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:food"
+				},
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"tag": "moonlight:rat/cheese"
+					},
+					"inverted": true
+				}
+			]
+		}
+	}
+}

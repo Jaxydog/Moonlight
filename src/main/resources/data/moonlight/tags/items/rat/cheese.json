@@ -1,11 +1,11 @@
 {
 	"values": [
-		"cheese_and_crackers",
-		"cheese_steak",
-		"cheese",
-		"cheesy_baked_potato",
-		"grilled_cheese",
-		"macaroni_and_cheese",
-		"pasta"
+		"moonlight:cheese_and_crackers",
+		"moonlight:cheese_steak",
+		"moonlight:cheese",
+		"moonlight:cheesy_baked_potato",
+		"moonlight:grilled_cheese",
+		"moonlight:macaroni_and_cheese",
+		"moonlight:pasta"
 	]
 }

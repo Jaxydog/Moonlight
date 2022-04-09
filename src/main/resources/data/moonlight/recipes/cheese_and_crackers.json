@@ -1,17 +1,15 @@
 {
 	"type": "minecraft:crafting_shapeless",
 	"ingredients": [
-		[
-			{
-				"item": "moonlight:cheese"
-			},
-			{
-				"item": "moonlight:cracker"
-			},
-			{
-				"item": "moonlight:cracker"
-			}
-		]
+		{
+			"item": "moonlight:cheese"
+		},
+		{
+			"item": "moonlight:cracker"
+		},
+		{
+			"item": "moonlight:cracker"
+		}
 	],
 	"result": {
 		"item": "moonlight:cheese_and_crackers",

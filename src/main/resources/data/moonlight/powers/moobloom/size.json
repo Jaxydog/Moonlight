@@ -1,7 +1,19 @@
 {
 	"name": "power.moonlight.moobloom.size.name",
 	"description": "power.moonlight.moobloom.size.description",
-	"type": "moonlight:model_scale",
-	"width": 0.75,
-	"height": 0.75
+	"type": "origins:multiple",
+	"small": {
+		"type": "moonlight:model_scale",
+		"width": 0.75,
+		"height": 0.75
+	},
+	"health": {
+		"type": "origins:attribute",
+		"update_health": true,
+		"modifier": {
+			"attribute": "minecraft:generic.max_health",
+			"operation": "addition",
+			"value": 4
+		}
+	}
 }

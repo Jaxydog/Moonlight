@@ -1,14 +1,12 @@
 {
 	"type": "minecraft:crafting_shapeless",
 	"ingredients": [
-		[
-			{
-				"item": "minecraft:milk_bucket"
-			},
-			{
-				"item": "moonlight:cheese_block"
-			}
-		]
+		{
+			"item": "minecraft:milk_bucket"
+		},
+		{
+			"item": "moonlight:cheese_block"
+		}
 	],
 	"result": {
 		"item": "moonlight:cheese",
