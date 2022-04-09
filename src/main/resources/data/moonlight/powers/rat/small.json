@@ -1,0 +1,27 @@
+{
+	"name": "power.moonlight.rat.small.name",
+	"description": "power.moonlight.rat.small.description",
+	"type": "origins:multiple",
+	"fast": {
+		"type": "origins:attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.move_speed",
+			"operation": "multiply_total",
+			"value": 0.25
+		}
+	},
+	"health": {
+		"type": "origins:attribute",
+		"update_health": true,
+		"modifier": {
+			"attribute": "minecraft:generic.max_health",
+			"operation": "addition",
+			"value": -8
+		}
+	},
+	"size": {
+		"type": "moonlight:model_scale",
+		"width": 0.25,
+		"height": 0.25
+	}
+}

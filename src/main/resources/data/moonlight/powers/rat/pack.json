@@ -1,0 +1,56 @@
+{
+	"name": "power.moonlight.rat.pack.name",
+	"description": "power.moonlight.rat.pack.description",
+	"type": "origins:action_over_time",
+	"interval": 5,
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+				"type": "origins:change_resource",
+				"resource": "moonlight:rat/pack_count",
+				"operation": "set",
+				"change": 0
+			},
+			{
+				"type": "origins:area_of_effect",
+				"radius": 12,
+				"bientity_action": {
+					"type": "origins:and",
+					"actions": [
+						{
+							"type": "origins:actor_action",
+							"action": {
+								"type": "origins:execute_command",
+								"command": "function moonlight:rat/pack"
+							}
+						},
+						{
+							"type": "origins:target_action",
+							"action": {
+								"type": "origins:execute_command",
+								"command": "function moonlight:rat/pack"
+							}
+						}
+					]
+				},
+				"bientity_condition": {
+					"type": "origins:target_condition",
+					"condition": {
+						"type": "origins:and",
+						"conditions": [
+							{
+								"type": "origins:entity_type",
+								"entity_type": "minecraft:player"
+							},
+							{
+								"type": "origins:origin",
+								"origin": "moonlight:rat"
+							}
+						]
+					}
+				}
+			}
+		]
+	}
+}
