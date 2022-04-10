@@ -4,6 +4,7 @@
 	"icon": "minecraft:dandelion",
 	"impact": 2,
 	"powers": [
+		"moonlight:moobloom/ambient",
 		"moonlight:moobloom/beef",
 		"moonlight:moobloom/cow_tools",
 		"moonlight:moobloom/flower_trail",

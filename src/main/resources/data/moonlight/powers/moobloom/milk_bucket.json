@@ -124,7 +124,7 @@
 				},
 				{
 					"type": "origins:execute_command",
-					"command": "playsound minecraft:item.bucket.fill player @a ~ ~ ~ 1 1"
+					"command": "function moonlight:moobloom/milk"
 				},
 				{
 					"type": "origins:equipped_item_action",
