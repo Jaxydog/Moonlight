@@ -6,7 +6,7 @@
 				"items": [
 					{
 						"items": [
-							"minecraft:milk_bucket"
+							"minecraft:wheat"
 						]
 					}
 				]
@@ -15,7 +15,8 @@
 	},
 	"rewards": {
 		"recipes": [
-			"moonlight:cheese"
+			"moonlight:cracker",
+			"moonlight:pasta"
 		]
 	}
 }

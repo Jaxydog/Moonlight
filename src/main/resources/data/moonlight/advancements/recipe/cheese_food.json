@@ -1,0 +1,26 @@
+{
+	"criteria": {
+		"has_mane": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"moonlight:cheese"
+						]
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"recipes": [
+			"moonlight:cheese_and_crackers",
+			"moonlight:cheese_block",
+			"moonlight:cheese_steak",
+			"moonlight:cheesy_baked_potato",
+			"moonlight:grilled_cheese",
+			"moonlight:macaroni_and_cheese"
+		]
+	}
+}
