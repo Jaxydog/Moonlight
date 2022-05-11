@@ -1,7 +1,7 @@
 {
 	"hidden": true,
 	"type": "origins:multiple",
-	"squawk": {
+	"squeak": {
 		"type": "origins:action_over_time",
 		"interval": 100,
 		"entity_action": {
