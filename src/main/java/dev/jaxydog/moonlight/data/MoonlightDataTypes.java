@@ -10,4 +10,7 @@ public class MoonlightDataTypes {
 	public static final SerializableDataType<AxisType> AXIS_TYPE = SerializableDataType.enumValue(
 			AxisType.class,
 			SerializationHelper.buildEnumMap(AxisType.class, AxisType::getType));
+	public static final SerializableDataType<MoonPhaseType> MOON_PHASE = SerializableDataType.enumValue(
+			MoonPhaseType.class,
+			SerializationHelper.buildEnumMap(MoonPhaseType.class, MoonPhaseType::getType));
 }
