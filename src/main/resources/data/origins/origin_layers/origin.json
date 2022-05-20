@@ -1,7 +1,6 @@
 {
-	"replace": true,
+	"replace": false,
 	"origins": [
-		"moonlight:rat",
 		"moonlight:harpy",
 		"moonlight:moobloom"
 	]

@@ -1,6 +1,7 @@
 package dev.jaxydog.moonlight.item;
 
 import dev.jaxydog.moonlight.Moonlight;
+import dev.jaxydog.moonlight.MoonlightSoundEvents;
 import dev.jaxydog.moonlight.block.MoonlightBlocks;
 import dev.jaxydog.moonlight.item.MoonlightItem.Config;
 import net.fabricmc.fabric.api.loot.v1.FabricLootPoolBuilder;
@@ -14,7 +15,8 @@ import net.minecraft.util.Rarity;
 
 public class MoonlightItems {
 	public static final MoonlightItem AVOCADO = new MoonlightItem(
-			new Config().setName("avocado").setTooltipEnabled(true),
+			new Config().setName("avocado").setTooltipEnabled(true)
+					.setUseSound(MoonlightSoundEvents.ITEM_AVOCADO_JINGLE),
 			new Settings().food(new FoodComponent.Builder().hunger(2).saturationModifier(1f).snack().build())
 					.rarity(Rarity.UNCOMMON));
 
