@@ -1,7 +1,6 @@
 package dev.jaxydog.moonlight.item;
 
 import java.util.List;
-
 import dev.jaxydog.moonlight.Moonlight;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.client.item.TooltipContext;
@@ -14,7 +13,6 @@ import net.minecraft.item.Items;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -44,8 +42,8 @@ public class MoonlightItem extends Item {
 	@Override
 	public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
 		if (CONFIG.getTooltipEnabled()) {
-			var text = new TranslatableText("item." + Moonlight.MOD_ID + "." + CONFIG.getName() + ".tooltip");
-			tooltip.add(text.formatted(Formatting.GRAY));
+			var key = "item." + Moonlight.MOD_ID + "." + CONFIG.getName() + ".tooltip";
+			tooltip.add(Text.translatable(key).formatted(Formatting.GRAY));
 		}
 
 		super.appendTooltip(stack, world, tooltip, context);

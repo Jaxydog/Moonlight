@@ -4,11 +4,11 @@ import dev.jaxydog.moonlight.Moonlight;
 import dev.jaxydog.moonlight.MoonlightSoundEvents;
 import dev.jaxydog.moonlight.block.MoonlightBlocks;
 import dev.jaxydog.moonlight.item.MoonlightItem.Config;
-import net.fabricmc.fabric.api.loot.v1.FabricLootPoolBuilder;
-import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
+import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item.Settings;
+import net.minecraft.loot.LootPool;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.util.Rarity;
@@ -83,21 +83,19 @@ public class MoonlightItems {
 		PASTA.register();
 		Moonlight.LOGGER.info("Registered items");
 
-		LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, table, setter) -> {
-			if (!id.equals(Blocks.JUNGLE_LEAVES.getLootTableId())) {
-				return;
+		LootTableEvents.MODIFY.register((resource, loot, id, table, setter) -> {
+			if (id.equals(Blocks.JUNGLE_LEAVES.getLootTableId())) {
+				var avocado = LootPool.builder()
+						.rolls(ConstantLootNumberProvider.create(0.05f))
+						.with(ItemEntry.builder(AVOCADO));
+				var banana = LootPool.builder()
+						.rolls(ConstantLootNumberProvider.create(0.0125f))
+						.with(ItemEntry.builder(BANANA));
+
+				table.pool(avocado).pool(banana);
 			}
-
-			FabricLootPoolBuilder avocado = FabricLootPoolBuilder.builder()
-					.rolls(ConstantLootNumberProvider.create(0.05f))
-					.with(ItemEntry.builder(AVOCADO));
-
-			FabricLootPoolBuilder banana = FabricLootPoolBuilder.builder()
-					.rolls(ConstantLootNumberProvider.create(0.0125f))
-					.with(ItemEntry.builder(BANANA));
-
-			table.pool(avocado).pool(banana);
 		});
+
 		Moonlight.LOGGER.info("Registered loot tables");
 	}
 }

@@ -23,12 +23,12 @@
 		"moonlight.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.14.4",
+		"fabricloader": ">=0.14.8",
 		"fabric": "*",
-		"minecraft": "~1.18.2",
+		"minecraft": "~1.19",
 		"java": ">=17",
-		"origins": ">=1.4.1",
-		"pehkui": ">=3.3.0",
-		"trinkets": ">=3.3.0"
+		"origins": ">=1.6.1",
+		"pehkui": ">=3.3.2",
+		"trinkets": ">=3.4.0"
 	}
 }

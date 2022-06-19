@@ -9,7 +9,6 @@ import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -39,8 +38,8 @@ public class MoonlightBlockItem extends BlockItem {
 	@Override
 	public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
 		if (CONFIG.getTooltipEnabled()) {
-			var text = new TranslatableText("item." + Moonlight.MOD_ID + "." + CONFIG.getName() + ".tooltip");
-			tooltip.add(text.formatted(Formatting.GRAY));
+			var key = "item." + Moonlight.MOD_ID + "." + CONFIG.getName() + ".tooltip";
+			tooltip.add(Text.translatable(key).formatted(Formatting.GRAY));
 		}
 
 		super.appendTooltip(stack, world, tooltip, context);

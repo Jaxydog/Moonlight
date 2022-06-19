@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import dev.jaxydog.moonlight.block.MoonlightBlocks;
-import dev.jaxydog.moonlight.item.MoonlightArmorItems;
 import dev.jaxydog.moonlight.item.MoonlightItems;
 import dev.jaxydog.moonlight.power.MoonlightActions;
 import dev.jaxydog.moonlight.power.MoonlightConditions;
@@ -25,7 +24,6 @@ public class Moonlight implements ModInitializer {
 		MoonlightSoundEvents.register();
 		MoonlightBlocks.register();
 		MoonlightItems.register();
-		MoonlightArmorItems.register();
 		MoonlightConditions.register();
 		MoonlightActions.register();
 		MoonlightPowers.register();
