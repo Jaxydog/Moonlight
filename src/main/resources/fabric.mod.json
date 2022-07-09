@@ -3,7 +3,7 @@
 	"id": "moonlight",
 	"version": "${version}",
 	"name": "Moonlight",
-	"description": "Origins addon for playing post-Starlight and pre-Astral",
+	"description": "Origins addon for Moonlight SMP",
 	"authors": [
 		"Jaxydog"
 	],
