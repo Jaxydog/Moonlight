@@ -1,14 +1,37 @@
 {
 	"hidden": true,
-	"type": "origins:self_action_when_hit",
-	"cooldown": 0,
-	"entity_action": {
-		"type": "origins:execute_command",
-		"command": "summon minecraft:item ~ ~ ~ {Item:{id:\"minecraft:beef\",Count:1b}}"
+	"type": "origins:multiple",
+	"cooked": {
+		"type": "origins:self_action_when_hit",
+		"cooldown": 0,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "summon minecraft:item ~ ~ ~ {Item:{id:\"minecraft:beef\",Count:1b}}"
+		},
+		"condition": {
+			"type": "origins:health",
+			"comparison": "<=",
+			"compare_to": 0
+		},
+		"damage_condition": {
+			"type": "origins:fire"
+		}
 	},
-	"condition": {
-		"type": "origins:health",
-		"comparison": "<=",
-		"compare_to": 0
+	"raw": {
+		"type": "origins:self_action_when_hit",
+		"cooldown": 0,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "summon minecraft:item ~ ~ ~ {Item:{id:\"minecraft:beef\",Count:1b}}"
+		},
+		"condition": {
+			"type": "origins:health",
+			"comparison": "<=",
+			"compare_to": 0
+		},
+		"damage_condition": {
+			"type": "origins:fire",
+			"inverted": true
+		}
 	}
 }
