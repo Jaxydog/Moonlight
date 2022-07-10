@@ -3,6 +3,7 @@
 	"description": "origin.moonlight.moobloom.description",
 	"icon": "minecraft:dandelion",
 	"impact": 2,
+	"unchoosable": true,
 	"powers": [
 		"moonlight:moobloom/ambient",
 		"moonlight:moobloom/beef",

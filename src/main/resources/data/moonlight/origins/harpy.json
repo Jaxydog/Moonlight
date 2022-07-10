@@ -3,6 +3,7 @@
 	"description": "origin.moonlight.harpy.description",
 	"icon": "minecraft:feather",
 	"impact": 3,
+	"unchoosable": true,
 	"powers": [
 		"moonlight:harpy/ambient",
 		"moonlight:harpy/backpedal",
