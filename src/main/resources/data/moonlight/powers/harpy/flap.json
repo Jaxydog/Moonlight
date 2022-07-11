@@ -29,8 +29,7 @@
 			"change": 1
 		},
 		"condition": {
-			"type": "origins:on_block",
-			"inverted": true
+			"type": "origins:fall_flying"
 		}
 	},
 	"regen_fast": {
@@ -42,7 +41,8 @@
 			"change": 1
 		},
 		"condition": {
-			"type": "origins:on_block"
+			"type": "origins:fall_flying",
+			"inverted": true
 		}
 	},
 	"activate": {
