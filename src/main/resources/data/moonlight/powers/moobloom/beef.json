@@ -6,7 +6,7 @@
 		"cooldown": 0,
 		"entity_action": {
 			"type": "origins:execute_command",
-			"command": "summon minecraft:item ~ ~ ~ {Item:{id:\"minecraft:beef\",Count:1b}}"
+			"command": "summon minecraft:item ~ ~ ~ {Item:{id:\"minecraft:cooked_beef\",Count:1b}}"
 		},
 		"condition": {
 			"type": "origins:health",
