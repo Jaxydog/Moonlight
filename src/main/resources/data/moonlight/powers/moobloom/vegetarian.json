@@ -15,7 +15,7 @@
 			"value": 1
 		},
 		"saturation_modifier": {
-			"operation": "multiply_total",
+			"operation": "multiply_total_multiplicative",
 			"value": 0.5
 		},
 		"item_condition": {

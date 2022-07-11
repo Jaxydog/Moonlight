@@ -14,7 +14,7 @@
 	"pain": {
 		"type": "origins:modify_damage_taken",
 		"modifier": {
-			"operation": "multiply_total",
+			"operation": "multiply_total_multiplicative",
 			"value": 0.25
 		}
 	}
