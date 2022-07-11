@@ -8,20 +8,15 @@
 		"distance": 5,
 		"block": false,
 		"bientity_action": {
-			"type": "origins:and",
-			"actions": [
-				{
-					"type": "moonlight:steal_item",
-					"equipment_slot": "mainhand"
+			"type": "origins:target_action",
+			"action": {
+				"type": "origins:drop_inventory",
+				"entity_action": {
+					"type": "origins:execute_command",
+					"command": "function moonlight:harpy/steal"
 				},
-				{
-					"type": "origins:target_action",
-					"action": {
-						"type": "origins:execute_command",
-						"command": "function moonlight:harpy/steal"
-					}
-				}
-			]
+				"slot": "weapon.mainhand"
+			}
 		},
 		"bientity_condition": {
 			"type": "origins:target_condition",
