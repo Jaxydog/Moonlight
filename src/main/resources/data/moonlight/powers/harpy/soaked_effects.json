@@ -20,7 +20,7 @@
 		"tick_rate": 5,
 		"modifier": {
 			"attribute": "minecraft:generic.movement_speed",
-			"operation": "multiply_total_multiplicative",
+			"operation": "multiply_total",
 			"value": -0.25
 		},
 		"condition": {
@@ -55,7 +55,7 @@
 		"tick_rate": 5,
 		"modifier": {
 			"attribute": "minecraft:generic.movement_speed",
-			"operation": "multiply_total_multiplicative",
+			"operation": "multiply_total",
 			"value": -0.5
 		},
 		"condition": {
