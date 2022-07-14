@@ -27,7 +27,7 @@ public class MoonlightItems {
 
 	public static final MoonlightItem CHEESE = new MoonlightItem(
 			new Config().setName("cheese").setTooltipEnabled(true),
-			new Settings().food(new FoodComponent.Builder().hunger(1).saturationModifier(1f).build())
+			new Settings().food(new FoodComponent.Builder().hunger(1).saturationModifier(1f).snack().build())
 					.rarity(Rarity.UNCOMMON));
 
 	public static final MoonlightItem CHEESE_AND_CRACKERS = new MoonlightItem(
@@ -41,7 +41,7 @@ public class MoonlightItems {
 
 	public static final MoonlightItem CHEESE_STEAK = new MoonlightItem(
 			new Config().setName("cheese_steak").setTooltipEnabled(true),
-			new Settings().food(new FoodComponent.Builder().hunger(10).saturationModifier(0.625f).build())
+			new Settings().food(new FoodComponent.Builder().hunger(10).saturationModifier(0.625f).meat().build())
 					.rarity(Rarity.UNCOMMON));
 
 	public static final MoonlightItem CHEESY_BAKED_POTATO = new MoonlightItem(
@@ -51,7 +51,8 @@ public class MoonlightItems {
 
 	public static final MoonlightItem CRACKER = new MoonlightItem(
 			new Config().setName("cracker").setTooltipEnabled(true),
-			new Settings().maxCount(16).food(new FoodComponent.Builder().hunger(1).saturationModifier(0.75f).build())
+			new Settings().maxCount(16)
+					.food(new FoodComponent.Builder().hunger(1).saturationModifier(0.75f).snack().build())
 					.rarity(Rarity.COMMON));
 
 	public static final MoonlightItem GRILLED_CHEESE = new MoonlightItem(
@@ -66,7 +67,8 @@ public class MoonlightItems {
 
 	public static final MoonlightItem PASTA = new MoonlightItem(
 			new Config().setName("pasta").setTooltipEnabled(true),
-			new Settings().maxCount(16).food(new FoodComponent.Builder().hunger(1).saturationModifier(0.5f).build())
+			new Settings().maxCount(16)
+					.food(new FoodComponent.Builder().hunger(1).saturationModifier(0.5f).snack().build())
 					.rarity(Rarity.COMMON));
 
 	public static void register() {
