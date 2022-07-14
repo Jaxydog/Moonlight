@@ -41,22 +41,22 @@ public class MoonlightItems {
 
 	public static final MoonlightItem CHEESE_STEAK = new MoonlightItem(
 			new Config().setName("cheese_steak").setTooltipEnabled(true),
-			new Settings().food(new FoodComponent.Builder().hunger(10).saturationModifier(1f).build())
+			new Settings().food(new FoodComponent.Builder().hunger(10).saturationModifier(0.625f).build())
 					.rarity(Rarity.UNCOMMON));
 
 	public static final MoonlightItem CHEESY_BAKED_POTATO = new MoonlightItem(
 			new Config().setName("cheesy_baked_potato").setTooltipEnabled(true),
-			new Settings().food(new FoodComponent.Builder().hunger(6).saturationModifier(1f).build())
+			new Settings().food(new FoodComponent.Builder().hunger(6).saturationModifier(0.875f).build())
 					.rarity(Rarity.COMMON));
 
 	public static final MoonlightItem CRACKER = new MoonlightItem(
 			new Config().setName("cracker").setTooltipEnabled(true),
-			new Settings().maxCount(16).food(new FoodComponent.Builder().hunger(1).saturationModifier(1f).build())
+			new Settings().maxCount(16).food(new FoodComponent.Builder().hunger(1).saturationModifier(0.75f).build())
 					.rarity(Rarity.COMMON));
 
 	public static final MoonlightItem GRILLED_CHEESE = new MoonlightItem(
 			new Config().setName("grilled_cheese").setTooltipEnabled(true),
-			new Settings().food(new FoodComponent.Builder().hunger(6).saturationModifier(1f).build())
+			new Settings().food(new FoodComponent.Builder().hunger(8).saturationModifier(0.75f).build())
 					.rarity(Rarity.UNCOMMON));
 
 	public static final MoonlightItem MACARONI_AND_CHEESE = new MoonlightItem(
@@ -66,7 +66,7 @@ public class MoonlightItems {
 
 	public static final MoonlightItem PASTA = new MoonlightItem(
 			new Config().setName("pasta").setTooltipEnabled(true),
-			new Settings().maxCount(16).food(new FoodComponent.Builder().hunger(1).saturationModifier(1f).build())
+			new Settings().maxCount(16).food(new FoodComponent.Builder().hunger(1).saturationModifier(0.5f).build())
 					.rarity(Rarity.COMMON));
 
 	public static void register() {
