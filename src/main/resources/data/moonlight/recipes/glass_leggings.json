@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"ggg",
+		"g g",
+		"g g"
+	],
+	"key": {
+		"g": {
+			"item": "minecraft:glass"
+		}
+	},
+	"result": {
+		"count": 1,
+		"item": "moonlight:glass_leggings"
+	}
+}

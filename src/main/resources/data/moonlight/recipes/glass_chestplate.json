@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"g g",
+		"ggg",
+		"ggg"
+	],
+	"key": {
+		"g": {
+			"item": "minecraft:glass"
+		}
+	},
+	"result": {
+		"count": 1,
+		"item": "moonlight:glass_chestplate"
+	}
+}

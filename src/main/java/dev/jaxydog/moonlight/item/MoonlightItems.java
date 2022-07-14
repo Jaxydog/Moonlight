@@ -71,6 +71,11 @@ public class MoonlightItems {
 					.food(new FoodComponent.Builder().hunger(1).saturationModifier(0.5f).snack().build())
 					.rarity(Rarity.COMMON));
 
+	public static final MoonlightArmorItem[] GLASS_ARMOR = MoonlightArmorItem.set(
+			new MoonlightArmorItem.Material().setName("glass").setDurabilityMod(0),
+			new Config().setName("glass").setGlintEnabled(false).setTooltipEnabled(true),
+			new Settings().rarity(Rarity.COMMON));
+
 	public static void register() {
 		AVOCADO.register();
 		BANANA.register();
@@ -83,6 +88,11 @@ public class MoonlightItems {
 		GRILLED_CHEESE.register();
 		MACARONI_AND_CHEESE.register();
 		PASTA.register();
+
+		for (var item : GLASS_ARMOR) {
+			item.register();
+		}
+
 		Moonlight.LOGGER.info("Registered items");
 
 		LootTableEvents.MODIFY.register((resource, loot, id, table, source) -> {
