@@ -10,7 +10,7 @@ import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item.Settings;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.entry.ItemEntry;
-import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
+import net.minecraft.loot.provider.number.BinomialLootNumberProvider;
 import net.minecraft.util.Rarity;
 
 public class MoonlightItems {
@@ -83,13 +83,17 @@ public class MoonlightItems {
 		PASTA.register();
 		Moonlight.LOGGER.info("Registered items");
 
-		LootTableEvents.MODIFY.register((resource, loot, id, table, setter) -> {
+		LootTableEvents.MODIFY.register((resource, loot, id, table, source) -> {
+			if (!source.isBuiltin()) {
+				return;
+			}
+
 			if (id.equals(Blocks.JUNGLE_LEAVES.getLootTableId())) {
 				var avocado = LootPool.builder()
-						.rolls(ConstantLootNumberProvider.create(0.05f))
+						.rolls(BinomialLootNumberProvider.create(1, 0.0125f))
 						.with(ItemEntry.builder(AVOCADO));
 				var banana = LootPool.builder()
-						.rolls(ConstantLootNumberProvider.create(0.0125f))
+						.rolls(BinomialLootNumberProvider.create(3, 0.0125f))
 						.with(ItemEntry.builder(BANANA));
 
 				table.pool(avocado).pool(banana);

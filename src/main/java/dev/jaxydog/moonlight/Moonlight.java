@@ -27,6 +27,6 @@ public class Moonlight implements ModInitializer {
 		MoonlightConditions.register();
 		MoonlightActions.register();
 		MoonlightPowers.register();
-		LOGGER.info("Loaded mod! Thanks for playing :)");
+		LOGGER.info("Loaded Moonlight! Thanks for playing :)");
 	}
 }
