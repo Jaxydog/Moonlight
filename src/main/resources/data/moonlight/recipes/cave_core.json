@@ -1,0 +1,35 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"tut",
+		"lcr",
+		"bdb"
+	],
+	"key": {
+		"t": {
+			"item": "minecraft:deepslate"
+		},
+		"b": {
+			"item": "minecraft:tuff"
+		},
+		"c": {
+			"item": "minecraft:emerald"
+		},
+		"l": {
+			"item": "moonlight:cheese"
+		},
+		"r": {
+			"item": "minecraft:golden_helmet"
+		},
+		"u": {
+			"item": "minecraft:redstone_block"
+		},
+		"d": {
+			"item": "minecraft:lapis_block"
+		}
+	},
+	"result": {
+		"item": "moonlight:cave_core",
+		"count": 1
+	}
+}

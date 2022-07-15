@@ -1,0 +1,29 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" a ",
+		"bec",
+		" d "
+	],
+	"key": {
+		"a": {
+			"item": "moonlight:land_core"
+		},
+		"b": {
+			"item": "moonlight:sea_core"
+		},
+		"c": {
+			"item": "moonlight:sky_core"
+		},
+		"d": {
+			"item": "moonlight:cave_core"
+		},
+		"e": {
+			"item": "moonlight:hell_core"
+		}
+	},
+	"result": {
+		"item": "origins:orb_of_origin",
+		"count": 1
+	}
+}

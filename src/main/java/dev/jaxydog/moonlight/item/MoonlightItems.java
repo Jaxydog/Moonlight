@@ -71,6 +71,26 @@ public class MoonlightItems {
 					.food(new FoodComponent.Builder().hunger(1).saturationModifier(0.5f).snack().build())
 					.rarity(Rarity.COMMON));
 
+	public static final MoonlightItem LAND_CORE = new MoonlightItem(
+			new Config().setName("land_core").setTooltipEnabled(true),
+			new Settings().maxCount(1).fireproof().rarity(Rarity.RARE));
+
+	public static final MoonlightItem SEA_CORE = new MoonlightItem(
+			new Config().setName("sea_core").setTooltipEnabled(true),
+			new Settings().maxCount(1).fireproof().rarity(Rarity.RARE));
+
+	public static final MoonlightItem SKY_CORE = new MoonlightItem(
+			new Config().setName("sky_core").setTooltipEnabled(true),
+			new Settings().maxCount(1).fireproof().rarity(Rarity.RARE));
+
+	public static final MoonlightItem CAVE_CORE = new MoonlightItem(
+			new Config().setName("cave_core").setTooltipEnabled(true),
+			new Settings().maxCount(1).fireproof().rarity(Rarity.RARE));
+
+	public static final MoonlightItem HELL_CORE = new MoonlightItem(
+			new Config().setName("hell_core").setTooltipEnabled(true),
+			new Settings().maxCount(1).fireproof().rarity(Rarity.RARE));
+
 	public static final MoonlightArmorItem[] GLASS_ARMOR = MoonlightArmorItem.set(
 			new MoonlightArmorItem.Material().setName("glass").setDurabilityMod(0),
 			new Config().setName("glass").setGlintEnabled(false).setTooltipEnabled(true),
@@ -88,6 +108,11 @@ public class MoonlightItems {
 		GRILLED_CHEESE.register();
 		MACARONI_AND_CHEESE.register();
 		PASTA.register();
+		LAND_CORE.register();
+		SEA_CORE.register();
+		SKY_CORE.register();
+		CAVE_CORE.register();
+		HELL_CORE.register();
 
 		for (var item : GLASS_ARMOR) {
 			item.register();

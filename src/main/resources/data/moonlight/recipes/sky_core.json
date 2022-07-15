@@ -1,0 +1,32 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"t t",
+		"lcr",
+		"bdb"
+	],
+	"key": {
+		"t": {
+			"item": "minecraft:feather"
+		},
+		"b": {
+			"tag": "minecraft:leaves"
+		},
+		"c": {
+			"item": "minecraft:phantom_membrane"
+		},
+		"l": {
+			"item": "minecraft:rabbit_hide"
+		},
+		"r": {
+			"tag": "minecraft:small_flowers"
+		},
+		"d": {
+			"item": "minecraft:hay_block"
+		}
+	},
+	"result": {
+		"item": "moonlight:sky_core",
+		"count": 1
+	}
+}

@@ -1,0 +1,35 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"tut",
+		"lcr",
+		"bdb"
+	],
+	"key": {
+		"t": {
+			"item": "minecraft:sand"
+		},
+		"b": {
+			"item": "minecraft:water_bucket"
+		},
+		"c": {
+			"item": "minecraft:dried_kelp_block"
+		},
+		"l": {
+			"item": "minecraft:magma_block"
+		},
+		"r": {
+			"item": "minecraft:snow_block"
+		},
+		"u": {
+			"item": "minecraft:gravel"
+		},
+		"d": {
+			"item": "minecraft:gravel"
+		}
+	},
+	"result": {
+		"item": "moonlight:sea_core",
+		"count": 1
+	}
+}

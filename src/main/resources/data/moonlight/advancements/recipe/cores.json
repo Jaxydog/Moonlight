@@ -1,0 +1,26 @@
+{
+	"criteria": {
+		"has_item": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"minecraft:netherite_ingot"
+						]
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"recipes": [
+			"moonlight:land_core",
+			"moonlight:sea_core",
+			"moonlight:sky_core",
+			"moonlight:cave_core",
+			"moonlight:hell_core",
+			"moonlight:orb_of_origin"
+		]
+	}
+}

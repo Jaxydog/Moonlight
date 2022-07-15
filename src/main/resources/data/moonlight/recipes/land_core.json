@@ -1,0 +1,35 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"tut",
+		"lcr",
+		"bdb"
+	],
+	"key": {
+		"t": {
+			"item": "minecraft:grass_block"
+		},
+		"b": {
+			"item": "minecraft:stone"
+		},
+		"c": {
+			"item": "minecraft:copper_block"
+		},
+		"l": {
+			"item": "minecraft:salmon"
+		},
+		"r": {
+			"item": "moonlight:banana"
+		},
+		"u": {
+			"tag": "minecraft:logs_that_burn"
+		},
+		"d": {
+			"tag": "minecraft:logs_that_burn"
+		}
+	},
+	"result": {
+		"item": "moonlight:land_core",
+		"count": 1
+	}
+}

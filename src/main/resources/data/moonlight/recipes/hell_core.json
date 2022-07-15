@@ -1,0 +1,35 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"tut",
+		"lcr",
+		"bdb"
+	],
+	"key": {
+		"t": {
+			"item": "minecraft:netherrack"
+		},
+		"b": {
+			"item": "minecraft:soul_sand"
+		},
+		"c": {
+			"item": "minecraft:gold_block"
+		},
+		"l": {
+			"item": "minecraft:blaze_powder"
+		},
+		"r": {
+			"item": "minecraft:flint_and_steel"
+		},
+		"u": {
+			"item": "minecraft:basalt"
+		},
+		"d": {
+			"item": "minecraft:lava_bucket"
+		}
+	},
+	"result": {
+		"item": "moonlight:hell_core",
+		"count": 1
+	}
+}
