@@ -1,25 +1,31 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"pattern": [
-		" a ",
+		"1a1",
 		"bec",
-		" d "
+		"2d2"
 	],
 	"key": {
 		"a": {
-			"item": "moonlight:land_core"
+			"item": "moonlight:sky_core"
 		},
 		"b": {
 			"item": "moonlight:sea_core"
 		},
 		"c": {
-			"item": "moonlight:sky_core"
+			"item": "moonlight:land_core"
 		},
 		"d": {
-			"item": "moonlight:cave_core"
+			"item": "moonlight:hell_core"
 		},
 		"e": {
-			"item": "moonlight:hell_core"
+			"item": "moonlight:cave_core"
+		},
+		"1": {
+			"item": "minecraft:diamond"
+		},
+		"2": {
+			"item": "minecraft:netherite_ingot"
 		}
 	},
 	"result": {
