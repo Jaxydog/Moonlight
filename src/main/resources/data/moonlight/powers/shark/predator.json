@@ -12,7 +12,7 @@
                 "type": "origins:apply_effect",
                 "effect": {
                     "effect": "minecraft:speed",
-                    "duration": 20,
+                    "duration": 60,
                     "show_particles": false,
                     "show_icon": false
                 }

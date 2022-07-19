@@ -10,9 +10,8 @@
                 "command": "function moonlight:shark/ruthless_hit"
             },
             {
-                "type": "origins:grant_power",
-                "power": "moonlight:shark/noregen",
-                "source": "moonlight:shark"
+                "type": "origins:execute_command",
+                "command": "power grant @s moonlight:shark/noregen"
             }
         ]
     },

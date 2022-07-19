@@ -21,9 +21,8 @@
         "type": "origins:action_over_time",
         "interval": 2,
         "entity_action": {
-            "type": "origins:revoke_power",
-            "power": "moonlight:shark/noregen",
-            "source": "moonlight:shark"
+            "type": "origins:execute_command",
+            "command": "power revoke @s moonlight:shark/noregen"
         },
         "condition": {
             "type": "origins:resource",
