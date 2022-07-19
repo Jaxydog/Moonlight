@@ -1,0 +1,11 @@
+{
+    "name": "power.moonlight.shark.ravenous.name",
+    "description": "power.moonlight.shark.ravenous.description",
+    "type": "origins:modify_food",
+    "saturation_modifiers": [
+        {
+            "operation": "multiply_base",
+            "value": -0.5
+        }
+    ]
+}

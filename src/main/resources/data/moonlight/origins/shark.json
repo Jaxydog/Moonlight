@@ -1,0 +1,25 @@
+{
+    "name": "origin.moonlight.shark.name",
+    "description": "origin.moonlight.shark.description",
+    "icon": "minecraft:trident",
+    "impact": 3,
+    "unchoosable": true,
+    "powers": [
+        "origins:air_from_potions",
+        "origins:aqua_affinity",
+        "origins:aquatic",
+        "origins:carnivore",
+        "origins:like_water",
+        "origins:water_breathing",
+        "origins:water_vision",
+        "moonlight:shark/drought",
+        "moonlight:shark/frenzy",
+        "moonlight:shark/guts",
+        "moonlight:shark/health",
+        "moonlight:shark/moist",
+        "moonlight:shark/netherite",
+        "moonlight:shark/predator",
+        "moonlight:shark/ravenous",
+        "moonlight:shark/swim"
+    ]
+}

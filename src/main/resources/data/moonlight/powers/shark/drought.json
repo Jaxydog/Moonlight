@@ -1,0 +1,79 @@
+{
+    "name": "power.moonlight.shark.drought.name",
+    "description": "power.moonlight.shark.drought.description",
+    "type": "origins:multiple",
+    "nausea": {
+        "type": "origins:stacking_status_effect",
+        "min_stacks": 0,
+        "max_stacks": 1,
+        "duration_per_stack": 100,
+        "tick_rate": 10,
+        "effect": {
+            "effect": "minecraft:nausea",
+            "is_ambient": true,
+            "show_particles": false,
+            "show_icon": false
+        },
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:dimension",
+                    "dimension": "minecraft:the_nether"
+                },
+                {
+                    "type": "origins:biome",
+                    "condition": {
+                        "type": "origins:temperature",
+                        "comparison": ">=",
+                        "compare_to": 1
+                    }
+                }
+            ]
+        }
+    },
+    "damage": {
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "multiply_base",
+            "value": -0.5
+        },
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:dimension",
+                    "dimension": "minecraft:the_nether"
+                },
+                {
+                    "type": "origins:biome",
+                    "condition": {
+                        "type": "origins:temperature",
+                        "comparison": ">=",
+                        "compare_to": 1
+                    }
+                }
+            ]
+        }
+    },
+    "sprint": {
+        "type": "origins:prevent_sprinting",
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:dimension",
+                    "dimension": "minecraft:the_nether"
+                },
+                {
+                    "type": "origins:biome",
+                    "condition": {
+                        "type": "origins:temperature",
+                        "comparison": ">=",
+                        "compare_to": 1
+                    }
+                }
+            ]
+        }
+    }
+}

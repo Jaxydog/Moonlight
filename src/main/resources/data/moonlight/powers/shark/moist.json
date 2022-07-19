@@ -1,0 +1,34 @@
+{
+    "name": "power.moonlight.shark.moist.name",
+    "description": "power.moonlight.shark.moist.description",
+    "type": "origins:multiple",
+    "fire": {
+        "type": "origins:fire_immunity",
+        "condition": {
+            "type": "origins:fluid_height",
+            "fluid": "minecraft:lava",
+            "comparison": "==",
+            "compare_to": 0
+        }
+    },
+    "lava": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_base",
+            "value": 1
+        },
+        "damage_condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:name",
+                    "name": "lava"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "lava.player"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "name": "power.moonlight.shark.swim.name",
+    "description": "power.moonlight.shark.swim.description",
+    "type": "origins:multiple",
+    "fast": {
+        "type": "origins:conditioned_attribute",
+        "tick_rate": 2,
+        "modifier": {
+            "attribute": "additionalentityattributes:water_speed",
+            "operation": "multiply_base",
+            "value": 2
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "moonlight:shark/frenzy_mode",
+            "comparison": "==",
+            "compare_to": 2
+        }
+    },
+    "normal": {
+        "type": "origins:conditioned_attribute",
+        "tick_rate": 2,
+        "modifier": {
+            "attribute": "additionalentityattributes:water_speed",
+            "operation": "multiply_base",
+            "value": 1.25
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "moonlight:shark/frenzy_mode",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "slow": {
+        "type": "origins:conditioned_attribute",
+        "tick_rate": 2,
+        "modifier": {
+            "attribute": "additionalentityattributes:water_speed",
+            "operation": "multiply_base",
+            "value": -0.25
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "moonlight:shark/frenzy_mode",
+            "comparison": "==",
+            "compare_to": 0
+        }
+    }
+}

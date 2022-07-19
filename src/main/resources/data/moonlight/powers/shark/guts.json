@@ -1,0 +1,24 @@
+{
+    "name": "power.moonlight.shark.guts.name",
+    "description": "power.moonlight.shark.guts.description",
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 5,
+    "modifier": {
+        "attribute": "minecraft:generic.attack_damage",
+        "operation": "multiply_base",
+        "value": 0.25
+    },
+    "condition": {
+        "type": "origins:or",
+        "conditions": [
+            {
+                "type": "origins:status_effect",
+                "effect": "minecraft:poison"
+            },
+            {
+                "type": "origins:status_effect",
+                "effect": "minecraft:wither"
+            }
+        ]
+    }
+}

@@ -1,0 +1,1 @@
+playsound minecraft:entity.fish.swim player @s ~ ~ ~ 0.6 1.2

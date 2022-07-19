@@ -1,0 +1,303 @@
+{
+    "name": "power.moonlight.shark.frenzy.name",
+    "description": "power.moonlight.shark.frenzy.description",
+    "type": "origins:multiple",
+    "mode": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2,
+        "start_value": 1,
+        "min_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function moonlight:shark/frenzy_min"
+                },
+                {
+                    "type": "origins:trigger_cooldown",
+                    "power": "moonlight:shark/frenzy_cooldown"
+                }
+            ]
+        },
+        "max_action": {
+            "type": "origins:execute_command",
+            "command": "function moonlight:shark/frenzy_max"
+        }
+    },
+    "timer": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 200,
+        "min_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function moonlight:shark/frenzy_recharge"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "moonlight:shark/frenzy_mode",
+                    "operation": "set",
+                    "change": 1
+                }
+            ]
+        },
+        "max_action": {
+            "type": "origins:change_resource",
+            "resource": "moonlight:shark/frenzy_mode",
+            "operation": "set",
+            "change": 0
+        },
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+            "bar_index": 22,
+            "inverted": true
+        }
+    },
+    "timer_fill": {
+        "type": "origins:action_over_time",
+        "interval": 2,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "moonlight:shark/frenzy_timer",
+            "change": 2
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "moonlight:shark/frenzy_mode",
+                    "comparison": "==",
+                    "compare_to": 2
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "moonlight:shark/frenzy_timer",
+                    "comparison": "<",
+                    "compare_to": 200
+                }
+            ]
+        }
+    },
+    "timer_drain": {
+        "type": "origins:action_over_time",
+        "interval": 2,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "moonlight:shark/frenzy_timer",
+            "change": -3
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "moonlight:shark/frenzy_mode",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "moonlight:shark/frenzy_timer",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        }
+    },
+    "cooldown": {
+        "type": "origins:cooldown",
+        "cooldown": 200,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 1,
+            "inverted": true
+        }
+    },
+    "toggle": {
+        "type": "origins:active_self",
+        "cooldown": 20,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:or",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "moonlight:shark/frenzy_mode",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "moonlight:shark/frenzy_cooldown",
+                                "comparison": ">",
+                                "compare_to": 0
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "function moonlight:shark/frenzy_fail"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "moonlight:shark/frenzy_mode",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "moonlight:shark/frenzy_mode",
+                        "operation": "set",
+                        "change": 2
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "moonlight:shark/frenzy_mode",
+                        "comparison": "==",
+                        "compare_to": 2
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "moonlight:shark/frenzy_mode",
+                        "operation": "set",
+                        "change": 0
+                    }
+                }
+            ]
+        },
+        "key": {
+            "key": "key.origins.secondary_active"
+        }
+    },
+    "buff_damage": {
+        "type": "origins:conditioned_attribute",
+        "tick_rate": 2,
+        "modifier": {
+            "attribute": "minecraft:generic.attack_damage",
+            "operation": "multiply_base",
+            "value": 0.25
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "moonlight:shark/frenzy_mode",
+            "comparison": "==",
+            "compare_to": 2
+        }
+    },
+    "buff_haste_attack": {
+        "type": "origins:conditioned_attribute",
+        "tick_rate": 2,
+        "modifier": {
+            "attribute": "minecraft:generic.attack_speed",
+            "operation": "multiply_base",
+            "value": 0.5
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "moonlight:shark/frenzy_mode",
+            "comparison": "==",
+            "compare_to": 2
+        }
+    },
+    "buff_haste_mine": {
+        "type": "origins:conditioned_attribute",
+        "tick_rate": 2,
+        "modifier": {
+            "attribute": "additionalentityattributes:dig_speed",
+            "operation": "multiply_base",
+            "value": 0.5
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "moonlight:shark/frenzy_mode",
+            "comparison": "==",
+            "compare_to": 2
+        }
+    },
+    "buff_speed": {
+        "type": "origins:conditioned_attribute",
+        "tick_rate": 2,
+        "modifier": {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "multiply_base",
+            "value": 0.25
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "moonlight:shark/frenzy_mode",
+            "comparison": "==",
+            "compare_to": 2
+        }
+    },
+    "debuff_damage": {
+        "type": "origins:conditioned_attribute",
+        "tick_rate": 2,
+        "modifier": {
+            "attribute": "minecraft:generic.attack_damage",
+            "operation": "multiply_base",
+            "value": -0.25
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "moonlight:shark/frenzy_mode",
+            "comparison": "==",
+            "compare_to": 0
+        }
+    },
+    "debuff_haste_attack": {
+        "type": "origins:conditioned_attribute",
+        "tick_rate": 2,
+        "modifier": {
+            "attribute": "minecraft:generic.attack_speed",
+            "operation": "multiply_base",
+            "value": -0.5
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "moonlight:shark/frenzy_mode",
+            "comparison": "==",
+            "compare_to": 0
+        }
+    },
+    "debuff_haste_mine": {
+        "type": "origins:conditioned_attribute",
+        "tick_rate": 2,
+        "modifier": {
+            "attribute": "additionalentityattributes:dig_speed",
+            "operation": "multiply_base",
+            "value": -0.5
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "moonlight:shark/frenzy_mode",
+            "comparison": "==",
+            "compare_to": 0
+        }
+    },
+    "debuff_speed": {
+        "type": "origins:conditioned_attribute",
+        "tick_rate": 2,
+        "modifier": {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "multiply_base",
+            "value": -0.25
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "moonlight:shark/frenzy_mode",
+            "comparison": "==",
+            "compare_to": 0
+        }
+    }
+}
