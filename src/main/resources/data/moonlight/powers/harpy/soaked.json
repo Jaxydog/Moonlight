@@ -1,192 +1,505 @@
 {
-	"name": "power.moonlight.harpy.soaked.name",
-	"description": "power.moonlight.harpy.soaked.description",
-	"type": "origins:multiple",
-	"resource": {
-		"type": "origins:resource",
-		"min": 0,
-		"max": 100,
-		"hud_render": {
-			"sprite_location": "moonlight:textures/gui/hud/resource_bar_1.png",
-			"bar_index": 2,
-			"condition": {
-				"type": "origins:resource",
-				"resource": "moonlight:harpy/soaked_resource",
-				"comparison": ">",
-				"compare_to": 0
-			}
-		},
-		"min_action": {
-			"type": "origins:execute_command",
-			"command": "function moonlight:harpy/soaked_min"
-		},
-		"max_action": {
-			"type": "origins:execute_command",
-			"command": "function moonlight:harpy/soaked_max"
-		}
-	},
-	"drain_slow": {
-		"type": "origins:action_over_time",
-		"interval": 20,
-		"entity_action": {
-			"type": "origins:change_resource",
-			"resource": "moonlight:harpy/soaked_resource",
-			"change": -1
-		},
-		"condition": {
-			"type": "origins:and",
-			"conditions": [
-				{
-					"type": "origins:power_active",
-					"power": "moonlight:harpy/soaked_fill_rain",
-					"inverted": true
-				},
-				{
-					"type": "origins:power_active",
-					"power": "moonlight:harpy/soaked_fill_water",
-					"inverted": true
-				},
-				{
-					"type": "origins:power_active",
-					"power": "moonlight:harpy/soaked_drain_fast",
-					"inverted": true
-				}
-			]
-		}
-	},
-	"drain_fast": {
-		"type": "origins:action_over_time",
-		"interval": 2,
-		"entity_action": {
-			"type": "origins:change_resource",
-			"resource": "moonlight:harpy/soaked_resource",
-			"change": -1
-		},
-		"condition": {
-			"type": "origins:and",
-			"conditions": [
-				{
-					"type": "origins:power_active",
-					"power": "moonlight:harpy/soaked_fill_rain",
-					"inverted": true
-				},
-				{
-					"type": "origins:power_active",
-					"power": "moonlight:harpy/soaked_fill_water",
-					"inverted": true
-				},
-				{
-					"type": "origins:or",
-					"conditions": [
-						{
-							"type": "origins:block_in_radius",
-							"radius": 3,
-							"block_condition": {
-								"type": "origins:or",
-								"conditions": [
-									{
-										"type": "origins:in_tag",
-										"tag": "moonlight:harpy/heat_source_strong"
-									},
-									{
-										"type": "origins:fluid",
-										"fluid_condition": {
-											"type": "origins:in_tag",
-											"tag": "moonlight:harpy/heat_source_strong"
-										}
-									}
-								]
-							},
-							"shape": "sphere",
-							"comparison": ">",
-							"compare_to": 0
-						},
-						{
-							"type": "origins:block_in_radius",
-							"radius": 1,
-							"block_condition": {
-								"type": "origins:or",
-								"conditions": [
-									{
-										"type": "origins:in_tag",
-										"tag": "moonlight:harpy/heat_source_weak"
-									},
-									{
-										"type": "origins:fluid",
-										"fluid_condition": {
-											"type": "origins:in_tag",
-											"tag": "moonlight:harpy/heat_source_weak"
-										}
-									}
-								]
-							}
-						},
-						{
-							"type": "origins:dimension",
-							"dimension": "minecraft:the_nether"
-						},
-						{
-							"type": "origins:on_fire"
-						}
-					]
-				}
-			]
-		}
-	},
-	"fill_rain": {
-		"type": "origins:action_over_time",
-		"interval": 2,
-		"entity_action": {
-			"type": "origins:change_resource",
-			"resource": "moonlight:harpy/soaked_resource",
-			"change": 1
-		},
-		"condition": {
-			"type": "origins:and",
-			"conditions": [
-				{
-					"type": "origins:in_rain"
-				},
-				{
-					"type": "origins:gamemode",
-					"gamemode": "spectator",
-					"inverted": true
-				}
-			]
-		}
-	},
-	"fill_water": {
-		"type": "origins:action_over_time",
-		"interval": 2,
-		"entity_action": {
-			"type": "origins:change_resource",
-			"resource": "moonlight:harpy/soaked_resource",
-			"change": 5
-		},
-		"condition": {
-			"type": "origins:and",
-			"conditions": [
-				{
-					"type": "origins:fluid_height",
-					"fluid": "minecraft:water",
-					"comparison": ">",
-					"compare_to": 0
-				},
-				{
-					"type": "origins:gamemode",
-					"gamemode": "spectator",
-					"inverted": true
-				}
-			]
-		}
-	},
-	"reset": {
-		"type": "origins:action_on_callback",
-		"entity_action_respawned": {
-			"type": "origins:change_resource",
-			"resource": "moonlight:harpy/soaked_resource",
-			"operation": "set",
-			"change": 0
-		}
-	}
+    "name": "power.moonlight.harpy.soaked.name",
+    "description": "power.moonlight.harpy.soaked.description",
+    "type": "origins:multiple",
+    "rate": {
+        "type": "origins:resource",
+        "min": -3,
+        "max": 3,
+        "start_value": 0
+    },
+    "rate_update": {
+        "type": "origins:action_over_time",
+        "interval": 2,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:fluid_height",
+                                "fluid": "minecraft:water",
+                                "comparison": ">",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:ingredient",
+                                            "ingredient": {
+                                                "tag": "moonlight:harpy/heat_source_strong"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "offhand",
+                                        "item_condition": {
+                                            "type": "origins:ingredient",
+                                            "ingredient": {
+                                                "tag": "moonlight:harpy/heat_source_strong"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "moonlight:harpy/soaked_rate",
+                        "operation": "set",
+                        "change": 2
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "moonlight:harpy/soaked_rate",
+                        "operation": "set",
+                        "change": 3
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:in_rain"
+                            },
+                            {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:ingredient",
+                                            "ingredient": {
+                                                "tag": "moonlight:harpy/heat_source_strong"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "offhand",
+                                        "item_condition": {
+                                            "type": "origins:ingredient",
+                                            "ingredient": {
+                                                "tag": "moonlight:harpy/heat_source_strong"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "moonlight:harpy/soaked_rate",
+                        "operation": "set",
+                        "change": 1
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:in_rain"
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "moonlight:harpy/soaked_rate",
+                        "operation": "set",
+                        "change": 2
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:or",
+                        "conditions": [
+                            {
+                                "type": "origins:block_in_radius",
+                                "radius": 3,
+                                "block_condition": {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:in_tag",
+                                            "tag": "moonlight:harpy/heat_source_strong"
+                                        },
+                                        {
+                                            "type": "origins:fluid",
+                                            "fluid_condition": {
+                                                "type": "origins:in_tag",
+                                                "tag": "moonlight:harpy/heat_source_strong"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "shape": "sphere",
+                                "comparison": ">",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:block_in_radius",
+                                "radius": 1,
+                                "block_condition": {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:in_tag",
+                                            "tag": "moonlight:harpy/heat_source_weak"
+                                        },
+                                        {
+                                            "type": "origins:fluid",
+                                            "fluid_condition": {
+                                                "type": "origins:in_tag",
+                                                "tag": "moonlight:harpy/heat_source_weak"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "origins:equipped_item",
+                                "equipment_slot": "mainhand",
+                                "item_condition": {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "tag": "moonlight:harpy/heat_source_strong"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "origins:equipped_item",
+                                "equipment_slot": "offhand",
+                                "item_condition": {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "tag": "moonlight:harpy/heat_source_strong"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "origins:dimension",
+                                "dimension": "minecraft:the_nether"
+                            },
+                            {
+                                "type": "origins:on_fire"
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "moonlight:harpy/soaked_rate",
+                        "operation": "set",
+                        "change": -3
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:or",
+                        "conditions": [
+                            {
+                                "type": "origins:block_in_radius",
+                                "radius": 6,
+                                "block_condition": {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:in_tag",
+                                            "tag": "moonlight:harpy/heat_source_strong"
+                                        },
+                                        {
+                                            "type": "origins:fluid",
+                                            "fluid_condition": {
+                                                "type": "origins:in_tag",
+                                                "tag": "moonlight:harpy/heat_source_strong"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "shape": "sphere",
+                                "comparison": ">",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:block_in_radius",
+                                "radius": 2,
+                                "block_condition": {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:in_tag",
+                                            "tag": "moonlight:harpy/heat_source_weak"
+                                        },
+                                        {
+                                            "type": "origins:fluid",
+                                            "fluid_condition": {
+                                                "type": "origins:in_tag",
+                                                "tag": "moonlight:harpy/heat_source_weak"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "origins:equipped_item",
+                                "equipment_slot": "mainhand",
+                                "item_condition": {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "tag": "moonlight:harpy/heat_source_weak"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "origins:equipped_item",
+                                "equipment_slot": "offhand",
+                                "item_condition": {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "tag": "moonlight:harpy/heat_source_weak"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "moonlight:harpy/soaked_rate",
+                        "operation": "set",
+                        "change": -2
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:constant",
+                        "value": true
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "moonlight:harpy/soaked_rate",
+                        "operation": "set",
+                        "change": -1
+                    }
+                }
+            ]
+        },
+        "falling_action": {
+            "type": "origins:change_resource",
+            "resource": "moonlight:harpy/soaked_rate",
+            "operation": "set",
+            "change": 0
+        },
+        "condition": {
+            "type": "origins:gamemode",
+            "gamemode": "spectator",
+            "inverted": true
+        }
+    },
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 100,
+        "hud_render": {
+            "sprite_location": "moonlight:textures/gui/hud/resource_bar_1.png",
+            "bar_index": 2,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "moonlight:harpy/soaked_resource",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        },
+        "min_action": {
+            "type": "origins:execute_command",
+            "command": "function moonlight:harpy/soaked_min"
+        },
+        "max_action": {
+            "type": "origins:execute_command",
+            "command": "function moonlight:harpy/soaked_max"
+        }
+    },
+    "resource_update_fast": {
+        "type": "origins:action_over_time",
+        "interval": 2,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "moonlight:harpy/soaked_rate",
+                        "comparison": "==",
+                        "compare_to": 3
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "moonlight:harpy/soaked_resource",
+                        "change": 5
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "moonlight:harpy/soaked_rate",
+                        "comparison": "==",
+                        "compare_to": 2
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "moonlight:harpy/soaked_resource",
+                        "change": 1
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "moonlight:harpy/soaked_rate",
+                        "comparison": "==",
+                        "compare_to": -2
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "moonlight:harpy/soaked_resource",
+                        "change": -1
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "moonlight:harpy/soaked_rate",
+                        "comparison": "==",
+                        "compare_to": -3
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "moonlight:harpy/soaked_resource",
+                        "change": -2
+                    }
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:gamemode",
+                    "gamemode": "spectator",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "resource": "moonlight:harpy/soaked_rate",
+                            "comparison": ">",
+                            "compare_to": 1
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "moonlight:harpy/soaked_rate",
+                            "comparison": "<",
+                            "compare_to": -1
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "resource_update_slow": {
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "moonlight:harpy/soaked_rate",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "moonlight:harpy/soaked_resource",
+                        "change": 1
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "moonlight:harpy/soaked_rate",
+                        "comparison": "==",
+                        "compare_to": -1
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "moonlight:harpy/soaked_resource",
+                        "change": -1
+                    }
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:gamemode",
+                    "gamemode": "spectator",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "resource": "moonlight:harpy/soaked_rate",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "moonlight:harpy/soaked_rate",
+                            "comparison": "==",
+                            "compare_to": -1
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "reset": {
+        "type": "origins:action_on_callback",
+        "entity_action_respawned": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "moonlight:harpy/soaked_rate",
+                    "operation": "set",
+                    "change": 0
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "moonlight:harpy/soaked_resource",
+                    "operation": "set",
+                    "change": 0
+                }
+            ]
+        }
+    }
 }
