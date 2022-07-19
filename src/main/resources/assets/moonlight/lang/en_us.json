@@ -45,6 +45,8 @@
 	"origin.moonlight.harpy.description": "A creature of the skies, the Harpy is an expert in combat and can easily overwhelm an unprepared enemy.",
 	"origin.moonlight.moobloom.name": "Moobloom",
 	"origin.moonlight.moobloom.description": "A cow grown from the ground, surrounded and shrouded in dandelions. It roams the Earth serving melatonin to others.",
+	"origin.moonlight.shark.name": "Shark",
+	"origin.moonlight.shark.description": "Fish are friends, *not* food.",
 	"power.moonlight.harpy.backpedal.name": "Backpedal",
 	"power.moonlight.harpy.backpedal.description": "You can leap backwards and up into the air to evade attacks.",
 	"power.moonlight.harpy.elytra.name": "Winged",
@@ -76,9 +78,12 @@
 	"power.moonlight.moobloom.regen.description": "Nearby players are given a small dose of melatonin and regenerate health more quickly.",
 	"power.moonlight.moobloom.size.name": "Cow-sized",
 	"power.moonlight.moobloom.size.description": "You're smaller than a normal player, only being 1.5 blocks tall.",
+	"power.moonlight.moobloom.stomp.name": "Mighty Stomp",
+	"power.moonlight.moobloom.stomp.description": "By slamming your feet against the ground, nearby creatures are thrown away from you and take 2 hearts of damage.",
 	"power.moonlight.moobloom.vegetarian.name": "Vegetarian",
 	"power.moonlight.moobloom.vegetarian.description": "You can only eat wheat and plant-based foods, however eating grants you more hunger.",
 	"power.moonlight.moobloom.vegetarian.wheat_tooltip": "Looks tasty!",
 	"power.moonlight.moobloom.water_slowness.name": "Four Wheeler",
-	"power.moonlight.moobloom.water_slowness.description": "Your body mass makes it difficult to walk while in water."
+	"power.moonlight.moobloom.water_slowness.description": "Your body mass makes it difficult to walk while in water.",
+	"death.attack.cowStomp.player": "%1$s was killed by %2$s's shockwave"
 }
