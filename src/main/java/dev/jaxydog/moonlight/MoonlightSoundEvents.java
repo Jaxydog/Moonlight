@@ -5,6 +5,8 @@ import net.minecraft.util.registry.Registry;
 
 public class MoonlightSoundEvents {
 	public static final SoundEvent ITEM_AVOCADO_JINGLE = new SoundEvent(Moonlight.Id("item.avocado.jingle"));
+	public static final SoundEvent ORIGIN_SNAKE_ALERT = new SoundEvent(Moonlight.Id("origin.snake.alert"));
+	public static final SoundEvent ORIGIN_SNAKE_SNEAK = new SoundEvent(Moonlight.Id("origin.snake.sneak"));
 
 	private static void register(SoundEvent... sounds) {
 		for (var sound : sounds) {
@@ -14,6 +16,8 @@ public class MoonlightSoundEvents {
 
 	public static void register() {
 		register(ITEM_AVOCADO_JINGLE);
+		register(ORIGIN_SNAKE_ALERT);
+		register(ORIGIN_SNAKE_SNEAK);
 		Moonlight.LOGGER.info("Registered sound events");
 	}
 }

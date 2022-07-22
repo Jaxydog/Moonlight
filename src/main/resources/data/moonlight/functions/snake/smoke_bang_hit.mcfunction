@@ -1,0 +1,1 @@
+playsound minecraft:entity.phantom.ambient player @s ~ ~ ~ 1 2

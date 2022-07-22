@@ -1,0 +1,7 @@
+{
+    "name": "power.moonlight.snake.size.name",
+    "description": "power.moonlight.snake.size.description",
+    "type": "moonlight:model_scale",
+    "width": 0.4,
+    "height": 0.4
+}

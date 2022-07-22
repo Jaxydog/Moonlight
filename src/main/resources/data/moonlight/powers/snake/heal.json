@@ -1,0 +1,92 @@
+{
+    "name": "power.moonlight.snake.heal.name",
+    "description": "power.moonlight.snake.heal.description",
+    "type": "origins:multiple",
+    "enabled": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 5,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+            "bar_index": 4,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "moonlight:snake/heal_enabled",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        }
+    },
+    "activate": {
+        "type": "origins:self_action_when_hit",
+        "cooldown": 0,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "moonlight:snake/heal_enabled",
+            "operation": "set",
+            "change": 5
+        }
+    },
+    "reset": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "moonlight:snake/heal_enabled",
+            "change": -1
+        },
+        "falling_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "moonlight:snake/heal_enabled",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "moonlight:snake/heal_enabled",
+                "operation": "set",
+                "change": 5
+            }
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:moving",
+                    "inverted": true
+                }
+            ]
+        }
+    },
+    "debuff": {
+        "type": "origins:modify_healing",
+        "modifier": {
+            "operation": "multiply_base",
+            "value": -1
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "moonlight:snake/heal_enabled",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    },
+    "buff": {
+        "type": "origins:modify_healing",
+        "modifier": {
+            "operation": "multiply_base",
+            "value": 0.1
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "moonlight:snake/heal_enabled",
+            "comparison": "==",
+            "compare_to": 0
+        }
+    }
+}

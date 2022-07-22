@@ -1,0 +1,13 @@
+{
+    "name": "power.moonlight.snake.fall.name",
+    "description": "power.moonlight.snake.fall.description",
+    "type": "origins:modify_falling",
+    "velocity": 0.08,
+    "take_fall_damage": false,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "moonlight:snake/heavy_weight",
+        "comparison": "<=",
+        "compare_to": 2
+    }
+}

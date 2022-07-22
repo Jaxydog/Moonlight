@@ -1,0 +1,10 @@
+{
+    "name": "power.moonlight.snake.alert.name",
+    "description": "power.moonlight.snake.alert.description",
+    "type": "origins:self_action_when_hit",
+    "cooldown": 100,
+    "entity_action": {
+        "type": "origins:execute_command",
+        "command": "function moonlight:snake/alert_activate"
+    }
+}

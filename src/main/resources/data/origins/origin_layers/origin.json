@@ -2,6 +2,7 @@
 	"origins": [
 		"moonlight:harpy",
 		"moonlight:moobloom",
-		"moonlight:shark"
+		"moonlight:shark",
+		"moonlight:snake"
 	]
 }

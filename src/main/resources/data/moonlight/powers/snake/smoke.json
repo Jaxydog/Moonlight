@@ -1,0 +1,118 @@
+{
+    "name": "power.moonlight.snake.smoke.name",
+    "description": "power.moonlight.snake.smoke.description",
+    "type": "origins:multiple",
+    "cooldown": {
+        "type": "origins:cooldown",
+        "cooldown": 600,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 0
+        }
+    },
+    "bomb": {
+        "type": "origins:active_self",
+        "cooldown": 10,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "moonlight:snake/smoke_cooldown",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "function moonlight:snake/smoke_bomb"
+                    },
+                    {
+                        "type": "origins:trigger_cooldown",
+                        "power": "moonlight:snake/smoke_cooldown"
+                    },
+                    {
+                        "type": "origins:trigger_cooldown",
+                        "power": "moonlight:snake/smoke_bomb_duration"
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:execute_command",
+                "command": "function moonlight:snake/smoke_fail"
+            }
+        },
+        "key": {
+            "key": "key.origins.primary_active"
+        }
+    },
+    "bomb_duration": {
+        "type": "origins:cooldown",
+        "cooldown": 60,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 1
+        }
+    },
+    "bomb_hide": {
+        "type": "origins:invisibility",
+        "render_armor": false,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "moonlight:snake/smoke_bomb_duration",
+            "comparison": "!=",
+            "compare_to": 0
+        }
+    },
+    "bang": {
+        "type": "origins:active_self",
+        "cooldown": 10,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "moonlight:snake/smoke_cooldown",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "function moonlight:snake/smoke_bang"
+                    },
+                    {
+                        "type": "origins:raycast",
+                        "distance": 6,
+                        "shape_type": "outline",
+                        "fluid_handling": "source_only",
+                        "hit_action": {
+                            "type": "origins:execute_command",
+                            "command": "function moonlight:snake/smoke_bang_hit"
+                        },
+                        "miss_action": {
+                            "type": "origins:execute_command",
+                            "command": "function moonlight:snake/smoke_bang_miss"
+                        },
+                        "command_at_hit": "function moonlight:snake/smoke_bang_end",
+                        "command_along_ray": "function moonlight:snake/smoke_bang_step",
+                        "command_step": 0.5
+                    },
+                    {
+                        "type": "origins:trigger_cooldown",
+                        "power": "moonlight:snake/smoke_cooldown"
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:execute_command",
+                "command": "function moonlight:snake/smoke_fail"
+            }
+        },
+        "key": {
+            "key": "key.origins.secondary_active"
+        }
+    }
+}

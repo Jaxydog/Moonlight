@@ -1,0 +1,20 @@
+{
+    "name": "origin.moonlight.snake.name",
+    "description": "origin.moonlight.snake.description",
+    "icon": "minecraft:barrel",
+    "impact": 3,
+    "unchoosable": true,
+    "powers": [
+        "moonlight:snake/agony",
+        "moonlight:snake/alert",
+        "moonlight:snake/barrel",
+        "moonlight:snake/coil",
+        "moonlight:snake/fall",
+        "moonlight:snake/heal",
+        "moonlight:snake/heavy",
+        "moonlight:snake/hide",
+        "moonlight:snake/jump",
+        "moonlight:snake/size",
+        "moonlight:snake/smoke"
+    ]
+}

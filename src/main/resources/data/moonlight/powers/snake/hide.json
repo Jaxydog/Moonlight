@@ -1,0 +1,70 @@
+{
+    "name": "power.moonlight.snake.hide.name",
+    "description": "power.moonlight.snake.hide.description",
+    "type": "origins:multiple",
+    "plant": {
+        "type": "origins:invisibility",
+        "render_armor": false,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "moonlight:snake/heavy_weight",
+                    "comparison": "<=",
+                    "compare_to": 2
+                },
+                {
+                    "type": "origins:in_block",
+                    "block_condition": {
+                        "type": "origins:or",
+                        "conditions": [
+                            {
+                                "type": "origins:in_tag",
+                                "tag": "minecraft:flowers"
+                            },
+                            {
+                                "type": "origins:in_tag",
+                                "tag": "minecraft:replaceable_plants"
+                            },
+                            {
+                                "type": "origins:in_tag",
+                                "tag": "minecraft:saplings"
+                            },
+                            {
+                                "type": "origins:block",
+                                "block": "minecraft:sugar_cane"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "dark": {
+        "type": "origins:model_color",
+        "alpha": 0.5,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:in_block",
+                    "block_condition": {
+                        "type": "origins:light_level",
+                        "comparison": "<=",
+                        "compare_to": 8
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "moonlight:snake/heavy_weight",
+                    "comparison": "<=",
+                    "compare_to": 2
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,1 @@
+playsound minecraft:entity.phantom.hurt player @s ~ ~ ~ 1 1.7

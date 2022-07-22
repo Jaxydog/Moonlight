@@ -6,5 +6,21 @@
 				"name": "moonlight:item/avocado_jingle"
 			}
 		]
+	},
+	"origin.snake.alert": {
+		"subtitle": "subtitles.moonlight.origin.snake.alert",
+		"sounds": [
+			{
+				"name": "moonlight:origin/snake/alert"
+			}
+		]
+	},
+	"origin.snake.sneak": {
+		"subtitle": "subtitles.moonlight.origin.snake.sneak",
+		"sounds": [
+			{
+				"name": "moonlight:origin/snake/sneak"
+			}
+		]
 	}
 }
