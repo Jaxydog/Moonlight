@@ -1,0 +1,21 @@
+{
+    "name": "power.moonlight.moobloom.hide.name",
+    "description": "power.moonlight.moobloom.hide.description",
+    "type": "origins:invisibility",
+    "render_armor": false,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:sneaking"
+            },
+            {
+                "type": "origins:in_block",
+                "block_condition": {
+                    "type": "origins:block",
+                    "block": "minecraft:dandelion"
+                }
+            }
+        ]
+    }
+}
