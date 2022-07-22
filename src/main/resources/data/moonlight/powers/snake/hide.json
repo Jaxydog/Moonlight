@@ -51,12 +51,22 @@
             "type": "origins:and",
             "conditions": [
                 {
-                    "type": "origins:in_block",
-                    "block_condition": {
-                        "type": "origins:light_level",
-                        "comparison": "<=",
-                        "compare_to": 8
-                    }
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:daytime",
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:in_block",
+                            "block_condition": {
+                                "type": "origins:light_level",
+                                "light_type": "block",
+                                "comparison": "<=",
+                                "compare_to": 8
+                            }
+                        }
+                    ]
                 },
                 {
                     "type": "origins:resource",
