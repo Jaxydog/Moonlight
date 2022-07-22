@@ -1,36 +1,73 @@
 {
 	"name": "power.moonlight.harpy.steal.name",
 	"description": "power.moonlight.harpy.steal.description",
-	"type": "origins:active_self",
-	"cooldown": 20,
-	"entity_action": {
-		"type": "origins:raycast",
-		"distance": 5,
-		"block": false,
-		"bientity_action": {
-			"type": "origins:target_action",
-			"action": {
-				"type": "origins:drop_inventory",
-				"entity_action": {
-					"type": "origins:execute_command",
-					"command": "function moonlight:harpy/steal"
-				},
-				"slot": "weapon.mainhand"
-			}
-		},
-		"bientity_condition": {
-			"type": "origins:target_condition",
-			"condition": {
-				"type": "origins:equipped_item",
-				"equipment_slot": "mainhand",
-				"item_condition": {
-					"type": "origins:empty",
-					"inverted": true
+	"type": "origins:multiple",
+	"primary": {
+		"type": "origins:active_self",
+		"cooldown": 10,
+		"entity_action": {
+			"type": "origins:raycast",
+			"distance": 5,
+			"block": false,
+			"bientity_action": {
+				"type": "origins:target_action",
+				"action": {
+					"type": "origins:drop_inventory",
+					"entity_action": {
+						"type": "origins:execute_command",
+						"command": "function moonlight:harpy/steal"
+					},
+					"slot": "weapon.mainhand"
+				}
+			},
+			"bientity_condition": {
+				"type": "origins:target_condition",
+				"condition": {
+					"type": "origins:equipped_item",
+					"equipment_slot": "mainhand",
+					"item_condition": {
+						"type": "origins:empty",
+						"inverted": true
+					}
 				}
 			}
+		},
+		"hud_render": {
+			"should_render": false
 		}
 	},
-	"hud_render": {
-		"should_render": false
+	"secondary": {
+		"type": "origins:active_self",
+		"cooldown": 10,
+		"entity_action": {
+			"type": "origins:raycast",
+			"distance": 5,
+			"block": false,
+			"bientity_action": {
+				"type": "origins:target_action",
+				"action": {
+					"type": "origins:drop_inventory",
+					"entity_action": {
+						"type": "origins:execute_command",
+						"command": "function moonlight:harpy/steal"
+					},
+					"slot": "weapon.offhand"
+				}
+			},
+			"bientity_condition": {
+				"type": "origins:target_condition",
+				"condition": {
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:empty",
+						"inverted": true
+					}
+				}
+			}
+		},
+		"hud_render": {
+			"should_render": false
+		}
 	}
 }
