@@ -68,6 +68,9 @@
 		},
 		"hud_render": {
 			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active"
 		}
 	}
 }
