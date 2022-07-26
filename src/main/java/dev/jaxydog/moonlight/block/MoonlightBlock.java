@@ -14,7 +14,7 @@ public class MoonlightBlock extends Block {
 	}
 
 	public Identifier Id() {
-		return Moonlight.Id(CONFIG.getName());
+		return Moonlight.id(CONFIG.getName());
 	}
 
 	public MoonlightBlock register() {

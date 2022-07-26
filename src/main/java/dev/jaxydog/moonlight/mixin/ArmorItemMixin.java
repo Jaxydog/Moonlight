@@ -34,10 +34,10 @@ public class ArmorItemMixin {
 	private Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers;
 	@Shadow
 	@Final
-	protected float knockbackResistance;
+	private float knockbackResistance;
 
 	@Inject(method = "<init>", at = @At(value = "RETURN"))
-	private void constructor(ArmorMaterial material, EquipmentSlot slot, Settings settings, CallbackInfo callbackInfo) {
+	private void constructor(ArmorMaterial material, EquipmentSlot slot, Settings settings, CallbackInfo info) {
 		if (material instanceof MoonlightArmorItem.Material) {
 			var uuid = MODIFIERS[slot.getEntitySlotId()];
 			ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
@@ -51,7 +51,6 @@ public class ArmorItemMixin {
 					Operation.ADDITION);
 
 			builder.put(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, modifier);
-
 			this.attributeModifiers = builder.build();
 		}
 	}

@@ -1,6 +1,5 @@
 package dev.jaxydog.moonlight.item;
 
-import dev.jaxydog.moonlight.Moonlight;
 import dev.jaxydog.moonlight.MoonlightSoundEvents;
 import dev.jaxydog.moonlight.block.MoonlightBlocks;
 import dev.jaxydog.moonlight.item.MoonlightItem.Config;
@@ -11,91 +10,135 @@ import net.minecraft.item.Item.Settings;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.provider.number.BinomialLootNumberProvider;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 
+/** Moonlight item class */
 public class MoonlightItems {
+	/** Avocado item */
 	public static final MoonlightItem AVOCADO = new MoonlightItem(
-			new Config().setName("avocado").setTooltipEnabled(true)
-					.setUseSound(MoonlightSoundEvents.ITEM_AVOCADO_JINGLE),
 			new Settings().food(new FoodComponent.Builder().hunger(2).saturationModifier(1f).snack().build())
-					.rarity(Rarity.UNCOMMON));
+					.rarity(Rarity.UNCOMMON),
+			new Config().setName("avocado").setTooltipEnabled(true)
+					.setUseSound(MoonlightSoundEvents.ITEM_AVOCADO_JINGLE));
 
-	public static final MoonlightItem BANANA = new MoonlightItem(new Config().setName("banana").setTooltipEnabled(true),
+	/** Banana item */
+	public static final MoonlightItem BANANA = new MoonlightItem(
 			new Settings()
 					.food(new FoodComponent.Builder().hunger(2).saturationModifier(1f).snack().alwaysEdible().build())
-					.rarity(Rarity.UNCOMMON));
+					.rarity(Rarity.UNCOMMON),
+			new Config().setName("banana").setTooltipEnabled(true));
 
+	/** Cheese item */
 	public static final MoonlightItem CHEESE = new MoonlightItem(
-			new Config().setName("cheese").setTooltipEnabled(true),
 			new Settings().food(new FoodComponent.Builder().hunger(1).saturationModifier(1f).snack().build())
-					.rarity(Rarity.UNCOMMON));
+					.rarity(Rarity.UNCOMMON),
+			new Config().setName("cheese").setTooltipEnabled(true));
 
+	/** Cheese and crackers item */
 	public static final MoonlightItem CHEESE_AND_CRACKERS = new MoonlightItem(
-			new Config().setName("cheese_and_crackers").setTooltipEnabled(true),
 			new Settings().food(new FoodComponent.Builder().hunger(4).saturationModifier(1f).build())
-					.rarity(Rarity.UNCOMMON));
+					.rarity(Rarity.UNCOMMON),
+			new Config().setName("cheese_and_crackers").setTooltipEnabled(true));
 
+	/** Cheese block item */
 	public static final MoonlightBlockItem CHEESE_BLOCK = new MoonlightBlockItem(
-			new Config().setName("cheese_block").setTooltipEnabled(true), MoonlightBlocks.CHEESE_BLOCK,
-			new Settings().rarity(Rarity.UNCOMMON));
+			MoonlightBlocks.CHEESE_BLOCK,
+			new Settings().rarity(Rarity.UNCOMMON),
+			new Config().setName("cheese_block").setTooltipEnabled(true));
 
+	/** Cheese steak item */
 	public static final MoonlightItem CHEESE_STEAK = new MoonlightItem(
-			new Config().setName("cheese_steak").setTooltipEnabled(true),
 			new Settings().food(new FoodComponent.Builder().hunger(10).saturationModifier(0.625f).meat().build())
-					.rarity(Rarity.UNCOMMON));
+					.rarity(Rarity.UNCOMMON),
+			new Config().setName("cheese_steak").setTooltipEnabled(true));
 
+	/** Cheesy baked potato item */
 	public static final MoonlightItem CHEESY_BAKED_POTATO = new MoonlightItem(
-			new Config().setName("cheesy_baked_potato").setTooltipEnabled(true),
 			new Settings().food(new FoodComponent.Builder().hunger(6).saturationModifier(0.875f).build())
-					.rarity(Rarity.COMMON));
+					.rarity(Rarity.COMMON),
+			new Config().setName("cheesy_baked_potato").setTooltipEnabled(true));
 
+	/** Cracker item */
 	public static final MoonlightItem CRACKER = new MoonlightItem(
-			new Config().setName("cracker").setTooltipEnabled(true),
 			new Settings().maxCount(16)
 					.food(new FoodComponent.Builder().hunger(1).saturationModifier(0.75f).snack().build())
-					.rarity(Rarity.COMMON));
+					.rarity(Rarity.COMMON),
+			new Config().setName("cracker").setTooltipEnabled(true));
 
+	/** Grilled cheese item */
 	public static final MoonlightItem GRILLED_CHEESE = new MoonlightItem(
-			new Config().setName("grilled_cheese").setTooltipEnabled(true),
 			new Settings().food(new FoodComponent.Builder().hunger(8).saturationModifier(0.75f).build())
-					.rarity(Rarity.UNCOMMON));
+					.rarity(Rarity.UNCOMMON),
+			new Config().setName("grilled_cheese").setTooltipEnabled(true));
 
+	/** Macaroni and cheese item */
 	public static final MoonlightItem MACARONI_AND_CHEESE = new MoonlightItem(
-			new Config().setName("macaroni_and_cheese").setTooltipEnabled(true),
 			new Settings().food(new FoodComponent.Builder().hunger(5).saturationModifier(1f).build())
-					.rarity(Rarity.UNCOMMON));
+					.rarity(Rarity.UNCOMMON),
+			new Config().setName("macaroni_and_cheese").setTooltipEnabled(true));
 
+	/** Pasta item */
 	public static final MoonlightItem PASTA = new MoonlightItem(
-			new Config().setName("pasta").setTooltipEnabled(true),
 			new Settings().maxCount(16)
 					.food(new FoodComponent.Builder().hunger(1).saturationModifier(0.5f).snack().build())
-					.rarity(Rarity.COMMON));
+					.rarity(Rarity.COMMON),
+			new Config().setName("pasta").setTooltipEnabled(true));
 
+	/** Land core item */
 	public static final MoonlightItem LAND_CORE = new MoonlightItem(
-			new Config().setName("land_core").setTooltipEnabled(true),
-			new Settings().maxCount(1).fireproof().rarity(Rarity.RARE));
+			new Settings().maxCount(1).fireproof().rarity(Rarity.RARE),
+			new Config().setName("land_core").setTooltipEnabled(true));
 
+	/** Sea core item */
 	public static final MoonlightItem SEA_CORE = new MoonlightItem(
-			new Config().setName("sea_core").setTooltipEnabled(true),
-			new Settings().maxCount(1).fireproof().rarity(Rarity.RARE));
+			new Settings().maxCount(1).fireproof().rarity(Rarity.RARE),
+			new Config().setName("sea_core").setTooltipEnabled(true));
 
+	/** Sky core item */
 	public static final MoonlightItem SKY_CORE = new MoonlightItem(
-			new Config().setName("sky_core").setTooltipEnabled(true),
-			new Settings().maxCount(1).fireproof().rarity(Rarity.RARE));
+			new Settings().maxCount(1).fireproof().rarity(Rarity.RARE),
+			new Config().setName("sky_core").setTooltipEnabled(true));
 
+	/** Cave core item */
 	public static final MoonlightItem CAVE_CORE = new MoonlightItem(
-			new Config().setName("cave_core").setTooltipEnabled(true),
-			new Settings().maxCount(1).fireproof().rarity(Rarity.RARE));
+			new Settings().maxCount(1).fireproof().rarity(Rarity.RARE),
+			new Config().setName("cave_core").setTooltipEnabled(true));
 
+	/** Hell core item */
 	public static final MoonlightItem HELL_CORE = new MoonlightItem(
-			new Config().setName("hell_core").setTooltipEnabled(true),
-			new Settings().maxCount(1).fireproof().rarity(Rarity.RARE));
+			new Settings().maxCount(1).fireproof().rarity(Rarity.RARE),
+			new Config().setName("hell_core").setTooltipEnabled(true));
 
-	public static final MoonlightArmorItem[] GLASS_ARMOR = MoonlightArmorItem.set(
-			new MoonlightArmorItem.Material().setName("glass").setDurabilityMod(0),
-			new Config().setName("glass").setGlintEnabled(false).setTooltipEnabled(true),
-			new Settings().rarity(Rarity.COMMON));
+	/** Glass armor set */
+	public static final MoonlightArmorItem[] GLASS_ARMOR = MoonlightArmorItem.createSet(
+			new MoonlightArmorItem.Material().setName("glass").setDurability(0),
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("glass").setGlintEnabled(false).setTooltipEnabled(true));
 
+	/** Modifies an existing built-in loot table */
+	private static void modify_loot(Identifier tableId, LootPool.Builder... builders) {
+		LootTableEvents.MODIFY.register((res, loot, id, table, src) -> {
+			if (!src.isBuiltin()) {
+				return;
+			}
+
+			if (id.equals(tableId)) {
+				for (var builder : builders) {
+					table.pool(builder);
+				}
+			}
+		});
+	}
+
+	/** Registers an armor set */
+	private static void register(MoonlightArmorItem... items) {
+		for (var item : items) {
+			item.register();
+		}
+	}
+
+	/** Registers all items */
 	public static void register() {
 		AVOCADO.register();
 		BANANA.register();
@@ -114,29 +157,13 @@ public class MoonlightItems {
 		CAVE_CORE.register();
 		HELL_CORE.register();
 
-		for (var item : GLASS_ARMOR) {
-			item.register();
-		}
+		register(GLASS_ARMOR);
 
-		Moonlight.LOGGER.info("Registered items");
-
-		LootTableEvents.MODIFY.register((resource, loot, id, table, source) -> {
-			if (!source.isBuiltin()) {
-				return;
-			}
-
-			if (id.equals(Blocks.JUNGLE_LEAVES.getLootTableId())) {
-				var avocado = LootPool.builder()
-						.rolls(BinomialLootNumberProvider.create(1, 0.0125f))
-						.with(ItemEntry.builder(AVOCADO));
-				var banana = LootPool.builder()
-						.rolls(BinomialLootNumberProvider.create(3, 0.0125f))
-						.with(ItemEntry.builder(BANANA));
-
-				table.pool(avocado).pool(banana);
-			}
-		});
-
-		Moonlight.LOGGER.info("Registered loot tables");
+		modify_loot(
+				Blocks.JUNGLE_LEAVES.getLootTableId(),
+				LootPool.builder().rolls(BinomialLootNumberProvider.create(1, 0.0125f))
+						.with(ItemEntry.builder(AVOCADO)),
+				LootPool.builder().rolls(BinomialLootNumberProvider.create(3, 0.0125f))
+						.with(ItemEntry.builder(BANANA)));
 	}
 }

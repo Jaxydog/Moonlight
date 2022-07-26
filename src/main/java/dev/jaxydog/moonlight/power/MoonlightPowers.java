@@ -8,29 +8,28 @@ import io.github.apace100.calio.data.SerializableData;
 import io.github.apace100.calio.data.SerializableDataTypes;
 import net.minecraft.util.registry.Registry;
 
+/** Moonlight power class */
 public class MoonlightPowers {
+	/** Model scale power */
 	public static final PowerFactory<Power> MODEL_SCALE = new PowerFactory<>(
-			Moonlight.Id("model_scale"),
+			Moonlight.id("model_scale"),
 			new SerializableData()
-					.add("width", SerializableDataTypes.FLOAT)
-					.add("height", SerializableDataTypes.FLOAT)
-					.add("scale_reach", SerializableDataTypes.BOOLEAN, false),
+					.add("width", SerializableDataTypes.FLOAT, 1.0f)
+					.add("height", SerializableDataTypes.FLOAT, 1.0f),
 			data -> (type, entity) -> new ModelScale(
 					type,
 					entity,
 					data.getFloat("width"),
-					data.getFloat("height"),
-					data.getBoolean("scale_reach")))
+					data.getFloat("height")))
 			.allowCondition();
 
-	private static void register(PowerFactory<?>... powers) {
-		for (var power : powers) {
-			Registry.register(ApoliRegistries.POWER_FACTORY, power.getSerializerId(), power);
-		}
+	/** Registers a new power factory */
+	private static void register(PowerFactory<?> power) {
+		Registry.register(ApoliRegistries.POWER_FACTORY, power.getSerializerId(), power);
 	}
 
+	/** Registers all power factories */
 	public static void register() {
 		register(MODEL_SCALE);
-		Moonlight.LOGGER.info("Registered powers");
 	}
 }

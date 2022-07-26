@@ -1,10 +1,12 @@
 package dev.jaxydog.moonlight.item;
 
 import java.util.List;
+
 import dev.jaxydog.moonlight.Moonlight;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -18,30 +20,33 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 
+/** Item wrapper class */
 public class MoonlightItem extends Item {
 	private final Config CONFIG;
 
-	public MoonlightItem(Config config, Settings settings) {
+	public MoonlightItem(Settings settings, Config config) {
 		super(settings.group(Config.DEFAULT_GROUP));
-		this.CONFIG = config;
+		CONFIG = config;
 	}
 
-	public Identifier Id() {
-		return Moonlight.Id(CONFIG.getName());
+	/** Returns the item's identifier */
+	public Identifier getId() {
+		return Moonlight.id(CONFIG.getName());
 	}
 
+	/** Registers the item */
 	public MoonlightItem register() {
-		return Registry.register(Registry.ITEM, this.Id(), this);
+		return Registry.register(Registry.ITEM, this.getId(), this);
 	}
 
 	@Override
 	public boolean hasGlint(ItemStack stack) {
-		return CONFIG.getGlintForced() || (CONFIG.getGlintEnabled() && super.hasGlint(stack));
+		return CONFIG.isGlintEnabled() && (CONFIG.isGlintForced() || super.hasGlint(stack));
 	}
 
 	@Override
 	public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
-		if (CONFIG.getTooltipEnabled()) {
+		if (CONFIG.isTooltipEnabled()) {
 			var key = "item." + Moonlight.MOD_ID + "." + CONFIG.getName() + ".tooltip";
 			tooltip.add(Text.translatable(key).formatted(Formatting.GRAY));
 		}
@@ -52,16 +57,18 @@ public class MoonlightItem extends Item {
 	@Override
 	public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
 		if (CONFIG.getUseSound() != null) {
-			var pitch = (float) ((Math.random() * (Config.PITCH_RANGE * 2)) - Config.PITCH_RANGE);
+			var pitch = (float) (Math.random() * (Config.PITCH_RANGE * 2)) - Config.PITCH_RANGE;
+
 			world.playSound(
 					null,
 					user.getBlockPos(),
 					CONFIG.getUseSound(),
 					SoundCategory.PLAYERS,
-					Config.DEFAULT_VOLUME, 1 - pitch);
+					Config.DEFAULT_VOLUME, pitch);
 		}
 
-		for (var effect : CONFIG.getUseEffects().clone()) {
+		for (var status : CONFIG.getUseEffects()) {
+			var effect = new StatusEffectInstance(status);
 			user.addStatusEffect(effect, null);
 		}
 
@@ -69,80 +76,97 @@ public class MoonlightItem extends Item {
 	}
 
 	public static class Config {
-		public static final float DEFAULT_VOLUME = 0.25f;
-		public static final float PITCH_RANGE = 0.25f;
+		/** Default item group */
 		public static final ItemGroup DEFAULT_GROUP = FabricItemGroupBuilder.build(
-				Moonlight.Id("main"),
-				() -> Items.END_STONE.getDefaultStack());
+				Moonlight.id("general"),
+				() -> Items.OBSIDIAN.getDefaultStack());
+		/** Default volume for sounds created by items */
+		public static float DEFAULT_VOLUME = 0.25f;
+		/** Default pitch variance for sounds created by items */
+		public static float PITCH_RANGE = 0.125f;
 
 		private String name;
 		private boolean enableGlint = true;
 		private boolean forceGlint = false;
 		private boolean tooltip = false;
-		private SoundEvent sound;
-		private StatusEffectInstance[] effects = {};
+		private SoundEvent useSound;
+		private StatusEffect[] useEffect = {};
 
+		/** Clones the configuration */
 		public Config clone() {
-			return new Config()
-					.setName(this.name)
-					.setGlintEnabled(this.enableGlint)
-					.setGlintForced(this.forceGlint)
-					.setTooltipEnabled(this.tooltip)
-					.setUseSound(this.sound)
-					.setUseEffects(this.effects);
+			var cfg = new Config();
+			cfg.name = name;
+			cfg.enableGlint = enableGlint;
+			cfg.forceGlint = forceGlint;
+			cfg.tooltip = tooltip;
+			cfg.useSound = useSound;
+			cfg.useEffect = useEffect;
+			return cfg;
 		}
 
+		/** Returns the item's name */
 		public String getName() {
-			return this.name;
+			return name;
 		}
 
-		public Config setName(String value) {
-			this.name = value;
+		/** Sets the item's name */
+		public Config setName(String name) {
+			this.name = name;
 			return this;
 		}
 
-		public boolean getGlintEnabled() {
-			return this.enableGlint;
+		/** Returns whether enchantment glint is enabled on the item */
+		public boolean isGlintEnabled() {
+			return enableGlint;
 		}
 
-		public Config setGlintEnabled(boolean value) {
-			this.enableGlint = value;
+		/** Sets whether enchantment glint is enabled on the item */
+		public Config setGlintEnabled(boolean enable) {
+			this.enableGlint = enable;
 			return this;
 		}
 
-		public boolean getGlintForced() {
-			return this.forceGlint;
+		/** Returns whether enchantment glint is forced on the item */
+		public boolean isGlintForced() {
+			return forceGlint;
 		}
 
-		public Config setGlintForced(boolean value) {
-			this.forceGlint = value;
+		/** Sets whether enchantment glint is forced on the item */
+		public Config setGlintForced(boolean force) {
+			this.forceGlint = force;
 			return this;
 		}
 
-		public boolean getTooltipEnabled() {
-			return this.tooltip;
+		/** Returns whether the item has a custom tooltip enabled */
+		public boolean isTooltipEnabled() {
+			return tooltip;
 		}
 
-		public Config setTooltipEnabled(boolean value) {
-			this.tooltip = value;
+		/** Sets whether the item has a custom tooltip enabled */
+		public Config setTooltipEnabled(boolean enabled) {
+			this.tooltip = enabled;
 			return this;
 		}
 
+		/** Returns the sound that plays when the item is used */
 		public SoundEvent getUseSound() {
-			return this.sound;
+			return useSound;
 		}
 
-		public Config setUseSound(SoundEvent value) {
-			this.sound = value;
+		/** Sets the sound that plays when the item is used */
+		public Config setUseSound(SoundEvent sound) {
+			this.useSound = sound;
 			return this;
 		}
 
-		public StatusEffectInstance[] getUseEffects() {
-			return this.effects;
+		/** Returns the effects given when the item is used */
+		public StatusEffect[] getUseEffects() {
+			return useEffect;
 		}
 
-		public Config setUseEffects(StatusEffectInstance[] value) {
-			this.effects = value;
+		/** Sets the effects given when the item is used */
+		public Config setUseEffects(StatusEffect... effects) {
+			this.useEffect = effects;
 			return this;
 		}
 	}

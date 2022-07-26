@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 
 import dev.jaxydog.moonlight.block.MoonlightBlocks;
 import dev.jaxydog.moonlight.item.MoonlightItems;
-import dev.jaxydog.moonlight.power.MoonlightActions;
 import dev.jaxydog.moonlight.power.MoonlightConditions;
 import dev.jaxydog.moonlight.power.MoonlightPowers;
 import net.fabricmc.api.ModInitializer;
@@ -15,7 +14,7 @@ public class Moonlight implements ModInitializer {
 	public static final String MOD_ID = "moonlight";
 	public static final Logger LOGGER = LoggerFactory.getLogger("Moonlight");
 
-	public static Identifier Id(String name) {
+	public static Identifier id(String name) {
 		return new Identifier(MOD_ID, name);
 	}
 
@@ -25,7 +24,6 @@ public class Moonlight implements ModInitializer {
 		MoonlightBlocks.register();
 		MoonlightItems.register();
 		MoonlightConditions.register();
-		MoonlightActions.register();
 		MoonlightPowers.register();
 		LOGGER.info("Loaded Moonlight! Thanks for playing :)");
 	}

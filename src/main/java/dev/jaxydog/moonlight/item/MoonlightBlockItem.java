@@ -14,30 +14,33 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 
+/** Block item wrapper class */
 public class MoonlightBlockItem extends BlockItem {
 	private final Config CONFIG;
 
-	public MoonlightBlockItem(Config config, Block block, Settings settings) {
-		super(block, settings.group(Config.DEFAULT_GROUP));
-		this.CONFIG = config;
+	public MoonlightBlockItem(Block block, Settings settings, Config config) {
+		super(block, settings);
+		CONFIG = config;
 	}
 
-	public Identifier Id() {
-		return Moonlight.Id(CONFIG.getName());
+	/** Returns the block item's identifier */
+	public Identifier getId() {
+		return Moonlight.id(CONFIG.getName());
 	}
 
+	/** Registers the block item */
 	public MoonlightBlockItem register() {
-		return Registry.register(Registry.ITEM, this.Id(), this);
+		return Registry.register(Registry.ITEM, this.getId(), this);
 	}
 
 	@Override
 	public boolean hasGlint(ItemStack stack) {
-		return CONFIG.getGlintForced() || (CONFIG.getGlintEnabled() && super.hasGlint(stack));
+		return CONFIG.isGlintEnabled() && (CONFIG.isGlintForced() || super.hasGlint(stack));
 	}
 
 	@Override
 	public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
-		if (CONFIG.getTooltipEnabled()) {
+		if (CONFIG.isTooltipEnabled()) {
 			var key = "item." + Moonlight.MOD_ID + "." + CONFIG.getName() + ".tooltip";
 			tooltip.add(Text.translatable(key).formatted(Formatting.GRAY));
 		}

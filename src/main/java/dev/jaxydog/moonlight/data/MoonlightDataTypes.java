@@ -4,12 +4,12 @@ import io.github.apace100.calio.SerializationHelper;
 import io.github.apace100.calio.data.SerializableDataType;
 
 public class MoonlightDataTypes {
-	public static final SerializableDataType<ComparisonType> COMPARISON_VALUE_TYPE = SerializableDataType.enumValue(
-			ComparisonType.class,
-			SerializationHelper.buildEnumMap(ComparisonType.class, ComparisonType::getType));
-	public static final SerializableDataType<AxisType> AXIS_TYPE = SerializableDataType.enumValue(
-			AxisType.class,
-			SerializationHelper.buildEnumMap(AxisType.class, AxisType::getType));
+	/** Value type data type */
+	public static final SerializableDataType<ValueType> VALUE_TYPE = SerializableDataType.enumValue(
+			ValueType.class,
+			SerializationHelper.buildEnumMap(ValueType.class, ValueType::getType));
+
+	/** Moon phase data type */
 	public static final SerializableDataType<MoonPhaseType> MOON_PHASE = SerializableDataType.enumValue(
 			MoonPhaseType.class,
 			SerializationHelper.buildEnumMap(MoonPhaseType.class, MoonPhaseType::getType));
