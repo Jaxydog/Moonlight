@@ -79,7 +79,7 @@ public class MoonlightItem extends Item {
 		/** Default item group */
 		public static final ItemGroup DEFAULT_GROUP = FabricItemGroupBuilder.build(
 				Moonlight.id("general"),
-				() -> Items.OBSIDIAN.getDefaultStack());
+				() -> Items.END_STONE.getDefaultStack());
 		/** Default volume for sounds created by items */
 		public static float DEFAULT_VOLUME = 0.25f;
 		/** Default pitch variance for sounds created by items */
