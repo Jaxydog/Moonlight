@@ -1,0 +1,1 @@
+playsound minecraft:entity.warden.agitated player @s ~ ~ ~ 0.5 2

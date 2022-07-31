@@ -1,0 +1,7 @@
+{
+    "name": "power.moonlight.blood_stalker.size.name",
+    "description": "power.moonlight.blood_stalker.size.description",
+    "type": "moonlight:model_scale",
+    "width": 0.45,
+    "height": 0.45
+}

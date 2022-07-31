@@ -1,0 +1,239 @@
+{
+    "name": "power.moonlight.blood_stalker.grapple.name",
+    "description": "power.moonlight.blood_stalker.grapple.description",
+    "type": "origins:multiple",
+    "cooldown": {
+        "type": "origins:cooldown",
+        "cooldown": 600,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+            "bar_index": 9,
+            "inverted": true,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "moonlight:blood_stalker/grapple_cooldown",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        }
+    },
+    "duration": {
+        "type": "origins:cooldown",
+        "cooldown": 60,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 1,
+            "inverted": true,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "moonlight:blood_stalker/grapple_duration",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "moonlight:blood_stalker/grapple_timer",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            }
+        }
+    },
+    "timer": {
+        "type": "origins:cooldown",
+        "cooldown": 60,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+            "bar_index": 22,
+            "inverted": true,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "moonlight:blood_stalker/grapple_timer",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        }
+    },
+    "cooldown_trigger": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "falling_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:trigger_cooldown",
+                    "power": "moonlight:blood_stalker/grapple_cooldown"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "function moonlight:blood_stalker/grapple_drop"
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "moonlight:blood_stalker/grapple_duration",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "moonlight:blood_stalker/grapple_timer",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        }
+    },
+    "duration_trigger": {
+        "type": "origins:active_self",
+        "cooldown": 5,
+        "entity_action": {
+            "type": "origins:trigger_cooldown",
+            "power": "moonlight:blood_stalker/grapple_duration"
+        },
+        "key": {
+            "key": "key.origins.primary_active"
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "moonlight:blood_stalker/grapple_cooldown",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "moonlight:blood_stalker/grapple_duration",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "moonlight:blood_stalker/grapple_timer",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
+        }
+    },
+    "timer_trigger": {
+        "type": "origins:action_on_hit",
+        "cooldown": 1,
+        "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "function moonlight:blood_stalker/grapple_grab"
+                    }
+                },
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "moonlight:blood_stalker/grapple_duration",
+                                "operation": "set",
+                                "change": 0
+                            },
+                            {
+                                "type": "origins:trigger_cooldown",
+                                "power": "moonlight:blood_stalker/grapple_timer"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:empty"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:target_condition",
+                    "condition": {
+                        "type": "origins:in_tag",
+                        "tag": "moonlight:blood_stalker/no_blood",
+                        "inverted": true
+                    }
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "moonlight:blood_stalker/grapple_duration",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:command",
+                    "command": "execute if entity @e[tag=bloodStalkerGrapple]",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
+        }
+    },
+    "dot": {
+        "type": "origins:action_over_time",
+        "interval": 15,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function moonlight:blood_stalker/grapple_hurt"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "moonlight:blood_stalker/blood_fill_20",
+                    "operation": "set",
+                    "change": 1
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "moonlight:blood_stalker/grapple_timer",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:command",
+                    "command": "execute if entity @e[tag=bloodStalkerGrapple]",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        }
+    }
+}

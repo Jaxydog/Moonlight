@@ -1,0 +1,25 @@
+{
+    "name": "power.moonlight.blood_stalker.climb.name",
+    "description": "power.moonlight.blood_stalker.climb.description",
+    "type": "origins:climbing",
+    "hold_condition": {
+        "type": "origins:or",
+        "conditions": [
+            {
+                "type": "origins:block_collision",
+                "offset_x": 0.01,
+                "offset_y": 0.01,
+                "offset_z": 0
+            },
+            {
+                "type": "origins:block_collision",
+                "offset_x": -0.01,
+                "offset_y": -0.01,
+                "offset_z": 0
+            }
+        ]
+    },
+    "condition": {
+        "type": "origins:collided_horizontally"
+    }
+}

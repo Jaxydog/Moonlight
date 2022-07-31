@@ -1,0 +1,105 @@
+{
+    "name": "power.moonlight.blood_stalker.sling.name",
+    "description": "power.moonlight.blood_stalker.sling.description",
+    "type": "origins:multiple",
+    "cooldown": {
+        "type": "origins:cooldown",
+        "cooldown": 100,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+            "bar_index": 12
+        }
+    },
+    "block": {
+        "type": "origins:active_self",
+        "cooldown": 10,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:trigger_cooldown",
+                    "power": "moonlight:blood_stalker/sling_cooldown"
+                },
+                {
+                    "type": "origins:raycast",
+                    "distance": 55,
+                    "block": true,
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "any",
+                    "command_along_ray": "particle minecraft:spit ~ ~ ~ 0 0 0 0 20 normal",
+                    "command_at_hit": "function bug:swingweb",
+                    "hit_action": {
+                        "type": "origins:add_velocity",
+                        "space": "local",
+                        "z": 4
+                    }
+                }
+            ]
+        },
+        "key": {
+            "key": "key.origins.secondary_active"
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "moonlight:blood_stalker/sling_cooldown",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:sneaking",
+                    "inverted": true
+                }
+            ]
+        }
+    },
+    "entity": {
+        "type": "origins:active_self",
+        "cooldown": 10,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:trigger_cooldown",
+                    "power": "moonlight:blood_stalker/sling_cooldown"
+                },
+                {
+                    "type": "origins:raycast",
+                    "distance": 55,
+                    "block": false,
+                    "entity": true,
+                    "shape_type": "collider",
+                    "fluid_handling": "any",
+                    "bientity_action": {
+                        "type": "origins:add_velocity",
+                        "client": false,
+                        "set": true,
+                        "z": -2
+                    },
+                    "command_along_ray": "particle minecraft:spit ~ ~ ~ 0 0 0 0 20 normal",
+                    "command_at_hit": "function bug:swingweb"
+                }
+            ]
+        },
+        "key": {
+            "key": "key.origins.secondary_active"
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "moonlight:blood_stalker/sling_cooldown",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:sneaking"
+                }
+            ]
+        }
+    }
+}

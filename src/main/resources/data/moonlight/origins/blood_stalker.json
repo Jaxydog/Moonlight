@@ -1,0 +1,15 @@
+{
+    "name": "origin.moonlight.blood_stalker.name",
+    "description": "origin.moonlight.blood_stalker.description",
+    "icon": "minecraft:red_dye",
+    "impact": 3,
+    "unchoosable": true,
+    "powers": [
+        "moonlight:blood_stalker/armor",
+        "moonlight:blood_stalker/blood",
+        "moonlight:blood_stalker/climb",
+        "moonlight:blood_stalker/grapple",
+        "moonlight:blood_stalker/size",
+        "moonlight:blood_stalker/sling"
+    ]
+}

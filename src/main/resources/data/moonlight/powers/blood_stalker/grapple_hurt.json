@@ -1,0 +1,22 @@
+{
+    "hidden": true,
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:damage",
+                "amount": 2,
+                "source": {
+                    "name": "bloodStalkerSuck",
+                    "bypasses_armor": true,
+                    "unblockable": true
+                }
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "power revoke @e[sort=nearest,limit=1,tag=bloodStalkerGrapple] moonlight:blood_stalker/grapple_hurt"
+            }
+        ]
+    }
+}

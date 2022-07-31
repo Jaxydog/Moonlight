@@ -1,6 +1,9 @@
 {
 	"block.moonlight.cheese_block": "Cheese Block",
+	"death.attack.cowStomp": "%1$s was killed by a shockwave",
 	"death.attack.cowStomp.player": "%1$s was killed by %2$s's shockwave",
+	"death.attack.bloodStalkerSuck": "%1$s was drained of their blood",
+	"death.attack.bloodStalkerSuck.player": "%1$s was drained of their blood by %2$s",
 	"item.moonlight.avocado.tooltip": "It's probably from Mexico...",
 	"item.moonlight.avocado": "Avocado",
 	"item.moonlight.banana_bread.tooltip": "Maybe you should check the statues...",

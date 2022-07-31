@@ -1,0 +1,1 @@
+playsound minecraft:entity.cat.hiss player @s ~ ~ ~ 0.7 2
