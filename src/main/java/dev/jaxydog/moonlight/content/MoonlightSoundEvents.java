@@ -1,5 +1,6 @@
-package dev.jaxydog.moonlight;
+package dev.jaxydog.moonlight.content;
 
+import dev.jaxydog.moonlight.Moonlight;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.registry.Registry;
 

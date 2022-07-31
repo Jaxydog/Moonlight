@@ -15,6 +15,7 @@
 	},
 	"rewards": {
 		"recipes": [
+			"moonlight:banana_bread",
 			"moonlight:cracker",
 			"moonlight:pasta"
 		]

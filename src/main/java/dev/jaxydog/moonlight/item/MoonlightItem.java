@@ -6,12 +6,10 @@ import dev.jaxydog.moonlight.Moonlight;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.Text;
@@ -68,8 +66,7 @@ public class MoonlightItem extends Item {
 		}
 
 		for (var status : CONFIG.getUseEffects()) {
-			var effect = new StatusEffectInstance(status);
-			user.addStatusEffect(effect, null);
+			user.addStatusEffect(status, null);
 		}
 
 		return super.finishUsing(stack, world, user);
@@ -79,7 +76,7 @@ public class MoonlightItem extends Item {
 		/** Default item group */
 		public static final ItemGroup DEFAULT_GROUP = FabricItemGroupBuilder.build(
 				Moonlight.id("general"),
-				() -> Items.END_STONE.getDefaultStack());
+				() -> MoonlightItems.ICON.getDefaultStack());
 		/** Default volume for sounds created by items */
 		public static float DEFAULT_VOLUME = 0.25f;
 		/** Default pitch variance for sounds created by items */
@@ -90,7 +87,7 @@ public class MoonlightItem extends Item {
 		private boolean forceGlint = false;
 		private boolean tooltip = false;
 		private SoundEvent useSound;
-		private StatusEffect[] useEffect = {};
+		private StatusEffectInstance[] useEffect = {};
 
 		/** Clones the configuration */
 		public Config clone() {
@@ -160,12 +157,12 @@ public class MoonlightItem extends Item {
 		}
 
 		/** Returns the effects given when the item is used */
-		public StatusEffect[] getUseEffects() {
+		public StatusEffectInstance[] getUseEffects() {
 			return useEffect;
 		}
 
 		/** Sets the effects given when the item is used */
-		public Config setUseEffects(StatusEffect... effects) {
+		public Config setUseEffects(StatusEffectInstance... effects) {
 			this.useEffect = effects;
 			return this;
 		}

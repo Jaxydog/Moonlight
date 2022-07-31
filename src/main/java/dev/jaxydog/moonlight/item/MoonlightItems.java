@@ -1,7 +1,7 @@
 package dev.jaxydog.moonlight.item;
 
-import dev.jaxydog.moonlight.MoonlightSoundEvents;
 import dev.jaxydog.moonlight.block.MoonlightBlocks;
+import dev.jaxydog.moonlight.content.MoonlightSoundEvents;
 import dev.jaxydog.moonlight.item.MoonlightItem.Config;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.block.Blocks;
@@ -15,6 +15,10 @@ import net.minecraft.util.Rarity;
 
 /** Moonlight item class */
 public class MoonlightItems {
+	/** Icon item */
+	public static final MoonlightItem ICON = new MoonlightItem(new Settings().maxCount(1).rarity(Rarity.RARE),
+			new Config().setName("icon"));
+
 	/** Avocado item */
 	public static final MoonlightItem AVOCADO = new MoonlightItem(
 			new Settings().food(new FoodComponent.Builder().hunger(2).saturationModifier(1f).snack().build())
@@ -28,6 +32,12 @@ public class MoonlightItems {
 					.food(new FoodComponent.Builder().hunger(2).saturationModifier(1f).snack().alwaysEdible().build())
 					.rarity(Rarity.UNCOMMON),
 			new Config().setName("banana").setTooltipEnabled(true));
+
+	/** Banana bread item */
+	public static final MoonlightItem BANANA_BREAD = new MoonlightItem(
+			new Settings().food(new FoodComponent.Builder().hunger(6).saturationModifier(1f).build())
+					.rarity(Rarity.UNCOMMON),
+			new Config().setName("banana_bread").setTooltipEnabled(true));
 
 	/** Cheese item */
 	public static final MoonlightItem CHEESE = new MoonlightItem(
@@ -56,7 +66,7 @@ public class MoonlightItems {
 	/** Cheesy baked potato item */
 	public static final MoonlightItem CHEESY_BAKED_POTATO = new MoonlightItem(
 			new Settings().food(new FoodComponent.Builder().hunger(6).saturationModifier(0.875f).build())
-					.rarity(Rarity.COMMON),
+					.rarity(Rarity.UNCOMMON),
 			new Config().setName("cheesy_baked_potato").setTooltipEnabled(true));
 
 	/** Cracker item */
@@ -84,6 +94,10 @@ public class MoonlightItems {
 					.food(new FoodComponent.Builder().hunger(1).saturationModifier(0.5f).snack().build())
 					.rarity(Rarity.COMMON),
 			new Config().setName("pasta").setTooltipEnabled(true));
+
+	public static final MoonlightItem BLOOD_BOTTLE = new MoonlightItem(
+			new Settings().maxCount(16).rarity(Rarity.EPIC),
+			new Config().setName("blood_bottle").setTooltipEnabled(true));
 
 	/** Land core item */
 	public static final MoonlightItem LAND_CORE = new MoonlightItem(
@@ -140,8 +154,10 @@ public class MoonlightItems {
 
 	/** Registers all items */
 	public static void register() {
+		ICON.register();
 		AVOCADO.register();
 		BANANA.register();
+		BANANA_BREAD.register();
 		CHEESE.register();
 		CHEESE_AND_CRACKERS.register();
 		CHEESE_BLOCK.register();
@@ -151,6 +167,7 @@ public class MoonlightItems {
 		GRILLED_CHEESE.register();
 		MACARONI_AND_CHEESE.register();
 		PASTA.register();
+		BLOOD_BOTTLE.register();
 		LAND_CORE.register();
 		SEA_CORE.register();
 		SKY_CORE.register();
