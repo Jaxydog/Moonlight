@@ -13,5 +13,10 @@
 				"command": "function moonlight:moobloom/regen"
 			}
 		}
+	},
+	"condition": {
+		"type": "origins:gamemode",
+		"gamemode": "spectator",
+		"inverted": true
 	}
 }
