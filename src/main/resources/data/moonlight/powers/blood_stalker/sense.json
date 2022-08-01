@@ -1,0 +1,76 @@
+{
+    "name": "power.moonlight.blood_stalker.sense.name",
+    "description": "power.moonlight.blood_stalker.sense.description",
+    "type": "origins:multiple",
+    "blind_active": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "blind_update": {
+        "type": "apoli:action_over_time",
+        "interval": 2,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:daytime"
+                    },
+                    {
+                        "type": "origins:brightness",
+                        "comparison": ">",
+                        "compare_to": 0.18
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "moonlight:blood_stalker/sense_blind_active",
+                "operation": "set",
+                "change": 1
+            },
+            "else_action": {
+                "type": "origins:change_resource",
+                "resource": "moonlight:blood_stalker/sense_blind_active",
+                "operation": "set",
+                "change": 0
+            }
+        },
+        "condition": {
+            "type": "origins:gamemode",
+            "gamemode": "spectator",
+            "inverted": true
+        }
+    },
+    "blind_shader": {
+        "type": "origins:shader",
+        "shader": "minecraft:shaders/post/sobel.json",
+        "condition": {
+            "type": "origins:resource",
+            "resource": "moonlight:blood_stalker/sense_blind_active",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "glow": {
+        "type": "origins:entity_glow",
+        "use_teams": false,
+        "red": 0.8,
+        "green": 0.1,
+        "blue": 0.1,
+        "bientity_condition": {
+            "type": "apoli:distance",
+            "comparison": "<=",
+            "compare_to": 8
+        },
+        "condition": {
+            "type": "origins:daytime",
+            "inverted": true
+        }
+    }
+}
