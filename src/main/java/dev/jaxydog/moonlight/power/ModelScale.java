@@ -26,8 +26,8 @@ public class ModelScale extends Power {
 		var width = builder.type(ScaleTypes.WIDTH).build();
 		var height = builder.type(ScaleTypes.HEIGHT).build();
 
-		width.setTargetScale(isActive() ? WIDTH : 1);
-		height.setTargetScale(isActive() ? HEIGHT : 1);
+		width.setScale(isActive() ? WIDTH : 1);
+		height.setScale(isActive() ? HEIGHT : 1);
 
 		super.tick();
 	}
