@@ -1,29 +1,41 @@
 {
     "name": "power.moonlight.blood_stalker.armor.name",
     "description": "power.moonlight.blood_stalker.armor.description",
-    "type": "origins:restrict_armor",
-    "head": {
-        "type": "origins:ingredient",
-        "ingredient": {
-            "item": "minecraft:netherite_helmet"
+    "type": "origins:multiple",
+    "armor": {
+        "type": "origins:restrict_armor",
+        "head": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:netherite_helmet"
+            }
+        },
+        "chest": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:netherite_chestplate"
+            }
+        },
+        "legs": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:netherite_leggings"
+            }
+        },
+        "feet": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:netherite_boots"
+            }
         }
     },
-    "chest": {
-        "type": "origins:ingredient",
-        "ingredient": {
-            "item": "minecraft:netherite_chestplate"
-        }
-    },
-    "legs": {
-        "type": "origins:ingredient",
-        "ingredient": {
-            "item": "minecraft:netherite_leggings"
-        }
-    },
-    "feet": {
-        "type": "origins:ingredient",
-        "ingredient": {
-            "item": "minecraft:netherite_boots"
+    "shield": {
+        "type": "origins:prevent_item_use",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:shield"
+            }
         }
     }
 }

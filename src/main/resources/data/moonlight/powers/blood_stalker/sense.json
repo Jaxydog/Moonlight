@@ -64,9 +64,9 @@
         "green": 0.1,
         "blue": 0.1,
         "bientity_condition": {
-            "type": "apoli:distance",
+            "type": "origins:distance",
             "comparison": "<=",
-            "compare_to": 8
+            "compare_to": 15
         },
         "condition": {
             "type": "origins:daytime",

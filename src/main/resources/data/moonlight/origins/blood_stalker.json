@@ -1,7 +1,7 @@
 {
     "name": "origin.moonlight.blood_stalker.name",
     "description": "origin.moonlight.blood_stalker.description",
-    "icon": "minecraft:red_dye",
+    "icon": "moonlight:blood_bottle",
     "impact": 3,
     "unchoosable": true,
     "powers": [
