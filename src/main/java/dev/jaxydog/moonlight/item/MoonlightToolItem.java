@@ -5,6 +5,7 @@ import java.util.List;
 import dev.jaxydog.moonlight.Moonlight;
 import dev.jaxydog.moonlight.item.MoonlightItem.Config;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.ItemConvertible;
@@ -55,6 +56,19 @@ public class MoonlightToolItem extends ToolItem {
         super.appendTooltip(stack, world, tooltip, context);
     }
 
+    @Override
+    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+        if (CONFIG.getInventoryTick() != null) {
+            var result = CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected);
+
+            if (!result) {
+                return;
+            }
+        }
+
+        super.inventoryTick(stack, world, entity, slot, selected);
+    }
+
     /** Sword item wrapper class */
     public static class Sword extends SwordItem {
         private final Config CONFIG;
@@ -87,6 +101,19 @@ public class MoonlightToolItem extends ToolItem {
             }
 
             super.appendTooltip(stack, world, tooltip, context);
+        }
+
+        @Override
+        public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+            if (CONFIG.getInventoryTick() != null) {
+                var result = CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected);
+
+                if (!result) {
+                    return;
+                }
+            }
+
+            super.inventoryTick(stack, world, entity, slot, selected);
         }
     }
 
@@ -123,6 +150,19 @@ public class MoonlightToolItem extends ToolItem {
 
             super.appendTooltip(stack, world, tooltip, context);
         }
+
+        @Override
+        public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+            if (CONFIG.getInventoryTick() != null) {
+                var result = CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected);
+
+                if (!result) {
+                    return;
+                }
+            }
+
+            super.inventoryTick(stack, world, entity, slot, selected);
+        }
     }
 
     /** Pickaxe item wrapper class */
@@ -157,6 +197,19 @@ public class MoonlightToolItem extends ToolItem {
             }
 
             super.appendTooltip(stack, world, tooltip, context);
+        }
+
+        @Override
+        public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+            if (CONFIG.getInventoryTick() != null) {
+                var result = CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected);
+
+                if (!result) {
+                    return;
+                }
+            }
+
+            super.inventoryTick(stack, world, entity, slot, selected);
         }
     }
 
@@ -193,6 +246,19 @@ public class MoonlightToolItem extends ToolItem {
 
             super.appendTooltip(stack, world, tooltip, context);
         }
+
+        @Override
+        public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+            if (CONFIG.getInventoryTick() != null) {
+                var result = CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected);
+
+                if (!result) {
+                    return;
+                }
+            }
+
+            super.inventoryTick(stack, world, entity, slot, selected);
+        }
     }
 
     /** Hoe item wrapper class */
@@ -227,6 +293,19 @@ public class MoonlightToolItem extends ToolItem {
             }
 
             super.appendTooltip(stack, world, tooltip, context);
+        }
+
+        @Override
+        public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+            if (CONFIG.getInventoryTick() != null) {
+                var result = CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected);
+
+                if (!result) {
+                    return;
+                }
+            }
+
+            super.inventoryTick(stack, world, entity, slot, selected);
         }
     }
 

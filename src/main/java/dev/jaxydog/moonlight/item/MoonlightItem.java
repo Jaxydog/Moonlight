@@ -2,9 +2,13 @@ package dev.jaxydog.moonlight.item;
 
 import java.util.List;
 
+import javax.annotation.Nullable;
+
 import dev.jaxydog.moonlight.Moonlight;
+import dev.jaxydog.moonlight.data.MoonlightDataTypes.PentaFunction;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.Item;
@@ -72,6 +76,19 @@ public class MoonlightItem extends Item {
 		return super.finishUsing(stack, world, user);
 	}
 
+	@Override
+	public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+		if (CONFIG.getInventoryTick() != null) {
+			var result = CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected);
+
+			if (!result) {
+				return;
+			}
+		}
+
+		super.inventoryTick(stack, world, entity, slot, selected);
+	}
+
 	public static class Config {
 		/** Default item group */
 		public static final ItemGroup DEFAULT_GROUP = FabricItemGroupBuilder.build(
@@ -88,6 +105,8 @@ public class MoonlightItem extends Item {
 		private boolean tooltip = false;
 		private SoundEvent useSound;
 		private StatusEffectInstance[] useEffect = {};
+		@Nullable
+		private PentaFunction<ItemStack, World, Entity, Integer, Boolean, Boolean> invTick;
 
 		/** Clones the configuration */
 		public Config clone() {
@@ -164,6 +183,17 @@ public class MoonlightItem extends Item {
 		/** Sets the effects given when the item is used */
 		public Config setUseEffects(StatusEffectInstance... effects) {
 			this.useEffect = effects;
+			return this;
+		}
+
+		/** Returns a function that runs each inventory tick */
+		public @Nullable PentaFunction<ItemStack, World, Entity, Integer, Boolean, Boolean> getInventoryTick() {
+			return invTick;
+		}
+
+		/** Sets a function that runs each inventory tick */
+		public Config setInventoryTick(PentaFunction<ItemStack, World, Entity, Integer, Boolean, Boolean> invTick) {
+			this.invTick = invTick;
 			return this;
 		}
 	}

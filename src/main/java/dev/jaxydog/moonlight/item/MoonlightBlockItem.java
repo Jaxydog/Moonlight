@@ -6,6 +6,7 @@ import dev.jaxydog.moonlight.Moonlight;
 import dev.jaxydog.moonlight.item.MoonlightItem.Config;
 import net.minecraft.block.Block;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
@@ -46,5 +47,18 @@ public class MoonlightBlockItem extends BlockItem {
 		}
 
 		super.appendTooltip(stack, world, tooltip, context);
+	}
+
+	@Override
+	public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+		if (CONFIG.getInventoryTick() != null) {
+			var result = CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected);
+
+			if (!result) {
+				return;
+			}
+		}
+
+		super.inventoryTick(stack, world, entity, slot, selected);
 	}
 }

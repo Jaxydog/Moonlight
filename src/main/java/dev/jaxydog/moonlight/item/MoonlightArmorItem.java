@@ -5,6 +5,7 @@ import java.util.List;
 import dev.jaxydog.moonlight.Moonlight;
 import dev.jaxydog.moonlight.item.MoonlightItem.Config;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -101,6 +102,19 @@ public class MoonlightArmorItem extends ArmorItem {
 		}
 
 		return super.finishUsing(stack, world, user);
+	}
+
+	@Override
+	public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+		if (CONFIG.getInventoryTick() != null) {
+			var result = CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected);
+
+			if (!result) {
+				return;
+			}
+		}
+
+		super.inventoryTick(stack, world, entity, slot, selected);
 	}
 
 	/** Armor material implementation */
