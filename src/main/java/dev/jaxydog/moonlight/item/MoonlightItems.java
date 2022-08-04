@@ -5,7 +5,6 @@ import dev.jaxydog.moonlight.content.MoonlightSoundEvents;
 import dev.jaxydog.moonlight.item.MoonlightItem.Config;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.block.Blocks;
-import net.minecraft.entity.Entity;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item.Settings;
 import net.minecraft.loot.LootPool;
@@ -13,8 +12,6 @@ import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.provider.number.BinomialLootNumberProvider;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
-import virtuoel.pehkui.api.ScaleData;
-import virtuoel.pehkui.api.ScaleTypes;
 
 /** Moonlight item class */
 public class MoonlightItems {
@@ -133,38 +130,6 @@ public class MoonlightItems {
 			new Settings().rarity(Rarity.COMMON),
 			new Config().setName("glass").setGlintEnabled(false).setTooltipEnabled(true));
 
-	public static final MoonlightItem TEST_ITEM = new MoonlightItem(
-			new Settings().rarity(Rarity.COMMON).maxDamage(200),
-			new Config().setName("test_item").setInventoryTick((stack, world, entity, slot, equipped) -> {
-				modifyReach(entity, equipped, 1.5f, 1);
-				return true;
-			}));
-
-	/** Modifies reach; use 0 for entities, 1 for blocks, and 2 for both */
-	private static void modifyReach(Entity entity, boolean equipped, float scale, int type) {
-		var builder = ScaleData.Builder.create().entity(entity);
-
-		switch (type) {
-			case 0: {
-				var reach = builder.type(ScaleTypes.ENTITY_REACH).build();
-				reach.setScale(equipped ? scale : 1);
-				break;
-			}
-			case 1: {
-				var reach = builder.type(ScaleTypes.ENTITY_REACH).build();
-				reach.setScale(equipped ? scale : 1);
-				break;
-			}
-			case 2: {
-				var block = builder.type(ScaleTypes.BLOCK_REACH).build();
-				var entity_ = builder.type(ScaleTypes.ENTITY_REACH).build();
-				block.setScale(equipped ? scale : 1);
-				entity_.setScale(equipped ? scale : 1);
-				break;
-			}
-		}
-	}
-
 	/** Modifies an existing built-in loot table */
 	private static void modifyLoot(Identifier tableId, LootPool.Builder... builders) {
 		LootTableEvents.MODIFY.register((res, loot, id, table, src) -> {
@@ -208,7 +173,6 @@ public class MoonlightItems {
 		SKY_CORE.register();
 		CAVE_CORE.register();
 		HELL_CORE.register();
-		TEST_ITEM.register();
 
 		register(GLASS_ARMOR);
 
