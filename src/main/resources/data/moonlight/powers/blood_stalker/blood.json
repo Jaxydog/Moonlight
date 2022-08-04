@@ -5,7 +5,7 @@
     "resource": {
         "type": "origins:resource",
         "min": 0,
-        "max": 200,
+        "max": 400,
         "hud_render": {
             "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
             "bar_index": 5
@@ -32,7 +32,7 @@
                         "type": "origins:resource",
                         "resource": "moonlight:blood_stalker/blood_resource",
                         "comparison": "<=",
-                        "compare_to": 190
+                        "compare_to": 390
                     },
                     "if_action": {
                         "type": "origins:execute_command",
@@ -73,7 +73,7 @@
                         "type": "origins:resource",
                         "resource": "moonlight:blood_stalker/blood_resource",
                         "comparison": "<=",
-                        "compare_to": 180
+                        "compare_to": 380
                     },
                     "if_action": {
                         "type": "origins:execute_command",
@@ -114,7 +114,7 @@
                         "type": "origins:resource",
                         "resource": "moonlight:blood_stalker/blood_resource",
                         "comparison": "<=",
-                        "compare_to": 150
+                        "compare_to": 350
                     },
                     "if_action": {
                         "type": "origins:execute_command",
@@ -236,7 +236,7 @@
                         "type": "origins:resource",
                         "resource": "moonlight:blood_stalker/blood_resource",
                         "comparison": ">",
-                        "compare_to": 100
+                        "compare_to": 200
                     },
                     "if_action": {
                         "type": "origins:and",
@@ -367,7 +367,7 @@
                     "type": "origins:resource",
                     "resource": "moonlight:blood_stalker/blood_resource",
                     "comparison": "<",
-                    "compare_to": 200
+                    "compare_to": 400
                 }
             ]
         }

@@ -1,7 +1,19 @@
 {
     "name": "power.moonlight.blood_stalker.size.name",
     "description": "power.moonlight.blood_stalker.size.description",
-    "type": "moonlight:model_scale",
-    "width": 0.45,
-    "height": 0.45
+    "type": "origins:multiple",
+    "size": {
+        "type": "moonlight:model_scale",
+        "width": 0.45,
+        "height": 0.45
+    },
+    "health": {
+        "type": "origins:attribute",
+        "update_health": true,
+        "modifier": {
+            "attribute": "minecraft:generic.max_health",
+            "operation": "addition",
+            "value": 2
+        }
+    }
 }

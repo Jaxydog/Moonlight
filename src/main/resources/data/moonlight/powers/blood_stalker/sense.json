@@ -16,7 +16,7 @@
         "entity_action": {
             "type": "origins:if_else",
             "condition": {
-                "type": "origins:or",
+                "type": "origins:and",
                 "conditions": [
                     {
                         "type": "origins:daytime"
