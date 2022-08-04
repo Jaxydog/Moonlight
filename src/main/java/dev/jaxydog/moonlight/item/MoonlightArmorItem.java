@@ -5,6 +5,7 @@ import java.util.List;
 import dev.jaxydog.moonlight.Moonlight;
 import dev.jaxydog.moonlight.item.MoonlightItem.Config;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -74,16 +75,6 @@ public class MoonlightArmorItem extends ArmorItem {
 	}
 
 	@Override
-	public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
-		if (CONFIG.isTooltipEnabled()) {
-			var key = "item." + Moonlight.MOD_ID + "." + CONFIG.getName() + ".tooltip";
-			tooltip.add(Text.translatable(key).formatted(Formatting.GRAY));
-		}
-
-		super.appendTooltip(stack, world, tooltip, context);
-	}
-
-	@Override
 	public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
 		if (CONFIG.getUseSound() != null) {
 			var pitch = (float) (Math.random() * (Config.PITCH_RANGE * 2)) - Config.PITCH_RANGE;
@@ -105,11 +96,21 @@ public class MoonlightArmorItem extends ArmorItem {
 	}
 
 	@Override
+	public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
+		var key = stack.getItem().getTranslationKey() + ".tooltip_";
+		var i = -1;
+
+		while (CONFIG.isTooltipEnabled() && I18n.hasTranslation(key + ++i)) {
+			tooltip.add(Text.translatable(key + i).formatted(Formatting.GRAY));
+		}
+
+		super.appendTooltip(stack, world, tooltip, context);
+	}
+
+	@Override
 	public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
 		if (CONFIG.getInventoryTick() != null) {
-			var result = CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected);
-
-			if (!result) {
+			if (!CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected)) {
 				return;
 			}
 		}

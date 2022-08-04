@@ -5,6 +5,7 @@ import java.util.List;
 import dev.jaxydog.moonlight.Moonlight;
 import dev.jaxydog.moonlight.item.MoonlightItem.Config;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.HoeItem;
@@ -48,9 +49,11 @@ public class MoonlightToolItem extends ToolItem {
 
     @Override
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
-        if (CONFIG.isTooltipEnabled()) {
-            var key = "item." + Moonlight.MOD_ID + "." + CONFIG.getName() + ".tooltip";
-            tooltip.add(Text.translatable(key).formatted(Formatting.GRAY));
+        var key = stack.getItem().getTranslationKey() + ".tooltip_";
+        var i = -1;
+
+        while (CONFIG.isTooltipEnabled() && I18n.hasTranslation(key + ++i)) {
+            tooltip.add(Text.translatable(key + i).formatted(Formatting.GRAY));
         }
 
         super.appendTooltip(stack, world, tooltip, context);
@@ -59,9 +62,7 @@ public class MoonlightToolItem extends ToolItem {
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         if (CONFIG.getInventoryTick() != null) {
-            var result = CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected);
-
-            if (!result) {
+            if (!CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected)) {
                 return;
             }
         }
@@ -95,9 +96,11 @@ public class MoonlightToolItem extends ToolItem {
 
         @Override
         public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
-            if (CONFIG.isTooltipEnabled()) {
-                var key = "item." + Moonlight.MOD_ID + "." + CONFIG.getName() + ".tooltip";
-                tooltip.add(Text.translatable(key).formatted(Formatting.GRAY));
+            var key = stack.getItem().getTranslationKey() + ".tooltip_";
+            var i = -1;
+
+            while (CONFIG.isTooltipEnabled() && I18n.hasTranslation(key + ++i)) {
+                tooltip.add(Text.translatable(key + i).formatted(Formatting.GRAY));
             }
 
             super.appendTooltip(stack, world, tooltip, context);
@@ -106,9 +109,7 @@ public class MoonlightToolItem extends ToolItem {
         @Override
         public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
             if (CONFIG.getInventoryTick() != null) {
-                var result = CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected);
-
-                if (!result) {
+                if (!CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected)) {
                     return;
                 }
             }
@@ -143,9 +144,11 @@ public class MoonlightToolItem extends ToolItem {
 
         @Override
         public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
-            if (CONFIG.isTooltipEnabled()) {
-                var key = "item." + Moonlight.MOD_ID + "." + CONFIG.getName() + ".tooltip";
-                tooltip.add(Text.translatable(key).formatted(Formatting.GRAY));
+            var key = stack.getItem().getTranslationKey() + ".tooltip_";
+            var i = -1;
+
+            while (CONFIG.isTooltipEnabled() && I18n.hasTranslation(key + ++i)) {
+                tooltip.add(Text.translatable(key + i).formatted(Formatting.GRAY));
             }
 
             super.appendTooltip(stack, world, tooltip, context);
@@ -154,9 +157,7 @@ public class MoonlightToolItem extends ToolItem {
         @Override
         public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
             if (CONFIG.getInventoryTick() != null) {
-                var result = CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected);
-
-                if (!result) {
+                if (!CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected)) {
                     return;
                 }
             }
@@ -191,9 +192,11 @@ public class MoonlightToolItem extends ToolItem {
 
         @Override
         public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
-            if (CONFIG.isTooltipEnabled()) {
-                var key = "item." + Moonlight.MOD_ID + "." + CONFIG.getName() + ".tooltip";
-                tooltip.add(Text.translatable(key).formatted(Formatting.GRAY));
+            var key = stack.getItem().getTranslationKey() + ".tooltip_";
+            var i = -1;
+
+            while (CONFIG.isTooltipEnabled() && I18n.hasTranslation(key + ++i)) {
+                tooltip.add(Text.translatable(key + i).formatted(Formatting.GRAY));
             }
 
             super.appendTooltip(stack, world, tooltip, context);
@@ -202,9 +205,7 @@ public class MoonlightToolItem extends ToolItem {
         @Override
         public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
             if (CONFIG.getInventoryTick() != null) {
-                var result = CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected);
-
-                if (!result) {
+                if (!CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected)) {
                     return;
                 }
             }
@@ -239,9 +240,11 @@ public class MoonlightToolItem extends ToolItem {
 
         @Override
         public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
-            if (CONFIG.isTooltipEnabled()) {
-                var key = "item." + Moonlight.MOD_ID + "." + CONFIG.getName() + ".tooltip";
-                tooltip.add(Text.translatable(key).formatted(Formatting.GRAY));
+            var key = stack.getItem().getTranslationKey() + ".tooltip_";
+            var i = -1;
+
+            while (CONFIG.isTooltipEnabled() && I18n.hasTranslation(key + ++i)) {
+                tooltip.add(Text.translatable(key + i).formatted(Formatting.GRAY));
             }
 
             super.appendTooltip(stack, world, tooltip, context);
@@ -250,9 +253,7 @@ public class MoonlightToolItem extends ToolItem {
         @Override
         public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
             if (CONFIG.getInventoryTick() != null) {
-                var result = CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected);
-
-                if (!result) {
+                if (!CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected)) {
                     return;
                 }
             }
@@ -287,9 +288,11 @@ public class MoonlightToolItem extends ToolItem {
 
         @Override
         public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
-            if (CONFIG.isTooltipEnabled()) {
-                var key = "item." + Moonlight.MOD_ID + "." + CONFIG.getName() + ".tooltip";
-                tooltip.add(Text.translatable(key).formatted(Formatting.GRAY));
+            var key = stack.getItem().getTranslationKey() + ".tooltip_";
+            var i = -1;
+
+            while (CONFIG.isTooltipEnabled() && I18n.hasTranslation(key + ++i)) {
+                tooltip.add(Text.translatable(key + i).formatted(Formatting.GRAY));
             }
 
             super.appendTooltip(stack, world, tooltip, context);
@@ -298,9 +301,7 @@ public class MoonlightToolItem extends ToolItem {
         @Override
         public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
             if (CONFIG.getInventoryTick() != null) {
-                var result = CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected);
-
-                if (!result) {
+                if (!CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected)) {
                     return;
                 }
             }
