@@ -1,393 +1,421 @@
 {
-    "name": "power.moonlight.blood_stalker.blood.name",
-    "description": "power.moonlight.blood_stalker.blood.description",
-    "type": "origins:multiple",
-    "resource": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 400,
-        "hud_render": {
-            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
-            "bar_index": 5
-        },
-        "max_action": {
-            "type": "origins:execute_command",
-            "command": "function moonlight:blood_stalker/blood/max"
-        },
-        "min_action": {
-            "type": "origins:execute_command",
-            "command": "function moonlight:blood_stalker/blood/min"
-        }
-    },
-    "fill_10": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 1,
-        "max_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "moonlight:blood_stalker/blood_resource",
-                        "comparison": "<=",
-                        "compare_to": 390
-                    },
-                    "if_action": {
-                        "type": "origins:execute_command",
-                        "command": "function moonlight:blood_stalker/blood/fill_10"
-                    },
-                    "else_action": {
-                        "type": "origins:execute_command",
-                        "command": "function moonlight:blood_stalker/blood/overfill_10"
-                    }
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "moonlight:blood_stalker/blood_resource",
-                    "change": 10
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "moonlight:blood_stalker/blood_fill_10",
-                    "operation": "set",
-                    "change": 0
-                }
-            ]
-        },
-        "hud_render": {
-            "should_render": false
-        }
-    },
-    "fill_20": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 1,
-        "max_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "moonlight:blood_stalker/blood_resource",
-                        "comparison": "<=",
-                        "compare_to": 380
-                    },
-                    "if_action": {
-                        "type": "origins:execute_command",
-                        "command": "function moonlight:blood_stalker/blood/fill_20"
-                    },
-                    "else_action": {
-                        "type": "origins:execute_command",
-                        "command": "function moonlight:blood_stalker/blood/overfill_20"
-                    }
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "moonlight:blood_stalker/blood_resource",
-                    "change": 20
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "moonlight:blood_stalker/blood_fill_20",
-                    "operation": "set",
-                    "change": 0
-                }
-            ]
-        },
-        "hud_render": {
-            "should_render": false
-        }
-    },
-    "fill_50": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 1,
-        "max_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "moonlight:blood_stalker/blood_resource",
-                        "comparison": "<=",
-                        "compare_to": 350
-                    },
-                    "if_action": {
-                        "type": "origins:execute_command",
-                        "command": "function moonlight:blood_stalker/blood/fill_50"
-                    },
-                    "else_action": {
-                        "type": "origins:execute_command",
-                        "command": "function moonlight:blood_stalker/blood/overfill_50"
-                    }
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "moonlight:blood_stalker/blood_resource",
-                    "change": 50
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "moonlight:blood_stalker/blood_fill_50",
-                    "operation": "set",
-                    "change": 0
-                }
-            ]
-        },
-        "hud_render": {
-            "should_render": false
-        }
-    },
-    "drain_10": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 1,
-        "max_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "moonlight:blood_stalker/blood_resource",
-                        "comparison": ">=",
-                        "compare_to": 10
-                    },
-                    "if_action": {
-                        "type": "origins:execute_command",
-                        "command": "function moonlight:blood_stalker/blood/drain_10"
-                    },
-                    "else_action": {
-                        "type": "origins:execute_command",
-                        "command": "function moonlight:blood_stalker/blood/overdrain_10"
-                    }
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "moonlight:blood_stalker/blood_resource",
-                    "change": -10
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "moonlight:blood_stalker/blood_drain_10",
-                    "operation": "set",
-                    "change": 0
-                }
-            ]
-        },
-        "hud_render": {
-            "should_render": false
-        }
-    },
-    "drain_20": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 1,
-        "max_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "moonlight:blood_stalker/blood_resource",
-                        "comparison": ">=",
-                        "compare_to": 20
-                    },
-                    "if_action": {
-                        "type": "origins:execute_command",
-                        "command": "function moonlight:blood_stalker/blood/drain_20"
-                    },
-                    "else_action": {
-                        "type": "origins:execute_command",
-                        "command": "function moonlight:blood_stalker/blood/overdrain_20"
-                    }
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "moonlight:blood_stalker/blood_resource",
-                    "change": -20
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "moonlight:blood_stalker/blood_drain_20",
-                    "operation": "set",
-                    "change": 0
-                }
-            ]
-        },
-        "hud_render": {
-            "should_render": false
-        }
-    },
-    "consume": {
-        "type": "origins:active_self",
-        "cooldown": 5,
-        "entity_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "moonlight:blood_stalker/blood_resource",
-                        "comparison": ">",
-                        "compare_to": 200
-                    },
-                    "if_action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "moonlight:blood_stalker/blood_drain_20",
-                                "operation": "set",
-                                "change": 1
-                            },
-                            {
-                                "type": "origins:feed",
-                                "food": 2,
-                                "saturation": 0.5
-                            }
-                        ]
-                    },
-                    "else_action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:change_resource",
-                                "resource": "moonlight:blood_stalker/blood_drain_10",
-                                "operation": "set",
-                                "change": 1
-                            },
-                            {
-                                "type": "origins:feed",
-                                "food": 1,
-                                "saturation": 0.5
-                            }
-                        ]
-                    }
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "moonlight:blood_stalker/blood_consume_active",
-                    "operation": "set",
-                    "change": 0
-                }
-            ]
-        },
-        "key": {
-            "key": "key.saveToolbarActivator",
-            "continuous": true
-        },
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:resource",
-                    "resource": "moonlight:blood_stalker/blood_resource",
-                    "comparison": ">=",
-                    "compare_to": 10
-                },
-                {
-                    "type": "origins:food_level",
-                    "comparison": "<",
-                    "compare_to": 20
-                }
-            ]
-        }
-    },
-    "sanguivore": {
-        "type": "origins:prevent_item_use",
-        "item_condition": {
-            "type": "origins:food"
-        }
-    },
-    "bottle": {
-        "type": "origins:active_self",
-        "cooldown": 5,
-        "entity_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:execute_command",
-                    "command": "clear @s moonlight:blood_bottle 1"
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "moonlight:blood_stalker/blood_fill_50",
-                    "operation": "set",
-                    "change": 1
-                },
-                {
-                    "type": "origins:give",
-                    "preferred_slot": "mainhand",
-                    "stack": {
-                        "item": "minecraft:glass_bottle"
-                    }
-                }
-            ]
-        },
-        "key": {
-            "key": "key.use",
-            "continuous": true
-        },
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:or",
-                    "conditions": [
-                        {
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "mainhand",
-                            "item_condition": {
-                                "type": "origins:ingredient",
-                                "ingredient": {
-                                    "item": "moonlight:blood_bottle"
-                                }
-                            }
-                        },
-                        {
-                            "type": "origins:equipped_item",
-                            "equipment_slot": "offhand",
-                            "item_condition": {
-                                "type": "origins:ingredient",
-                                "ingredient": {
-                                    "item": "moonlight:blood_bottle"
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "moonlight:blood_stalker/blood_resource",
-                    "comparison": "<",
-                    "compare_to": 400
-                }
-            ]
-        }
-    },
-    "crafting": {
-        "type": "origins:recipe",
-        "recipe": {
-            "id": "moonlight:blood_stalker/blood_bottle",
-            "type": "minecraft:crafting_shapeless",
-            "ingredients": [
-                {
-                    "item": "minecraft:glass_bottle"
-                },
-                {
-                    "tag": "moonlight:blood_stalker/bottleable"
-                }
-            ],
-            "result": {
-                "item": "moonlight:blood_bottle"
-            }
-        }
-    }
+	"name": "power.moonlight.blood_stalker.blood.name",
+	"description": "power.moonlight.blood_stalker.blood.description",
+	"type": "origins:multiple",
+	"resource": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 400,
+		"hud_render": {
+			"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+			"bar_index": 5
+		},
+		"max_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:blood_stalker/blood/max"
+		},
+		"min_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:blood_stalker/blood/min"
+		}
+	},
+	"fill_10": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"max_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:if_else",
+					"condition": {
+						"type": "origins:resource",
+						"resource": "moonlight:blood_stalker/blood_resource",
+						"comparison": "<=",
+						"compare_to": 390
+					},
+					"if_action": {
+						"type": "origins:execute_command",
+						"command": "function moonlight:blood_stalker/blood/fill_10"
+					},
+					"else_action": {
+						"type": "origins:execute_command",
+						"command": "function moonlight:blood_stalker/blood/overfill_10"
+					}
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "moonlight:blood_stalker/blood_resource",
+					"change": 10
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "moonlight:blood_stalker/blood_fill_10",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	"fill_20": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"max_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:if_else",
+					"condition": {
+						"type": "origins:resource",
+						"resource": "moonlight:blood_stalker/blood_resource",
+						"comparison": "<=",
+						"compare_to": 380
+					},
+					"if_action": {
+						"type": "origins:execute_command",
+						"command": "function moonlight:blood_stalker/blood/fill_20"
+					},
+					"else_action": {
+						"type": "origins:execute_command",
+						"command": "function moonlight:blood_stalker/blood/overfill_20"
+					}
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "moonlight:blood_stalker/blood_resource",
+					"change": 20
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "moonlight:blood_stalker/blood_fill_20",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	"fill_50": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"max_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:if_else",
+					"condition": {
+						"type": "origins:resource",
+						"resource": "moonlight:blood_stalker/blood_resource",
+						"comparison": "<=",
+						"compare_to": 350
+					},
+					"if_action": {
+						"type": "origins:execute_command",
+						"command": "function moonlight:blood_stalker/blood/fill_50"
+					},
+					"else_action": {
+						"type": "origins:execute_command",
+						"command": "function moonlight:blood_stalker/blood/overfill_50"
+					}
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "moonlight:blood_stalker/blood_resource",
+					"change": 50
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "moonlight:blood_stalker/blood_fill_50",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	"drain_10": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"max_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:if_else",
+					"condition": {
+						"type": "origins:resource",
+						"resource": "moonlight:blood_stalker/blood_resource",
+						"comparison": ">=",
+						"compare_to": 10
+					},
+					"if_action": {
+						"type": "origins:execute_command",
+						"command": "function moonlight:blood_stalker/blood/drain_10"
+					},
+					"else_action": {
+						"type": "origins:execute_command",
+						"command": "function moonlight:blood_stalker/blood/overdrain_10"
+					}
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "moonlight:blood_stalker/blood_resource",
+					"change": -10
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "moonlight:blood_stalker/blood_drain_10",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	"drain_20": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"max_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:if_else",
+					"condition": {
+						"type": "origins:resource",
+						"resource": "moonlight:blood_stalker/blood_resource",
+						"comparison": ">=",
+						"compare_to": 20
+					},
+					"if_action": {
+						"type": "origins:execute_command",
+						"command": "function moonlight:blood_stalker/blood/drain_20"
+					},
+					"else_action": {
+						"type": "origins:execute_command",
+						"command": "function moonlight:blood_stalker/blood/overdrain_20"
+					}
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "moonlight:blood_stalker/blood_resource",
+					"change": -20
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "moonlight:blood_stalker/blood_drain_20",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	"consume": {
+		"type": "origins:active_self",
+		"cooldown": 5,
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:if_else",
+					"condition": {
+						"type": "origins:resource",
+						"resource": "moonlight:blood_stalker/blood_resource",
+						"comparison": ">",
+						"compare_to": 200
+					},
+					"if_action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:change_resource",
+								"resource": "moonlight:blood_stalker/blood_drain_20",
+								"operation": "set",
+								"change": 1
+							},
+							{
+								"type": "origins:feed",
+								"food": 2,
+								"saturation": 0.5
+							}
+						]
+					},
+					"else_action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:change_resource",
+								"resource": "moonlight:blood_stalker/blood_drain_10",
+								"operation": "set",
+								"change": 1
+							},
+							{
+								"type": "origins:feed",
+								"food": 1,
+								"saturation": 0.5
+							}
+						]
+					}
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "moonlight:blood_stalker/blood_consume_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"key": {
+			"key": "key.saveToolbarActivator",
+			"continuous": true
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:blood_stalker/blood_resource",
+					"comparison": ">=",
+					"compare_to": 10
+				},
+				{
+					"type": "origins:food_level",
+					"comparison": "<",
+					"compare_to": 20
+				}
+			]
+		}
+	},
+	"sanguivore": {
+		"type": "origins:prevent_item_use",
+		"item_condition": {
+			"type": "origins:food"
+		}
+	},
+	"bottle": {
+		"type": "origins:active_self",
+		"cooldown": 5,
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "clear @s moonlight:blood_bottle 1"
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "moonlight:blood_stalker/blood_fill_50",
+					"operation": "set",
+					"change": 1
+				},
+				{
+					"type": "origins:give",
+					"preferred_slot": "mainhand",
+					"stack": {
+						"item": "minecraft:glass_bottle"
+					}
+				}
+			]
+		},
+		"key": {
+			"key": "key.use",
+			"continuous": true
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:equipped_item",
+							"equipment_slot": "mainhand",
+							"item_condition": {
+								"type": "origins:ingredient",
+								"ingredient": {
+									"item": "moonlight:blood_bottle"
+								}
+							}
+						},
+						{
+							"type": "origins:equipped_item",
+							"equipment_slot": "offhand",
+							"item_condition": {
+								"type": "origins:ingredient",
+								"ingredient": {
+									"item": "moonlight:blood_bottle"
+								}
+							}
+						}
+					]
+				},
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:blood_stalker/blood_resource",
+					"comparison": "<",
+					"compare_to": 400
+				}
+			]
+		}
+	},
+	"crafting": {
+		"type": "origins:recipe",
+		"recipe": {
+			"id": "moonlight:blood_stalker/blood_bottle",
+			"type": "minecraft:crafting_shapeless",
+			"ingredients": [
+				{
+					"item": "minecraft:glass_bottle"
+				},
+				{
+					"tag": "moonlight:blood_stalker/bottleable"
+				}
+			],
+			"result": {
+				"item": "moonlight:blood_bottle"
+			}
+		}
+	},
+	"crafting_small": {
+		"type": "origins:recipe",
+		"recipe": {
+			"id": "moonlight:blood_stalker/blood_bottle",
+			"type": "minecraft:crafting_shapeless",
+			"ingredients": [
+				{
+					"item": "minecraft:glass_bottle"
+				},
+				{
+					"item": "minecraft:glass_bottle"
+				},
+				{
+					"tag": "moonlight:blood_stalker/bottleable_small"
+				},
+				{
+					"tag": "moonlight:blood_stalker/bottleable_small"
+				},
+				{
+					"tag": "moonlight:blood_stalker/bottleable_small"
+				}
+			],
+			"result": {
+				"item": "moonlight:blood_bottle",
+				"count": 2
+			}
+		}
+	}
 }

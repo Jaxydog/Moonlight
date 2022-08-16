@@ -1,6 +1,3 @@
 {
-    "values": [
-        "minecraft:beef",
-        "minecraft:porkchop"
-    ]
+	"values": ["minecraft:beef", "minecraft:porkchop", "minecraft:rabbit"]
 }
