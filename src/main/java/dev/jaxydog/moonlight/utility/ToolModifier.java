@@ -13,8 +13,8 @@ public enum ToolModifier {
         var blockReach = builder.type(ScaleTypes.BLOCK_REACH).build();
         var entityReach = builder.type(ScaleTypes.ENTITY_REACH).build();
 
-        blockReach.setScale(equipped ? 1.25f : 1);
-        entityReach.setScale(equipped ? 1.25f : 1);
+        blockReach.setScale(equipped ? 1.1f : 1);
+        entityReach.setScale(equipped ? 1.1f : 1);
 
         return true;
     }),
@@ -23,8 +23,8 @@ public enum ToolModifier {
         var blockReach = builder.type(ScaleTypes.BLOCK_REACH).build();
         var entityReach = builder.type(ScaleTypes.ENTITY_REACH).build();
 
-        blockReach.setScale(equipped ? 1.5f : 1);
-        entityReach.setScale(equipped ? 1.5f : 1);
+        blockReach.setScale(equipped ? 1.2f : 1);
+        entityReach.setScale(equipped ? 1.2f : 1);
 
         return true;
     }),
@@ -33,12 +33,22 @@ public enum ToolModifier {
         var blockReach = builder.type(ScaleTypes.BLOCK_REACH).build();
         var entityReach = builder.type(ScaleTypes.ENTITY_REACH).build();
 
-        blockReach.setScale(equipped ? 1.75f : 1);
-        entityReach.setScale(equipped ? 1.75f : 1);
+        blockReach.setScale(equipped ? 1.3f : 1);
+        entityReach.setScale(equipped ? 1.3f : 1);
 
         return true;
     }),
     SHRINK_REACH_SMALL((stack, world, entity, slot, equipped) -> {
+        var builder = ScaleData.Builder.create().entity(entity);
+        var blockReach = builder.type(ScaleTypes.BLOCK_REACH).build();
+        var entityReach = builder.type(ScaleTypes.ENTITY_REACH).build();
+
+        blockReach.setScale(equipped ? 0.9f : 1);
+        entityReach.setScale(equipped ? 0.9f : 1);
+
+        return true;
+    }),
+    SHRINK_REACH_MEDIUM((stack, world, entity, slot, equipped) -> {
         var builder = ScaleData.Builder.create().entity(entity);
         var blockReach = builder.type(ScaleTypes.BLOCK_REACH).build();
         var entityReach = builder.type(ScaleTypes.ENTITY_REACH).build();
@@ -48,23 +58,13 @@ public enum ToolModifier {
 
         return true;
     }),
-    SHRINK_REACH_MEDIUM((stack, world, entity, slot, equipped) -> {
-        var builder = ScaleData.Builder.create().entity(entity);
-        var blockReach = builder.type(ScaleTypes.BLOCK_REACH).build();
-        var entityReach = builder.type(ScaleTypes.ENTITY_REACH).build();
-
-        blockReach.setScale(equipped ? 0.6f : 1);
-        entityReach.setScale(equipped ? 0.6f : 1);
-
-        return true;
-    }),
     SHRINK_REACH_LARGE((stack, world, entity, slot, equipped) -> {
         var builder = ScaleData.Builder.create().entity(entity);
         var blockReach = builder.type(ScaleTypes.BLOCK_REACH).build();
         var entityReach = builder.type(ScaleTypes.ENTITY_REACH).build();
 
-        blockReach.setScale(equipped ? 0.4f : 1);
-        entityReach.setScale(equipped ? 0.4f : 1);
+        blockReach.setScale(equipped ? 0.7f : 1);
+        entityReach.setScale(equipped ? 0.7f : 1);
 
         return true;
     }),

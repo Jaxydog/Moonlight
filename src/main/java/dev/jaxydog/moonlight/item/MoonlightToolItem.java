@@ -28,7 +28,7 @@ public class MoonlightToolItem extends ToolItem {
     private final Config CONFIG;
 
     public MoonlightToolItem(Material material, Settings settings, Config config) {
-        super(material, settings);
+        super(material, settings.group(Config.DEFAULT_GROUP));
         CONFIG = config;
     }
 
@@ -75,7 +75,7 @@ public class MoonlightToolItem extends ToolItem {
         private final Config CONFIG;
 
         protected Sword(Material material, int attackDamage, float attackSpeed, Settings settings, Config config) {
-            super(material, attackDamage, attackSpeed, settings);
+            super(material, attackDamage, attackSpeed, settings.group(Config.DEFAULT_GROUP));
             CONFIG = config;
         }
 
@@ -123,7 +123,7 @@ public class MoonlightToolItem extends ToolItem {
         private final Config CONFIG;
 
         protected Axe(Material material, int attackDamage, float attackSpeed, Settings settings, Config config) {
-            super(material, attackDamage, attackSpeed, settings);
+            super(material, attackDamage, attackSpeed, settings.group(Config.DEFAULT_GROUP));
             CONFIG = config;
         }
 
@@ -171,7 +171,7 @@ public class MoonlightToolItem extends ToolItem {
         private final Config CONFIG;
 
         protected Pickaxe(Material material, int attackDamage, float attackSpeed, Settings settings, Config config) {
-            super(material, attackDamage, attackSpeed, settings);
+            super(material, attackDamage, attackSpeed, settings.group(Config.DEFAULT_GROUP));
             CONFIG = config;
         }
 
@@ -219,7 +219,7 @@ public class MoonlightToolItem extends ToolItem {
         private final Config CONFIG;
 
         protected Shovel(Material material, int attackDamage, float attackSpeed, Settings settings, Config config) {
-            super(material, attackDamage, attackSpeed, settings);
+            super(material, attackDamage, attackSpeed, settings.group(Config.DEFAULT_GROUP));
             CONFIG = config;
         }
 
@@ -267,7 +267,7 @@ public class MoonlightToolItem extends ToolItem {
         private final Config CONFIG;
 
         protected Hoe(Material material, int attackDamage, float attackSpeed, Settings settings, Config config) {
-            super(material, attackDamage, attackSpeed, settings);
+            super(material, attackDamage, attackSpeed, settings.group(Config.DEFAULT_GROUP));
             CONFIG = config;
         }
 
