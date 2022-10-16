@@ -6,7 +6,7 @@
 		"type": "origins:modify_damage_dealt",
 		"modifier": {
 			"operation": "addition",
-			"value": 2
+			"value": 4
 		},
 		"bientity_condition": {
 			"type": "origins:actor_condition",
@@ -27,7 +27,7 @@
 		"type": "origins:modify_damage_dealt",
 		"modifier": {
 			"operation": "multiply_total",
-			"value": 0.5
+			"value": 1
 		},
 		"bientity_condition": {
 			"type": "origins:actor_condition",
