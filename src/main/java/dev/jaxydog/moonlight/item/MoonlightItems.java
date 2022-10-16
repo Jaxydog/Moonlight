@@ -102,6 +102,7 @@ public class MoonlightItems {
 					.rarity(Rarity.COMMON),
 			new Config().setName("pasta").setTooltipEnabled(true));
 
+	/** Blood bottle item */
 	public static final MoonlightItem BLOOD_BOTTLE = new MoonlightItem(
 			new Settings().maxCount(16).rarity(Rarity.EPIC),
 			new Config().setName("blood_bottle").setTooltipEnabled(true));
