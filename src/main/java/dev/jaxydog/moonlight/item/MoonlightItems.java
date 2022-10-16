@@ -80,7 +80,7 @@ public class MoonlightItems {
 
 	/** Dino nuggy item */
 	public static final MoonlightItem DINO_NUGGIE = new MoonlightItem(
-			new Settings().food(new FoodComponent.Builder().hunger(7).saturationModifier(0.625f).snack().meat().build())
+			new Settings().food(new FoodComponent.Builder().hunger(7).saturationModifier(0.65f).snack().meat().build())
 					.rarity(Rarity.UNCOMMON),
 			new Config().setName("dino_nuggie").setTooltipEnabled(true));
 
