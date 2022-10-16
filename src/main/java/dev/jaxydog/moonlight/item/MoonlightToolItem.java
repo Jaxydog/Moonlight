@@ -61,10 +61,10 @@ public class MoonlightToolItem extends ToolItem {
 
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-        if (CONFIG.getInventoryTick() != null) {
-            if (!CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected)) {
-                return;
-            }
+        var tick = CONFIG.getInventoryTick();
+
+        if (tick != null && !tick.apply(stack, world, entity, slot, selected)) {
+            return;
         }
 
         super.inventoryTick(stack, world, entity, slot, selected);
@@ -108,10 +108,10 @@ public class MoonlightToolItem extends ToolItem {
 
         @Override
         public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-            if (CONFIG.getInventoryTick() != null) {
-                if (!CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected)) {
-                    return;
-                }
+            var tick = CONFIG.getInventoryTick();
+
+            if (tick != null && !tick.apply(stack, world, entity, slot, selected)) {
+                return;
             }
 
             super.inventoryTick(stack, world, entity, slot, selected);
@@ -156,10 +156,10 @@ public class MoonlightToolItem extends ToolItem {
 
         @Override
         public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-            if (CONFIG.getInventoryTick() != null) {
-                if (!CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected)) {
-                    return;
-                }
+            var tick = CONFIG.getInventoryTick();
+
+            if (tick != null && !tick.apply(stack, world, entity, slot, selected)) {
+                return;
             }
 
             super.inventoryTick(stack, world, entity, slot, selected);
@@ -204,10 +204,10 @@ public class MoonlightToolItem extends ToolItem {
 
         @Override
         public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-            if (CONFIG.getInventoryTick() != null) {
-                if (!CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected)) {
-                    return;
-                }
+            var tick = CONFIG.getInventoryTick();
+
+            if (tick != null && !tick.apply(stack, world, entity, slot, selected)) {
+                return;
             }
 
             super.inventoryTick(stack, world, entity, slot, selected);
@@ -252,10 +252,10 @@ public class MoonlightToolItem extends ToolItem {
 
         @Override
         public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-            if (CONFIG.getInventoryTick() != null) {
-                if (!CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected)) {
-                    return;
-                }
+            var tick = CONFIG.getInventoryTick();
+
+            if (tick != null && !tick.apply(stack, world, entity, slot, selected)) {
+                return;
             }
 
             super.inventoryTick(stack, world, entity, slot, selected);
@@ -300,10 +300,10 @@ public class MoonlightToolItem extends ToolItem {
 
         @Override
         public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-            if (CONFIG.getInventoryTick() != null) {
-                if (!CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected)) {
-                    return;
-                }
+            var tick = CONFIG.getInventoryTick();
+
+            if (tick != null && !tick.apply(stack, world, entity, slot, selected)) {
+                return;
             }
 
             super.inventoryTick(stack, world, entity, slot, selected);

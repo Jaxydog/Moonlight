@@ -50,14 +50,16 @@ public class MoonlightItem extends Item {
 	@Override
 	public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
 		if (CONFIG.getUseSound() != null) {
-			var pitch = (float) (Math.random() * (Config.PITCH_RANGE * 2)) - Config.PITCH_RANGE;
+			var range = (float) (Math.random() * (Config.PITCH_RANGE * 2)) - Config.PITCH_RANGE;
+			var pitch = 1.0F - range;
 
 			world.playSound(
 					null,
 					user.getBlockPos(),
 					CONFIG.getUseSound(),
 					SoundCategory.PLAYERS,
-					Config.DEFAULT_VOLUME, pitch);
+					Config.DEFAULT_VOLUME,
+					pitch);
 		}
 
 		for (var status : CONFIG.getUseEffects()) {
@@ -81,10 +83,10 @@ public class MoonlightItem extends Item {
 
 	@Override
 	public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-		if (CONFIG.getInventoryTick() != null) {
-			if (!CONFIG.getInventoryTick().apply(stack, world, entity, slot, selected)) {
-				return;
-			}
+		var tick = CONFIG.getInventoryTick();
+
+		if (tick != null && !tick.apply(stack, world, entity, slot, selected)) {
+			return;
 		}
 
 		super.inventoryTick(stack, world, entity, slot, selected);
