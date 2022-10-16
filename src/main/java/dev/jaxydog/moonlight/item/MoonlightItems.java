@@ -74,10 +74,15 @@ public class MoonlightItems {
 
 	/** Cracker item */
 	public static final MoonlightItem CRACKER = new MoonlightItem(
-			new Settings().maxCount(16)
-					.food(new FoodComponent.Builder().hunger(1).saturationModifier(0.75f).snack().build())
+			new Settings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.75f).snack().build())
 					.rarity(Rarity.COMMON),
 			new Config().setName("cracker").setTooltipEnabled(true));
+
+	/** Dino nuggy item */
+	public static final MoonlightItem DINO_NUGGIE = new MoonlightItem(
+			new Settings().food(new FoodComponent.Builder().hunger(7).saturationModifier(0.625f).snack().meat().build())
+					.rarity(Rarity.UNCOMMON),
+			new Config().setName("dino_nuggie").setTooltipEnabled(true));
 
 	/** Grilled cheese item */
 	public static final MoonlightItem GRILLED_CHEESE = new MoonlightItem(
@@ -93,8 +98,7 @@ public class MoonlightItems {
 
 	/** Pasta item */
 	public static final MoonlightItem PASTA = new MoonlightItem(
-			new Settings().maxCount(16)
-					.food(new FoodComponent.Builder().hunger(1).saturationModifier(0.5f).snack().build())
+			new Settings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.5f).snack().build())
 					.rarity(Rarity.COMMON),
 			new Config().setName("pasta").setTooltipEnabled(true));
 
@@ -194,6 +198,7 @@ public class MoonlightItems {
 		CHEESE_STEAK.register();
 		CHEESY_BAKED_POTATO.register();
 		CRACKER.register();
+		DINO_NUGGIE.register();
 		GRILLED_CHEESE.register();
 		MACARONI_AND_CHEESE.register();
 		PASTA.register();
