@@ -104,6 +104,11 @@ public class MoonlightItems {
 			new Settings().maxCount(16).rarity(Rarity.EPIC),
 			new Config().setName("blood_bottle").setTooltipEnabled(true));
 
+	public static final BouquetItem BOUQUET = new BouquetItem(
+			new Settings().food(new FoodComponent.Builder().hunger(0).saturationModifier(0).alwaysEdible().build())
+					.maxCount(16).rarity(Rarity.EPIC),
+			new Config().setName("bouquet").setTooltipEnabled(true));
+
 	/** Land core item */
 	public static final MoonlightItem LAND_CORE = new MoonlightItem(
 			new Settings().maxCount(1).fireproof().rarity(Rarity.RARE),
@@ -334,6 +339,7 @@ public class MoonlightItems {
 		MACARONI_AND_CHEESE.register();
 		PASTA.register();
 		BLOOD_BOTTLE.register();
+		BOUQUET.register();
 		LAND_CORE.register();
 		SEA_CORE.register();
 		SKY_CORE.register();

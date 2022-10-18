@@ -1,0 +1,24 @@
+{
+	"hidden": true,
+	"type": "origins:recipe",
+	"recipe": {
+		"type": "minecraft:crafting_shaped",
+		"id": "moonlight:moobloom/bouquet",
+		"pattern": ["FFF", "PFP", "SPS"],
+		"key": {
+			"F": {
+				"tag": "minecraft:small_flowers"
+			},
+			"P": {
+				"item": "minecraft:paper"
+			},
+			"S": {
+				"item": "minecraft:string"
+			}
+		},
+		"result": {
+			"item": "moonlight:bouquet",
+			"count": 1
+		}
+	}
+}
