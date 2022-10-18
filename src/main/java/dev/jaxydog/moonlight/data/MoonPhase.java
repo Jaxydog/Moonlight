@@ -1,39 +1,37 @@
 package dev.jaxydog.moonlight.data;
 
-import java.util.function.Function;
-
 import net.minecraft.world.World;
 
-public enum MoonPhaseType {
+public enum MoonPhase {
 	/** Invalid phase */
-	NONE("", (w) -> false),
+	NONE("", -1),
 	/** Full moon */
-	FULL("full", (w) -> w.getMoonPhase() == 0),
+	FULL("full", 0),
 	/** Waning gibbus */
-	WANING_GIBBUS("waning_gibbus", (w) -> w.getMoonPhase() == 1),
+	WANING_GIBBUS("waning_gibbus", 1),
 	/** Third quarter */
-	THIRD_QUARTER("third_quarter", (w) -> w.getMoonPhase() == 2),
+	THIRD_QUARTER("third_quarter", 2),
 	/** Waning crescent */
-	WANING_CRESCENT("waning_crescent", (w) -> w.getMoonPhase() == 3),
+	WANING_CRESCENT("waning_crescent", 3),
 	/** New moon */
-	NEW("new", (w) -> w.getMoonPhase() == 4),
+	NEW("new", 4),
 	/** Waxing crescent */
-	WAXING_CRESCENT("waxing_crescent", (w) -> w.getMoonPhase() == 5),
+	WAXING_CRESCENT("waxing_crescent", 5),
 	/** First quarter */
-	FIRST_QUARTER("first_quarted", (w) -> w.getMoonPhase() == 6),
+	FIRST_QUARTER("first_quarted", 6),
 	/** Waxing gibbus */
-	WAXING_GIBBUS("waxing_gibbus", (w) -> w.getMoonPhase() == 7);
+	WAXING_GIBBUS("waxing_gibbus", 7);
 
 	private final String TYPE;
-	private final Function<World, Boolean> TEST;
+	private final int PHASE_ID;
 
-	private MoonPhaseType(String type, Function<World, Boolean> test) {
-		this.TYPE = type;
-		this.TEST = test;
+	private MoonPhase(String type, int phaseId) {
+		TYPE = type;
+		PHASE_ID = phaseId;
 	}
 
 	/** Resolves a moon phase from a string */
-	public static MoonPhaseType from(String type) {
+	public static MoonPhase from(String type) {
 		switch (type) {
 			case "full":
 				return FULL;
@@ -51,17 +49,22 @@ public enum MoonPhaseType {
 				return FIRST_QUARTER;
 			case "waxing_gibbus":
 				return WAXING_GIBBUS;
+			default:
+				return NONE;
 		}
-		return NONE;
 	}
 
 	/** Returns a string representation of the variant */
 	public String getType() {
-		return this.TYPE;
+		return TYPE;
+	}
+
+	public int getPhaseId() {
+		return PHASE_ID;
 	}
 
 	/** Tests whether the current moon phase is the variant's type */
-	public boolean test(World world) {
-		return this.TEST.apply(world);
+	public boolean isCurrent(World world) {
+		return world.getMoonPhase() == PHASE_ID;
 	}
 }

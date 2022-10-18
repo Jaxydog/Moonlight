@@ -2,7 +2,7 @@ package dev.jaxydog.moonlight.power;
 
 import dev.jaxydog.moonlight.Moonlight;
 import dev.jaxydog.moonlight.data.ValueType;
-import dev.jaxydog.moonlight.data.MoonPhaseType;
+import dev.jaxydog.moonlight.data.MoonPhase;
 import dev.jaxydog.moonlight.data.MoonlightDataTypes;
 import io.github.apace100.apoli.data.ApoliDataTypes;
 import io.github.apace100.apoli.power.factory.condition.ConditionFactory;
@@ -17,8 +17,7 @@ import net.minecraft.util.registry.Registry;
 /** Moonlight condition class */
 public class MoonlightConditions {
 	/** Durability condition factory */
-	public static final ConditionFactory<ItemStack> DURABILITY = new ConditionFactory<>(
-			Moonlight.id("durability"),
+	public static final ConditionFactory<ItemStack> DURABILITY = new ConditionFactory<>(Moonlight.id("durability"),
 			new SerializableData()
 					.add("value_type", MoonlightDataTypes.VALUE_TYPE, ValueType.PERCENT)
 					.add("comparison", ApoliDataTypes.COMPARISON)
@@ -34,14 +33,9 @@ public class MoonlightConditions {
 			});
 
 	/** Moon phase condition factory */
-	public static final ConditionFactory<Entity> MOON_PHASE = new ConditionFactory<>(
-			Moonlight.id("moon_phase"),
-			new SerializableData()
-					.add("phase", MoonlightDataTypes.MOON_PHASE),
-			(data, entity) -> {
-				MoonPhaseType phase = data.get("phase");
-				return phase.test(entity.getWorld());
-			});
+	public static final ConditionFactory<Entity> MOON_PHASE = new ConditionFactory<>(Moonlight.id("moon_phase"),
+			new SerializableData().add("phase", MoonlightDataTypes.MOON_PHASE),
+			(data, entity) -> ((MoonPhase) data.get("phase")).isCurrent(entity.getWorld()));
 
 	/** Registers a new condition factory */
 	private static <T> void register(ConditionFactory<T> factory, Registry<ConditionFactory<T>> registry) {

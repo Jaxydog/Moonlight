@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack;
 /** Value type for comparing values */
 public enum ValueType {
 	/** Invalid type */
-	NONE("", (v, i) -> v.intValue()),
+	NONE("", (v, i) -> 0),
 	/** Exact value */
 	NUMBER("number", (v, i) -> v.intValue()),
 	/** Percent of max damage */
