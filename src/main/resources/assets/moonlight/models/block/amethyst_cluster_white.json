@@ -1,0 +1,6 @@
+{
+	"parent": "block/cross",
+	"textures": {
+		"cross": "moonlight:block/amethyst_cluster_white"
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"replace": false,
+	"values": [
+		"moonlight:amethyst_block_black",
+		"moonlight:amethyst_block_blue",
+		"moonlight:amethyst_block_brown",
+		"moonlight:amethyst_block_cyan",
+		"moonlight:amethyst_block_gray",
+		"moonlight:amethyst_block_green",
+		"moonlight:amethyst_block_light_blue",
+		"moonlight:amethyst_block_light_gray",
+		"moonlight:amethyst_block_lime",
+		"moonlight:amethyst_block_magenta",
+		"moonlight:amethyst_block_orange",
+		"moonlight:amethyst_block_pink",
+		"moonlight:amethyst_block_purple",
+		"moonlight:amethyst_block_red",
+		"moonlight:amethyst_block_white",
+		"moonlight:amethyst_block_yellow"
+	]
+}

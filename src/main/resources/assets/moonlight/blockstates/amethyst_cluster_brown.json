@@ -1,0 +1,30 @@
+{
+	"variants": {
+		"facing=down": {
+			"model": "moonlight:block/amethyst_cluster_brown",
+			"x": 180
+		},
+		"facing=east": {
+			"model": "moonlight:block/amethyst_cluster_brown",
+			"x": 90,
+			"y": 90
+		},
+		"facing=north": {
+			"model": "moonlight:block/amethyst_cluster_brown",
+			"x": 90
+		},
+		"facing=south": {
+			"model": "moonlight:block/amethyst_cluster_brown",
+			"x": 90,
+			"y": 180
+		},
+		"facing=up": {
+			"model": "moonlight:block/amethyst_cluster_brown"
+		},
+		"facing=west": {
+			"model": "moonlight:block/amethyst_cluster_brown",
+			"x": 90,
+			"y": 270
+		}
+	}
+}

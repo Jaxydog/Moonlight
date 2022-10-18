@@ -13,7 +13,8 @@
 	"icon": "assets/moonlight/icon.png",
 	"environment": "*",
 	"entrypoints": {
-		"main": ["dev.jaxydog.moonlight.Moonlight"]
+		"main": ["dev.jaxydog.moonlight.Moonlight"],
+		"client": ["dev.jaxydog.moonlight.MoonlightClient"]
 	},
 	"mixins": ["moonlight.mixins.json"],
 	"depends": {

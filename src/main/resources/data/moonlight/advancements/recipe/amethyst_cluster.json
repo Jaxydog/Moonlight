@@ -1,0 +1,34 @@
+{
+	"criteria": {
+		"has_item": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": ["minecraft:amethyst_cluster"]
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"recipes": [
+			"moonlight:dye/amethyst_cluster_black",
+			"moonlight:dye/amethyst_cluster_blue",
+			"moonlight:dye/amethyst_cluster_brown",
+			"moonlight:dye/amethyst_cluster_cyan",
+			"moonlight:dye/amethyst_cluster_gray",
+			"moonlight:dye/amethyst_cluster_green",
+			"moonlight:dye/amethyst_cluster_light_blue",
+			"moonlight:dye/amethyst_cluster_light_gray",
+			"moonlight:dye/amethyst_cluster_lime",
+			"moonlight:dye/amethyst_cluster_magenta",
+			"moonlight:dye/amethyst_cluster_orange",
+			"moonlight:dye/amethyst_cluster_pink",
+			"moonlight:dye/amethyst_cluster_purple",
+			"moonlight:dye/amethyst_cluster_red",
+			"moonlight:dye/amethyst_cluster_white",
+			"moonlight:dye/amethyst_cluster_yellow"
+		]
+	}
+}

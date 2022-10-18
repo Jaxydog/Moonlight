@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "minecraft:amethyst_block"
+		},
+		{
+			"item": "minecraft:gray_dye"
+		}
+	],
+	"result": {
+		"item": "moonlight:amethyst_block_gray",
+		"count": 1
+	}
+}

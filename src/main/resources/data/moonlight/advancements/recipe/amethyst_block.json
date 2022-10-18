@@ -1,0 +1,34 @@
+{
+	"criteria": {
+		"has_item": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": ["minecraft:amethyst_block"]
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"recipes": [
+			"moonlight:dye/amethyst_block_black",
+			"moonlight:dye/amethyst_block_blue",
+			"moonlight:dye/amethyst_block_brown",
+			"moonlight:dye/amethyst_block_cyan",
+			"moonlight:dye/amethyst_block_gray",
+			"moonlight:dye/amethyst_block_green",
+			"moonlight:dye/amethyst_block_light_blue",
+			"moonlight:dye/amethyst_block_light_gray",
+			"moonlight:dye/amethyst_block_lime",
+			"moonlight:dye/amethyst_block_magenta",
+			"moonlight:dye/amethyst_block_orange",
+			"moonlight:dye/amethyst_block_pink",
+			"moonlight:dye/amethyst_block_purple",
+			"moonlight:dye/amethyst_block_red",
+			"moonlight:dye/amethyst_block_white",
+			"moonlight:dye/amethyst_block_yellow"
+		]
+	}
+}

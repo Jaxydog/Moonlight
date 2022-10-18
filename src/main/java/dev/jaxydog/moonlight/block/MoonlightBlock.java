@@ -13,12 +13,12 @@ public class MoonlightBlock extends Block {
 		this.CONFIG = config;
 	}
 
-	public Identifier Id() {
+	public Identifier id() {
 		return Moonlight.id(CONFIG.getName());
 	}
 
 	public MoonlightBlock register() {
-		return Registry.register(Registry.BLOCK, this.Id(), this);
+		return Registry.register(Registry.BLOCK, this.id(), this);
 	}
 
 	public static class Config {

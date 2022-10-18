@@ -132,6 +132,166 @@ public class MoonlightItems {
 			new Settings().maxCount(1).fireproof().rarity(Rarity.RARE),
 			new Config().setName("hell_core").setTooltipEnabled(true));
 
+	public static final MoonlightBlockItem AMETHYST_BLOCK_BLACK = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_BLOCK_BLACK,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_block_black"));
+
+	public static final MoonlightBlockItem AMETHYST_BLOCK_BLUE = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_BLOCK_BLUE,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_block_blue"));
+
+	public static final MoonlightBlockItem AMETHYST_BLOCK_BROWN = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_BLOCK_BROWN,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_block_brown"));
+
+	public static final MoonlightBlockItem AMETHYST_BLOCK_CYAN = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_BLOCK_CYAN,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_block_cyan"));
+
+	public static final MoonlightBlockItem AMETHYST_BLOCK_GRAY = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_BLOCK_GRAY,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_block_gray"));
+
+	public static final MoonlightBlockItem AMETHYST_BLOCK_GREEN = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_BLOCK_GREEN,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_block_green"));
+
+	public static final MoonlightBlockItem AMETHYST_BLOCK_LIGHT_BLUE = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_BLOCK_LIGHT_BLUE,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_block_light_blue"));
+
+	public static final MoonlightBlockItem AMETHYST_BLOCK_LIGHT_GRAY = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_BLOCK_LIGHT_GRAY,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_block_light_gray"));
+
+	public static final MoonlightBlockItem AMETHYST_BLOCK_LIME = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_BLOCK_LIME,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_block_lime"));
+
+	public static final MoonlightBlockItem AMETHYST_BLOCK_MAGENTA = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_BLOCK_MAGENTA,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_block_magenta"));
+
+	public static final MoonlightBlockItem AMETHYST_BLOCK_ORANGE = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_BLOCK_ORANGE,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_block_orange"));
+
+	public static final MoonlightBlockItem AMETHYST_BLOCK_PINK = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_BLOCK_PINK,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_block_pink"));
+
+	public static final MoonlightBlockItem AMETHYST_BLOCK_PURPLE = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_BLOCK_PURPLE,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_block_purple"));
+
+	public static final MoonlightBlockItem AMETHYST_BLOCK_RED = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_BLOCK_RED,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_block_red"));
+
+	public static final MoonlightBlockItem AMETHYST_BLOCK_WHITE = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_BLOCK_WHITE,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_block_white"));
+
+	public static final MoonlightBlockItem AMETHYST_BLOCK_YELLOW = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_BLOCK_YELLOW,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_block_yellow"));
+
+	public static final MoonlightBlockItem AMETHYST_CLUSTER_BLACK = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_CLUSTER_BLACK,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_cluster_black"));
+
+	public static final MoonlightBlockItem AMETHYST_CLUSTER_BLUE = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_CLUSTER_BLUE,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_cluster_blue"));
+
+	public static final MoonlightBlockItem AMETHYST_CLUSTER_BROWN = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_CLUSTER_BROWN,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_cluster_brown"));
+
+	public static final MoonlightBlockItem AMETHYST_CLUSTER_CYAN = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_CLUSTER_CYAN,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_cluster_cyan"));
+
+	public static final MoonlightBlockItem AMETHYST_CLUSTER_GRAY = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_CLUSTER_GRAY,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_cluster_gray"));
+
+	public static final MoonlightBlockItem AMETHYST_CLUSTER_GREEN = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_CLUSTER_GREEN,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_cluster_green"));
+
+	public static final MoonlightBlockItem AMETHYST_CLUSTER_LIGHT_BLUE = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_CLUSTER_LIGHT_BLUE,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_cluster_light_blue"));
+
+	public static final MoonlightBlockItem AMETHYST_CLUSTER_LIGHT_GRAY = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_CLUSTER_LIGHT_GRAY,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_cluster_light_gray"));
+
+	public static final MoonlightBlockItem AMETHYST_CLUSTER_LIME = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_CLUSTER_LIME,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_cluster_lime"));
+
+	public static final MoonlightBlockItem AMETHYST_CLUSTER_MAGENTA = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_CLUSTER_MAGENTA,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_cluster_magenta"));
+
+	public static final MoonlightBlockItem AMETHYST_CLUSTER_ORANGE = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_CLUSTER_ORANGE,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_cluster_orange"));
+
+	public static final MoonlightBlockItem AMETHYST_CLUSTER_PINK = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_CLUSTER_PINK,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_cluster_pink"));
+
+	public static final MoonlightBlockItem AMETHYST_CLUSTER_PURPLE = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_CLUSTER_PURPLE,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_cluster_purple"));
+
+	public static final MoonlightBlockItem AMETHYST_CLUSTER_RED = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_CLUSTER_RED,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_cluster_red"));
+
+	public static final MoonlightBlockItem AMETHYST_CLUSTER_WHITE = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_CLUSTER_WHITE,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_cluster_white"));
+
+	public static final MoonlightBlockItem AMETHYST_CLUSTER_YELLOW = new MoonlightBlockItem(
+			MoonlightBlocks.AMETHYST_CLUSTER_YELLOW,
+			new Settings().rarity(Rarity.COMMON),
+			new Config().setName("amethyst_cluster_yellow"));
+
 	/** Hell sword item */
 	public static final MoonlightToolItem.Sword HELL_SWORD = new MoonlightToolItem.Sword(
 			new MoonlightToolItem.Material().setAttackDamage(4).setDurability(2560), 4, -3f,
@@ -209,6 +369,38 @@ public class MoonlightItems {
 		SKY_CORE.register();
 		CAVE_CORE.register();
 		HELL_CORE.register();
+		AMETHYST_BLOCK_BLACK.register();
+		AMETHYST_BLOCK_BLUE.register();
+		AMETHYST_BLOCK_BROWN.register();
+		AMETHYST_BLOCK_CYAN.register();
+		AMETHYST_BLOCK_GRAY.register();
+		AMETHYST_BLOCK_GREEN.register();
+		AMETHYST_BLOCK_LIGHT_BLUE.register();
+		AMETHYST_BLOCK_LIGHT_GRAY.register();
+		AMETHYST_BLOCK_LIME.register();
+		AMETHYST_BLOCK_MAGENTA.register();
+		AMETHYST_BLOCK_ORANGE.register();
+		AMETHYST_BLOCK_PINK.register();
+		AMETHYST_BLOCK_PURPLE.register();
+		AMETHYST_BLOCK_RED.register();
+		AMETHYST_BLOCK_WHITE.register();
+		AMETHYST_BLOCK_YELLOW.register();
+		AMETHYST_CLUSTER_BLACK.register();
+		AMETHYST_CLUSTER_BLUE.register();
+		AMETHYST_CLUSTER_BROWN.register();
+		AMETHYST_CLUSTER_CYAN.register();
+		AMETHYST_CLUSTER_GRAY.register();
+		AMETHYST_CLUSTER_GREEN.register();
+		AMETHYST_CLUSTER_LIGHT_BLUE.register();
+		AMETHYST_CLUSTER_LIGHT_GRAY.register();
+		AMETHYST_CLUSTER_LIME.register();
+		AMETHYST_CLUSTER_MAGENTA.register();
+		AMETHYST_CLUSTER_ORANGE.register();
+		AMETHYST_CLUSTER_PINK.register();
+		AMETHYST_CLUSTER_PURPLE.register();
+		AMETHYST_CLUSTER_RED.register();
+		AMETHYST_CLUSTER_WHITE.register();
+		AMETHYST_CLUSTER_YELLOW.register();
 		HELL_SWORD.register();
 		HELL_HAMMER.register();
 
