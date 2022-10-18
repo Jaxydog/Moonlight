@@ -21,7 +21,7 @@ public class MoonlightBlockItem extends BlockItem {
 	private final Config CONFIG;
 
 	public MoonlightBlockItem(Block block, Settings settings, Config config) {
-		super(block, settings);
+		super(block, settings.group(Config.DEFAULT_GROUP));
 		CONFIG = config;
 	}
 
