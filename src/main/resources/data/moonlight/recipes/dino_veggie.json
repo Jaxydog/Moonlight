@@ -1,0 +1,18 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "minecraft:baked_potato"
+		},
+		{
+			"item": "minecraft:baked_potato"
+		},
+		{
+			"item": "minecraft:wheat"
+		}
+	],
+	"result": {
+		"item": "moonlight:dino_veggie",
+		"count": 2
+	}
+}

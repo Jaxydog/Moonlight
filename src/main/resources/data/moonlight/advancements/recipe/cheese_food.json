@@ -5,9 +5,7 @@
 			"conditions": {
 				"items": [
 					{
-						"items": [
-							"moonlight:cheese"
-						]
+						"items": ["moonlight:cheese"]
 					}
 				]
 			}
@@ -19,6 +17,8 @@
 			"moonlight:cheese_block",
 			"moonlight:cheese_steak",
 			"moonlight:cheesy_baked_potato",
+			"moonlight:cheesy_dino_nuggie",
+			"moonlight:cheesy_dino_veggie",
 			"moonlight:grilled_cheese",
 			"moonlight:macaroni_and_cheese"
 		]

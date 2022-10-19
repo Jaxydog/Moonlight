@@ -12,6 +12,12 @@
 		}
 	},
 	"rewards": {
-		"recipes": ["moonlight:banana_bread", "moonlight:cracker", "moonlight:dino_nuggie", "moonlight:pasta"]
+		"recipes": [
+			"moonlight:banana_bread",
+			"moonlight:cracker",
+			"moonlight:dino_nuggie",
+			"moonlight:dino_veggie",
+			"moonlight:pasta"
+		]
 	}
 }
