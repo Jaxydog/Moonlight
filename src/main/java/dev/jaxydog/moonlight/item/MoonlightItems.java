@@ -117,6 +117,12 @@ public class MoonlightItems {
 					.rarity(Rarity.COMMON),
 			new Config().setName("pasta").setTooltipEnabled(true));
 
+	/** Mozzarella stick item */
+	public static final MoonlightItem MOZZ_STICK = new MoonlightItem(
+			new Settings().food(new FoodComponent.Builder().hunger(2).saturationModifier(4.5f).build())
+					.rarity(Rarity.COMMON),
+			new Config().setName("mozz_stick").setTooltipEnabled(true));
+
 	/** Blood bottle item */
 	public static final MoonlightItem BLOOD_BOTTLE = new MoonlightItem(
 			new Settings().maxCount(16).rarity(Rarity.EPIC),
@@ -359,6 +365,7 @@ public class MoonlightItems {
 		GRILLED_CHEESE.register();
 		MACARONI_AND_CHEESE.register();
 		PASTA.register();
+		MOZZ_STICK.register();
 		BLOOD_BOTTLE.register();
 		BOUQUET.register();
 		LAND_CORE.register();

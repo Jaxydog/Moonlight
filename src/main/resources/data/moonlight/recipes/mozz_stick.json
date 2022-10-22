@@ -1,0 +1,18 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "minecraft:bread"
+		},
+		{
+			"item": "moonlight:cheese"
+		},
+		{
+			"item": "moonlight:cheese"
+		}
+	],
+	"result": {
+		"item": "moonlight:mozz_stick",
+		"count": 4
+	}
+}
