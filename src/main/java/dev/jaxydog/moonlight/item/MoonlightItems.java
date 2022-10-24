@@ -6,6 +6,7 @@ import dev.jaxydog.moonlight.item.MoonlightItem.Config;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.FoodComponent;
+import net.minecraft.item.Items;
 import net.minecraft.item.Item.Settings;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.entry.ItemEntry;
@@ -132,6 +133,11 @@ public class MoonlightItems {
 			new Settings().food(new FoodComponent.Builder().hunger(0).saturationModifier(0).alwaysEdible().build())
 					.maxCount(16).rarity(Rarity.EPIC),
 			new Config().setName("bouquet").setTooltipEnabled(true));
+
+	public static final MoonlightItem MILK_BOTTLE = new MoonlightItem(
+			new Settings().food(new FoodComponent.Builder().hunger(2).saturationModifier(3).alwaysEdible().build())
+					.recipeRemainder(Items.BUCKET).maxCount(1).rarity(Rarity.EPIC),
+			new Config().setName("milk_bottle").setTooltipEnabled(true));
 
 	/** Land core item */
 	public static final MoonlightItem LAND_CORE = new MoonlightItem(
