@@ -120,7 +120,7 @@ public class MoonlightItems {
 
 	/** Mozzarella stick item */
 	public static final MoonlightItem MOZZ_STICK = new MoonlightItem(
-			new Settings().food(new FoodComponent.Builder().hunger(2).saturationModifier(4.5f).build())
+			new Settings().food(new FoodComponent.Builder().hunger(2).saturationModifier(1.5f).build())
 					.rarity(Rarity.COMMON),
 			new Config().setName("mozz_stick").setTooltipEnabled(true));
 
@@ -135,7 +135,7 @@ public class MoonlightItems {
 			new Config().setName("bouquet").setTooltipEnabled(true));
 
 	public static final MilkBottleItem MILK_BOTTLE = new MilkBottleItem(
-			new Settings().food(new FoodComponent.Builder().hunger(2).saturationModifier(3).alwaysEdible().build())
+			new Settings().food(new FoodComponent.Builder().hunger(2).saturationModifier(1.5f).alwaysEdible().build())
 					.recipeRemainder(Items.BUCKET).maxCount(16).rarity(Rarity.EPIC),
 			new Config().setName("milk_bottle").setTooltipEnabled(true));
 
