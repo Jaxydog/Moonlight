@@ -134,7 +134,7 @@ public class MoonlightItems {
 					.maxCount(16).rarity(Rarity.EPIC),
 			new Config().setName("bouquet").setTooltipEnabled(true));
 
-	public static final MoonlightItem MILK_BOTTLE = new MoonlightItem(
+	public static final MilkBottleItem MILK_BOTTLE = new MilkBottleItem(
 			new Settings().food(new FoodComponent.Builder().hunger(2).saturationModifier(3).alwaysEdible().build())
 					.recipeRemainder(Items.BUCKET).maxCount(1).rarity(Rarity.EPIC),
 			new Config().setName("milk_bottle").setTooltipEnabled(true));
@@ -374,6 +374,7 @@ public class MoonlightItems {
 		MOZZ_STICK.register();
 		BLOOD_BOTTLE.register();
 		BOUQUET.register();
+		MILK_BOTTLE.register();
 		LAND_CORE.register();
 		SEA_CORE.register();
 		SKY_CORE.register();
