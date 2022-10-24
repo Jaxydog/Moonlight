@@ -17,7 +17,7 @@ public class MilkBottleItem extends MoonlightItem {
 		if (user instanceof PlayerEntity && !((PlayerEntity) user).getAbilities().creativeMode) {
 			stack.decrement(1);
 		}
-		if (!world.isClient) {
+		if (!world.isClient && user.getStatusEffects().size() > 0) {
 			var effects = user.getStatusEffects();
 			var index = (int) Math.floor(Math.random() * effects.size());
 			var instance = (StatusEffectInstance) effects.toArray()[index];
