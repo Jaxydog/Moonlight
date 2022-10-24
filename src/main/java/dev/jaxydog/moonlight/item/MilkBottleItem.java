@@ -16,7 +16,7 @@ public class MilkBottleItem extends MoonlightItem {
 	@Override
 	public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
 		if (user instanceof PlayerEntity && !((PlayerEntity) user).getAbilities().creativeMode) {
-			stack.decrement(1);
+			((PlayerEntity) user).getInventory().insertStack(Items.GLASS_BOTTLE.getDefaultStack());
 		}
 		if (!world.isClient && user.getStatusEffects().size() > 0) {
 			var effects = user.getStatusEffects();
@@ -24,9 +24,6 @@ public class MilkBottleItem extends MoonlightItem {
 			var instance = (StatusEffectInstance) effects.toArray()[index];
 
 			user.removeStatusEffect(instance.getEffectType());
-		}
-		if (stack.isEmpty()) {
-			return new ItemStack(Items.GLASS_BOTTLE);
 		}
 
 		return super.finishUsing(stack, world, user);

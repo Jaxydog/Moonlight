@@ -136,7 +136,7 @@ public class MoonlightItems {
 
 	public static final MilkBottleItem MILK_BOTTLE = new MilkBottleItem(
 			new Settings().food(new FoodComponent.Builder().hunger(2).saturationModifier(3).alwaysEdible().build())
-					.recipeRemainder(Items.BUCKET).maxCount(1).rarity(Rarity.EPIC),
+					.recipeRemainder(Items.BUCKET).maxCount(16).rarity(Rarity.EPIC),
 			new Config().setName("milk_bottle").setTooltipEnabled(true));
 
 	/** Land core item */
