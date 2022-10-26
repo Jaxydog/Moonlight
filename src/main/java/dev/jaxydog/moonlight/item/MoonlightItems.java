@@ -46,6 +46,12 @@ public class MoonlightItems {
 					.rarity(Rarity.COMMON),
 			new Config().setName("birch_nut").setTooltipEnabled(true));
 
+	public static final MoonlightItem COOKED_BIRCH_NUT = new MoonlightItem(
+			new Settings()
+					.food(new FoodComponent.Builder().hunger(4).saturationModifier(1.5f).snack().build())
+					.rarity(Rarity.UNCOMMON),
+			new Config().setName("cooked_birch_nut").setTooltipEnabled(true));
+
 	/** Cheese item */
 	public static final MoonlightItem CHEESE = new MoonlightItem(
 			new Settings().food(new FoodComponent.Builder().hunger(1).saturationModifier(1f).snack().build())
@@ -365,6 +371,7 @@ public class MoonlightItems {
 		BANANA.register();
 		BANANA_BREAD.register();
 		BIRCH_NUT.register();
+		COOKED_BIRCH_NUT.register();
 		CHEESE.register();
 		CHEESE_AND_CRACKERS.register();
 		CHEESE_BLOCK.register();
@@ -428,5 +435,9 @@ public class MoonlightItems {
 						.with(ItemEntry.builder(AVOCADO)),
 				LootPool.builder().rolls(BinomialLootNumberProvider.create(3, 0.0125f))
 						.with(ItemEntry.builder(BANANA)));
+		modifyLoot(
+				Blocks.BIRCH_LEAVES.getLootTableId(),
+				LootPool.builder().rolls(BinomialLootNumberProvider.create(3, 0.0125f))
+						.with(ItemEntry.builder(BIRCH_NUT)));
 	}
 }
