@@ -40,6 +40,12 @@ public class MoonlightItems {
 					.rarity(Rarity.UNCOMMON),
 			new Config().setName("banana_bread").setTooltipEnabled(true));
 
+	public static final MoonlightItem BIRCH_NUT = new MoonlightItem(
+			new Settings()
+					.food(new FoodComponent.Builder().hunger(1).saturationModifier(2f).snack().build())
+					.rarity(Rarity.COMMON),
+			new Config().setName("birch_nut").setTooltipEnabled(true));
+
 	/** Cheese item */
 	public static final MoonlightItem CHEESE = new MoonlightItem(
 			new Settings().food(new FoodComponent.Builder().hunger(1).saturationModifier(1f).snack().build())
@@ -358,6 +364,7 @@ public class MoonlightItems {
 		AVOCADO.register();
 		BANANA.register();
 		BANANA_BREAD.register();
+		BIRCH_NUT.register();
 		CHEESE.register();
 		CHEESE_AND_CRACKERS.register();
 		CHEESE_BLOCK.register();
