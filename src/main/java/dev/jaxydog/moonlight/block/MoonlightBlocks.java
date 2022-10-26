@@ -117,14 +117,14 @@ public class MoonlightBlocks {
 			Settings.of(Material.AMETHYST, MapColor.GREEN).sounds(BlockSoundGroup.AMETHYST_BLOCK)
 					.nonOpaque().ticksRandomly().strength(1.5f).luminance(state -> 5));
 
-	public static final MoonlightAmethystClusterBlock AMETHYST_CLUSTER_LIGHT_BLUE = new MoonlightAmethystClusterBlock(0,
-			0,
+	public static final MoonlightAmethystClusterBlock AMETHYST_CLUSTER_LIGHT_BLUE = new MoonlightAmethystClusterBlock(7,
+			3,
 			new MoonlightBlock.Config().setName("amethyst_cluster_light_blue"),
 			Settings.of(Material.AMETHYST, MapColor.LIGHT_BLUE).sounds(BlockSoundGroup.AMETHYST_BLOCK)
 					.nonOpaque().ticksRandomly().strength(1.5f).luminance(state -> 5));
 
-	public static final MoonlightAmethystClusterBlock AMETHYST_CLUSTER_LIGHT_GRAY = new MoonlightAmethystClusterBlock(0,
-			0,
+	public static final MoonlightAmethystClusterBlock AMETHYST_CLUSTER_LIGHT_GRAY = new MoonlightAmethystClusterBlock(7,
+			3,
 			new MoonlightBlock.Config().setName("amethyst_cluster_light_gray"),
 			Settings.of(Material.AMETHYST, MapColor.LIGHT_GRAY).sounds(BlockSoundGroup.AMETHYST_BLOCK)
 					.nonOpaque().ticksRandomly().strength(1.5f).luminance(state -> 5));

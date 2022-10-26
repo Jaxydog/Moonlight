@@ -120,7 +120,7 @@ public class MoonlightItems {
 
 	/** Mozzarella stick item */
 	public static final MoonlightItem MOZZ_STICK = new MoonlightItem(
-			new Settings().food(new FoodComponent.Builder().hunger(2).saturationModifier(4.5f).build())
+			new Settings().food(new FoodComponent.Builder().hunger(2).saturationModifier(1.5f).build())
 					.rarity(Rarity.COMMON),
 			new Config().setName("mozz_stick").setTooltipEnabled(true));
 
@@ -134,9 +134,9 @@ public class MoonlightItems {
 					.maxCount(16).rarity(Rarity.EPIC),
 			new Config().setName("bouquet").setTooltipEnabled(true));
 
-	public static final MoonlightItem MILK_BOTTLE = new MoonlightItem(
-			new Settings().food(new FoodComponent.Builder().hunger(2).saturationModifier(3).alwaysEdible().build())
-					.recipeRemainder(Items.BUCKET).maxCount(1).rarity(Rarity.EPIC),
+	public static final MilkBottleItem MILK_BOTTLE = new MilkBottleItem(
+			new Settings().food(new FoodComponent.Builder().hunger(2).saturationModifier(1.5f).alwaysEdible().build())
+					.recipeRemainder(Items.BUCKET).maxCount(16).rarity(Rarity.EPIC),
 			new Config().setName("milk_bottle").setTooltipEnabled(true));
 
 	/** Land core item */
@@ -374,6 +374,7 @@ public class MoonlightItems {
 		MOZZ_STICK.register();
 		BLOOD_BOTTLE.register();
 		BOUQUET.register();
+		MILK_BOTTLE.register();
 		LAND_CORE.register();
 		SEA_CORE.register();
 		SKY_CORE.register();
