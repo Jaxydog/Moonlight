@@ -20,6 +20,9 @@ public class MoonlightItems {
 	public static final MoonlightItem ICON = new MoonlightItem(new Settings().maxCount(1).rarity(Rarity.RARE),
 			new Config().setName("icon"));
 
+	public static final MoonlightItem AMONGUS = new MoonlightItem(new Settings().maxCount(1).rarity(Rarity.UNCOMMON),
+			new Config().setName("amongus"));
+
 	/** Avocado item */
 	public static final MoonlightItem AVOCADO = new MoonlightItem(
 			new Settings().food(new FoodComponent.Builder().hunger(2).saturationModifier(1f).snack().build())
@@ -367,6 +370,7 @@ public class MoonlightItems {
 	/** Registers all items */
 	public static void register() {
 		ICON.register();
+		AMONGUS.register();
 		AVOCADO.register();
 		BANANA.register();
 		BANANA_BREAD.register();
