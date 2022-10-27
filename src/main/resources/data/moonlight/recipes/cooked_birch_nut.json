@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:smelting",
+    "ingredient": {
+        "item": "moonlight:birch_nut"
+    },
+    "result": "moonlight:cooked_birch_nut",
+    "experience": 0.35
+}

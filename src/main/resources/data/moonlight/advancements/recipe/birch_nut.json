@@ -1,0 +1,23 @@
+{
+	"criteria": {
+		"has_item": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"moonlight:birch_nut"
+						]
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"recipes": [
+			"moonlight:cooked_birch_nut",
+			"moonlight:cooked_birch_nut_from_smoking",
+			"moonlight:cooked_birch_nut_from_campfire_cooking"
+		]
+	}
+}
