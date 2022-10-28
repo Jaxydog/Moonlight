@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "moonlight:item/mozz_stick"
+		"layer0": "moonlight:item/mozzarella_stick"
 	}
 }

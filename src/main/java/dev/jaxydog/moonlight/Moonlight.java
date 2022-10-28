@@ -3,11 +3,11 @@ package dev.jaxydog.moonlight;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import dev.jaxydog.moonlight.block.MoonlightBlocks;
-import dev.jaxydog.moonlight.content.MoonlightSoundEvents;
-import dev.jaxydog.moonlight.item.MoonlightItems;
-import dev.jaxydog.moonlight.power.MoonlightConditions;
-import dev.jaxydog.moonlight.power.MoonlightPowers;
+import dev.jaxydog.moonlight.block.MLBlocks;
+import dev.jaxydog.moonlight.content.MLSoundEvents;
+import dev.jaxydog.moonlight.item.MLItems;
+import dev.jaxydog.moonlight.power.MLConditions;
+import dev.jaxydog.moonlight.power.MLPowers;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
 
@@ -25,11 +25,11 @@ public class Moonlight implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		MoonlightSoundEvents.register();
-		MoonlightBlocks.register();
-		MoonlightItems.register();
-		MoonlightConditions.register();
-		MoonlightPowers.register();
+		MLSoundEvents.register();
+		MLBlocks.register();
+		MLItems.register();
+		MLConditions.register();
+		MLPowers.register();
 
 		LOGGER.info("Loaded Moonlight! Thanks for playing :)");
 	}

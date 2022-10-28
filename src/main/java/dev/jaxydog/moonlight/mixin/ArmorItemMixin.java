@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 
-import dev.jaxydog.moonlight.item.MoonlightArmorItem;
+import dev.jaxydog.moonlight.item.MLArmorItem;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
@@ -38,7 +38,7 @@ public class ArmorItemMixin {
 
 	@Inject(method = "<init>", at = @At(value = "RETURN"))
 	private void constructor(ArmorMaterial material, EquipmentSlot slot, Settings settings, CallbackInfo info) {
-		if (material instanceof MoonlightArmorItem.Material) {
+		if (material instanceof MLArmorItem.Material) {
 			var uuid = MODIFIERS[slot.getEntitySlotId()];
 			ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
 

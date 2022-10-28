@@ -3,7 +3,7 @@ package dev.jaxydog.moonlight.data;
 import io.github.apace100.calio.SerializationHelper;
 import io.github.apace100.calio.data.SerializableDataType;
 
-public class MoonlightDataTypes {
+public class MLDataTypes {
 	/** Interface for function with 3 args */
 	@FunctionalInterface
 	public static interface TriFunction<A, B, C, R> {
