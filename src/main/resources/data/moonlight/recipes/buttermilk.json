@@ -1,0 +1,18 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "minecraft:milk_bucket"
+		},
+		{
+			"item": "minecraft:wheat"
+		},
+		{
+			"item": "minecraft:dandelion"
+		}
+	],
+	"result": {
+		"item": "moonlight:buttermilk",
+		"count": 1
+	}
+}

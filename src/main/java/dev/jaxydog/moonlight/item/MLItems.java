@@ -6,6 +6,7 @@ import dev.jaxydog.moonlight.item.MLArmorItem.Material;
 import dev.jaxydog.moonlight.item.MLItem.Config;
 import dev.jaxydog.moonlight.item.MLItem.LootModifier;
 import dev.jaxydog.moonlight.item.unique.BouquetItem;
+import dev.jaxydog.moonlight.item.unique.ButterMilkItem;
 import dev.jaxydog.moonlight.item.unique.MLDyeableAmethystBlockItem;
 import dev.jaxydog.moonlight.item.unique.MLDyeableAmethystClusterBlockItem;
 import dev.jaxydog.moonlight.item.unique.MilkBottleItem;
@@ -134,6 +135,11 @@ public class MLItems {
 					.maxCount(16).rarity(Rarity.EPIC).recipeRemainder(Items.BUCKET),
 			new Config("milk_bottle").withTooltip());
 
+	public static final ButterMilkItem BUTTERMILK = new ButterMilkItem(
+			new Settings().food(new FoodComponent.Builder().alwaysEdible().hunger(6).saturationModifier(0.25f).build())
+					.maxCount(1).rarity(Rarity.EPIC),
+			new Config("buttermilk").withTooltip());
+
 	public static final MLItem MOZZARELLA_STICK = new MLItem(
 			new Settings().food(new FoodComponent.Builder().hunger(2).saturationModifier(1.5f).build())
 					.rarity(Rarity.UNCOMMON),
@@ -179,6 +185,7 @@ public class MLItems {
 		BIRCH_NUT.register();
 		BLOOD_BOTTLE.register();
 		BOUQUET.register();
+		BUTTERMILK.register();
 		CHEESE.register();
 		CHEESE_AND_CRACKERS.register();
 		CHEESE_BLOCK.register();
