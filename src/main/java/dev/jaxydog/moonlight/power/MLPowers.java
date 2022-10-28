@@ -9,7 +9,7 @@ import io.github.apace100.calio.data.SerializableDataTypes;
 import net.minecraft.util.registry.Registry;
 
 /** Moonlight power class */
-public class MoonlightPowers {
+public class MLPowers {
 	/** Model scale power */
 	public static final PowerFactory<Power> MODEL_SCALE = new PowerFactory<>(
 			Moonlight.id("model_scale"),

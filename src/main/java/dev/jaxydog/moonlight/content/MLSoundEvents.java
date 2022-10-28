@@ -5,7 +5,7 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.registry.Registry;
 
 /** Moonlight sound event class */
-public class MoonlightSoundEvents {
+public class MLSoundEvents {
 	/** Avocado jingle sound */
 	public static final SoundEvent ITEM_AVOCADO_JINGLE = new SoundEvent(Moonlight.id("item.avocado.jingle"));
 	/** Snake alert sound */
