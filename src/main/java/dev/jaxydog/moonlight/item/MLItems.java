@@ -32,6 +32,10 @@ public class MLItems {
 			new Settings().rarity(Rarity.COMMON),
 			new Config("amethyst_cluster"));
 
+	public static final MLItem AMONGUS = new MLItem(
+			new Settings().maxCount(1).rarity(Rarity.RARE),
+			new Config("amongus").withTooltip());
+
 	public static final MLItem AVOCADO = new MLItem(
 			new Settings().food(new FoodComponent.Builder().hunger(3).saturationModifier(1.25f).build())
 					.rarity(Rarity.UNCOMMON),
@@ -64,6 +68,11 @@ public class MLItems {
 			new Settings().food(new FoodComponent.Builder().alwaysEdible().hunger(0).saturationModifier(0).build())
 					.maxCount(16).rarity(Rarity.EPIC),
 			new Config("bouquet").withTooltip());
+
+	public static final ButterMilkItem BUTTERMILK = new ButterMilkItem(
+			new Settings().food(new FoodComponent.Builder().alwaysEdible().hunger(6).saturationModifier(0.25f).build())
+					.maxCount(1).rarity(Rarity.EPIC),
+			new Config("buttermilk").withTooltip());
 
 	public static final MLItem CHEESE = new MLItem(
 			new Settings().food(new FoodComponent.Builder().hunger(1).saturationModifier(1.25f).snack().build())
@@ -135,11 +144,6 @@ public class MLItems {
 					.maxCount(16).rarity(Rarity.EPIC).recipeRemainder(Items.BUCKET),
 			new Config("milk_bottle").withTooltip());
 
-	public static final ButterMilkItem BUTTERMILK = new ButterMilkItem(
-			new Settings().food(new FoodComponent.Builder().alwaysEdible().hunger(6).saturationModifier(0.25f).build())
-					.maxCount(1).rarity(Rarity.EPIC),
-			new Config("buttermilk").withTooltip());
-
 	public static final MLItem MOZZARELLA_STICK = new MLItem(
 			new Settings().food(new FoodComponent.Builder().hunger(2).saturationModifier(1.5f).build())
 					.rarity(Rarity.UNCOMMON),
@@ -179,6 +183,7 @@ public class MLItems {
 		ICON.register();
 		AMETHYST_BLOCK.register();
 		AMETHYST_CLUSTER.register();
+		AMONGUS.register();
 		AVOCADO.register();
 		BANANA.register();
 		BANANA_BREAD.register();
