@@ -14,6 +14,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Items;
 import net.minecraft.item.Item.Settings;
+import net.minecraft.loot.LootTables;
 import net.minecraft.util.Rarity;
 
 public class MLItems {
@@ -34,7 +35,8 @@ public class MLItems {
 
 	public static final MLItem AMONGUS = new MLItem(
 			new Settings().maxCount(1).rarity(Rarity.RARE),
-			new Config("amongus").withTooltip());
+			new Config("amongus").withTooltip().lootModifier(new LootModifier().chance(0.225f).rolls(1)
+					.table(LootTables.SIMPLE_DUNGEON_CHEST)));
 
 	public static final MLItem AVOCADO = new MLItem(
 			new Settings().food(new FoodComponent.Builder().hunger(3).saturationModifier(1.25f).build())
