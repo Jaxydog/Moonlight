@@ -109,6 +109,16 @@ public class MLItems {
 					.rarity(Rarity.UNCOMMON),
 			new Config("cheesy_dino_veggie").withTooltip());
 
+	public static final MLItem CHEESY_GOOBY_NUGGIE = new MLItem(
+			new Settings().food(new FoodComponent.Builder().hunger(9).meat().saturationModifier(0.925f).snack().build())
+					.rarity(Rarity.UNCOMMON),
+			new Config("cheesy_gooby_nuggie").withTooltip());
+
+	public static final MLItem CHEESY_GOOBY_VEGGIE = new MLItem(
+			new Settings().food(new FoodComponent.Builder().hunger(8).saturationModifier(0.925f).snack().build())
+					.rarity(Rarity.UNCOMMON),
+			new Config("cheesy_gooby_veggie").withTooltip());
+
 	public static final MLItem COOKED_BIRCH_NUT = new MLItem(
 			new Settings().food(new FoodComponent.Builder().hunger(4).saturationModifier(1.5f).snack().build())
 					.rarity(Rarity.UNCOMMON),
@@ -128,6 +138,16 @@ public class MLItems {
 			new Settings().food(new FoodComponent.Builder().hunger(6).saturationModifier(0.65f).snack().build())
 					.rarity(Rarity.UNCOMMON),
 			new Config("dino_veggie").withTooltip());
+
+	public static final MLItem GOOBY_NUGGIE = new MLItem(
+			new Settings().food(new FoodComponent.Builder().hunger(8).meat().saturationModifier(0.65f).snack().build())
+					.rarity(Rarity.UNCOMMON),
+			new Config("gooby_nuggie").withTooltip());
+
+	public static final MLItem GOOBY_VEGGIE = new MLItem(
+			new Settings().food(new FoodComponent.Builder().hunger(7).saturationModifier(0.65f).snack().build())
+					.rarity(Rarity.UNCOMMON),
+			new Config("gooby_veggie").withTooltip());
 
 	public static final MLItem GRILLED_CHEESE = new MLItem(
 			new Settings().food(new FoodComponent.Builder().hunger(8).saturationModifier(0.75f).build())
@@ -198,10 +218,14 @@ public class MLItems {
 		CHEESY_BAKED_POTATO.register();
 		CHEESY_DINO_NUGGIE.register();
 		CHEESY_DINO_VEGGIE.register();
+		CHEESY_GOOBY_NUGGIE.register();
+		CHEESY_GOOBY_VEGGIE.register();
 		COOKED_BIRCH_NUT.register();
 		CRACKER.register();
 		DINO_NUGGIE.register();
 		DINO_VEGGIE.register();
+		GOOBY_NUGGIE.register();
+		GOOBY_VEGGIE.register();
 		GRILLED_CHEESE.register();
 		MACARONI_AND_CHEESE.register();
 		MILK_BOTTLE.register();
