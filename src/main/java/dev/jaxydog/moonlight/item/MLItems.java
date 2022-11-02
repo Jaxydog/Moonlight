@@ -23,6 +23,10 @@ public class MLItems {
 			new Settings().maxCount(1).rarity(Rarity.RARE),
 			new Config("icon").withTooltip());
 
+	public static final MLItem GOOBY_ESSENCE = new MLItem(
+			new Settings().rarity(Rarity.RARE),
+			new Config("gooby_essence").withTooltip());
+
 	public static final MLDyeableAmethystBlockItem AMETHYST_BLOCK = new MLDyeableAmethystBlockItem(
 			MLBlocks.AMETHYST_BLOCK,
 			new Settings().rarity(Rarity.COMMON),
@@ -203,6 +207,7 @@ public class MLItems {
 
 	public static void register() {
 		ICON.register();
+		GOOBY_ESSENCE.register();
 		AMETHYST_BLOCK.register();
 		AMETHYST_CLUSTER.register();
 		AMONGUS.register();
