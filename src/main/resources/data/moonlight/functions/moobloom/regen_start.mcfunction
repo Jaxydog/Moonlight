@@ -1,0 +1,1 @@
+title @s actionbar {"translate": "power.moonlight.moobloom.regen.start", "color": "red"}

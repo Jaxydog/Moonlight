@@ -167,6 +167,8 @@
 	"power.moonlight.moobloom.no_netherite.name": "Not *THAT* Strong",
 	"power.moonlight.moobloom.regen.description": "Nearby players are given a small dose of melatonin and regenerate health more quickly.",
 	"power.moonlight.moobloom.regen.name": "Passive Dosage",
+	"power.moonlight.moobloom.regen.start": "Regeneration enabled!",
+	"power.moonlight.moobloom.regen.stop": "Regeneration disabled!",
 	"power.moonlight.moobloom.size.description": "You're smaller than a normal player, only being 1.5 blocks tall.",
 	"power.moonlight.moobloom.size.name": "Cow-sized",
 	"power.moonlight.moobloom.stomp.description": "By slamming your feet against the ground, nearby creatures are thrown away from you and take 2 hearts of damage.",
