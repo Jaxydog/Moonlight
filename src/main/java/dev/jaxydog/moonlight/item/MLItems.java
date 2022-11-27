@@ -63,7 +63,7 @@ public class MLItems {
 	public static final MLItem BIRCH_NUT = new MLItem(
 			new Settings().food(new FoodComponent.Builder().hunger(1).saturationModifier(1.5f).snack().build())
 					.rarity(Rarity.COMMON),
-			new Config("birch_nut").lootModifier(new LootModifier().chance(0.15f).rolls(2)
+			new Config("birch_nut").lootModifier(new LootModifier().chance(0.015f).rolls(2)
 					.table(Blocks.BIRCH_LEAVES.getLootTableId())).withTooltip());
 
 	public static final MLItem BLOOD_BOTTLE = new MLItem(
