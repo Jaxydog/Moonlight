@@ -61,7 +61,7 @@ public class MLItems {
 			new Config("banana_bread").withTooltip());
 
 	public static final MLItem BIRCH_NUT = new MLItem(
-			new Settings().food(new FoodComponent.Builder().hunger(1).saturationModifier(1.5f).snack().build())
+			new Settings().food(new FoodComponent.Builder().hunger(1).saturationModifier(1.25f).snack().build())
 					.rarity(Rarity.COMMON),
 			new Config("birch_nut").lootModifier(new LootModifier().chance(0.015f).rolls(2)
 					.table(Blocks.BIRCH_LEAVES.getLootTableId())).withTooltip());
@@ -126,7 +126,7 @@ public class MLItems {
 			new Config("cheesy_gooby_veggie").withTooltip());
 
 	public static final MLItem COOKED_BIRCH_NUT = new MLItem(
-			new Settings().food(new FoodComponent.Builder().hunger(4).saturationModifier(1.5f).snack().build())
+			new Settings().food(new FoodComponent.Builder().hunger(2).saturationModifier(1.25f).snack().build())
 					.rarity(Rarity.UNCOMMON),
 			new Config("cooked_birch_nut").withTooltip());
 
