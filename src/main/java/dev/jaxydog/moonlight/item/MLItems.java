@@ -91,6 +91,11 @@ public class MLItems {
 			new Settings().rarity(Rarity.UNCOMMON),
 			new Config("cheese_block").withTooltip());
 
+	public static final MLBlockItem IF_I_EATED_SOAP_CAKE = new MLBlockItem(
+			MLBlocks.IF_I_EATED_SOAP_CAKE,
+			new Settings().rarity(Rarity.UNCOMMON),
+			new Config("if_i_eated_soap_cake").withTooltip());
+
 	public static final MLItem CHEESE_STEAK = new MLItem(
 			new Settings().food(new FoodComponent.Builder().hunger(10).meat().saturationModifier(0.625f).build())
 					.rarity(Rarity.UNCOMMON),
@@ -205,6 +210,7 @@ public class MLItems {
 		DINO_NUGGIE.register();
 		DINO_VEGGIE.register();
 		GRILLED_CHEESE.register();
+		IF_I_EATED_SOAP_CAKE.register();
 		MACARONI_AND_CHEESE.register();
 		MILK_BOTTLE.register();
 		MOZZARELLA_STICK.register();

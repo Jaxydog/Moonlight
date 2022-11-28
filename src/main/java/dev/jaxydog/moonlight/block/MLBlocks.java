@@ -22,7 +22,12 @@ public class MLBlocks {
 			Settings.of(Material.SPONGE).hardness(1.0f).sounds(BlockSoundGroup.SLIME),
 			new Config("cheese_block"));
 
+	public static final MLBlock IF_I_EATED_SOAP_CAKE = new MLBlock(
+			Settings.of(Material.SPONGE).hardness(1.0f).sounds(BlockSoundGroup.SLIME),
+			new Config("if_i_eated_soap_cake"));
+
 	public static void register() {
+		IF_I_EATED_SOAP_CAKE.register();
 		AMETHYST_BLOCK.register();
 		AMETHYST_CLUSTER.register();
 		CHEESE_BLOCK.register();
