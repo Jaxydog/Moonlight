@@ -1,21 +1,48 @@
 {
-    "name": "power.moonlight.moobloom.hide.name",
-    "description": "power.moonlight.moobloom.hide.description",
-    "type": "origins:invisibility",
-    "render_armor": false,
-    "condition": {
-        "type": "origins:and",
-        "conditions": [
-            {
-                "type": "origins:sneaking"
-            },
-            {
-                "type": "origins:in_block",
-                "block_condition": {
-                    "type": "origins:block",
-                    "block": "minecraft:dandelion"
-                }
-            }
-        ]
-    }
+	"name": "power.moonlight.moobloom.hide.name",
+	"description": "power.moonlight.moobloom.hide.description",
+	"type": "origins:multiple",
+	"toggle": {
+		"type": "origins:toggle",
+		"active_by_default": false,
+		"key": {
+			"key": "key.loadToolbarActivator"
+		}
+	},
+	"effect": {
+		"type": "origins:overlay",
+		"texture": "minecraft:textures/misc/nausea.png",
+		"red": 0.5,
+		"green": 0.5,
+		"blue": 0.2,
+		"strength": 0.7,
+		"draw_mode": "nausea",
+		"draw_phase": "above_hud",
+		"visible_in_third_person": true,
+		"hide_with_hud": true,
+		"condition": {
+			"type": "origins:power_active",
+			"power": "moonlight:moobloom/hide_toggle"
+		}
+	},
+	"invisibility": {
+		"type": "origins:invisibility",
+		"render_armor": false,
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:power_active",
+					"power": "moonlight:moobloom/hide_toggle"
+				},
+				{
+					"type": "origins:in_block",
+					"block_condition": {
+						"type": "origins:block",
+						"block": "minecraft:dandelion"
+					}
+				}
+			]
+		}
+	}
 }

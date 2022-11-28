@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "moonlight:cooked_birch_nut"
+		},
+		{
+			"item": "moonlight:cheese"
+		}
+	],
+	"result": {
+		"item": "moonlight:cheesy_birch_nut",
+		"count": 1
+	}
+}

@@ -1,0 +1,22 @@
+{
+	"criteria": {
+		"has_item": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": ["moonlight:gooby_essence"]
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"recipes": [
+			"moonlight:gooby_nuggie",
+			"moonlight:gooby_veggie",
+			"moonlight:cheesy_gooby_nuggie",
+			"moonlight:cheesy_gooby_veggie"
+		]
+	}
+}
