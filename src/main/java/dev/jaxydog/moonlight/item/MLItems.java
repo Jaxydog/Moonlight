@@ -43,14 +43,14 @@ public class MLItems {
 					.table(LootTables.SIMPLE_DUNGEON_CHEST)));
 
 	public static final MLItem AVOCADO = new MLItem(
-			new Settings().food(new FoodComponent.Builder().hunger(3).saturationModifier(1.25f).build())
+			new Settings().food(new FoodComponent.Builder().hunger(3).saturationModifier(1.125f).build())
 					.rarity(Rarity.UNCOMMON),
 			new Config("avocado").lootModifier(new LootModifier().chance(0.0125f).rolls(1)
 					.table(Blocks.JUNGLE_LEAVES.getLootTableId())).useSound(MLSoundEvents.ITEM_AVOCADO_JINGLE)
 					.withTooltip());
 
 	public static final MLItem BANANA = new MLItem(
-			new Settings().food(new FoodComponent.Builder().hunger(2).saturationModifier(1.25f).snack().build())
+			new Settings().food(new FoodComponent.Builder().hunger(2).saturationModifier(1f).snack().build())
 					.rarity(Rarity.UNCOMMON),
 			new Config("banana").lootModifier(new LootModifier().chance(0.0125f).rolls(3)
 					.table(Blocks.JUNGLE_LEAVES.getLootTableId())).withTooltip());
@@ -61,7 +61,7 @@ public class MLItems {
 			new Config("banana_bread").withTooltip());
 
 	public static final MLItem BIRCH_NUT = new MLItem(
-			new Settings().food(new FoodComponent.Builder().hunger(1).saturationModifier(1.25f).snack().build())
+			new Settings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.75f).snack().build())
 					.rarity(Rarity.COMMON),
 			new Config("birch_nut").lootModifier(new LootModifier().chance(0.015f).rolls(2)
 					.table(Blocks.BIRCH_LEAVES.getLootTableId())).withTooltip());
@@ -81,12 +81,12 @@ public class MLItems {
 			new Config("buttermilk").withTooltip());
 
 	public static final MLItem CHEESE = new MLItem(
-			new Settings().food(new FoodComponent.Builder().hunger(1).saturationModifier(1.25f).snack().build())
+			new Settings().food(new FoodComponent.Builder().hunger(1).saturationModifier(1.125f).snack().build())
 					.rarity(Rarity.UNCOMMON),
 			new Config("cheese").withTooltip());
 
 	public static final MLItem CHEESE_AND_CRACKERS = new MLItem(
-			new Settings().food(new FoodComponent.Builder().hunger(4).saturationModifier(1.25f).build())
+			new Settings().food(new FoodComponent.Builder().hunger(4).saturationModifier(1.125f).build())
 					.rarity(Rarity.UNCOMMON),
 			new Config("cheese_and_crackers").withTooltip());
 
@@ -104,6 +104,11 @@ public class MLItems {
 			new Settings().food(new FoodComponent.Builder().hunger(6).saturationModifier(0.875f).build())
 					.rarity(Rarity.UNCOMMON),
 			new Config("cheesy_baked_potato").withTooltip());
+
+	public static final MLItem CHEESY_BIRCH_NUT = new MLItem(
+			new Settings().food(new FoodComponent.Builder().hunger(3).saturationModifier(1.125f).snack().build())
+					.rarity(Rarity.UNCOMMON),
+			new Config("cheesy_birch_nut").withTooltip());
 
 	public static final MLItem CHEESY_DINO_NUGGIE = new MLItem(
 			new Settings().food(new FoodComponent.Builder().hunger(8).meat().saturationModifier(0.925f).snack().build())
@@ -125,8 +130,13 @@ public class MLItems {
 					.rarity(Rarity.UNCOMMON),
 			new Config("cheesy_gooby_veggie").withTooltip());
 
+	public static final MLItem CHEESY_MASHED_POTATOES = new MLItem(
+			new Settings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.875f).build())
+					.rarity(Rarity.UNCOMMON),
+			new Config("cheesy_mashed_potatoes").withTooltip());
+
 	public static final MLItem COOKED_BIRCH_NUT = new MLItem(
-			new Settings().food(new FoodComponent.Builder().hunger(2).saturationModifier(1.25f).snack().build())
+			new Settings().food(new FoodComponent.Builder().hunger(2).saturationModifier(1f).snack().build())
 					.rarity(Rarity.UNCOMMON),
 			new Config("cooked_birch_nut").withTooltip());
 
@@ -164,6 +174,11 @@ public class MLItems {
 			new Settings().food(new FoodComponent.Builder().hunger(5).saturationModifier(1.125f).build())
 					.rarity(Rarity.UNCOMMON),
 			new Config("macaroni_and_cheese").withTooltip());
+
+	public static final MLItem MASHED_POTATOES = new MLItem(
+			new Settings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.5f).build())
+					.rarity(Rarity.UNCOMMON).recipeRemainder(Items.WOODEN_SHOVEL),
+			new Config("mashed_potatoes").withTooltip());
 
 	public static final MilkBottleItem MILK_BOTTLE = new MilkBottleItem(
 			new Settings().food(new FoodComponent.Builder().alwaysEdible().hunger(2).saturationModifier(1.5f).build())
@@ -212,21 +227,23 @@ public class MLItems {
 		AMETHYST_CLUSTER.register();
 		AMONGUS.register();
 		AVOCADO.register();
-		BANANA.register();
 		BANANA_BREAD.register();
+		BANANA.register();
 		BIRCH_NUT.register();
 		BLOOD_BOTTLE.register();
 		BOUQUET.register();
 		BUTTERMILK.register();
-		CHEESE.register();
 		CHEESE_AND_CRACKERS.register();
 		CHEESE_BLOCK.register();
 		CHEESE_STEAK.register();
+		CHEESE.register();
 		CHEESY_BAKED_POTATO.register();
+		CHEESY_BIRCH_NUT.register();
 		CHEESY_DINO_NUGGIE.register();
 		CHEESY_DINO_VEGGIE.register();
 		CHEESY_GOOBY_NUGGIE.register();
 		CHEESY_GOOBY_VEGGIE.register();
+		CHEESY_MASHED_POTATOES.register();
 		COOKED_BIRCH_NUT.register();
 		CRACKER.register();
 		DINO_NUGGIE.register();
@@ -235,6 +252,7 @@ public class MLItems {
 		GOOBY_VEGGIE.register();
 		GRILLED_CHEESE.register();
 		MACARONI_AND_CHEESE.register();
+		MASHED_POTATOES.register();
 		MILK_BOTTLE.register();
 		MOZZARELLA_STICK.register();
 		PASTA.register();
