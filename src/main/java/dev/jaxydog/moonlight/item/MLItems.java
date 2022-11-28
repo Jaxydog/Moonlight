@@ -151,6 +151,11 @@ public class MLItems {
 					.maxCount(16).rarity(Rarity.EPIC).recipeRemainder(Items.BUCKET),
 			new Config("milk_bottle").withTooltip());
 
+	public static final MilkBottleItem PILK = new MilkBottleItem(
+			new Settings().food(new FoodComponent.Builder().alwaysEdible().hunger(2).saturationModifier(0.5f).build())
+					.maxCount(1).rarity(Rarity.EPIC),
+			new Config("pilk").withTooltip());
+
 	public static final MLItem MOZZARELLA_STICK = new MLItem(
 			new Settings().food(new FoodComponent.Builder().hunger(2).saturationModifier(1.5f).build())
 					.rarity(Rarity.UNCOMMON),
@@ -215,6 +220,7 @@ public class MLItems {
 		MILK_BOTTLE.register();
 		MOZZARELLA_STICK.register();
 		PASTA.register();
+		PILK.register();
 		CAVE_CORE.register();
 		HELL_CORE.register();
 		LAND_CORE.register();
