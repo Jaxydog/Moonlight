@@ -19,6 +19,7 @@ public class ButterMilkItem extends MLItem {
         if (user instanceof PlayerEntity && !((PlayerEntity) user).getAbilities().creativeMode) {
             ((PlayerEntity) user).getInventory().insertStack(Items.BUCKET.getDefaultStack());
         }
+
         return super.finishUsing(stack, world, user);
     }
 

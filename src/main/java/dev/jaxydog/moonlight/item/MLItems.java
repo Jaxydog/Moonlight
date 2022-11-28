@@ -7,6 +7,7 @@ import dev.jaxydog.moonlight.item.MLItem.Config;
 import dev.jaxydog.moonlight.item.MLItem.LootModifier;
 import dev.jaxydog.moonlight.item.unique.BouquetItem;
 import dev.jaxydog.moonlight.item.unique.ButterMilkItem;
+import dev.jaxydog.moonlight.item.unique.CaramelAppleItem;
 import dev.jaxydog.moonlight.item.unique.MLDyeableAmethystBlockItem;
 import dev.jaxydog.moonlight.item.unique.MLDyeableAmethystClusterBlockItem;
 import dev.jaxydog.moonlight.item.unique.MilkBottleItem;
@@ -77,8 +78,18 @@ public class MLItems {
 
 	public static final ButterMilkItem BUTTERMILK = new ButterMilkItem(
 			new Settings().food(new FoodComponent.Builder().alwaysEdible().hunger(6).saturationModifier(0.25f).build())
-					.maxCount(1).rarity(Rarity.EPIC),
+					.maxCount(1).rarity(Rarity.EPIC).recipeRemainder(Items.BUCKET),
 			new Config("buttermilk").withTooltip());
+
+	public static final CaramelAppleItem CARAMEL_APPLE = new CaramelAppleItem(
+			new Settings().food(new FoodComponent.Builder().hunger(5).saturationModifier(0.45f).snack().build())
+					.rarity(Rarity.UNCOMMON),
+			new Config("caramel_apple").withTooltip());
+
+	public static final MLItem CARAMEL_BOTTLE = new MLItem(
+			new Settings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.25f).snack().build())
+					.maxCount(16).rarity(Rarity.COMMON).recipeRemainder(Items.GLASS_BOTTLE),
+			new Config("caramel_bottle").withTooltip());
 
 	public static final MLItem CHEESE = new MLItem(
 			new Settings().food(new FoodComponent.Builder().hunger(1).saturationModifier(1.125f).snack().build())
@@ -182,7 +193,7 @@ public class MLItems {
 
 	public static final MilkBottleItem MILK_BOTTLE = new MilkBottleItem(
 			new Settings().food(new FoodComponent.Builder().alwaysEdible().hunger(2).saturationModifier(1.5f).build())
-					.maxCount(16).rarity(Rarity.EPIC).recipeRemainder(Items.BUCKET),
+					.maxCount(16).rarity(Rarity.EPIC),
 			new Config("milk_bottle").withTooltip());
 
 	public static final MLItem MOZZARELLA_STICK = new MLItem(
@@ -233,6 +244,8 @@ public class MLItems {
 		BLOOD_BOTTLE.register();
 		BOUQUET.register();
 		BUTTERMILK.register();
+		CARAMEL_APPLE.register();
+		CARAMEL_BOTTLE.register();
 		CHEESE_AND_CRACKERS.register();
 		CHEESE_BLOCK.register();
 		CHEESE_STEAK.register();
