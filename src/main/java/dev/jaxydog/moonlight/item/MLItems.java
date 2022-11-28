@@ -188,7 +188,7 @@ public class MLItems {
 
 	public static final MLItem MASHED_POTATOES = new MLItem(
 			new Settings().food(new FoodComponent.Builder().hunger(2).saturationModifier(0.5f).build())
-					.rarity(Rarity.UNCOMMON).recipeRemainder(Items.WOODEN_SHOVEL),
+					.rarity(Rarity.UNCOMMON),
 			new Config("mashed_potatoes").withTooltip());
 
 	public static final MilkBottleItem MILK_BOTTLE = new MilkBottleItem(
