@@ -1,0 +1,257 @@
+{
+	"name": "power.moonlight.snow_leopard.speed.name",
+	"description": "power.moonlight.snow_leopard.speed.description",
+	"type": "origins:multiple",
+	"base": {
+		"type": "origins:attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "multiply_base",
+			"value": 0.25
+		}
+	},
+	"inertia": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 100,
+		"hud_render": {
+			"sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+			"bar_index": 20,
+			"condition": {
+				"type": "origins:resource",
+				"resource": "moonlight:snow_leopard/speed_inertia",
+				"comparison": ">",
+				"compare_to": 0
+			}
+		},
+		"max_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:snow_leopard/speed_max"
+		}
+	},
+	"update": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "moonlight:snow_leopard/speed_inertia",
+			"operation": "add",
+			"change": 1
+		},
+		"falling_action": {
+			"type": "origins:change_resource",
+			"resource": "moonlight:snow_leopard/speed_inertia",
+			"operation": "set",
+			"change": 0
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:sprinting"
+				},
+				{
+					"type": "origins:sneaking",
+					"inverted": true
+				}
+			]
+		}
+	},
+	"level_1": {
+		"type": "origins:conditioned_attribute",
+		"tick_rate": 1,
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "multiply_base",
+			"value": 0.04375
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:snow_leopard/speed_inertia",
+					"comparison": ">=",
+					"compare_to": 12
+				},
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:snow_leopard/speed_inertia",
+					"comparison": "<",
+					"compare_to": 25
+				}
+			]
+		}
+	},
+	"level_2": {
+		"type": "origins:conditioned_attribute",
+		"tick_rate": 1,
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "multiply_base",
+			"value": 0.0875
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:snow_leopard/speed_inertia",
+					"comparison": ">=",
+					"compare_to": 25
+				},
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:snow_leopard/speed_inertia",
+					"comparison": "<",
+					"compare_to": 38
+				}
+			]
+		}
+	},
+	"level_3": {
+		"type": "origins:conditioned_attribute",
+		"tick_rate": 1,
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "multiply_base",
+			"value": 0.13125
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:snow_leopard/speed_inertia",
+					"comparison": ">=",
+					"compare_to": 38
+				},
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:snow_leopard/speed_inertia",
+					"comparison": "<",
+					"compare_to": 50
+				}
+			]
+		}
+	},
+	"level_4": {
+		"type": "origins:conditioned_attribute",
+		"tick_rate": 1,
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "multiply_base",
+			"value": 0.175
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:snow_leopard/speed_inertia",
+					"comparison": ">=",
+					"compare_to": 50
+				},
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:snow_leopard/speed_inertia",
+					"comparison": "<",
+					"compare_to": 62
+				}
+			]
+		}
+	},
+	"level_5": {
+		"type": "origins:conditioned_attribute",
+		"tick_rate": 1,
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "multiply_base",
+			"value": 0.21875
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:snow_leopard/speed_inertia",
+					"comparison": ">=",
+					"compare_to": 62
+				},
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:snow_leopard/speed_inertia",
+					"comparison": "<",
+					"compare_to": 75
+				}
+			]
+		}
+	},
+	"level_6": {
+		"type": "origins:conditioned_attribute",
+		"tick_rate": 1,
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "multiply_base",
+			"value": 0.2625
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:snow_leopard/speed_inertia",
+					"comparison": ">=",
+					"compare_to": 75
+				},
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:snow_leopard/speed_inertia",
+					"comparison": "<",
+					"compare_to": 88
+				}
+			]
+		}
+	},
+	"level_7": {
+		"type": "origins:conditioned_attribute",
+		"tick_rate": 1,
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "multiply_base",
+			"value": 0.30625
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:snow_leopard/speed_inertia",
+					"comparison": ">=",
+					"compare_to": 88
+				},
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:snow_leopard/speed_inertia",
+					"comparison": "<",
+					"compare_to": 100
+				}
+			]
+		}
+	},
+	"level_8": {
+		"type": "origins:conditioned_attribute",
+		"tick_rate": 1,
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "multiply_base",
+			"value": 0.35
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "moonlight:snow_leopard/speed_inertia",
+			"comparison": ">=",
+			"compare_to": 100
+		}
+	}
+}

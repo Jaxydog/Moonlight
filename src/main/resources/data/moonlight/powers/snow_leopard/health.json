@@ -1,0 +1,11 @@
+{
+	"name": "power.moonlight.snow_leopard.health.name",
+	"description": "power.moonlight.snow_leopard.health.description",
+	"type": "origins:attribute",
+	"update_health": true,
+	"modifier": {
+		"attribute": "minecraft:generic.max_health",
+		"operation": "addition",
+		"value": -4
+	}
+}

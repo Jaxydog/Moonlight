@@ -1,0 +1,47 @@
+{
+	"hidden": true,
+	"type": "origins:multiple",
+	"squawk": {
+		"type": "origins:action_over_time",
+		"interval": 100,
+		"entity_action": {
+			"type": "origins:chance",
+			"chance": 0.25,
+			"action": {
+				"type": "origins:execute_command",
+				"command": "playsound minecraft:entity.cat.ambient player @a ~ ~ ~ 0.25 0.5"
+			}
+		},
+		"condition": {
+			"type": "origins:gamemode",
+			"gamemode": "spectator",
+			"inverted": true
+		}
+	},
+	"hurt": {
+		"type": "origins:action_when_damage_taken",
+		"cooldown": 0,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "playsound minecraft:entity.cat.hurt player @a ~ ~ ~ 0.5 0.5"
+		},
+		"condition": {
+			"type": "origins:health",
+			"comparison": ">",
+			"compare_to": 0
+		}
+	},
+	"death": {
+		"type": "origins:action_when_damage_taken",
+		"cooldown": 0,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "playsound minecraft:entity.cat.death player @a ~ ~ ~ 0.5 0.5"
+		},
+		"condition": {
+			"type": "origins:health",
+			"comparison": "==",
+			"compare_to": 0
+		}
+	}
+}

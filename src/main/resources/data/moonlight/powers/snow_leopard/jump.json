@@ -1,0 +1,118 @@
+{
+	"name": "power.moonlight.snow_leopard.jump.name",
+	"description": "power.moonlight.snow_leopard.jump.description",
+	"type": "origins:multiple",
+	"timer": {
+		"type": "origins:resource",
+		"min": -1,
+		"max": 3,
+		"hud_render": {
+			"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+			"bar_index": 16,
+			"condition": {
+				"type": "origins:resource",
+				"resource": "moonlight:snow_leopard/jump_timer",
+				"comparison": ">",
+				"compare_to": -1
+			}
+		},
+		"max_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:snow_leopard/jump_max"
+		}
+	},
+	"update": {
+		"type": "origins:action_over_time",
+		"interval": 10,
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "moonlight:snow_leopard/jump_timer",
+			"change": 1
+		},
+		"falling_action": {
+			"type": "origins:change_resource",
+			"resource": "moonlight:snow_leopard/jump_timer",
+			"operation": "set",
+			"change": -1
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:sneaking"
+				},
+				{
+					"type": "origins:on_block"
+				},
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:snow_leopard/barrel_toggle",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:snow_leopard/heavy_weight",
+					"comparison": "<=",
+					"compare_to": 2
+				}
+			]
+		}
+	},
+	"boost_1": {
+		"type": "origins:modify_jump",
+		"modifier": {
+			"operation": "multiply_base",
+			"value": 0.5
+		},
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:snow_leopard/jump_small"
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "moonlight:snow_leopard/jump_timer",
+			"comparison": "==",
+			"compare_to": 1
+		}
+	},
+	"boost_2": {
+		"type": "origins:modify_jump",
+		"modifier": {
+			"operation": "multiply_base",
+			"value": 1
+		},
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:snow_leopard/jump_medium"
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "moonlight:snow_leopard/jump_timer",
+			"comparison": "==",
+			"compare_to": 2
+		}
+	},
+	"boost_3": {
+		"type": "origins:modify_jump",
+		"modifier": {
+			"operation": "multiply_base",
+			"value": 1.5
+		},
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:snow_leopard/jump_large"
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "moonlight:snow_leopard/jump_timer",
+			"comparison": "==",
+			"compare_to": 3
+		}
+	},
+	"no_fall": {
+		"type": "origins:modify_falling",
+		"velocity": 0.08,
+		"take_fall_damage": false
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"name": "origin.moonlight.snow_leopard.name",
+	"description": "origin.moonlight.snow_leopard.description",
+	"icon": "minecraft:snowball",
+	"impact": 3,
+	"unchoosable": true,
+	"powers": [
+		"moonlight:snow_leopard/ambient",
+		"moonlight:snow_leopard/diet",
+		"moonlight:snow_leopard/disease",
+		"moonlight:snow_leopard/health",
+		"moonlight:snow_leopard/jump",
+		"moonlight:snow_leopard/speed"
+	]
+}

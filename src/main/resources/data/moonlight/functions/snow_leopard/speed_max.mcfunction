@@ -1,0 +1,1 @@
+playsound minecraft:block.note_block.bass player @a ~ ~ ~ 1 2

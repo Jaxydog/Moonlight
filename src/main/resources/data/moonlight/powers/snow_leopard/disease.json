@@ -1,0 +1,57 @@
+{
+	"name": "power.moonlight.snow_leopard.disease.name",
+	"description": "power.moonlight.snow_leopard.disease.description",
+	"type": "origins:action_over_time",
+	"interval": 125,
+	"entity_action": {
+		"type": "origins:chance",
+		"chance": 0.025,
+		"action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:choice",
+					"actions": [
+						{
+							"weight": 10,
+							"element": {
+								"type": "origins:execute_command",
+								"command": "function moonlight:snow_leopard/disease_weak"
+							}
+						},
+						{
+							"weight": 10,
+							"element": {
+								"type": "origins:execute_command",
+								"command": "function moonlight:snow_leopard/disease_normal"
+							}
+						},
+						{
+							"weight": 10,
+							"element": {
+								"type": "origins:execute_command",
+								"command": "function moonlight:snow_leopard/disease_strong"
+							}
+						},
+						{
+							"weight": 1,
+							"element": {
+								"type": "origins:execute_command",
+								"command": "function moonlight:snow_leopard/disease_funny"
+							}
+						}
+					]
+				},
+				{
+					"type": "origins:damage",
+					"amount": 2,
+					"source": {
+						"name": "snowLeopardDisease",
+						"bypasses_armor": true,
+						"unblockable": true
+					}
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"name": "power.moonlight.snow_leopard.diet.name",
+	"description": "power.moonlight.snow_leopard.diet.description",
+	"type": "origins:prevent_item_use",
+	"item_condition": {
+		"type": "origins:and",
+		"conditions": [
+			{
+				"type": "origins:food"
+			},
+			{
+				"type": "origins:ingredient",
+				"ingredient": {
+					"tag": "moonlight:snow_leopard/diet"
+				},
+				"inverted": true
+			}
+		]
+	}
+}

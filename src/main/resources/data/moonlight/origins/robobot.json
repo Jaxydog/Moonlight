@@ -1,0 +1,8 @@
+{
+	"name": "origin.moonlight.robobot.name",
+	"description": "origin.moonlight.robobot.description",
+	"icon": "minecraft:snowball",
+	"impact": 1,
+	"unchoosable": true,
+	"powers": []
+}
