@@ -4,7 +4,7 @@
 	"version": "${version}",
 	"name": "Moonlight",
 	"description": "Origins addon for Moonlight SMP",
-	"authors": ["Jaxydog"],
+	"authors": ["Jaxydog", "FunsulYT"],
 	"contact": {
 		"sources": "https://github.com/Jaxydog/Moonlight",
 		"issues": "https://github.com/Jaxydog/Moonlight/issues"
@@ -18,11 +18,11 @@
 	},
 	"mixins": ["moonlight.mixins.json"],
 	"depends": {
-		"fabricloader": ">=0.14.8",
+		"fabricloader": ">=0.14.10",
 		"fabric": "*",
 		"minecraft": "~1.19",
 		"java": ">=17",
 		"origins": ">=1.7.0",
-		"pehkui": ">=3.5.0"
+		"pehkui": ">=3.6.0"
 	}
 }

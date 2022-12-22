@@ -32,7 +32,7 @@
 				"type": "origins:change_resource",
 				"resource": "moonlight:power_armor/modification/cooling_vents_resource",
 				"operation": "set",
-				"change": 1
+				"change": 0
 			},
 			"condition": {
 				"type": "origins:equipped_item",
@@ -44,6 +44,12 @@
 					}
 				}
 			}
+		},
+		"falling_action": {
+			"type": "origins:change_resource",
+			"resource": "moonlight:power_armor/modification/cooling_vents_resource",
+			"operation": "set",
+			"change": 0
 		},
 		"condition": {
 			"type": "origins:resource",

@@ -28,6 +28,6 @@
 		"type": "origins:resource",
 		"resource": "moonlight:power_armor/power_resource",
 		"comparison": ">=",
-		"compare_to": 2400
+		"compare_to": 600
 	}
 }

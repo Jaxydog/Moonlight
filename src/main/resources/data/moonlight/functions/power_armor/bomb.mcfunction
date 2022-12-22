@@ -1,0 +1,1 @@
+summon minecraft:creeper ~ ~ ~ {powered: 1, Fuse: 100, ignited: 1, Invulnerable: 1b, NoAI: 1b, Tags: ["powerArmorBomb"], ActiveEffects: [{Id: 14, Duration: 100, ShowParticles: 0b}]}

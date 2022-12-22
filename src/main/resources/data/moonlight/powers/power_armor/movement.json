@@ -19,27 +19,12 @@
 	},
 	"power_drain": {
 		"type": "origins:action_over_time",
-		"interval": 10,
+		"interval": 5,
 		"entity_action": {
-			"type": "origins:if_else",
-			"if_action": {
-				"type": "origins:change_resource",
-				"resource": "moonlight:power_armor/power_resource",
-				"operation": "add",
-				"change": -3
-			},
-			"else_action": {
-				"type": "origins:change_resource",
-				"resource": "moonlight:power_armor/power_resource",
-				"operation": "add",
-				"change": -5
-			},
-			"condition": {
-				"type": "origins:resource",
-				"resource": "moonlight:power_armor/modification/cooling_vents_resource",
-				"comparison": "==",
-				"compare_to": 0
-			}
+			"type": "origins:change_resource",
+			"resource": "moonlight:power_armor/power_drain_small",
+			"operation": "set",
+			"change": 1
 		},
 		"condition": {
 			"type": "origins:moving"

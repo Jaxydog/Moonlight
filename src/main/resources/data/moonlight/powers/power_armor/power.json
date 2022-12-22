@@ -5,7 +5,7 @@
 	"resource": {
 		"type": "origins:resource",
 		"min": 0,
-		"max": 12000,
+		"max": 3000,
 		"min_action": {
 			"type": "origins:execute_command",
 			"command": "function moonlight:power_armor/power/empty"
@@ -112,7 +112,7 @@
 						"type": "origins:change_resource",
 						"resource": "moonlight:power_armor/power_resource",
 						"operation": "add",
-						"change": -7
+						"change": -8
 					},
 					"else_action": {
 						"type": "origins:change_resource",
