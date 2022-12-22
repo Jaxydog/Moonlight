@@ -1,4 +1,108 @@
 {
 	"hidden": true,
-	"type": "origins:multiple"
+	"type": "origins:multiple",
+	"resource": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"min_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:power_armor/modification/counterweights_inactive"
+		},
+		"max_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:power_armor/modification/counterweights_active"
+		},
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	"update": {
+		"type": "origins:action_over_time",
+		"interval": 5,
+		"entity_action": {
+			"type": "origins:if_else",
+			"if_action": {
+				"type": "origins:change_resource",
+				"resource": "moonlight:power_armor/modification/counterweights_resource",
+				"operation": "set",
+				"change": 1
+			},
+			"else_action": {
+				"type": "origins:change_resource",
+				"resource": "moonlight:power_armor/modification/counterweights_resource",
+				"operation": "set",
+				"change": 0
+			},
+			"condition": {
+				"type": "origins:equipped_item",
+				"equipment_slot": "legs",
+				"item_condition": {
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "moonlight:counterweights"
+					}
+				}
+			}
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "moonlight:power_armor/state_resource",
+			"comparison": "==",
+			"compare_to": 1
+		}
+	},
+	"drain": {
+		"type": "origins:action_over_time",
+		"interval": 5,
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "moonlight:power_armor/power_drain_small",
+			"operation": "set",
+			"change": 1
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:power_armor/state_resource",
+					"comparison": "==",
+					"compare_to": 1
+				},
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:power_armor/modification/counterweights_resource",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		}
+	},
+	"attack": {
+		"type": "origins:conditioned_attribute",
+		"tick_rate": 5,
+		"modifier": {
+			"attribute": "minecraft:generic.attack_speed",
+			"operation": "multiply_base",
+			"value": 0.2
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:power_armor/state_resource",
+					"comparison": "==",
+					"compare_to": 1
+				},
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:power_armor/modification/counterweights_resource",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		}
+	}
 }
