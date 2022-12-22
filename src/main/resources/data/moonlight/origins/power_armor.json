@@ -1,0 +1,25 @@
+{
+	"name": "origin.moonlight.power_armor.name",
+	"description": "origin.moonlight.power_armor.description",
+	"icon": "minecraft:netherite_chestplate",
+	"impact": 3,
+	"unchoosable": true,
+	"powers": [
+		"moonlight:power_armor/cooling_vents",
+		"moonlight:power_armor/counterweights",
+		"moonlight:power_armor/medical_pump",
+		"moonlight:power_armor/mining_gauntlets",
+		"moonlight:power_armor/motion_detector",
+		"moonlight:power_armor/night_vision_visor",
+		"moonlight:power_armor/overdrive_servos",
+		"moonlight:power_armor/tesla_coils",
+		"moonlight:power_armor/armor",
+		"moonlight:power_armor/buffs",
+		"moonlight:power_armor/debuffs",
+		"moonlight:power_armor/movement",
+		"moonlight:power_armor/oxygen",
+		"moonlight:power_armor/power",
+		"moonlight:power_armor/scale",
+		"moonlight:power_armor/state"
+	]
+}

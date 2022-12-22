@@ -12,10 +12,12 @@ import dev.jaxydog.moonlight.item.unique.MLDyeableAmethystBlockItem;
 import dev.jaxydog.moonlight.item.unique.MLDyeableAmethystClusterBlockItem;
 import dev.jaxydog.moonlight.item.unique.MilkBottleItem;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Items;
 import net.minecraft.item.Item.Settings;
 import net.minecraft.loot.LootTables;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Rarity;
 
 public class MLItems {
@@ -231,6 +233,58 @@ public class MLItems {
 			new Settings().rarity(Rarity.RARE),
 			new Config("glass").disableGlint().withTooltip());
 
+	public static final MLItem COOLING_VENT = new MLItem(
+			new Settings().rarity(Rarity.RARE).maxCount(16),
+			new Config("cooling_vent").withTooltip());
+
+	public static final MLArmorItem COOLING_VENTS = new MLArmorItem(
+			new Material("cooling_vents").durability(40.0f).equipSound(SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE),
+			EquipmentSlot.LEGS,
+			new Settings().rarity(Rarity.RARE),
+			new Config("cooling_vents").withTooltip());
+
+	public static final MLArmorItem COUNTERWEIGHTS = new MLArmorItem(
+			new Material("counterweights").durability(40.0f).equipSound(SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE),
+			EquipmentSlot.FEET,
+			new Settings().rarity(Rarity.RARE),
+			new Config("counterweights").withTooltip());
+
+	public static final MLArmorItem MEDICAL_PUMP = new MLArmorItem(
+			new Material("medical_pump").durability(40.0f).equipSound(SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE),
+			EquipmentSlot.CHEST,
+			new Settings().rarity(Rarity.RARE),
+			new Config("medical_pump").withTooltip());
+
+	public static final MLArmorItem MINING_GAUNTLETS = new MLArmorItem(
+			new Material("mining_gauntlets").durability(40.0f).equipSound(SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE),
+			EquipmentSlot.FEET,
+			new Settings().rarity(Rarity.RARE),
+			new Config("mining_gauntlets").withTooltip());
+
+	public static final MLArmorItem MOTION_DETECTOR = new MLArmorItem(
+			new Material("motion_detector").durability(40.0f).equipSound(SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE),
+			EquipmentSlot.HEAD,
+			new Settings().rarity(Rarity.RARE),
+			new Config("motion_detector").withTooltip());
+
+	public static final MLArmorItem NIGHT_VISION_VISOR = new MLArmorItem(
+			new Material("night_vision_visor").durability(40.0f).equipSound(SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE),
+			EquipmentSlot.HEAD,
+			new Settings().rarity(Rarity.RARE),
+			new Config("night_vision_visor").withTooltip());
+
+	public static final MLArmorItem OVERDRIVE_SERVOS = new MLArmorItem(
+			new Material("overdrive_servos").durability(40.0f).equipSound(SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE),
+			EquipmentSlot.LEGS,
+			new Settings().rarity(Rarity.RARE),
+			new Config("overdrive_servos").withTooltip());
+
+	public static final MLArmorItem TESLA_COILS = new MLArmorItem(
+			new Material("tesla_coils").durability(40.0f).equipSound(SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE),
+			EquipmentSlot.CHEST,
+			new Settings().rarity(Rarity.RARE),
+			new Config("tesla_coils").withTooltip());
+
 	public static void register() {
 		ICON.register();
 		GOOBY_ESSENCE.register();
@@ -275,6 +329,14 @@ public class MLItems {
 		SEA_CORE.register();
 		SKY_CORE.register();
 		GLASS_ARMOR.register();
+		COOLING_VENTS.register();
+		COUNTERWEIGHTS.register();
+		MEDICAL_PUMP.register();
+		MINING_GAUNTLETS.register();
+		MOTION_DETECTOR.register();
+		NIGHT_VISION_VISOR.register();
+		OVERDRIVE_SERVOS.register();
+		TESLA_COILS.register();
 	}
 
 }

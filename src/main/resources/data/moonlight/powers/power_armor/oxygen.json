@@ -1,0 +1,84 @@
+{
+	"name": "power.moonlight.power_armor.oxygen.name",
+	"description": "power.moonlight.power_armor.oxygen.description",
+	"type": "origins:multiple",
+	"resource": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 180,
+		"min_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:power_armor/oxygen/empty"
+		},
+		"max_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:power_armor/oxygen/full"
+		},
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	"drain": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"rising_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:power_armor/oxygen_drain_start"
+		},
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:if_else",
+					"if_action": {
+						"type": "origins:gain_air",
+						"value": 30
+					},
+					"condition": {
+						"type": "origins:resource",
+						"resource": "moonlight:power_armor/oxygen_resource",
+						"comparison": ">",
+						"compare_to": 0
+					}
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "moonlight:power_armor/oxygen_resource",
+					"operation": "add",
+					"change": -1
+				}
+			]
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:power_armor/oxygen_drain_stop"
+		},
+		"condition": {
+			"type": "origins:submerged_in",
+			"fluid": "minecraft:water"
+		}
+	},
+	"refill": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"rising_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:power_armor/oxygen_refill_start"
+		},
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "moonlight:power_armor/oxygen_resource",
+			"operation": "add",
+			"change": 2
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:power_armor/oxygen_refill_stop"
+		},
+		"condition": {
+			"type": "origins:submerged_in",
+			"fluid": "minecraft:water",
+			"inverted": true
+		}
+	}
+}

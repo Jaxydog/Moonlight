@@ -1,0 +1,48 @@
+{
+	"name": "power.moonlight.power_armor.movement.name",
+	"description": "power.moonlight.power_armor.movement.description",
+	"type": "origins:multiple",
+	"slowness": {
+		"type": "origins:conditioned_attribute",
+		"tick_rate": 5,
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "multiply_base",
+			"value": -0.4
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "moonlight:power_armor/power_resource",
+			"comparison": "==",
+			"compare_to": 0
+		}
+	},
+	"power_drain": {
+		"type": "origins:action_over_time",
+		"interval": 10,
+		"entity_action": {
+			"type": "origins:if_else",
+			"if_action": {
+				"type": "origins:change_resource",
+				"resource": "moonlight:power_armor/power_resource",
+				"operation": "add",
+				"change": -3
+			},
+			"else_action": {
+				"type": "origins:change_resource",
+				"resource": "moonlight:power_armor/power_resource",
+				"operation": "add",
+				"change": -5
+			},
+			"condition": {
+				"type": "origins:resource",
+				"resource": "moonlight:power_armor/modification/cooling_vents_resource",
+				"comparison": "==",
+				"compare_to": 0
+			}
+		},
+		"condition": {
+			"type": "origins:moving"
+		}
+	}
+}

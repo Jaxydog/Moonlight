@@ -1,0 +1,50 @@
+{
+	"name": "power.moonlight.power_armor.buffs.name",
+	"description": "power.moonlight.power_armor.buffs.description",
+	"type": "origins:multiple",
+	"damage": {
+		"type": "origins:modify_damage_dealt",
+		"modifier": {
+			"operation": "multiply_base",
+			"value": 0.2
+		},
+		"target_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:power_armor/hit_target"
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "moonlight:power_armor/state_resource",
+			"comparison": "==",
+			"compare_to": 1
+		}
+	},
+	"resistance": {
+		"type": "origins:modify_damage_taken",
+		"modifier": {
+			"operation": "multiply_total",
+			"value": -0.4
+		},
+		"self_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:power_armor/hit_self"
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "moonlight:power_armor/state_resource",
+			"comparison": "==",
+			"compare_to": 1
+		}
+	},
+	"falling": {
+		"type": "origins:modify_falling",
+		"velocity": 0.08,
+		"take_fall_damage": false,
+		"condition": {
+			"type": "origins:resource",
+			"resource": "moonlight:power_armor/state_resource",
+			"comparison": "==",
+			"compare_to": 1
+		}
+	}
+}

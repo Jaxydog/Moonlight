@@ -1,0 +1,53 @@
+{
+	"name": "power.moonlight.power_armor.buffs.name",
+	"description": "power.moonlight.power_armor.buffs.description",
+	"type": "origins:multiple",
+	"damage": {
+		"type": "origins:modify_damage_dealt",
+		"modifier": {
+			"operation": "multiply_base",
+			"value": -0.4
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "moonlight:power_armor/state_resource",
+			"comparison": "==",
+			"compare_to": 0
+		}
+	},
+	"you_either_cum_in_the_sink_or_sink_in_the_cum": {
+		"type": "origins:ignore_water",
+		"condition": {
+			"type": "origins:resource",
+			"resource": "moonlight:power_armor/state_resource",
+			"comparison": "==",
+			"compare_to": 1
+		}
+	},
+	"and_youre_a_sinker": {
+		"type": "origins:conditioned_attribute",
+		"tick_rate": 5,
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "multiply_base",
+			"value": -0.6
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:power_armor/state_resource",
+					"comparison": "==",
+					"compare_to": 1
+				},
+				{
+					"type": "origins:fluid_height",
+					"fluid": "minecraft:water",
+					"comparison": ">",
+					"compare_to": 0
+				}
+			]
+		}
+	}
+}

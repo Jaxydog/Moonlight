@@ -1,0 +1,45 @@
+{
+	"name": "power.moonlight.power_armor.armor.name",
+	"description": "power.moonlight.power_armor.armor.description",
+	"type": "origins:multiple",
+	"body": {
+		"type": "origins:restrict_armor",
+		"head": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"tag": "moonlight:power_armor/modifications"
+			},
+			"inverted": true
+		},
+		"chest": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"tag": "moonlight:power_armor/modifications"
+			},
+			"inverted": true
+		},
+		"legs": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"tag": "moonlight:power_armor/modifications"
+			},
+			"inverted": true
+		},
+		"feet": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"tag": "moonlight:power_armor/modifications"
+			},
+			"inverted": true
+		}
+	},
+	"hands": {
+		"type": "origins:prevent_item_use",
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"item": "minecraft:shield"
+			}
+		}
+	}
+}
