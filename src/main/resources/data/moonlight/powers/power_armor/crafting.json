@@ -1,0 +1,50 @@
+{
+	"hidden": true,
+	"type": "origins:multiple",
+	"stable_flux": {
+		"type": "origins:recipe",
+		"recipe": {
+			"id": "moonlight:stable_flux",
+			"type": "minecraft:crafting_shaped",
+			"pattern": ["ddd", "dtd", "ddd"],
+			"key": {
+				"d": {
+					"tag": "moonlight:dyes"
+				},
+				"t": {
+					"item": "minecraft:tnt"
+				}
+			},
+			"result": {
+				"item": "moonlight:stable_flux",
+				"count": 1
+			}
+		}
+	},
+	"fusion_core": {
+		"type": "origins:recipe",
+		"recipe": {
+			"id": "moonlight:fusion_core",
+			"type": "minecraft:crafting_shaped",
+			"pattern": ["crc", "ifi", "cic"],
+			"key": {
+				"c": {
+					"item": "minecraft:copper_ingot"
+				},
+				"r": {
+					"item": "minecraft:redstone"
+				},
+				"i": {
+					"item": "minecraft:iron_nugget"
+				},
+				"f": {
+					"item": "moonlight:stable_flux"
+				}
+			},
+			"result": {
+				"item": "moonlight:fusion_core",
+				"count": 1
+			}
+		}
+	}
+}

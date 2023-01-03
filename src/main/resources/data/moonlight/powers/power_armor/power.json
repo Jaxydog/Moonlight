@@ -41,10 +41,8 @@
 						"change": -2
 					},
 					"condition": {
-						"type": "origins:resource",
-						"resource": "moonlight:power_armor/modification/cooling_vents_resource",
-						"comparison": "==",
-						"compare_to": 1
+						"type": "origins:constant",
+						"value": false
 					}
 				},
 				{
@@ -81,10 +79,8 @@
 						"change": -5
 					},
 					"condition": {
-						"type": "origins:resource",
-						"resource": "moonlight:power_armor/modification/cooling_vents_resource",
-						"comparison": "==",
-						"compare_to": 1
+						"type": "origins:constant",
+						"value": false
 					}
 				},
 				{
@@ -121,10 +117,8 @@
 						"change": -10
 					},
 					"condition": {
-						"type": "origins:resource",
-						"resource": "moonlight:power_armor/modification/cooling_vents_resource",
-						"comparison": "==",
-						"compare_to": 1
+						"type": "origins:constant",
+						"value": false
 					}
 				},
 				{
@@ -161,10 +155,8 @@
 						"change": -50
 					},
 					"condition": {
-						"type": "origins:resource",
-						"resource": "moonlight:power_armor/modification/cooling_vents_resource",
-						"comparison": "==",
-						"compare_to": 1
+						"type": "origins:constant",
+						"value": false
 					}
 				},
 				{
@@ -177,6 +169,40 @@
 		},
 		"hud_render": {
 			"should_render": false
+		}
+	},
+	"recharge": {
+		"type": "origins:action_on_item_use",
+		"item_action": {
+			"type": "origins:consume",
+			"amount": 1
+		},
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "function moonlight:power_armor/power/recharge"
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "moonlight:power_armor/power_resource",
+					"operation": "add",
+					"change": 600
+				}
+			]
+		},
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"item": "moonlight:fusion_core"
+			}
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "moonlight:power_armor/power_resource",
+			"comparison": "<",
+			"compare_to": 3000
 		}
 	}
 }

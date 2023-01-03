@@ -12,12 +12,10 @@ import dev.jaxydog.moonlight.item.unique.MLDyeableAmethystBlockItem;
 import dev.jaxydog.moonlight.item.unique.MLDyeableAmethystClusterBlockItem;
 import dev.jaxydog.moonlight.item.unique.MilkBottleItem;
 import net.minecraft.block.Blocks;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Items;
 import net.minecraft.item.Item.Settings;
 import net.minecraft.loot.LootTables;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Rarity;
 
 public class MLItems {
@@ -168,6 +166,10 @@ public class MLItems {
 					.rarity(Rarity.UNCOMMON),
 			new Config("dino_veggie").withTooltip());
 
+	public static final MLItem FUSION_CORE = new MLItem(
+			new Settings().fireproof().maxCount(16).rarity(Rarity.RARE),
+			new Config("fusion_core").withTooltip());
+
 	public static final MLItem GOOBY_NUGGIE = new MLItem(
 			new Settings().food(new FoodComponent.Builder().hunger(8).meat().saturationModifier(0.65f).snack().build())
 					.rarity(Rarity.UNCOMMON),
@@ -208,6 +210,10 @@ public class MLItems {
 					.rarity(Rarity.COMMON),
 			new Config("pasta").withTooltip());
 
+	public static final MLItem STABLE_FLUX = new MLItem(
+			new Settings().fireproof().maxCount(64).rarity(Rarity.UNCOMMON),
+			new Config("stable_flux").withTooltip());
+
 	public static final MLItem CAVE_CORE = new MLItem(
 			new Settings().fireproof().maxCount(1).rarity(Rarity.RARE),
 			new Config("cave_core").withTooltip());
@@ -232,58 +238,6 @@ public class MLItems {
 			new Material("glass").durability(0.0f),
 			new Settings().rarity(Rarity.RARE),
 			new Config("glass").disableGlint().withTooltip());
-
-	public static final MLItem COOLING_VENT = new MLItem(
-			new Settings().rarity(Rarity.RARE).maxCount(16),
-			new Config("cooling_vent").withTooltip());
-
-	public static final MLArmorItem COOLING_VENTS = new MLArmorItem(
-			new Material("cooling_vents").durability(40.0f).equipSound(SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE),
-			EquipmentSlot.LEGS,
-			new Settings().rarity(Rarity.RARE),
-			new Config("cooling_vents").withTooltip());
-
-	public static final MLArmorItem COUNTERWEIGHTS = new MLArmorItem(
-			new Material("counterweights").durability(40.0f).equipSound(SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE),
-			EquipmentSlot.FEET,
-			new Settings().rarity(Rarity.RARE),
-			new Config("counterweights").withTooltip());
-
-	public static final MLArmorItem MEDICAL_PUMP = new MLArmorItem(
-			new Material("medical_pump").durability(40.0f).equipSound(SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE),
-			EquipmentSlot.CHEST,
-			new Settings().rarity(Rarity.RARE),
-			new Config("medical_pump").withTooltip());
-
-	public static final MLArmorItem MINING_GAUNTLETS = new MLArmorItem(
-			new Material("mining_gauntlets").durability(40.0f).equipSound(SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE),
-			EquipmentSlot.FEET,
-			new Settings().rarity(Rarity.RARE),
-			new Config("mining_gauntlets").withTooltip());
-
-	public static final MLArmorItem MOTION_DETECTOR = new MLArmorItem(
-			new Material("motion_detector").durability(40.0f).equipSound(SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE),
-			EquipmentSlot.HEAD,
-			new Settings().rarity(Rarity.RARE),
-			new Config("motion_detector").withTooltip());
-
-	public static final MLArmorItem NIGHT_VISION_VISOR = new MLArmorItem(
-			new Material("night_vision_visor").durability(40.0f).equipSound(SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE),
-			EquipmentSlot.HEAD,
-			new Settings().rarity(Rarity.RARE),
-			new Config("night_vision_visor").withTooltip());
-
-	public static final MLArmorItem OVERDRIVE_SERVOS = new MLArmorItem(
-			new Material("overdrive_servos").durability(40.0f).equipSound(SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE),
-			EquipmentSlot.LEGS,
-			new Settings().rarity(Rarity.RARE),
-			new Config("overdrive_servos").withTooltip());
-
-	public static final MLArmorItem TESLA_COILS = new MLArmorItem(
-			new Material("tesla_coils").durability(40.0f).equipSound(SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE),
-			EquipmentSlot.CHEST,
-			new Settings().rarity(Rarity.RARE),
-			new Config("tesla_coils").withTooltip());
 
 	public static void register() {
 		ICON.register();
@@ -315,6 +269,7 @@ public class MLItems {
 		CRACKER.register();
 		DINO_NUGGIE.register();
 		DINO_VEGGIE.register();
+		FUSION_CORE.register();
 		GOOBY_NUGGIE.register();
 		GOOBY_VEGGIE.register();
 		GRILLED_CHEESE.register();
@@ -323,20 +278,13 @@ public class MLItems {
 		MILK_BOTTLE.register();
 		MOZZARELLA_STICK.register();
 		PASTA.register();
+		STABLE_FLUX.register();
 		CAVE_CORE.register();
 		HELL_CORE.register();
 		LAND_CORE.register();
 		SEA_CORE.register();
 		SKY_CORE.register();
 		GLASS_ARMOR.register();
-		COOLING_VENTS.register();
-		COUNTERWEIGHTS.register();
-		MEDICAL_PUMP.register();
-		MINING_GAUNTLETS.register();
-		MOTION_DETECTOR.register();
-		NIGHT_VISION_VISOR.register();
-		OVERDRIVE_SERVOS.register();
-		TESLA_COILS.register();
 	}
 
 }
