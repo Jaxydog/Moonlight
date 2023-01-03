@@ -7,30 +7,21 @@
 		"head": {
 			"type": "origins:ingredient",
 			"ingredient": {
-				"tag": "moonlight:power_armor/modifications"
+				"item": "minecraft:pumpkin"
 			},
 			"inverted": true
 		},
 		"chest": {
-			"type": "origins:ingredient",
-			"ingredient": {
-				"tag": "moonlight:power_armor/modifications"
-			},
-			"inverted": true
+			"type": "origins:constant",
+			"value": true
 		},
 		"legs": {
-			"type": "origins:ingredient",
-			"ingredient": {
-				"tag": "moonlight:power_armor/modifications"
-			},
-			"inverted": true
+			"type": "origins:constant",
+			"value": true
 		},
 		"feet": {
-			"type": "origins:ingredient",
-			"ingredient": {
-				"tag": "moonlight:power_armor/modifications"
-			},
-			"inverted": true
+			"type": "origins:constant",
+			"value": true
 		}
 	},
 	"hands": {
