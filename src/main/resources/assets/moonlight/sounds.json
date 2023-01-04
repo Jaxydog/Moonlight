@@ -22,5 +22,13 @@
 				"name": "moonlight:origin/snake/sneak"
 			}
 		]
+	},
+	"origin.snow_leopard.scream": {
+		"subtitle": "subtitles.moonlight.origin.snow_leopard.scream",
+		"sounds": [
+			{
+				"name": "moonlight:origin/snow_leopard/women"
+			}
+		]
 	}
 }

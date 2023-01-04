@@ -13,6 +13,9 @@ public class MLSoundEvents {
 	/** Snake sneak sound */
 	public static final SoundEvent ORIGIN_SNAKE_SNEAK = new SoundEvent(Moonlight.id("origin.snake.sneak"));
 
+	public static final SoundEvent ORIGIN_SNOW_LEOPARD_SCREAM = new SoundEvent(
+			Moonlight.id("origin.snow_leopard.scream"));
+
 	/** Registers a sound */
 	private static void register(SoundEvent sound) {
 		Registry.register(Registry.SOUND_EVENT, sound.getId(), sound);
@@ -22,5 +25,6 @@ public class MLSoundEvents {
 		register(ITEM_AVOCADO_JINGLE);
 		register(ORIGIN_SNAKE_ALERT);
 		register(ORIGIN_SNAKE_SNEAK);
+		register(ORIGIN_SNOW_LEOPARD_SCREAM);
 	}
 }
