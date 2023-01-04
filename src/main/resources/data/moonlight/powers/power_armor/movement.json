@@ -11,10 +11,21 @@
 			"value": -0.4
 		},
 		"condition": {
-			"type": "origins:resource",
-			"resource": "moonlight:power_armor/power_resource",
-			"comparison": "==",
-			"compare_to": 0
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:power_armor/state_resource",
+					"comparison": "==",
+					"compare_to": 1
+				},
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:power_armor/power_resource",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
 		}
 	},
 	"power_drain": {
@@ -27,7 +38,18 @@
 			"change": 1
 		},
 		"condition": {
-			"type": "origins:moving"
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:power_armor/state_resource",
+					"comparison": "==",
+					"compare_to": 1
+				},
+				{
+					"type": "origins:moving"
+				}
+			]
 		}
 	}
 }

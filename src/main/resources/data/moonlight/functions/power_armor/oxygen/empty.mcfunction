@@ -1,0 +1,1 @@
+playsound minecraft:item.bucket.empty player @s ~ ~ ~ 0.7 0.5

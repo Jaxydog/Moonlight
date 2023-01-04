@@ -30,7 +30,7 @@
 		"modifier": {
 			"attribute": "minecraft:generic.movement_speed",
 			"operation": "multiply_base",
-			"value": -0.6
+			"value": -0.2
 		},
 		"condition": {
 			"type": "origins:and",

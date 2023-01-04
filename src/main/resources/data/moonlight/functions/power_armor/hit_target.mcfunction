@@ -1,0 +1,1 @@
+playsound minecraft:item.trident.hit player @a ~ ~ ~ 0.8 0.5

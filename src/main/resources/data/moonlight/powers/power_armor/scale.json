@@ -1,27 +1,13 @@
 {
 	"name": "power.moonlight.power_armor.scale.name",
 	"description": "power.moonlight.power_armor.scale.description",
-	"type": "origins:multiple",
-	"inactive": {
-		"type": "moonlight:model_scale",
-		"width": 1.0,
-		"height": 1.0,
-		"condition": {
-			"type": "origins:resource",
-			"resource": "moonlight:power_armor/state_resource",
-			"comparison": "==",
-			"compare_to": 0
-		}
-	},
-	"active": {
-		"type": "moonlight:model_scale",
-		"width": 1.25,
-		"height": 1.25,
-		"condition": {
-			"type": "origins:resource",
-			"resource": "moonlight:power_armor/state_resource",
-			"comparison": "==",
-			"compare_to": 1
-		}
+	"type": "moonlight:model_scale",
+	"width": 1.25,
+	"height": 1.25,
+	"condition": {
+		"type": "origins:resource",
+		"resource": "moonlight:power_armor/state_resource",
+		"comparison": "==",
+		"compare_to": 1
 	}
 }

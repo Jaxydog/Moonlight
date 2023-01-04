@@ -1,0 +1,1 @@
+playsound minecraft:entity.item.break player @a ~ ~ ~ 0.3 0.5

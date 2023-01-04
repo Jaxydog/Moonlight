@@ -1,0 +1,1 @@
+playsound minecraft:item.bucket.fill_powder_snow player @a ~ ~ ~ 2 0.5

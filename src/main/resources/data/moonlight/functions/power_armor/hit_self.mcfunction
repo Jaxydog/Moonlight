@@ -1,0 +1,1 @@
+playsound minecraft:item.axe.scrape player @a ~ ~ ~ 1 2

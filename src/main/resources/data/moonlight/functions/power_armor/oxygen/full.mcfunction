@@ -1,0 +1,1 @@
+playsound minecraft:entity.puffer_fish.blow_out player @s ~ ~ ~ 0.7 0.75
