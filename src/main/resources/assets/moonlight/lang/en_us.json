@@ -36,6 +36,8 @@
 	"death.attack.bloodStalkerSuck": "%1$s was drained of their blood",
 	"death.attack.cowStomp.player": "%1$s was killed by %2$s's shockwave",
 	"death.attack.cowStomp": "%1$s was killed by a shockwave",
+	"death.attack.cowVine.player": "%1$s was pricked by %2$s's thorny vines",
+	"death.attack.cowVine": "%1$s was pricked to death by thorny vines",
 	"death.attack.snowLeopardDisease.player": "%1$s succumbed to the disease because of %2$s",
 	"death.attack.snowLeopardDisease": "%1$s got down with the sickness",
 	"item.moonlight.amongus": "AMONGUS!!!",
