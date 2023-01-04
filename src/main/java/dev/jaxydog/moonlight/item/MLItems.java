@@ -11,6 +11,7 @@ import dev.jaxydog.moonlight.item.unique.CaramelAppleItem;
 import dev.jaxydog.moonlight.item.unique.MLDyeableAmethystBlockItem;
 import dev.jaxydog.moonlight.item.unique.MLDyeableAmethystClusterBlockItem;
 import dev.jaxydog.moonlight.item.unique.MilkBottleItem;
+import dev.jaxydog.moonlight.item.unique.ScytheItem;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Items;
@@ -210,8 +211,12 @@ public class MLItems {
 					.rarity(Rarity.COMMON),
 			new Config("pasta").withTooltip());
 
+	public static final ScytheItem SCYTHE = new ScytheItem(
+			new Settings().rarity(Rarity.UNCOMMON),
+			new Config("scythe").withTooltip());
+
 	public static final MLItem STABLE_FLUX = new MLItem(
-			new Settings().fireproof().maxCount(64).rarity(Rarity.UNCOMMON),
+			new Settings().rarity(Rarity.UNCOMMON),
 			new Config("stable_flux").withTooltip());
 
 	public static final MLItem CAVE_CORE = new MLItem(
@@ -278,6 +283,7 @@ public class MLItems {
 		MILK_BOTTLE.register();
 		MOZZARELLA_STICK.register();
 		PASTA.register();
+		SCYTHE.register();
 		STABLE_FLUX.register();
 		CAVE_CORE.register();
 		HELL_CORE.register();
