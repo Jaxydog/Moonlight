@@ -27,6 +27,39 @@
 		"subtitle": "subtitles.moonlight.origin.snow_leopard.scream",
 		"sounds": [
 			{
+				"name": "moonlight:origin/snow_leopard/scream_1"
+			},
+			{
+				"name": "moonlight:origin/snow_leopard/scream_2"
+			},
+			{
+				"name": "moonlight:origin/snow_leopard/scream_3"
+			},
+			{
+				"name": "moonlight:origin/snow_leopard/scream_4"
+			},
+			{
+				"name": "moonlight:origin/snow_leopard/scream_5"
+			},
+			{
+				"name": "moonlight:origin/snow_leopard/scream_6"
+			},
+			{
+				"name": "moonlight:origin/snow_leopard/scream_7"
+			},
+			{
+				"name": "moonlight:origin/snow_leopard/scream_8"
+			},
+			{
+				"name": "moonlight:origin/snow_leopard/scream_9"
+			},
+			{
+				"name": "moonlight:origin/snow_leopard/scream_10"
+			},
+			{
+				"name": "moonlight:origin/snow_leopard/scream_11"
+			},
+			{
 				"name": "moonlight:origin/snow_leopard/women"
 			}
 		]
