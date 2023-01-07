@@ -53,7 +53,7 @@
 								"type": "origins:if_else",
 								"if_action": {
 									"type": "origins:damage",
-									"amount": 1,
+									"amount": 2,
 									"source": {
 										"name": "cowVine.player",
 										"bypasses_armor": true,
