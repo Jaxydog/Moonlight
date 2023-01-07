@@ -1,11 +1,9 @@
 package dev.jaxydog.moonlight.item;
 
-import java.util.List;
-
-import javax.annotation.Nullable;
-
 import dev.jaxydog.moonlight.Moonlight;
 import dev.jaxydog.moonlight.utility.Registerable;
+import java.util.List;
+import javax.annotation.Nullable;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.client.item.TooltipContext;
@@ -50,9 +48,12 @@ public class MLItem extends Item implements Registerable {
 					return;
 				}
 
-				builder.pool(LootPool.builder()
+				builder.pool(
+					LootPool
+						.builder()
 						.rolls(BinomialLootNumberProvider.create(modifier.getRolls(), modifier.getChance()))
-						.with(ItemEntry.builder(this)));
+						.with(ItemEntry.builder(this))
+				);
 			});
 		}
 
@@ -95,15 +96,19 @@ public class MLItem extends Item implements Registerable {
 
 		public static final float DEFAULT_VOLUME = 0.25f;
 		public static final float PITCH_VARIANCE = 0.125f;
-		public static final ItemGroup DEFAULT_GROUP = FabricItemGroupBuilder.build(Moonlight.id("general"),
-				() -> MLItems.ICON.getDefaultStack());
+		public static final ItemGroup DEFAULT_GROUP = FabricItemGroupBuilder.build(
+			Moonlight.id("general"),
+			() -> MLItems.ICON.getDefaultStack()
+		);
 
 		private final String __NAME;
 		private boolean __enableGlint = true;
 		private boolean __forceGlint = false;
 		private boolean __hasTooltip = false;
+
 		@Nullable
 		private SoundEvent __useSound = null;
+
 		@Nullable
 		private LootModifier __loot = null;
 
@@ -178,13 +183,13 @@ public class MLItem extends Item implements Registerable {
 
 			return c;
 		}
-
 	}
 
 	public static class LootModifier {
 
 		@Nullable
 		private Identifier __id = null;
+
 		private int __rolls = 0;
 		private float __chance = 0.0f;
 
@@ -225,7 +230,5 @@ public class MLItem extends Item implements Registerable {
 
 			return d;
 		}
-
 	}
-
 }

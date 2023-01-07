@@ -9,8 +9,24 @@ import net.minecraft.util.Identifier;
 
 public abstract class MLDyeableBlock<B extends Registerable> implements Registerable {
 
-	public static final String[] COLORS = new String[] { "white", "light_gray", "gray", "black", "brown",
-			"red", "orange", "yellow", "lime", "green", "cyan", "light_blue", "blue", "purple", "magenta", "pink" };
+	public static final String[] COLORS = new String[] {
+		"white",
+		"light_gray",
+		"gray",
+		"black",
+		"brown",
+		"red",
+		"orange",
+		"yellow",
+		"lime",
+		"green",
+		"cyan",
+		"light_blue",
+		"blue",
+		"purple",
+		"magenta",
+		"pink",
+	};
 
 	protected final Settings _SETTINGS;
 	protected final Config _CONFIG;
@@ -54,5 +70,4 @@ public abstract class MLDyeableBlock<B extends Registerable> implements Register
 
 		return this;
 	}
-
 }

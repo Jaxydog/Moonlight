@@ -32,5 +32,4 @@ public class MLDyeableAmethystBlockItem extends MLDyeableBlockItem<MLAmethystBlo
 
 		return items;
 	}
-
 }

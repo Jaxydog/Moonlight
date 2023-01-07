@@ -25,5 +25,4 @@ public class MLAmethystBlock extends AmethystBlock implements Registerable {
 	public MLAmethystBlock register() {
 		return Registry.register(Registry.BLOCK, getId(), this);
 	}
-
 }

@@ -1,8 +1,5 @@
 package dev.jaxydog.moonlight;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import dev.jaxydog.moonlight.block.MLBlocks;
 import dev.jaxydog.moonlight.content.MLSoundEvents;
 import dev.jaxydog.moonlight.item.MLItems;
@@ -10,9 +7,12 @@ import dev.jaxydog.moonlight.power.MLConditions;
 import dev.jaxydog.moonlight.power.MLPowers;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /** Main moonlight class */
 public class Moonlight implements ModInitializer {
+
 	/** Mod identifier */
 	public static final String MOD_ID = "moonlight";
 	/** Mod logger */

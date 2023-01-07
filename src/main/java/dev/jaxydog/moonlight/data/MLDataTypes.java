@@ -4,6 +4,7 @@ import io.github.apace100.calio.SerializationHelper;
 import io.github.apace100.calio.data.SerializableDataType;
 
 public class MLDataTypes {
+
 	/** Interface for function with 3 args */
 	@FunctionalInterface
 	public static interface TriFunction<A, B, C, R> {
@@ -29,10 +30,14 @@ public class MLDataTypes {
 	}
 
 	/** Value type data type */
-	public static final SerializableDataType<ValueType> VALUE_TYPE = SerializableDataType.enumValue(ValueType.class,
-			SerializationHelper.buildEnumMap(ValueType.class, ValueType::getType));
+	public static final SerializableDataType<ValueType> VALUE_TYPE = SerializableDataType.enumValue(
+		ValueType.class,
+		SerializationHelper.buildEnumMap(ValueType.class, ValueType::getType)
+	);
 
 	/** Moon phase data type */
-	public static final SerializableDataType<MoonPhase> MOON_PHASE = SerializableDataType.enumValue(MoonPhase.class,
-			SerializationHelper.buildEnumMap(MoonPhase.class, MoonPhase::getType));
+	public static final SerializableDataType<MoonPhase> MOON_PHASE = SerializableDataType.enumValue(
+		MoonPhase.class,
+		SerializationHelper.buildEnumMap(MoonPhase.class, MoonPhase::getType)
+	);
 }

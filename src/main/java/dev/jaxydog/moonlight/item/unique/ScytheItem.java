@@ -1,10 +1,9 @@
 package dev.jaxydog.moonlight.item.unique;
 
-import java.util.List;
-
 import dev.jaxydog.moonlight.Moonlight;
 import dev.jaxydog.moonlight.item.MLItem.Config;
 import dev.jaxydog.moonlight.utility.Registerable;
+import java.util.List;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.client.resource.language.I18n;
@@ -29,8 +28,7 @@ public class ScytheItem extends HoeItem implements Registerable {
 	protected final Config _CONFIG;
 
 	public ScytheItem(Settings settings, Config config) {
-		super(ToolMaterials.DIAMOND, 5, 0f, settings);
-
+		super(ToolMaterials.DIAMOND, 5, 0f, settings.group(Config.DEFAULT_GROUP));
 		_CONFIG = config;
 	}
 
@@ -50,9 +48,12 @@ public class ScytheItem extends HoeItem implements Registerable {
 					return;
 				}
 
-				builder.pool(LootPool.builder()
+				builder.pool(
+					LootPool
+						.builder()
 						.rolls(BinomialLootNumberProvider.create(modifier.getRolls(), modifier.getChance()))
-						.with(ItemEntry.builder(this)));
+						.with(ItemEntry.builder(this))
+				);
 			});
 		}
 
@@ -97,5 +98,4 @@ public class ScytheItem extends HoeItem implements Registerable {
 
 		return super.postHit(stack, target, attacker);
 	}
-
 }

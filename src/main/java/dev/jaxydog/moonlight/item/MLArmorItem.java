@@ -1,10 +1,9 @@
 package dev.jaxydog.moonlight.item;
 
-import java.util.List;
-
 import dev.jaxydog.moonlight.Moonlight;
 import dev.jaxydog.moonlight.item.MLItem.Config;
 import dev.jaxydog.moonlight.utility.Registerable;
+import java.util.List;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.EquipmentSlot;
@@ -182,7 +181,5 @@ public class MLArmorItem extends ArmorItem implements Registerable {
 
 			return m;
 		}
-
 	}
-
 }

@@ -82,5 +82,4 @@ public class BouquetItem extends MLItem {
 
 		return super.useOnBlock(context);
 	}
-
 }

@@ -23,14 +23,30 @@ public class MLArmorSet implements Registerable {
 	}
 
 	protected MLArmorItem[] _getSet() {
-		var h = new MLArmorItem(_MATERIAL.clone(), EquipmentSlot.HEAD, _SETTINGS,
-				_CONFIG.clone(_CONFIG.getName() + "_helmet"));
-		var c = new MLArmorItem(_MATERIAL.clone(), EquipmentSlot.CHEST, _SETTINGS,
-				_CONFIG.clone(_CONFIG.getName() + "_chestplate"));
-		var l = new MLArmorItem(_MATERIAL.clone(), EquipmentSlot.LEGS, _SETTINGS,
-				_CONFIG.clone(_CONFIG.getName() + "_leggings"));
-		var b = new MLArmorItem(_MATERIAL.clone(), EquipmentSlot.FEET, _SETTINGS,
-				_CONFIG.clone(_CONFIG.getName() + "_boots"));
+		var h = new MLArmorItem(
+			_MATERIAL.clone(),
+			EquipmentSlot.HEAD,
+			_SETTINGS,
+			_CONFIG.clone(_CONFIG.getName() + "_helmet")
+		);
+		var c = new MLArmorItem(
+			_MATERIAL.clone(),
+			EquipmentSlot.CHEST,
+			_SETTINGS,
+			_CONFIG.clone(_CONFIG.getName() + "_chestplate")
+		);
+		var l = new MLArmorItem(
+			_MATERIAL.clone(),
+			EquipmentSlot.LEGS,
+			_SETTINGS,
+			_CONFIG.clone(_CONFIG.getName() + "_leggings")
+		);
+		var b = new MLArmorItem(
+			_MATERIAL.clone(),
+			EquipmentSlot.FEET,
+			_SETTINGS,
+			_CONFIG.clone(_CONFIG.getName() + "_boots")
+		);
 
 		return new MLArmorItem[] { b, l, c, h };
 	}
@@ -48,5 +64,4 @@ public class MLArmorSet implements Registerable {
 
 		return this;
 	}
-
 }

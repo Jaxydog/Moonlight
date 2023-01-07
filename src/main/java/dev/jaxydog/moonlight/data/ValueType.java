@@ -1,7 +1,6 @@
 package dev.jaxydog.moonlight.data;
 
 import java.util.function.BiFunction;
-
 import net.minecraft.item.ItemStack;
 
 /** Value type for comparing values */

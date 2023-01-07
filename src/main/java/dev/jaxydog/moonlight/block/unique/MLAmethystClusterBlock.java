@@ -25,5 +25,4 @@ public class MLAmethystClusterBlock extends AmethystClusterBlock implements Regi
 	public MLAmethystClusterBlock register() {
 		return Registry.register(Registry.BLOCK, getId(), this);
 	}
-
 }

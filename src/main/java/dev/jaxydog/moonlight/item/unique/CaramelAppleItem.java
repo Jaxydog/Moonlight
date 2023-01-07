@@ -21,5 +21,4 @@ public class CaramelAppleItem extends MLItem {
 
 		return super.finishUsing(stack, world, user);
 	}
-
 }

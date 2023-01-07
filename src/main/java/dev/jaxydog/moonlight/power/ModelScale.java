@@ -8,6 +8,7 @@ import virtuoel.pehkui.api.ScaleTypes;
 
 /** Model scale power class */
 public class ModelScale extends Power {
+
 	/** Width scale */
 	private final float WIDTH;
 	/** Height scale */

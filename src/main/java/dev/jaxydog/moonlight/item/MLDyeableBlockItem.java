@@ -9,7 +9,7 @@ import net.minecraft.item.Item.Settings;
 import net.minecraft.util.Identifier;
 
 public abstract class MLDyeableBlockItem<B extends Block & Registerable, I extends Registerable>
-		implements Registerable {
+	implements Registerable {
 
 	protected final MLDyeableBlock<B> _BLOCKS;
 	protected final Settings _SETTINGS;
@@ -44,5 +44,4 @@ public abstract class MLDyeableBlockItem<B extends Block & Registerable, I exten
 
 		return this;
 	}
-
 }

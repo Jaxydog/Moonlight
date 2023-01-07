@@ -1,10 +1,9 @@
 package dev.jaxydog.moonlight.item;
 
-import java.util.List;
-
 import dev.jaxydog.moonlight.Moonlight;
 import dev.jaxydog.moonlight.item.MLItem.Config;
 import dev.jaxydog.moonlight.utility.Registerable;
+import java.util.List;
 import net.minecraft.block.Block;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.client.resource.language.I18n;
@@ -68,5 +67,4 @@ public class MLBlockItem extends BlockItem implements Registerable {
 	public boolean hasGlint(ItemStack stack) {
 		return _CONFIG.isGlintEnabled() && (_CONFIG.isGlintForced() || super.hasGlint(stack));
 	}
-
 }

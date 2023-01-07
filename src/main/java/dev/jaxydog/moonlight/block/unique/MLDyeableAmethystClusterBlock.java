@@ -1,7 +1,7 @@
 package dev.jaxydog.moonlight.block.unique;
 
-import dev.jaxydog.moonlight.block.MLDyeableBlock;
 import dev.jaxydog.moonlight.block.MLBlock.Config;
+import dev.jaxydog.moonlight.block.MLDyeableBlock;
 import net.minecraft.block.AbstractBlock.Settings;
 
 public class MLDyeableAmethystClusterBlock extends MLDyeableBlock<MLAmethystClusterBlock> {
@@ -23,5 +23,4 @@ public class MLDyeableAmethystClusterBlock extends MLDyeableBlock<MLAmethystClus
 
 		return blocks;
 	}
-
 }

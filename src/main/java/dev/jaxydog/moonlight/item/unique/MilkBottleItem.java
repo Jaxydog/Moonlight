@@ -37,5 +37,4 @@ public class MilkBottleItem extends MLItem {
 	public UseAction getUseAction(ItemStack stack) {
 		return UseAction.DRINK;
 	}
-
 }

@@ -10,13 +10,16 @@ import net.minecraft.util.registry.Registry;
 
 /** Moonlight power class */
 public class MLPowers {
+
 	/** Model scale power */
 	public static final PowerFactory<Power> MODEL_SCALE = new PowerFactory<>(
-			Moonlight.id("model_scale"),
-			new SerializableData().add("width", SerializableDataTypes.FLOAT, 1.0f)
-					.add("height", SerializableDataTypes.FLOAT, 1.0f),
-			data -> (type, entity) -> new ModelScale(type, entity, data.getFloat("width"), data.getFloat("height")))
-			.allowCondition();
+		Moonlight.id("model_scale"),
+		new SerializableData()
+			.add("width", SerializableDataTypes.FLOAT, 1.0f)
+			.add("height", SerializableDataTypes.FLOAT, 1.0f),
+		data -> (type, entity) -> new ModelScale(type, entity, data.getFloat("width"), data.getFloat("height"))
+	)
+		.allowCondition();
 
 	/** Registers a new power factory */
 	private static void register(PowerFactory<?> power) {

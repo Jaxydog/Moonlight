@@ -9,8 +9,11 @@ import net.minecraft.item.Item.Settings;
 
 public class MLDyeableAmethystClusterBlockItem extends MLDyeableBlockItem<MLAmethystClusterBlock, MLBlockItem> {
 
-	public MLDyeableAmethystClusterBlockItem(MLDyeableBlock<MLAmethystClusterBlock> blocks, Settings settings,
-			Config config) {
+	public MLDyeableAmethystClusterBlockItem(
+		MLDyeableBlock<MLAmethystClusterBlock> blocks,
+		Settings settings,
+		Config config
+	) {
 		super(blocks, settings, config);
 	}
 
@@ -33,5 +36,4 @@ public class MLDyeableAmethystClusterBlockItem extends MLDyeableBlockItem<MLAmet
 
 		return items;
 	}
-
 }
