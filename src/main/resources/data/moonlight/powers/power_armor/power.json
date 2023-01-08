@@ -189,7 +189,7 @@
 					"type": "origins:change_resource",
 					"resource": "moonlight:power_armor/power_resource",
 					"operation": "add",
-					"change": 600
+					"change": 1000
 				}
 			]
 		},

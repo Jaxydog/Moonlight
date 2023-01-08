@@ -37,7 +37,7 @@
 					"type": "origins:change_resource",
 					"resource": "moonlight:power_armor/power_resource",
 					"operation": "add",
-					"change": -600
+					"change": -1000
 				},
 				{
 					"type": "origins:execute_command",
@@ -60,7 +60,7 @@
 			"type": "origins:resource",
 			"resource": "moonlight:power_armor/power_resource",
 			"comparison": ">=",
-			"compare_to": 600
+			"compare_to": 1000
 		}
 	}
 }
