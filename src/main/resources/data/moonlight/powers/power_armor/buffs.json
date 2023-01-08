@@ -23,7 +23,7 @@
 		"type": "origins:modify_damage_taken",
 		"modifier": {
 			"operation": "multiply_total",
-			"value": -0.4
+			"value": -0.6
 		},
 		"self_action": {
 			"type": "origins:execute_command",
