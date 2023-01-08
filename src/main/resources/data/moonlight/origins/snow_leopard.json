@@ -5,6 +5,7 @@
 	"impact": 3,
 	"unchoosable": true,
 	"powers": [
+		"moonlight:power_armor/crafting",
 		"moonlight:snow_leopard/ambient",
 		"moonlight:snow_leopard/diet",
 		"moonlight:snow_leopard/disease",
