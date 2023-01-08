@@ -1,0 +1,48 @@
+{
+	"name": "power.moonlight.power_armor.crash.name",
+	"description": "power.moonlight.power_armor.crash.description",
+	"type": "origins:action_over_time",
+	"interval": 5,
+	"entity_action": {
+		"type": "origins:area_of_effect",
+		"radius": 1.25,
+		"bientity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:add_velocity",
+					"z": 0.5
+				},
+				{
+					"type": "origins:damage",
+					"amount": 2,
+					"source": {
+						"name": "powerArmorCrash.player"
+					}
+				}
+			]
+		},
+		"bientity_condition": {
+			"type": "origins:target_condition",
+			"condition": {
+				"type": "origins:entity_type",
+				"entity_type": "minecraft:item",
+				"inverted": true
+			}
+		}
+	},
+	"condition": {
+		"type": "origins:and",
+		"conditions": [
+			{
+				"type": "origins:resource",
+				"resource": "moonlight:power_armor/state_resource",
+				"comparison": "==",
+				"compare_to": 1
+			},
+			{
+				"type": "origins:sprinting"
+			}
+		]
+	}
+}
