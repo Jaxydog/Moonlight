@@ -4,7 +4,7 @@
 	"type": "origins:multiple",
 	"fuse": {
 		"type": "origins:cooldown",
-		"cooldown": 97,
+		"cooldown": 57,
 		"hud_render": {
 			"should_render": false
 		}
