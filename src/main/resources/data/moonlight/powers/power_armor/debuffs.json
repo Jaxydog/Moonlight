@@ -1,6 +1,6 @@
 {
-	"name": "power.moonlight.power_armor.buffs.name",
-	"description": "power.moonlight.power_armor.buffs.description",
+	"name": "power.moonlight.power_armor.debuffs.name",
+	"description": "power.moonlight.power_armor.debuffs.description",
 	"type": "origins:multiple",
 	"damage": {
 		"type": "origins:modify_damage_dealt",
