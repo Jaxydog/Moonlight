@@ -5,7 +5,7 @@
 	"resource": {
 		"type": "origins:resource",
 		"min": 0,
-		"max": 180,
+		"max": 60,
 		"min_action": {
 			"type": "origins:execute_command",
 			"command": "function moonlight:power_armor/oxygen/empty"
@@ -21,7 +21,7 @@
 				"type": "origins:resource",
 				"resource": "moonlight:snow_leopard/oxygen_resource",
 				"comparison": "<",
-				"compare_to": 180
+				"compare_to": 60
 			}
 		}
 	},
@@ -41,7 +41,13 @@
 				},
 				{
 					"type": "origins:change_resource",
-					"resource": "moonlight:snow_leopard/oxygen_drain_small",
+					"resource": "moonlight:snow_leopard/oxygen_resource",
+					"operation": "add",
+					"change": -1
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "moonlight:snow_leopard/power_drain_medium",
 					"operation": "set",
 					"change": 1
 				}

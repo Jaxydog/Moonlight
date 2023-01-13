@@ -9,8 +9,11 @@
 		"moonlight:snow_leopard/ambient",
 		"moonlight:snow_leopard/diet",
 		"moonlight:snow_leopard/disease",
+		"moonlight:snow_leopard/feed",
 		"moonlight:snow_leopard/health",
 		"moonlight:snow_leopard/jump",
+		"moonlight:snow_leopard/oxygen",
+		"moonlight:snow_leopard/power",
 		"moonlight:snow_leopard/speed"
 	]
 }

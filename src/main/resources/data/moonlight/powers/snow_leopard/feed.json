@@ -13,7 +13,7 @@
 			},
 			{
 				"type": "origins:change_resource",
-				"resource": "moonlight:snow_leopard/power_drain_small",
+				"resource": "moonlight:snow_leopard/power_drain_medium",
 				"operation": "set",
 				"change": 1
 			}
