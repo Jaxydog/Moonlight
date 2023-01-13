@@ -316,7 +316,7 @@ public class MLItems {
 
 	public static final MLItem SURF_STICKS = new MLItem(
 		new Settings()
-			.food(new FoodComponent.Builder().hunger(13).saturationModifier(0.7f).build())
+			.food(new FoodComponent.Builder().hunger(13).saturationModifier(0.7f).meat().build())
 			.rarity(Rarity.COMMON),
 		new Config("surf_sticks").withTooltip()
 	);
