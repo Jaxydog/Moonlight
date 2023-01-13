@@ -1,0 +1,237 @@
+{
+	"name": "power.moonlight.snow_leopard.power.name",
+	"description": "power.moonlight.snow_leopard.power.description",
+	"type": "origins:multiple",
+	"resource": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1000,
+		"min_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:power_armor/power/empty"
+		},
+		"max_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:power_armor/power/full"
+		},
+		"hud_render": {
+			"bar_index": 2,
+			"sprite_location": "origins:textures/gui/resource_bar.png"
+		}
+	},
+	"drain_small": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"max_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:if_else",
+					"if_action": {
+						"type": "origins:change_resource",
+						"resource": "moonlight:snow_leopard/power_resource",
+						"operation": "add",
+						"change": -1
+					},
+					"else_action": {
+						"type": "origins:change_resource",
+						"resource": "moonlight:snow_leopard/power_resource",
+						"operation": "add",
+						"change": -2
+					},
+					"condition": {
+						"type": "origins:constant",
+						"value": false
+					}
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "moonlight:snow_leopard/power_drain_small",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	"drain_medium": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"max_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:if_else",
+					"if_action": {
+						"type": "origins:change_resource",
+						"resource": "moonlight:snow_leopard/power_resource",
+						"operation": "add",
+						"change": -4
+					},
+					"else_action": {
+						"type": "origins:change_resource",
+						"resource": "moonlight:snow_leopard/power_resource",
+						"operation": "add",
+						"change": -5
+					},
+					"condition": {
+						"type": "origins:constant",
+						"value": false
+					}
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "moonlight:snow_leopard/power_drain_medium",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	"drain_large": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"max_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:if_else",
+					"if_action": {
+						"type": "origins:change_resource",
+						"resource": "moonlight:snow_leopard/power_resource",
+						"operation": "add",
+						"change": -8
+					},
+					"else_action": {
+						"type": "origins:change_resource",
+						"resource": "moonlight:snow_leopard/power_resource",
+						"operation": "add",
+						"change": -10
+					},
+					"condition": {
+						"type": "origins:constant",
+						"value": false
+					}
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "moonlight:snow_leopard/power_drain_large",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	"drain_huge": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"max_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:if_else",
+					"if_action": {
+						"type": "origins:change_resource",
+						"resource": "moonlight:snow_leopard/power_resource",
+						"operation": "add",
+						"change": -38
+					},
+					"else_action": {
+						"type": "origins:change_resource",
+						"resource": "moonlight:snow_leopard/power_resource",
+						"operation": "add",
+						"change": -50
+					},
+					"condition": {
+						"type": "origins:constant",
+						"value": false
+					}
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "moonlight:snow_leopard/power_drain_huge",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	"recharge": {
+		"type": "origins:active_self",
+		"cooldown": 5,
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "clear @s moonlight:fusion_core 1"
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "function moonlight:power_armor/power/recharge"
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "moonlight:snow_leopard/power_resource",
+					"operation": "add",
+					"change": 1000
+				}
+			]
+		},
+		"key": {
+			"key": "key.use",
+			"continuous": true
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:snow_leopard/power_resource",
+					"comparison": "<",
+					"compare_to": 1000
+				},
+				{
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:equipped_item",
+							"equipment_slot": "mainhand",
+							"item_condition": {
+								"type": "origins:ingredient",
+								"ingredient": {
+									"item": "moonlight:fusion_core"
+								}
+							}
+						},
+						{
+							"type": "origins:equipped_item",
+							"equipment_slot": "offhand",
+							"item_condition": {
+								"type": "origins:ingredient",
+								"ingredient": {
+									"item": "moonlight:fusion_core"
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	}
+}

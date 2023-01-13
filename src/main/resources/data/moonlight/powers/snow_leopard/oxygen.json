@@ -1,0 +1,99 @@
+{
+	"name": "power.moonlight.power_armor.oxygen.name",
+	"description": "power.moonlight.power_armor.oxygen.description",
+	"type": "origins:multiple",
+	"resource": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 180,
+		"min_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:power_armor/oxygen/empty"
+		},
+		"max_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:power_armor/oxygen/full"
+		},
+		"hud_render": {
+			"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+			"bar_index": 4,
+			"condition": {
+				"type": "origins:resource",
+				"resource": "moonlight:snow_leopard/oxygen_resource",
+				"comparison": "<",
+				"compare_to": 180
+			}
+		}
+	},
+	"drain": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"rising_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:power_armor/oxygen/drain_start"
+		},
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:gain_air",
+					"value": 30
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "moonlight:snow_leopard/oxygen_drain_small",
+					"operation": "set",
+					"change": 1
+				}
+			]
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:power_armor/oxygen/drain_stop"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:submerged_in",
+					"fluid": "minecraft:water"
+				},
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:snow_leopard/oxygen_resource",
+					"comparison": ">",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "moonlight:snow_leopard/power_resource",
+					"comparison": ">",
+					"compare_to": 0
+				}
+			]
+		}
+	},
+	"refill": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"rising_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:power_armor/oxygen/refill_start"
+		},
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "moonlight:snow_leopard/oxygen_resource",
+			"operation": "add",
+			"change": 1
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:power_armor/oxygen/refill_stop"
+		},
+		"condition": {
+			"type": "origins:submerged_in",
+			"fluid": "minecraft:water",
+			"inverted": true
+		}
+	}
+}

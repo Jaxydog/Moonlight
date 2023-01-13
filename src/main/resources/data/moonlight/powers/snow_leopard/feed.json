@@ -1,0 +1,38 @@
+{
+	"name": "power.moonlight.snow_leopard.feed.name",
+	"description": "power.moonlight.snow_leopard.feed.description",
+	"type": "origins:action_over_time",
+	"interval": 10,
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+				"type": "origins:feed",
+				"food": 1,
+				"saturation": 1.0
+			},
+			{
+				"type": "origins:change_resource",
+				"resource": "moonlight:snow_leopard/power_drain_small",
+				"operation": "set",
+				"change": 1
+			}
+		]
+	},
+	"condition": {
+		"type": "origins:and",
+		"conditions": [
+			{
+				"type": "origins:resource",
+				"resource": "moonlight:snow_leopard/power_resource",
+				"comparison": ">",
+				"compare_to": 0
+			},
+			{
+				"type": "origins:food_level",
+				"comparison": "<",
+				"compare_to": 20
+			}
+		]
+	}
+}
