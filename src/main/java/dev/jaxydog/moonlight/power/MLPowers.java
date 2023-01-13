@@ -21,13 +21,6 @@ public class MLPowers {
 	)
 		.allowCondition();
 
-	public static final PowerFactory<Power> ELYTRA_SPEED = new PowerFactory<>(
-		Moonlight.id("elytra_speed"),
-		new SerializableData().add("speed", SerializableDataTypes.FLOAT, 1.0f),
-		data -> (type, entity) -> new ElytraSpeed(type, entity, data.getFloat("speed"))
-	)
-		.allowCondition();
-
 	/** Registers a new power factory */
 	private static void register(PowerFactory<?> power) {
 		Registry.register(ApoliRegistries.POWER_FACTORY, power.getSerializerId(), power);
@@ -35,7 +28,6 @@ public class MLPowers {
 
 	/** Registers all power factories */
 	public static void register() {
-		register(ELYTRA_SPEED);
 		register(MODEL_SCALE);
 	}
 }
