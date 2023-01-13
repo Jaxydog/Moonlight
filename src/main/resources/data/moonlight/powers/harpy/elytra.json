@@ -14,5 +14,27 @@
 		"condition": {
 			"type": "origins:fall_flying"
 		}
+	},
+	"speed_horizontal": {
+		"type": "origins:modify_velocity",
+		"axis": ["x", "z"],
+		"modifier": {
+			"operation": "multiply_total",
+			"value": 0.4
+		},
+		"condition": {
+			"type": "origins:fall_flying"
+		}
+	},
+	"speed_vertical": {
+		"type": "origins:modify_velocity",
+		"axis": ["y"],
+		"modifier": {
+			"operation": "multiply_total",
+			"value": 0.2
+		},
+		"condition": {
+			"type": "origins:fall_flying"
+		}
 	}
 }
