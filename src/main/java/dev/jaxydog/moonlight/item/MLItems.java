@@ -8,6 +8,7 @@ import dev.jaxydog.moonlight.item.MLItem.LootModifier;
 import dev.jaxydog.moonlight.item.unique.BouquetItem;
 import dev.jaxydog.moonlight.item.unique.ButterMilkItem;
 import dev.jaxydog.moonlight.item.unique.CaramelAppleItem;
+import dev.jaxydog.moonlight.item.unique.DandelionSoupItem;
 import dev.jaxydog.moonlight.item.unique.MLDyeableAmethystBlockItem;
 import dev.jaxydog.moonlight.item.unique.MLDyeableAmethystClusterBlockItem;
 import dev.jaxydog.moonlight.item.unique.MilkBottleItem;
@@ -213,6 +214,13 @@ public class MLItems {
 		new Config("cracker").withTooltip()
 	);
 
+	public static final DandelionSoupItem DANDELION_SOUP = new DandelionSoupItem(
+		new Settings()
+			.food(new FoodComponent.Builder().hunger(1).saturationModifier(2.0f).build())
+			.rarity(Rarity.COMMON),
+		new Config("dandelion_soup").withTooltip()
+	);
+
 	public static final MLItem DINO_NUGGIE = new MLItem(
 		new Settings()
 			.food(new FoodComponent.Builder().hunger(7).meat().saturationModifier(0.65f).snack().build())
@@ -282,6 +290,13 @@ public class MLItems {
 		new Config("mozzarella_stick").withTooltip()
 	);
 
+	public static final MLItem OMELETTE = new MLItem(
+		new Settings()
+			.food(new FoodComponent.Builder().hunger(4).saturationModifier(1.25f).build())
+			.rarity(Rarity.COMMON),
+		new Config("omelette").withTooltip()
+	);
+
 	public static final MLItem PASTA = new MLItem(
 		new Settings()
 			.food(new FoodComponent.Builder().hunger(1).saturationModifier(0.5f).snack().build())
@@ -297,6 +312,13 @@ public class MLItems {
 	public static final MLItem STABLE_FLUX = new MLItem(
 		new Settings().rarity(Rarity.UNCOMMON),
 		new Config("stable_flux").withTooltip()
+	);
+
+	public static final MLItem SURF_STICKS = new MLItem(
+		new Settings()
+			.food(new FoodComponent.Builder().hunger(13).saturationModifier(0.7f).build())
+			.rarity(Rarity.COMMON),
+		new Config("surf_sticks").withTooltip()
 	);
 
 	public static final MLItem CAVE_CORE = new MLItem(
@@ -358,6 +380,7 @@ public class MLItems {
 		CHEESY_MASHED_POTATOES.register();
 		COOKED_BIRCH_NUT.register();
 		CRACKER.register();
+		DANDELION_SOUP.register();
 		DINO_NUGGIE.register();
 		DINO_VEGGIE.register();
 		FUSION_CORE.register();
@@ -368,9 +391,11 @@ public class MLItems {
 		MASHED_POTATOES.register();
 		MILK_BOTTLE.register();
 		MOZZARELLA_STICK.register();
+		OMELETTE.register();
 		PASTA.register();
 		SCYTHE.register();
 		STABLE_FLUX.register();
+		SURF_STICKS.register();
 		CAVE_CORE.register();
 		HELL_CORE.register();
 		LAND_CORE.register();
