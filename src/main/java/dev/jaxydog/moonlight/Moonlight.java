@@ -2,6 +2,7 @@ package dev.jaxydog.moonlight;
 
 import dev.jaxydog.moonlight.block.MLBlocks;
 import dev.jaxydog.moonlight.content.MLSoundEvents;
+import dev.jaxydog.moonlight.effect.MLStatusEffects;
 import dev.jaxydog.moonlight.item.MLItems;
 import dev.jaxydog.moonlight.power.MLConditions;
 import dev.jaxydog.moonlight.power.MLPowers;
@@ -26,6 +27,7 @@ public class Moonlight implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		MLSoundEvents.register();
+		MLStatusEffects.register();
 		MLBlocks.register();
 		MLItems.register();
 		MLConditions.register();
