@@ -1,0 +1,50 @@
+{
+	"name": "power.moonlight.axolotl.mean_bean.name",
+	"description": "power.moonlight.axolotl.mean_bean.description",
+	"type": "origins:multiple",
+	"size": {
+		"type": "moonlight:model_scale",
+		"width": 0.5,
+		"height": 0.5
+	},
+	"health": {
+		"type": "origins:attribute",
+		"update_health": true,
+		"modifier": {
+			"attribute": "minecraft:generic.max_health",
+			"operation": "addition",
+			"value": -4
+		}
+	},
+	"armor": {
+		"type": "origins:restrict_armor",
+		"head": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"tag": "moonlight:axolotl/armor"
+			},
+			"inverted": true
+		},
+		"chest": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"tag": "moonlight:axolotl/armor"
+			},
+			"inverted": true
+		},
+		"legs": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"tag": "moonlight:axolotl/armor"
+			},
+			"inverted": true
+		},
+		"feet": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"tag": "moonlight:axolotl/armor"
+			},
+			"inverted": true
+		}
+	}
+}

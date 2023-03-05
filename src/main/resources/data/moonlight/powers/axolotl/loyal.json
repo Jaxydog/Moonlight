@@ -1,0 +1,97 @@
+{
+	"name": "power.moonlight.axolotl.loyal.name",
+	"description": "power.moonlight.axolotl.loyal.description",
+	"type": "origins:multiple",
+	"yoink": {
+		"type": "origins:action_on_being_used",
+		"action_result": "success",
+		"bientity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:invert",
+					"action": {
+						"type": "origins:mount"
+					}
+				},
+				{
+					"type": "apoli:actor_action",
+					"action": {
+						"type": "origins:execute_command",
+						"command": "function moonlight:axolotl/yoink"
+					}
+				}
+			]
+		},
+		"bientity_condition": {
+			"type": "origins:target_condition",
+			"condition": {
+				"type": "origins:sneaking",
+				"inverted": true
+			}
+		},
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"item": "minecraft:water_bucket"
+			}
+		}
+	},
+	"splosh": {
+		"type": "origins:active_self",
+		"cooldown": 0,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:axolotl/splosh"
+		},
+		"condition": {
+			"type": "origins:riding"
+		},
+		"key": {
+			"key": "key.sneak"
+		},
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	"friend_toggle": {
+		"type": "origins:toggle",
+		"active_by_default": true,
+		"retain_state": false,
+		"key": {
+			"key": "key.saveToolbarActivator"
+		},
+		"condition": {
+			"type": "origins:gamemode",
+			"gamemode": "spectator",
+			"inverted": true
+		}
+	},
+	"friend": {
+		"type": "origins:action_over_time",
+		"interval": 10,
+		"entity_action": {
+			"type": "origins:area_of_effect",
+			"radius": 8,
+			"bientity_action": {
+				"type": "origins:target_action",
+				"action": {
+					"type": "origins:execute_command",
+					"command": "function moonlight:axolotl/friend"
+				}
+			}
+		},
+		"rising_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:axolotl/friend_start"
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:axolotl/friend_stop"
+		},
+		"condition": {
+			"type": "origins:power_active",
+			"power": "moonlight:axolotl/loyal_friend_toggle"
+		}
+	}
+}

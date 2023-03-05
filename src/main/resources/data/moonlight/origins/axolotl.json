@@ -1,0 +1,18 @@
+{
+	"name": "origin.moonlight.axolotl.name",
+	"description": "origin.moonlight.axolotl.description",
+	"icon": "minecraft:axolotl_bucket",
+	"impact": 3,
+	"unchoosable": true,
+	"powers": [
+		"moonlight:axolotl/aquatic",
+		"moonlight:axolotl/hydration",
+		"moonlight:axolotl/loyal",
+		"moonlight:axolotl/mean_bean",
+		"moonlight:axolotl/meanie_muncher",
+		"moonlight:axolotl/resident_sleeper",
+		"origins:aqua_affinity",
+		"origins:like_water",
+		"origins:water_vision"
+	]
+}

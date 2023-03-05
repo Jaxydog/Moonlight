@@ -1,0 +1,168 @@
+{
+	"name": "power.moonlight.axolotl.aquatic.name",
+	"description": "power.moonlight.axolotl.aquatic.description",
+	"type": "origins:multiple",
+	"resource": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 750,
+		"start_value": 500,
+		"min_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:axolotl/hydration_empty"
+		},
+		"max_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:axolotl/hydration_full"
+		},
+		"hud_render": {
+			"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+			"bar_index": 15
+		}
+	},
+	"drain": {
+		"type": "origins:action_over_time",
+		"interval": 5,
+		"entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:biome",
+				"condition": {
+					"type": "origins:high_humidity"
+				}
+			},
+			"if_action": {
+				"type": "origins:change_resource",
+				"resource": "*:*_resource",
+				"operation": "add",
+				"change": -1
+			},
+			"else_action": {
+				"type": "origins:change_resource",
+				"resource": "*:*_resource",
+				"operation": "add",
+				"change": -2
+			}
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:fluid_height",
+					"fluid": "minecraft:water",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:in_rain",
+					"inverted": true
+				},
+				{
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:gamemode",
+							"gamemode": "adventure"
+						},
+						{
+							"type": "origins:gamemode",
+							"gamemode": "survival"
+						}
+					]
+				}
+			]
+		}
+	},
+	"regen": {
+		"type": "origins:action_over_time",
+		"interval": 5,
+		"entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:biome",
+				"condition": {
+					"type": "origins:high_humidity"
+				}
+			},
+			"if_action": {
+				"type": "origins:change_resource",
+				"resource": "*:*_resource",
+				"operation": "add",
+				"change": 25
+			},
+			"else_action": {
+				"type": "origins:change_resource",
+				"resource": "*:*_resource",
+				"operation": "add",
+				"change": 10
+			}
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:fluid_height",
+							"fluid": "minecraft:water",
+							"comparison": ">",
+							"compare_to": 0
+						},
+						{
+							"type": "origins:in_rain"
+						}
+					]
+				},
+				{
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:gamemode",
+							"gamemode": "adventure"
+						},
+						{
+							"type": "origins:gamemode",
+							"gamemode": "survival"
+						}
+					]
+				}
+			]
+		}
+	},
+	"drink": {
+		"type": "origins:action_on_item_use",
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "*:*_resource",
+			"operation": "add",
+			"change": 100
+		},
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"item": "minecraft:potion",
+				"tag": "{Potion:\"water\"}"
+			}
+		}
+	},
+	"agony": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:damage",
+			"amount": 1,
+			"source": {
+				"name": "drown",
+				"bypasses_armor": true,
+				"unblockable": true
+			}
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "*:*_resource",
+			"comparison": "==",
+			"compare_to": 0
+		}
+	}
+}

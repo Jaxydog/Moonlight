@@ -1,0 +1,67 @@
+{
+	"name": "power.moonlight.axolotl.meanie_muncher.name",
+	"description": "power.moonlight.axolotl.meanie_muncher.description",
+	"type": "origins:multiple",
+	"friend": {
+		"type": "origins:action_over_time",
+		"interval": 10,
+		"entity_action": {
+			"type": "origins:area_of_effect",
+			"radius": 8,
+			"bientity_action": {
+				"type": "origins:target_action",
+				"action": {
+					"type": "origins:execute_command",
+					"command": "function moonlight:axolotl/meanie_muncher"
+				}
+			}
+		},
+		"condition": {
+			"type": "origins:gamemode",
+			"gamemode": "spectator",
+			"inverted": true
+		}
+	},
+	"saddd": {
+		"type": "origins:cooldown",
+		"cooldown": 1200,
+		"hud_render": {
+			"sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+			"bar_index": 16
+		}
+	},
+	"saddd_nohit": {
+		"type": "origins:modify_damage_dealt",
+		"modifier": {
+			"operation": "multiply_total",
+			"value": -1
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "*:*_saddd",
+			"comparison": ">",
+			"compare_to": 0
+		}
+	},
+	"spearfishing": {
+		"type": "origins:modify_damage_dealt",
+		"modifier": {
+			"operation": "multiply_base",
+			"value": 0.5
+		},
+		"target_condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:entity_group",
+					"group": "aquatic"
+				},
+				{
+					"type": "origins:in_tag",
+					"tag": "moonlight:axolotl/frens",
+					"inverted": true
+				}
+			]
+		}
+	}
+}

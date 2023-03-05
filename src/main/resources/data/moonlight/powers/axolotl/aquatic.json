@@ -1,0 +1,59 @@
+{
+	"name": "power.moonlight.axolotl.aquatic.name",
+	"description": "power.moonlight.axolotl.aquatic.description",
+	"type": "origins:multiple",
+	"breathe": {
+		"type": "origins:stacking_status_effect",
+		"duration_per_stack": 100,
+		"min_stacks": 1,
+		"max_stacks": 1,
+		"effect": {
+			"effect": "minecraft:water_breathing",
+			"show_icon": false,
+			"show_particles": false
+		}
+	},
+	"vision": {
+		"type": "origins:toggle_night_vision",
+		"active_by_default": true,
+		"strength": 1.0,
+		"key": {
+			"key": "key.saveToolbarActivator"
+		},
+		"condition": {
+			"type": "origins:submerged_in",
+			"fluid": "minecraft:water"
+		}
+	},
+	"feesh": {
+		"type": "origins:entity_group",
+		"group": "aquatic"
+	},
+	"swimmmm": {
+		"type": "origins:modify_swim_speed",
+		"modifier": {
+			"operation": "multiply_base",
+			"value": 2.0
+		}
+	},
+	"boost": {
+		"type": "origins:active_self",
+		"cooldown": 120,
+		"entity_action": {
+			"type": "origins:add_velocity",
+			"space": "local",
+			"z": 1
+		},
+		"key": {
+			"key": "key.origins.primary_active"
+		},
+		"hud_render": {
+			"sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+			"bar_index": 0
+		},
+		"condition": {
+			"type": "origins:submerged_in",
+			"fluid": "minecraft:water"
+		}
+	}
+}
