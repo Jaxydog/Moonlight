@@ -18,7 +18,7 @@ public enum MoonPhase {
 	/** Waxing crescent */
 	WAXING_CRESCENT("waxing_crescent", 5),
 	/** First quarter */
-	FIRST_QUARTER("first_quarted", 6),
+	FIRST_QUARTER("first_quarter", 6),
 	/** Waxing gibbus */
 	WAXING_GIBBUS("waxing_gibbus", 7);
 
