@@ -141,8 +141,7 @@
 		"item_condition": {
 			"type": "origins:ingredient",
 			"ingredient": {
-				"item": "minecraft:potion",
-				"tag": "{Potion:\"water\"}"
+				"item": "minecraft:potion"
 			}
 		}
 	},
