@@ -1,9 +1,11 @@
 package dev.jaxydog.moonlight.power;
 
 import dev.jaxydog.moonlight.Moonlight;
+import dev.jaxydog.moonlight.data.AxolotlEmotion;
 import dev.jaxydog.moonlight.data.MLDataTypes;
 import dev.jaxydog.moonlight.data.MoonPhase;
 import dev.jaxydog.moonlight.data.ValueType;
+import dev.jaxydog.moonlight.item.unique.Emotional;
 import io.github.apace100.apoli.data.ApoliDataTypes;
 import io.github.apace100.apoli.power.factory.condition.ConditionFactory;
 import io.github.apace100.apoli.registry.ApoliRegistries;
@@ -34,6 +36,16 @@ public class MLConditions {
 			var target = valueType.convert(compareTo, entity);
 
 			return !entity.isEmpty() && entity.isDamageable() && comparison.compare(target, damage);
+		}
+	);
+
+	public static final ConditionFactory<ItemStack> EMOTION = new ConditionFactory<>(
+		Moonlight.id("emotion"),
+		new SerializableData().add("emotion", MLDataTypes.AXOLOTL_EMOTION),
+		(data, stack) -> {
+			if (!(stack.getItem() instanceof Emotional)) return false;
+
+			return Emotional.getEmotion(stack) == data.<AxolotlEmotion>get("emotion");
 		}
 	);
 
