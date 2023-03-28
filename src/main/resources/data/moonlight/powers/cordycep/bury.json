@@ -1,0 +1,49 @@
+{
+	"hidden": true,
+	"type": "origins:multiple",
+	"toggle": {
+		"type": "origins:toggle",
+		"active_by_default": false,
+		"retain_state": false,
+		"key": {
+			"key": "key.origins.primary_active"
+		},
+		"condition": {
+			"type": "origins:gamemode",
+			"gamemode": "spectator",
+			"inverted": true
+		}
+	},
+	"phasing": {
+		"type": "origins:phasing",
+		"render_type": "blindness",
+		"view_distance": 16,
+		"phase_down_condition": {
+			"type": "origins:sneaking"
+		},
+		"block_condition": {
+			"type": "origins:in_tag",
+			"tag": "moonlight:cordycep/burrowable"
+		},
+		"condition": {
+			"type": "origins:power_active",
+			"power": "moonlight:cordycep/bury_toggle"
+		}
+	},
+	"effect": {
+		"type": "origins:overlay",
+		"texture": "minecraft:textures/misc/nausea.png",
+		"red": 0.2,
+		"green": 0.5,
+		"blue": 0.2,
+		"strength": 0.7,
+		"draw_mode": "nausea",
+		"draw_phase": "above_hud",
+		"visible_in_third_person": true,
+		"hide_with_hud": true,
+		"condition": {
+			"type": "origins:power_active",
+			"power": "moonlight:cordycep/bury_toggle"
+		}
+	}
+}

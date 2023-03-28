@@ -1,0 +1,65 @@
+{
+	"name": "power.moonlight.cordycep.historysucks.name",
+	"description": "power.moonlight.cordycep.historysucks.description",
+	"type": "origins:multiple",
+	"ripgreeb": {
+		"type": "origins:modify_damage_dealt",
+		"modifier": {
+			"operation": "multiply_base",
+			"value": 1
+		},
+		"target_condition": {
+			"type": "origins:origin",
+			"origin": "rock:rock"
+		}
+	},
+	"zoinks": {
+		"type": "origins:modify_damage_taken",
+		"modifier": {
+			"operation": "multiply_base",
+			"value": 0.5
+		},
+		"damage_condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:projectile",
+					"projectile": "minecraft:arrow"
+				},
+				{
+					"type": "origins:projectile",
+					"projectile": "minecraft:spectral_arrow"
+				}
+			]
+		}
+	},
+	"traumasparkleemoji": {
+		"type": "origins:stacking_status_effect",
+		"tick_rate": 10,
+		"min_stacks": 0,
+		"max_stacks": 1,
+		"duration_per_stack": 100,
+		"effects": [
+			{
+				"effect": "minecraft:slowness",
+				"amplifier": 0,
+				"is_ambient": false,
+				"show_icon": true,
+				"show_particles": false
+			},
+			{
+				"effect": "minecraft:nausea",
+				"amplifier": 0,
+				"is_ambient": false,
+				"show_icon": true,
+				"show_particles": false
+			}
+		],
+		"condition": {
+			"type": "origins:command",
+			"command": "execute if entity @e[type = minecraft:cow, distance = ..6]",
+			"comparison": ">",
+			"compare_to": 0
+		}
+	}
+}

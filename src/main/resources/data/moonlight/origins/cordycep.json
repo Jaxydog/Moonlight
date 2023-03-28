@@ -1,0 +1,19 @@
+{
+	"name": "origin.moonlight.cordycep.name",
+	"description": "origin.moonlight.cordycep.description",
+	"icon": "minecraft:dandelion",
+	"impact": 3,
+	"unchoosable": true,
+	"powers": [
+		"moonlight:cordycep/bury",
+		"moonlight:cordycep/drops",
+		"moonlight:cordycep/historysucks",
+		"moonlight:cordycep/mushroom",
+		"moonlight:cordycep/thelore",
+		"moonlight:cordycep/weakvines",
+		"moonlight:moobloom/bouquet",
+		"moonlight:moobloom/flower_trail",
+		"moonlight:moobloom/hide",
+		"moonlight:moobloom/scythe"
+	]
+}

@@ -11,7 +11,9 @@ import io.github.apace100.apoli.util.Comparison;
 import io.github.apace100.calio.data.SerializableData;
 import io.github.apace100.calio.data.SerializableDataTypes;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.Pair;
 import net.minecraft.util.registry.Registry;
 
 /** Moonlight condition class */
@@ -35,6 +37,12 @@ public class MLConditions {
 		}
 	);
 
+	public static final ConditionFactory<Pair<DamageSource, Float>> MAGIC = new ConditionFactory<>(
+		Moonlight.id("magic"),
+		new SerializableData(),
+		(data, damage) -> damage.getLeft().isMagic()
+	);
+
 	/** Moon phase condition factory */
 	public static final ConditionFactory<Entity> MOON_PHASE = new ConditionFactory<>(
 		Moonlight.id("moon_phase"),
@@ -50,6 +58,7 @@ public class MLConditions {
 	/** Registers all condition factories */
 	public static void register() {
 		register(DURABILITY, ApoliRegistries.ITEM_CONDITION);
+		register(MAGIC, ApoliRegistries.DAMAGE_CONDITION);
 		register(MOON_PHASE, ApoliRegistries.ENTITY_CONDITION);
 	}
 }

@@ -1,0 +1,81 @@
+{
+	"hidden": true,
+	"type": "origins:multiple",
+	"toggle": {
+		"type": "origins:toggle",
+		"active_by_default": false,
+		"key": {
+			"key": "key.origins.secondary_active"
+		}
+	},
+	"vines": {
+		"type": "origins:action_over_time",
+		"interval": 10,
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "function moonlight:cordycep/vines_tick"
+				},
+				{
+					"type": "origins:area_of_effect",
+					"radius": 8,
+					"bientity_action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "apoli:actor_action",
+								"action": {
+									"type": "origins:execute_command",
+									"command": "function moonlight:cordycep/vines_self"
+								}
+							},
+							{
+								"type": "origins:target_action",
+								"action": {
+									"type": "origins:execute_command",
+									"command": "function moonlight:cordycep/vines_target"
+								}
+							},
+							{
+								"type": "origins:if_else",
+								"if_action": {
+									"type": "origins:damage",
+									"amount": 1,
+									"source": {
+										"name": "cowVine.player",
+										"bypasses_armor": true,
+										"magic": true,
+										"unblockable": true
+									}
+								},
+								"condition": {
+									"type": "origins:target_condition",
+									"condition": {
+										"type": "origins:moving"
+									}
+								}
+							}
+						]
+					},
+					"bientity_condition": {
+						"type": "origins:target_condition",
+						"condition": {
+							"type": "origins:entity_type",
+							"entity_type": "minecraft:player"
+						}
+					}
+				}
+			]
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:cordycep/vines_stop"
+		},
+		"condition": {
+			"type": "origins:power_active",
+			"power": "moonlight:cordycep/weakvines_toggle"
+		}
+	}
+}

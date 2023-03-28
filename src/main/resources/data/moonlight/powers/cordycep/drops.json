@@ -1,0 +1,57 @@
+{
+	"hidden": true,
+	"type": "origins:self_action_when_hit",
+	"cooldown": 0,
+	"entity_action": {
+		"type": "origins:choice",
+		"actions": [
+			{
+				"weight": 2,
+				"element": {
+					"type": "origins:execute_command",
+					"command": "summon minecraft:item ~ ~ ~ {Item:{id:\"minecraft:red_mushroom\",Count:1b}}"
+				}
+			},
+			{
+				"weight": 2,
+				"element": {
+					"type": "origins:execute_command",
+					"command": "summon minecraft:item ~ ~ ~ {Item:{id:\"minecraft:red_mushroom\",Count:2b}}"
+				}
+			},
+			{
+				"weight": 1,
+				"element": {
+					"type": "origins:execute_command",
+					"command": "summon minecraft:item ~ ~ ~ {Item:{id:\"minecraft:red_mushroom\",Count:3b}}"
+				}
+			},
+			{
+				"weight": 2,
+				"element": {
+					"type": "origins:execute_command",
+					"command": "summon minecraft:item ~ ~ ~ {Item:{id:\"minecraft:brown_mushroom\",Count:1b}}"
+				}
+			},
+			{
+				"weight": 2,
+				"element": {
+					"type": "origins:execute_command",
+					"command": "summon minecraft:item ~ ~ ~ {Item:{id:\"minecraft:brown_mushroom\",Count:2b}}"
+				}
+			},
+			{
+				"weight": 1,
+				"element": {
+					"type": "origins:execute_command",
+					"command": "summon minecraft:item ~ ~ ~ {Item:{id:\"minecraft:brown_mushroom\",Count:3b}}"
+				}
+			}
+		]
+	},
+	"condition": {
+		"type": "origins:health",
+		"comparison": "<=",
+		"compare_to": 0
+	}
+}

@@ -1,0 +1,62 @@
+{
+	"name": "power.moonlight.cordycep.mushroom.name",
+	"description": "power.moonlight.cordycep.mushroom.description",
+	"type": "origins:multiple",
+	"fourfootelevenheadassgetsomeinchesonyou": {
+		"type": "moonlight:model_scale",
+		"width": 0.625,
+		"height": 0.625
+	},
+	"strength": {
+		"type": "origins:modify_damage_dealt",
+		"modifier": {
+			"operation": "addition",
+			"value": 3
+		},
+		"condition": {
+			"type": "origins:brightness",
+			"comparison": "<=",
+			"compare_to": 0.2
+		}
+	},
+	"weakness": {
+		"type": "origins:stacking_status_effect",
+		"tick_rate": 10,
+		"min_stacks": -9,
+		"max_stacks": 1,
+		"duration_per_stack": 100,
+		"effects": [
+			{
+				"effect": "minecraft:weakness",
+				"amplifier": 0,
+				"is_ambient": true,
+				"show_icon": true,
+				"show_particles": false
+			},
+			{
+				"effect": "minecraft:slowness",
+				"amplifier": 0,
+				"is_ambient": true,
+				"show_icon": true,
+				"show_particles": false
+			}
+		],
+		"condition": {
+			"type": "origins:exposed_to_sun"
+		}
+	},
+	"flammable": {
+		"type": "origins:modify_damage_taken",
+		"self_action": {
+			"type": "origins:execute_command",
+			"command": "function moonlight:cordycep/burn"
+		},
+		"modifier": {
+			"operation": "multiply_base",
+			"value": 1
+		},
+		"damage_condition": {
+			"type": "origins:fire"
+		}
+	}
+}

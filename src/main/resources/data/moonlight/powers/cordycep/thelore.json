@@ -1,0 +1,84 @@
+{
+	"name": "power.moonlight.cordycep.thelore.name",
+	"description": "power.moonlight.cordycep.thelore.description",
+	"type": "origins:multiple",
+	"sityourfatassdown": {
+		"type": "origins:action_on_entity_use",
+		"bientity_action": {
+			"type": "origins:mount"
+		},
+		"bientity_condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:actor_condition",
+					"condition": {
+						"type": "origins:gamemode",
+						"gamemode": "spectator",
+						"inverted": true
+					}
+				},
+				{
+					"type": "origins:target_condition",
+					"condition": {
+						"type": "apoli:entity_type",
+						"entity_type": "minecraft:player"
+					}
+				}
+			]
+		},
+		"item_condition": {
+			"type": "origins:empty"
+		}
+	},
+	"frens": {
+		"type": "origins:stacking_status_effect",
+		"tick_rate": 10,
+		"min_stacks": -9,
+		"max_stacks": 1,
+		"duration_per_stack": 100,
+		"effects": [
+			{
+				"effect": "minecraft:strength",
+				"amplifier": 0,
+				"is_ambient": false,
+				"show_icon": true,
+				"show_particles": false
+			},
+			{
+				"effect": "minecraft:resistance",
+				"amplifier": 0,
+				"is_ambient": false,
+				"show_icon": true,
+				"show_particles": false
+			}
+		],
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "execute if data entity @e[distance = ..32, name = Dananator5000]",
+					"comparison": "==",
+					"compare_to": 1
+				},
+				{
+					"type": "origins:command",
+					"command": "execute if data entity @e[distance = ..32, name = mellow_ish]",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		}
+	},
+	"theyremagicallydelicious": {
+		"type": "origins:modify_damage_taken",
+		"modifier": {
+			"operation": "multiply_base",
+			"value": 3
+		},
+		"damage_condition": {
+			"type": "moonlight:magic"
+		}
+	}
+}
