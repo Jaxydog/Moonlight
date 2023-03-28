@@ -1,44 +1,18 @@
 package dev.jaxydog.moonlight.item.unique;
 
 import dev.jaxydog.moonlight.data.AxolotlEmotion;
-import dev.jaxydog.moonlight.item.MLArmorItem;
-import dev.jaxydog.moonlight.item.MLItem.Config;
+import dev.jaxydog.moonlight.item.MLItem;
 import java.util.List;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.world.World;
 
-public class CrownItem extends MLArmorItem implements Emotional {
+public class CrystalItem extends MLItem implements Emotional {
 
-	public CrownItem(Material material, EquipmentSlot slot, Settings settings, Config config) {
-		super(material, slot, settings, config);
-	}
-
-	public int getLayers() {
-		return 5;
-	}
-
-	@Override
-	public int getColor(ItemStack stack, int index) {
-		if (index == 0) return 0xFFFFFF;
-
-		if (Emotional.getEmotion(stack) != AxolotlEmotion.NEUTRAL) {
-			return Emotional.super.getColor(stack, index);
-		}
-
-		switch (index) {
-			case 1:
-				return ANGRY_COLOR;
-			case 2:
-				return HAPPY_COLOR;
-			case 3:
-				return SAD_COLOR;
-			default:
-				return NEUTRAL_COLOR;
-		}
+	public CrystalItem(Settings settings, Config config) {
+		super(settings, config);
 	}
 
 	@Override
@@ -59,7 +33,14 @@ public class CrownItem extends MLArmorItem implements Emotional {
 	}
 
 	@Override
-	public MLArmorItem register() {
+	public Text getName(ItemStack stack) {
+		var emotion = Text.translatable(Emotional.getEmotion(stack).getTranslationKey());
+
+		return Text.translatable(this.getTranslationKey()).append(" ").append(emotion);
+	}
+
+	@Override
+	public MLItem register() {
 		ColorProviderRegistry.ITEM.register(this::getColor, this);
 		return super.register();
 	}

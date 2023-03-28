@@ -9,6 +9,7 @@ import dev.jaxydog.moonlight.item.unique.BouquetItem;
 import dev.jaxydog.moonlight.item.unique.ButterMilkItem;
 import dev.jaxydog.moonlight.item.unique.CaramelAppleItem;
 import dev.jaxydog.moonlight.item.unique.CrownItem;
+import dev.jaxydog.moonlight.item.unique.CrystalItem;
 import dev.jaxydog.moonlight.item.unique.DandelionSoupItem;
 import dev.jaxydog.moonlight.item.unique.MLDyeableAmethystBlockItem;
 import dev.jaxydog.moonlight.item.unique.MLDyeableAmethystClusterBlockItem;
@@ -227,7 +228,12 @@ public class MLItems {
 			.toughness(3),
 		EquipmentSlot.HEAD,
 		new Settings().fireproof().rarity(Rarity.RARE),
-		new Config("crown").withTooltip()
+		new Config("crown").forceGlint().withTooltip()
+	);
+
+	public static final CrystalItem CRYSTAL = new CrystalItem(
+		new Settings().fireproof().maxCount(1).rarity(Rarity.RARE),
+		new Config("crystal").forceGlint().withTooltip()
 	);
 
 	public static final DandelionSoupItem DANDELION_SOUP = new DandelionSoupItem(
@@ -384,6 +390,7 @@ public class MLItems {
 		CARAMEL_APPLE.register();
 		CARAMEL_BOTTLE.register();
 		CROWN.register();
+		CRYSTAL.register();
 		CHEESE_AND_CRACKERS.register();
 		CHEESE_BLOCK.register();
 		CHEESE_STEAK.register();
