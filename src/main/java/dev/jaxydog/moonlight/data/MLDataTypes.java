@@ -29,6 +29,11 @@ public class MLDataTypes {
 		public R apply(A a, B b, C c, D d, E e, F f);
 	}
 
+	public static final SerializableDataType<AxolotlEmotion> AXOLOTL_EMOTION = SerializableDataType.enumValue(
+		AxolotlEmotion.class,
+		SerializationHelper.buildEnumMap(AxolotlEmotion.class, AxolotlEmotion::getName)
+	);
+
 	/** Value type data type */
 	public static final SerializableDataType<ValueType> VALUE_TYPE = SerializableDataType.enumValue(
 		ValueType.class,

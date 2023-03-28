@@ -8,16 +8,19 @@ import dev.jaxydog.moonlight.item.MLItem.LootModifier;
 import dev.jaxydog.moonlight.item.unique.BouquetItem;
 import dev.jaxydog.moonlight.item.unique.ButterMilkItem;
 import dev.jaxydog.moonlight.item.unique.CaramelAppleItem;
+import dev.jaxydog.moonlight.item.unique.CrownItem;
 import dev.jaxydog.moonlight.item.unique.DandelionSoupItem;
 import dev.jaxydog.moonlight.item.unique.MLDyeableAmethystBlockItem;
 import dev.jaxydog.moonlight.item.unique.MLDyeableAmethystClusterBlockItem;
 import dev.jaxydog.moonlight.item.unique.MilkBottleItem;
 import dev.jaxydog.moonlight.item.unique.ScytheItem;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item.Settings;
 import net.minecraft.item.Items;
 import net.minecraft.loot.LootTables;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Rarity;
 
 public class MLItems {
@@ -214,6 +217,19 @@ public class MLItems {
 		new Config("cracker").withTooltip()
 	);
 
+	public static final CrownItem CROWN = new CrownItem(
+		new MLArmorItem.Material("crown")
+			.durability(37)
+			.enchantability(15)
+			.equipSound(SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE)
+			.knockbackResistance(0.1f)
+			.protection(3, 0, 0, 0)
+			.toughness(3),
+		EquipmentSlot.HEAD,
+		new Settings().fireproof().rarity(Rarity.RARE),
+		new Config("crown").withTooltip()
+	);
+
 	public static final DandelionSoupItem DANDELION_SOUP = new DandelionSoupItem(
 		new Settings()
 			.food(new FoodComponent.Builder().hunger(1).saturationModifier(2.0f).build())
@@ -367,6 +383,7 @@ public class MLItems {
 		BUTTERMILK.register();
 		CARAMEL_APPLE.register();
 		CARAMEL_BOTTLE.register();
+		CROWN.register();
 		CHEESE_AND_CRACKERS.register();
 		CHEESE_BLOCK.register();
 		CHEESE_STEAK.register();

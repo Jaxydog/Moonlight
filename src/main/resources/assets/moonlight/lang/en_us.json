@@ -43,6 +43,10 @@
 	"death.attack.snowLeopardDisease.player": "%1$s succumbed to the disease because of %2$s",
 	"death.attack.snowLeopardDisease": "%1$s got down with the sickness",
 	"effect.moonlight.friend": "Friend :)",
+	"emotion.moonlight.angry": "Anger",
+	"emotion.moonlight.happy": "Happiness",
+	"emotion.moonlight.neutral": "Neutrality",
+	"emotion.moonlight.sad": "Sadness",
 	"item.moonlight.amongus": "AMONGUS!!!",
 	"item.moonlight.avocado.tooltip_0": "It's probably from Mexico...",
 	"item.moonlight.avocado": "Avocado",
@@ -91,6 +95,8 @@
 	"item.moonlight.cooked_birch_nut": "Cooked Birch Nut",
 	"item.moonlight.cracker.tooltip_0": "No cheese, Gromit...",
 	"item.moonlight.cracker": "Cracker",
+	"item.moonlight.crown.tooltip_0": "You are flooded with emotions as you look into the crystals...",
+	"item.moonlight.crown": "Icarus' Crown",
 	"item.moonlight.dandelion_soup.tooltip_0": "Don't tell Marigold.",
 	"item.moonlight.dandelion_soup": "Dandelion Soup",
 	"item.moonlight.dino_nuggie.tooltip_0": "Fine, Funsul. Here you go.",
@@ -305,5 +311,6 @@
 	"subtitles.moonlight.item.avocado.jingle": "Avocados from Mexico jingle plays",
 	"subtitles.moonlight.origin.snake.alert": "Snake gets caught",
 	"subtitles.moonlight.origin.snake.sneak": "Sneaking intensifies...",
-	"subtitles.moonlight.origin.snow_leopard.scream": "Someone coughs up a lung..."
+	"subtitles.moonlight.origin.snow_leopard.scream": "Someone coughs up a lung...",
+	"tooltip.moonlight.crown_contains": "Contains"
 }

@@ -1,0 +1,10 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "moonlight:item/crown_0",
+		"layer1": "moonlight:item/crown_1",
+		"layer2": "moonlight:item/crown_2",
+		"layer3": "moonlight:item/crown_3",
+		"layer4": "moonlight:item/crown_4"
+	}
+}
