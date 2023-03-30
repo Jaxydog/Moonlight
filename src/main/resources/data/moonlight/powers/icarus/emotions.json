@@ -365,6 +365,87 @@
 			}
 		}
 	},
+	"rage_effects": {
+		"type": "origins:action_over_time",
+		"interval": 5,
+		"entity_action": {
+			"type": "origins:area_of_effect",
+			"radius": 16,
+			"bientity_action": {
+				"type": "origins:if_else_list",
+				"actions": [
+					{
+						"condition": {
+							"type": "origins:actor_condition",
+							"condition": {
+								"type": "origins:resource",
+								"resource": "*:*_rage_resource",
+								"comparison": ">=",
+								"compare_to": 67
+							}
+						},
+						"action": {
+							"type": "origins:target_action",
+							"action": {
+								"type": "origins:execute_command",
+								"command": "function moonlight:icarus/emotion/rage_high"
+							}
+						}
+					},
+					{
+						"condition": {
+							"type": "origins:actor_condition",
+							"condition": {
+								"type": "origins:resource",
+								"resource": "*:*_rage_resource",
+								"comparison": ">",
+								"compare_to": 33
+							}
+						},
+						"action": {
+							"type": "origins:target_action",
+							"action": {
+								"type": "origins:execute_command",
+								"command": "function moonlight:icarus/emotion/rage_medium"
+							}
+						}
+					},
+					{
+						"condition": {
+							"type": "origins:constant",
+							"value": true
+						},
+						"action": {
+							"type": "origins:target_action",
+							"action": {
+								"type": "origins:execute_command",
+								"command": "function moonlight:icarus/emotion/rage_low"
+							}
+						}
+					}
+				]
+			}
+		},
+		"condition": {
+			"type": "origins:equipped_item",
+			"equipment_slot": "head",
+			"item_condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "moonlight:crown"
+						}
+					},
+					{
+						"type": "origins:nbt",
+						"nbt": "{Emotion:\"angry\"}"
+					}
+				]
+			}
+		}
+	},
 	"happy": {
 		"name": "power.moonlight.icarus.happy.name",
 		"description": "power.moonlight.icarus.happy.description",
@@ -516,6 +597,8 @@
 			"command": "function moonlight:icarus/emotion/happy_empty"
 		},
 		"hud_render": {
+			"sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+			"bar_index": 14,
 			"condition": {
 				"type": "origins:equipped_item",
 				"equipment_slot": "head",
@@ -534,6 +617,78 @@
 						}
 					]
 				}
+			}
+		}
+	},
+	"happy_update": {
+		"type": "origins:action_over_time",
+		"interval": 10,
+		"entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:equipped_item",
+				"equipment_slot": "offhand",
+				"item_condition": {
+					"type": "origins:and",
+					"conditions": [
+						{
+							"type": "origins:ingredient",
+							"ingredient": {
+								"item": "moonlight:crystal"
+							}
+						},
+						{
+							"type": "origins:nbt",
+							"nbt": "{Emotion:\"happy\"}"
+						}
+					]
+				}
+			},
+			"if_action": {
+				"type": "origins:change_resource",
+				"resource": "*:*_happy_resource",
+				"operation": "add",
+				"change": 2
+			},
+			"else_action": {
+				"type": "origins:if_else",
+				"condition": {
+					"type": "origins:command",
+					"command": "execute if entity @e[type = minecraft:player, distance = 0.01..10]",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				"if_action": {
+					"type": "origins:change_resource",
+					"resource": "*:*_happy_resource",
+					"operation": "add",
+					"change": -1
+				}
+			}
+		},
+		"falling_action": {
+			"type": "origins:change_resource",
+			"resource": "*:*_happy_resource",
+			"operation": "set",
+			"change": 100
+		},
+		"condition": {
+			"type": "origins:equipped_item",
+			"equipment_slot": "head",
+			"item_condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "moonlight:crown"
+						}
+					},
+					{
+						"type": "origins:nbt",
+						"nbt": "{Emotion:\"happy\"}"
+					}
+				]
 			}
 		}
 	}

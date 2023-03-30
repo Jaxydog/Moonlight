@@ -7,7 +7,7 @@
 		"active_by_default": false,
 		"retain_state": false,
 		"key": {
-			"key": "key.saveToolbarActivator"
+			"key": "key.origins.primary_active"
 		},
 		"condition": {
 			"type": "origins:and",
