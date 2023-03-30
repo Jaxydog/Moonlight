@@ -102,5 +102,118 @@
 			"type": "origins:submerged_in",
 			"fluid": "minecraft:water"
 		}
+	},
+	"hydration_resource": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 700,
+		"start_value": 350,
+		"hud_render": {
+			"sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+			"bar_index": 16
+		}
+	},
+	"hydration_update": {
+		"type": "origins:action_over_time",
+		"interval": 10,
+		"entity_action": {
+			"type": "origins:if_else_list",
+			"actions": [
+				{
+					"condition": {
+						"type": "origins:submerged_in",
+						"fluid": "minecraft:water"
+					},
+					"action": {
+						"type": "origins:change_resource",
+						"resource": "*:*_hydration_update",
+						"change": 10
+					}
+				},
+				{
+					"condition": {
+						"type": "origins:fluid_height",
+						"fluid": "minecraft:water",
+						"comparison": ">",
+						"compare_to": 0
+					},
+					"action": {
+						"type": "origins:change_resource",
+						"resource": "*:*_hydration_update",
+						"change": 5
+					}
+				},
+				{
+					"condition": {
+						"type": "origins:constant",
+						"value": true
+					},
+					"action": {
+						"type": "origins:if_else",
+						"condition": {
+							"type": "origins:equipped_item",
+							"equipment_slot": "head",
+							"item_condition": {
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:ingredient",
+										"ingredient": {
+											"item": "moonlight:crown"
+										}
+									},
+									{
+										"type": "origins:nbt",
+										"nbt": "{Emotion:\"sad\"}"
+									}
+								]
+							}
+						},
+						"if_action": {
+							"type": "origins:change_resource",
+							"resource": "*:*_hydration_update",
+							"change": -3
+						},
+						"else_action": {
+							"type": "origins:change_resource",
+							"resource": "*:*_hydration_update",
+							"change": -1
+						}
+					}
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:gamemode",
+					"gamemode": "survival"
+				},
+				{
+					"type": "origins:gamemode",
+					"gamemode": "adventure"
+				}
+			]
+		}
+	},
+	"hydration_dry": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:damage",
+			"amount": 1,
+			"source": {
+				"name": "no_water_for_gills",
+				"bypasses_armor": true,
+				"unblockable": true
+			}
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "*:*_hydration_update",
+			"comparison": "==",
+			"compare_to": 0
+		}
 	}
 }
