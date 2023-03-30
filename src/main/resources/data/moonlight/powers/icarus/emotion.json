@@ -738,8 +738,8 @@
 			"command": "function moonlight:icarus/emotion/sad_max"
 		},
 		"hud_render": {
-			"sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
-			"bar_index": 16,
+			"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+			"bar_index": 0,
 			"condition": {
 				"type": "origins:equipped_item",
 				"equipment_slot": "head",
@@ -878,27 +878,47 @@
 		}
 	},
 	"sad_effects": {
-		"type": "origins:stacking_status_effect",
-		"tick_rate": 5,
-		"min_stacks": 0,
-		"max_stacks": 1,
-		"duration_per_stack": 60,
-		"effects": [
-			{
-				"effect": "minecraft:resistance",
-				"amplifier": 1,
-				"is_ambient": false,
-				"show_icon": false,
-				"show_particles": false
-			},
-			{
-				"effect": "minecraft:absorption",
-				"amplifier": 0,
-				"is_ambient": false,
-				"show_icon": false,
-				"show_particles": false
-			}
-		],
+		"type": "origins:action_over_time",
+		"interval": 5,
+		"entity_action": {
+			"type": "origins:if_else_list",
+			"actions": [
+				{
+					"condition": {
+						"type": "origins:resource",
+						"resource": "*:*_sad_resource",
+						"comparison": ">=",
+						"compare_to": 67
+					},
+					"action": {
+						"type": "origins:execute_command",
+						"command": "function moonlight:icarus/emotion/sad_effect_high"
+					}
+				},
+				{
+					"condition": {
+						"type": "origins:resource",
+						"resource": "*:*_sad_resource",
+						"comparison": "<=",
+						"compare_to": 33
+					},
+					"action": {
+						"type": "origins:execute_command",
+						"command": "function moonlight:icarus/emotion/sad_effect_low"
+					}
+				},
+				{
+					"condition": {
+						"type": "origins:constant",
+						"value": true
+					},
+					"action": {
+						"type": "origins:execute_command",
+						"command": "function moonlight:icarus/emotion/sad_effect_medium"
+					}
+				}
+			]
+		},
 		"condition": {
 			"type": "origins:equipped_item",
 			"equipment_slot": "head",
