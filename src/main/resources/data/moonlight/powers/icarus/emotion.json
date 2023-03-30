@@ -1012,7 +1012,7 @@
 	},
 	"sad_throw": {
 		"type": "origins:active_self",
-		"cooldown": 100,
+		"cooldown": 40,
 		"entity_action": {
 			"type": "origins:raycast",
 			"distance": 8,
