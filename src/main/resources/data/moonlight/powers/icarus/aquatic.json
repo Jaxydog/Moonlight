@@ -211,7 +211,7 @@
 		},
 		"condition": {
 			"type": "origins:resource",
-			"resource": "*:*_hydration_update",
+			"resource": "*:*_hydration_resource",
 			"comparison": "==",
 			"compare_to": 0
 		}
