@@ -113,7 +113,7 @@
 			"type": "origins:change_resource",
 			"resource": "*:*_angry_resource",
 			"operation": "set",
-			"change": 100
+			"change": 99
 		},
 		"condition": {
 			"type": "origins:equipped_item",
@@ -565,7 +565,7 @@
 			"type": "origins:change_resource",
 			"resource": "*:*_happy_resource",
 			"operation": "set",
-			"change": 100
+			"change": 99
 		},
 		"condition": {
 			"type": "origins:equipped_item",
@@ -829,7 +829,7 @@
 			"type": "origins:change_resource",
 			"resource": "*:*_sad_resource",
 			"operation": "set",
-			"change": 100
+			"change": 99
 		},
 		"condition": {
 			"type": "origins:equipped_item",
