@@ -1,0 +1,1 @@
+playsound minecraft:entity.axolotl.swim player @s ~ ~ ~ 0.75 0.75

@@ -1,0 +1,1 @@
+playsound minecraft:entity.phantom.bite player @s ~ ~ ~ 0.75 2

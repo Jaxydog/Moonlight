@@ -1,0 +1,1 @@
+playsound minecraft:entity.axolotl.idle_air player @a ~ ~ ~ 0.75 0.75
