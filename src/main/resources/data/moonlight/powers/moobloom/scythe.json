@@ -3,7 +3,7 @@
 	"type": "origins:recipe",
 	"recipe": {
 		"type": "minecraft:crafting_shaped",
-		"id": "moonlight:moobloom/bouquet",
+		"id": "moonlight:moobloom/scythe",
 		"pattern": ["DDD", " SS", "S  "],
 		"key": {
 			"D": {
