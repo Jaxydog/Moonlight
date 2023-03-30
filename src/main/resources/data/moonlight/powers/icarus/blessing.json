@@ -106,19 +106,35 @@
 				},
 				"A": {
 					"item": "moonlight:crystal",
-					"tag": "{Emotion:\"angry\"}"
+					"data": {
+						"require": {
+							"Emotion": "angry"
+						}
+					}
 				},
 				"H": {
 					"item": "moonlight:crystal",
-					"tag": "{Emotion:\"happy\"}"
+					"data": {
+						"require": {
+							"Emotion": "happy"
+						}
+					}
 				},
 				"S": {
 					"item": "moonlight:crystal",
-					"tag": "{Emotion:\"sad\"}"
+					"data": {
+						"require": {
+							"Emotion": "sad"
+						}
+					}
 				},
 				"N": {
 					"item": "moonlight:crystal",
-					"tag": "{Emotion:\"neutral\"}"
+					"data": {
+						"require": {
+							"Emotion": "neutral"
+						}
+					}
 				}
 			},
 			"result": {
