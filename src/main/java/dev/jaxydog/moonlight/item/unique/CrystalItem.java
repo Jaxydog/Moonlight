@@ -58,7 +58,10 @@ public class CrystalItem extends MLItem implements Emotional {
 			server.getCommandManager().executeWithPrefix(source, CRAFT_COMMAND);
 		}
 
-		player.damage(BOTTLE_UP, player.getMaxHealth() / 2.0f);
+		// for some reason this method takes *hearts*, not actual hp,
+		// so we divide by 4 to get half of the player's health
+
+		player.damage(BOTTLE_UP, player.getMaxHealth() / 4.0f);
 
 		super.onCraft(stack, world, player);
 	}
