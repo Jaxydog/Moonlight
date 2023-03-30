@@ -4,7 +4,6 @@ import dev.jaxydog.moonlight.data.AxolotlEmotion;
 import dev.jaxydog.moonlight.item.MLArmorItem;
 import dev.jaxydog.moonlight.item.MLItem.Config;
 import java.util.List;
-import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ItemStack;
@@ -56,11 +55,5 @@ public class CrownItem extends MLArmorItem implements Emotional {
 		Emotional.setEmotion(stack, AxolotlEmotion.NEUTRAL);
 
 		return stack;
-	}
-
-	@Override
-	public MLArmorItem register() {
-		ColorProviderRegistry.ITEM.register(this::getColor, this);
-		return super.register();
 	}
 }

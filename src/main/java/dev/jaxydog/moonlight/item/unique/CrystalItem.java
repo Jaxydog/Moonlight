@@ -3,7 +3,6 @@ package dev.jaxydog.moonlight.item.unique;
 import dev.jaxydog.moonlight.data.AxolotlEmotion;
 import dev.jaxydog.moonlight.item.MLItem;
 import java.util.List;
-import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
@@ -64,11 +63,5 @@ public class CrystalItem extends MLItem implements Emotional {
 		player.damage(BOTTLE_UP, player.getMaxHealth() / 4.0f);
 
 		super.onCraft(stack, world, player);
-	}
-
-	@Override
-	public MLItem register() {
-		ColorProviderRegistry.ITEM.register(this::getColor, this);
-		return super.register();
 	}
 }
