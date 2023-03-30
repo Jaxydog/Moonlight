@@ -126,7 +126,7 @@
 					},
 					"action": {
 						"type": "origins:change_resource",
-						"resource": "*:*_hydration_update",
+						"resource": "*:*_hydration_resource",
 						"change": 10
 					}
 				},
@@ -139,7 +139,7 @@
 					},
 					"action": {
 						"type": "origins:change_resource",
-						"resource": "*:*_hydration_update",
+						"resource": "*:*_hydration_resource",
 						"change": 5
 					}
 				},
@@ -171,12 +171,12 @@
 						},
 						"if_action": {
 							"type": "origins:change_resource",
-							"resource": "*:*_hydration_update",
+							"resource": "*:*_hydration_resource",
 							"change": -3
 						},
 						"else_action": {
 							"type": "origins:change_resource",
-							"resource": "*:*_hydration_update",
+							"resource": "*:*_hydration_resource",
 							"change": -1
 						}
 					}
