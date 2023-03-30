@@ -188,7 +188,7 @@
 					},
 					"action": {
 						"type": "origins:execute_command",
-						"command": "function moonlight:icarus/emotion/angry_effect_medium"
+						"command": "function moonlight:icarus/emotion/angry_effect_low"
 					}
 				},
 				{
@@ -198,7 +198,7 @@
 					},
 					"action": {
 						"type": "origins:execute_command",
-						"command": "function moonlight:icarus/emotion/angry_effect_low"
+						"command": "function moonlight:icarus/emotion/angry_effect_medium"
 					}
 				}
 			]
