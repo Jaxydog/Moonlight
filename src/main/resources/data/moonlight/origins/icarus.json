@@ -8,6 +8,7 @@
 	"impact": 3,
 	"unchoosable": true,
 	"powers": [
+		"moonlight:icarus/ambient",
 		"moonlight:icarus/aquatic",
 		"moonlight:icarus/blessing",
 		"moonlight:icarus/emotions",
