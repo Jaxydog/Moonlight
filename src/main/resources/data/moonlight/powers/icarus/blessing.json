@@ -1,6 +1,6 @@
 {
-	"name": "powers.moonlight.blessing.name",
-	"description": "powers.moonlight.blessing.description",
+	"name": "power.moonlight.icarus.blessing.name",
+	"description": "power.moonlight.icarus.blessing.description",
 	"type": "origins:multiple",
 	"craft_crystal_neutral": {
 		"type": "origins:recipe",

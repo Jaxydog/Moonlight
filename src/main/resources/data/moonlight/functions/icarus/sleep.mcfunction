@@ -1,1 +1,1 @@
-title @s actionbar {"translate": "power.moonlight.axolotl.sleeper.sleep", "color": "blue"}
+title @s actionbar {"translate": "power.moonlight.icarus.sleeper.sleep", "color": "blue"}

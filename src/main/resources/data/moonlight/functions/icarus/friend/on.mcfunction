@@ -1,1 +1,1 @@
-title @s actionbar {"translate": "power.moonlight.axolotl.loyal.friend.on", "color": "red"}
+title @s actionbar {"translate": "power.moonlight.icarus.loyal.friend.on", "color": "red"}

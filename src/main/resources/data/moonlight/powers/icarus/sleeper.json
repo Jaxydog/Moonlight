@@ -1,6 +1,6 @@
 {
-	"name": "powers.moonlight.icarus.sleeper.name",
-	"description": "powers.moonlight.icarus.sleeper.description",
+	"name": "power.moonlight.icarus.sleeper.name",
+	"description": "power.moonlight.icarus.sleeper.description",
 	"type": "origins:multiple",
 	"toggle": {
 		"type": "origins:toggle",

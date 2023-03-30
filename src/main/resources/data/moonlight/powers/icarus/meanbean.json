@@ -1,6 +1,6 @@
 {
-	"name": "powers.moonlight.icarus.meanbean.name",
-	"description": "powers.moonlight.icarus.meanbean.description",
+	"name": "power.moonlight.icarus.meanbean.name",
+	"description": "power.moonlight.icarus.meanbean.description",
 	"type": "origins:multiple",
 	"size": {
 		"type": "moonlight:model_scale",

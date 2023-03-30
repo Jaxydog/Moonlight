@@ -1,6 +1,6 @@
 {
-	"name": "powers.moonlight.icarus.muncher.name",
-	"description": "powers.moonlight.icarus.muncher.description",
+	"name": "power.moonlight.icarus.muncher.name",
+	"description": "power.moonlight.icarus.muncher.description",
 	"type": "origins:multiple",
 	"damage": {
 		"type": "origins:modify_damage_dealt",

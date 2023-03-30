@@ -1,6 +1,6 @@
 {
-	"name": "powers.moonlight.aquatic.name",
-	"description": "powers.moonlight.aquatic.description",
+	"name": "power.moonlight.icarus.aquatic.name",
+	"description": "power.moonlight.icarus.aquatic.description",
 	"type": "origins:multiple",
 	"breathe": {
 		"type": "origins:stacking_status_effect",
