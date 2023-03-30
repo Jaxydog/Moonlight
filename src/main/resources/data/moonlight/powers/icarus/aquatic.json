@@ -89,7 +89,7 @@
 		"entity_action": {
 			"type": "origins:add_velocity",
 			"space": "local",
-			"z": 1.0
+			"z": 2.0
 		},
 		"key": {
 			"key": "key.origins.primary_active"
