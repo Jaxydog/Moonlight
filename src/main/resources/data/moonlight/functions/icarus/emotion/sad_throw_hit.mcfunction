@@ -1,0 +1,1 @@
+playsound minecraft:item.trident.throw player @s ~ ~ ~ 0.7 1
