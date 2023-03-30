@@ -1,9 +1,9 @@
 package dev.jaxydog.moonlight.item;
 
+import blue.endless.jankson.annotation.Nullable;
 import dev.jaxydog.moonlight.Moonlight;
 import dev.jaxydog.moonlight.utility.Registerable;
 import java.util.List;
-import javax.annotation.Nullable;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.client.item.TooltipContext;

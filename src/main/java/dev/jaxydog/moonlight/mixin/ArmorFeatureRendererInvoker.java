@@ -1,6 +1,6 @@
 package dev.jaxydog.moonlight.mixin;
 
-import javax.annotation.Nullable;
+import blue.endless.jankson.annotation.Nullable;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.feature.ArmorFeatureRenderer;
 import net.minecraft.client.render.entity.model.BipedEntityModel;
