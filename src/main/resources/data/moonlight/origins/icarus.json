@@ -1,0 +1,20 @@
+{
+	"name": "origin.moonlight.icarus.name",
+	"description": "origin.moonlight.icarus.description",
+	"icon": {
+		"item": "moonlight:crown",
+		"tag": "{Emotion:\"neutral\"}"
+	},
+	"impact": 3,
+	"unchoosable": true,
+	"powers": [
+		"moonlight:icarus/aquatic",
+		"moonlight:icarus/blessing",
+		"moonlight:icarus/emotions",
+		"moonlight:icarus/loyal",
+		"moonlight:icarus/meanbean",
+		"moonlight:icarus/muncher",
+		"moonlight:icarus/sleeper",
+		"origins:like_water"
+	]
+}

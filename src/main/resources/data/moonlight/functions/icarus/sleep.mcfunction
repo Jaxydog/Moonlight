@@ -1,0 +1,1 @@
+title @s actionbar {"translate": "power.moonlight.axolotl.sleeper.sleep", "color": "blue"}

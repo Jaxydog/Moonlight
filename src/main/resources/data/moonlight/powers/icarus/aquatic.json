@@ -1,16 +1,63 @@
 {
-	"name": "power.moonlight.axolotl.aquatic.name",
-	"description": "power.moonlight.axolotl.aquatic.description",
+	"name": "powers.moonlight.aquatic.name",
+	"description": "powers.moonlight.aquatic.description",
 	"type": "origins:multiple",
 	"breathe": {
 		"type": "origins:stacking_status_effect",
-		"duration_per_stack": 100,
+		"tick_rate": 10,
 		"min_stacks": 1,
 		"max_stacks": 1,
+		"duration_per_stack": 119,
 		"effect": {
 			"effect": "minecraft:water_breathing",
+			"amplifier": 0,
+			"is_ambient": false,
 			"show_icon": false,
 			"show_particles": false
+		}
+	},
+	"mining_underwater": {
+		"type": "origins:modify_break_speed",
+		"modifier": {
+			"operation": "multiply_total",
+			"value": 4
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:submerged_in",
+					"fluid": "minecraft:water"
+				},
+				{
+					"type": "origins:enchantment",
+					"enchantment": "minecraft:aqua_affinity",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
+		}
+	},
+	"mining_ungrounded": {
+		"type": "apoli:modify_break_speed",
+		"modifier": {
+			"operation": "multiply_total",
+			"value": 4
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:fluid_height",
+					"fluid": "minecraft:water",
+					"comparison": ">",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:on_block",
+					"inverted": true
+				}
+			]
 		}
 	},
 	"vision": {
@@ -25,11 +72,11 @@
 			"fluid": "minecraft:water"
 		}
 	},
-	"feesh": {
+	"fish": {
 		"type": "origins:entity_group",
 		"group": "aquatic"
 	},
-	"swimmmm": {
+	"swim": {
 		"type": "origins:modify_swim_speed",
 		"modifier": {
 			"operation": "multiply_base",
@@ -42,7 +89,7 @@
 		"entity_action": {
 			"type": "origins:add_velocity",
 			"space": "local",
-			"z": 1
+			"z": 1.0
 		},
 		"key": {
 			"key": "key.origins.primary_active"

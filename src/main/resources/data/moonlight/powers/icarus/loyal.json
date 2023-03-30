@@ -1,10 +1,9 @@
 {
-	"name": "power.moonlight.axolotl.loyal.name",
-	"description": "power.moonlight.axolotl.loyal.description",
+	"name": "power.moonlight.icarus.loyal.name",
+	"description": "power.moonlight.icarus.loyal.description",
 	"type": "origins:multiple",
-	"yoink": {
+	"grab_bucket": {
 		"type": "origins:action_on_being_used",
-		"action_result": "success",
 		"bientity_action": {
 			"type": "origins:and",
 			"actions": [
@@ -15,10 +14,10 @@
 					}
 				},
 				{
-					"type": "apoli:actor_action",
+					"type": "origins:actor_action",
 					"action": {
 						"type": "origins:execute_command",
-						"command": "function moonlight:axolotl/yoink"
+						"command": "function moonlight:icarus/grab/bucket"
 					}
 				}
 			]
@@ -37,21 +36,21 @@
 			}
 		}
 	},
-	"splosh": {
+	"grab_dismount": {
 		"type": "origins:active_self",
-		"cooldown": 0,
+		"cooldown": 1,
 		"entity_action": {
 			"type": "origins:execute_command",
-			"command": "function moonlight:axolotl/splosh"
+			"command": "function moonlight:icarus/grab/dismount"
 		},
-		"condition": {
-			"type": "origins:riding"
+		"hud_render": {
+			"should_render": false
 		},
 		"key": {
 			"key": "key.sneak"
 		},
-		"hud_render": {
-			"should_render": false
+		"condition": {
+			"type": "origins:riding"
 		}
 	},
 	"friend_toggle": {
@@ -59,7 +58,7 @@
 		"active_by_default": true,
 		"retain_state": false,
 		"key": {
-			"key": "key.saveToolbarActivator"
+			"key": "key.loadToolbarActivator"
 		},
 		"condition": {
 			"type": "origins:gamemode",
@@ -67,7 +66,7 @@
 			"inverted": true
 		}
 	},
-	"friend": {
+	"friend_effect": {
 		"type": "origins:action_over_time",
 		"interval": 10,
 		"entity_action": {
@@ -76,22 +75,48 @@
 			"bientity_action": {
 				"type": "origins:target_action",
 				"action": {
-					"type": "origins:execute_command",
-					"command": "function moonlight:axolotl/friend"
+					"type": "origins:if_else",
+					"condition": {
+						"type": "origins:equipped_item",
+						"equipment_slot": "head",
+						"item_condition": {
+							"type": "origins:and",
+							"conditions": [
+								{
+									"type": "origins:ingredient",
+									"ingredient": {
+										"item": "moonlight:crown"
+									}
+								},
+								{
+									"type": "origins:nbt",
+									"nbt": "{Emotion:\"happy\"}"
+								}
+							]
+						}
+					},
+					"if_action": {
+						"type": "origins:execute_command",
+						"command": "function moonlight:icarus/friend/passive_happy"
+					},
+					"else_action": {
+						"type": "origins:execute_command",
+						"command": "function moonlight:icarus/friend/passive_normal"
+					}
 				}
 			}
 		},
 		"rising_action": {
 			"type": "origins:execute_command",
-			"command": "function moonlight:axolotl/friend_start"
+			"command": "function moonlight:icarus/friend/on"
 		},
 		"falling_action": {
 			"type": "origins:execute_command",
-			"command": "function moonlight:axolotl/friend_stop"
+			"command": "function moonlight:icarus/friend/off"
 		},
 		"condition": {
 			"type": "origins:power_active",
-			"power": "moonlight:axolotl/loyal_friend_toggle"
+			"power": "*:*_friend_toggle"
 		}
 	}
 }

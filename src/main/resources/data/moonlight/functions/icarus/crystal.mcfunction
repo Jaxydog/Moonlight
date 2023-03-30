@@ -1,4 +1,4 @@
-title @s actionbar {"translate": "power.moonlight.axolotl.axocerias_blessing.craft_crystal", "color": "yellow"}
+title @s actionbar {"translate": "power.moonlight.icarus.blessing.craft_crystal", "color": "yellow"}
 playsound minecraft:block.amethyst_block.chime player @a ~ ~ ~ 1 0.75
 playsound minecraft:block.amethyst_block.chime player @a ~ ~ ~ 1 1
 playsound minecraft:block.amethyst_block.chime player @a ~ ~ ~ 1 1.25

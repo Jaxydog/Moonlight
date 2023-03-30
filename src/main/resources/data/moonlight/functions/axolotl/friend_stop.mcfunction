@@ -1,1 +1,0 @@
-title @s actionbar {"translate": "power.moonlight.axolotl.friend.stop", "color": "red"}

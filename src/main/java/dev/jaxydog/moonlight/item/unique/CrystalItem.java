@@ -18,7 +18,7 @@ public class CrystalItem extends MLItem implements Emotional {
 		.setBypassesProtection()
 		.setUnblockable()
 		.setUsesMagic();
-	public static final String CRAFT_COMMAND = "function moonlight:axolotl/craft_crystal";
+	public static final String CRAFT_COMMAND = "function moonlight:icarus/crystal";
 
 	public CrystalItem(Settings settings, Config config) {
 		super(settings, config);

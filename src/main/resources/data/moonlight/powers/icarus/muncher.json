@@ -1,0 +1,70 @@
+{
+	"name": "powers.moonlight.icarus.muncher.name",
+	"description": "powers.moonlight.icarus.muncher.description",
+	"type": "origins:multiple",
+	"damage": {
+		"type": "origins:modify_damage_dealt",
+		"modifier": {
+			"operation": "multiply_base",
+			"value": 1
+		},
+		"bientity_condition": {
+			"type": "origins:target_condition",
+			"condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "apoli:entity_group",
+						"group": "aquatic"
+					},
+					{
+						"type": "origins:in_tag",
+						"tag": "moonlight:icarus/muncher_blacklist",
+						"inverted": true
+					}
+				]
+			}
+		}
+	},
+	"guilt_timer": {
+		"type": "origins:cooldown",
+		"cooldown": 1200,
+		"hud_render": {
+			"sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+			"bar_index": 16
+		}
+	},
+	"guild_trigger": {
+		"type": "origins:modify_damage_dealt",
+		"bientity_condition": {
+			"type": "origins:target_condition",
+			"condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:health",
+						"comparison": "<=",
+						"compare_to": 0
+					},
+					{
+						"type": "origins:in_tag",
+						"tag": "moonlight:icarus/muncher_passives"
+					}
+				]
+			}
+		}
+	},
+	"guilt_nohit": {
+		"type": "origins:modify_damage_dealt",
+		"modifier": {
+			"operation": "multiply_total",
+			"value": -1
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "*:*_guilt_timer",
+			"comparison": ">",
+			"compare_to": 0
+		}
+	}
+}

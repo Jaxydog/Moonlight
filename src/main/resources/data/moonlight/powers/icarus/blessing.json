@@ -1,0 +1,283 @@
+{
+	"name": "powers.moonlight.blessing.name",
+	"description": "powers.moonlight.blessing.description",
+	"type": "origins:multiple",
+	"craft_crystal_neutral": {
+		"type": "origins:recipe",
+		"recipe": {
+			"type": "minecraft:crafting_shaped",
+			"id": "moonlight:crystal_neutral",
+			"pattern": [" S ", "SIS", " S "],
+			"key": {
+				"S": {
+					"item": "minecraft:prismarine_shard"
+				},
+				"I": {
+					"item": "minecraft:gunpowder"
+				}
+			},
+			"result": {
+				"item": "moonlight:crystal",
+				"amount": 1,
+				"data": {
+					"Emotion": "neutral"
+				}
+			}
+		}
+	},
+	"craft_crystal_angry": {
+		"type": "origins:recipe",
+		"recipe": {
+			"type": "minecraft:crafting_shaped",
+			"id": "moonlight:crystal_angry",
+			"pattern": [" S ", "SIS", " S "],
+			"key": {
+				"S": {
+					"item": "minecraft:prismarine_shard"
+				},
+				"I": {
+					"item": "minecraft:magma_cream"
+				}
+			},
+			"result": {
+				"item": "moonlight:crystal",
+				"amount": 1,
+				"data": {
+					"Emotion": "angry"
+				}
+			}
+		}
+	},
+	"craft_crystal_happy": {
+		"type": "origins:recipe",
+		"recipe": {
+			"type": "minecraft:crafting_shaped",
+			"id": "moonlight:crystal_happy",
+			"pattern": [" S ", "SIS", " S "],
+			"key": {
+				"S": {
+					"item": "minecraft:prismarine_shard"
+				},
+				"I": {
+					"item": "minecraft:cookie"
+				}
+			},
+			"result": {
+				"item": "moonlight:crystal",
+				"amount": 1,
+				"data": {
+					"Emotion": "happy"
+				}
+			}
+		}
+	},
+	"craft_crystal_sad": {
+		"type": "origins:recipe",
+		"recipe": {
+			"type": "minecraft:crafting_shaped",
+			"id": "moonlight:crystal_sad",
+			"pattern": [" S ", "SIS", " S "],
+			"key": {
+				"S": {
+					"item": "minecraft:prismarine_shard"
+				},
+				"I": {
+					"item": "minecraft:scute"
+				}
+			},
+			"result": {
+				"item": "moonlight:crystal",
+				"amount": 1,
+				"data": {
+					"Emotion": "sad"
+				}
+			}
+		}
+	},
+	"craft_crown": {
+		"type": "origins:recipe",
+		"recipe": {
+			"type": "minecraft:crafting_shaped",
+			"id": "moonlight:crown",
+			"pattern": ["AHS", "GNG", "GGG"],
+			"key": {
+				"G": {
+					"item": "minecraft:gold_ingot"
+				},
+				"A": {
+					"item": "moonlight:crystal",
+					"tag": "{Emotion:\"angry\"}"
+				},
+				"H": {
+					"item": "moonlight:crystal",
+					"tag": "{Emotion:\"happy\"}"
+				},
+				"S": {
+					"item": "moonlight:crystal",
+					"tag": "{Emotion:\"sad\"}"
+				},
+				"N": {
+					"item": "moonlight:crystal",
+					"tag": "{Emotion:\"neutral\"}"
+				}
+			},
+			"result": {
+				"item": "moonlight:crown",
+				"amount": 1,
+				"data": {
+					"Emotion": "neutral"
+				}
+			}
+		}
+	},
+	"update_crown": {
+		"type": "origins:action_over_time",
+		"interval": 5,
+		"entity_action": {
+			"type": "origins:if_else_list",
+			"actions": [
+				{
+					"condition": {
+						"type": "origins:equipped_item",
+						"equipment_slot": "offhand",
+						"item_condition": {
+							"type": "origins:and",
+							"conditions": [
+								{
+									"type": "origins:ingredient",
+									"ingredient": {
+										"item": "moonlight:crystal"
+									}
+								},
+								{
+									"type": "origins:nbt",
+									"nbt": "{Emotion:\"neutral\"}"
+								}
+							]
+						}
+					},
+					"action": {
+						"type": "origins:equipped_item_action",
+						"equipment_slot": "head",
+						"action": {
+							"type": "origins:merge_nbt",
+							"nbt": "{Emotion:\"neutral\"}"
+						}
+					}
+				},
+				{
+					"condition": {
+						"type": "origins:equipped_item",
+						"equipment_slot": "offhand",
+						"item_condition": {
+							"type": "origins:and",
+							"conditions": [
+								{
+									"type": "origins:ingredient",
+									"ingredient": {
+										"item": "moonlight:crystal"
+									}
+								},
+								{
+									"type": "origins:nbt",
+									"nbt": "{Emotion:\"angry\"}"
+								}
+							]
+						}
+					},
+					"action": {
+						"type": "origins:equipped_item_action",
+						"equipment_slot": "head",
+						"action": {
+							"type": "origins:merge_nbt",
+							"nbt": "{Emotion:\"angry\"}"
+						}
+					}
+				},
+				{
+					"condition": {
+						"type": "origins:equipped_item",
+						"equipment_slot": "offhand",
+						"item_condition": {
+							"type": "origins:and",
+							"conditions": [
+								{
+									"type": "origins:ingredient",
+									"ingredient": {
+										"item": "moonlight:crystal"
+									}
+								},
+								{
+									"type": "origins:nbt",
+									"nbt": "{Emotion:\"happy\"}"
+								}
+							]
+						}
+					},
+					"action": {
+						"type": "origins:equipped_item_action",
+						"equipment_slot": "head",
+						"action": {
+							"type": "origins:merge_nbt",
+							"nbt": "{Emotion:\"happy\"}"
+						}
+					}
+				},
+				{
+					"condition": {
+						"type": "origins:equipped_item",
+						"equipment_slot": "offhand",
+						"item_condition": {
+							"type": "origins:and",
+							"conditions": [
+								{
+									"type": "origins:ingredient",
+									"ingredient": {
+										"item": "moonlight:crystal"
+									}
+								},
+								{
+									"type": "origins:nbt",
+									"nbt": "{Emotion:\"sad\"}"
+								}
+							]
+						}
+					},
+					"action": {
+						"type": "origins:equipped_item_action",
+						"equipment_slot": "head",
+						"action": {
+							"type": "origins:merge_nbt",
+							"nbt": "{Emotion:\"sad\"}"
+						}
+					}
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "head",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "moonlight:crown"
+						}
+					}
+				},
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "moonlight:crystal"
+						}
+					}
+				}
+			]
+		}
+	}
+}

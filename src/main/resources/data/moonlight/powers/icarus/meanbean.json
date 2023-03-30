@@ -1,0 +1,45 @@
+{
+	"name": "powers.moonlight.icarus.meanbean.name",
+	"description": "powers.moonlight.icarus.meanbean.description",
+	"type": "origins:multiple",
+	"size": {
+		"type": "moonlight:model_scale",
+		"width": 0.5,
+		"height": 0.5
+	},
+	"armor": {
+		"type": "origins:restrict_armor",
+		"head": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"tag": "moonlight:icarus/armor_blacklist"
+			}
+		},
+		"chest": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"tag": "moonlight:icarus/armor_blacklist"
+			}
+		},
+		"legs": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"tag": "moonlight:icarus/armor_blacklist"
+			}
+		},
+		"feet": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"tag": "moonlight:icarus/armor_blacklist"
+			}
+		}
+	},
+	"health": {
+		"type": "origins:modify_attribute",
+		"attribute": "minecraft:generic.max_health",
+		"modifier": {
+			"operation": "addition",
+			"value": -4
+		}
+	}
+}
