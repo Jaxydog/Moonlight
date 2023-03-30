@@ -114,6 +114,25 @@
 			"resource": "*:*_angry_resource",
 			"operation": "set",
 			"change": 100
+		},
+		"condition": {
+			"type": "origins:equipped_item",
+			"equipment_slot": "head",
+			"item_condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "moonlight:crown"
+						}
+					},
+					{
+						"type": "origins:nbt",
+						"nbt": "{Emotion:\"angry\"}"
+					}
+				]
+			}
 		}
 	},
 	"angry_hunger": {
@@ -547,6 +566,25 @@
 			"resource": "*:*_happy_resource",
 			"operation": "set",
 			"change": 100
+		},
+		"condition": {
+			"type": "origins:equipped_item",
+			"equipment_slot": "head",
+			"item_condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "moonlight:crown"
+						}
+					},
+					{
+						"type": "origins:nbt",
+						"nbt": "{Emotion:\"happy\"}"
+					}
+				]
+			}
 		}
 	},
 	"happy_hunger": {
@@ -792,6 +830,25 @@
 			"resource": "*:*_sad_resource",
 			"operation": "set",
 			"change": 100
+		},
+		"condition": {
+			"type": "origins:equipped_item",
+			"equipment_slot": "head",
+			"item_condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "moonlight:crown"
+						}
+					},
+					{
+						"type": "origins:nbt",
+						"nbt": "{Emotion:\"sad\"}"
+					}
+				]
+			}
 		}
 	},
 	"sad_hunger": {
