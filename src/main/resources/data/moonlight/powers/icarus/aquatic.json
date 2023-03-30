@@ -127,7 +127,7 @@
 					"action": {
 						"type": "origins:change_resource",
 						"resource": "*:*_hydration_resource",
-						"change": 10
+						"change": 50
 					}
 				},
 				{
@@ -140,7 +140,7 @@
 					"action": {
 						"type": "origins:change_resource",
 						"resource": "*:*_hydration_resource",
-						"change": 5
+						"change": 10
 					}
 				},
 				{
