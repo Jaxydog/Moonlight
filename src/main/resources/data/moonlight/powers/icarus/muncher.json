@@ -36,6 +36,13 @@
 	},
 	"guild_trigger": {
 		"type": "origins:modify_damage_dealt",
+		"bientity_action": {
+			"type": "origins:actor_action",
+			"action": {
+				"type": "origins:trigger_cooldown",
+				"power": "*:*_guilt_timer"
+			}
+		},
 		"bientity_condition": {
 			"type": "origins:target_condition",
 			"condition": {
